@@ -1,0 +1,81 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import earthImg from '../../assets/earth.png';
+
+function AboutSection() {
+  return (
+    <div className="section-about-us section-spacing-lg" id="about">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="heading-section">
+              <div className="heading-sub fw-semibold effectFade fadeUp">About Us</div>
+              <div className="heading-title text-gradient-2 effectFade fadeRotateX">Innovations and <br /> Digital
+                Solutions</div>
+            </div>
+          </div>
+          <div className="col-xxl-7 col-lg-6 lg-mb-24">
+            <div className="col-left">
+              <div className="position-relative z-5">
+                <div className="sub text-white">
+                  <span className="dot"></span>
+                  Available for worldwide project
+                </div>
+                <h5 className="title fw-semibold text-white">Based in <span className="text-brand">Nagpur & Pune , Maharashtra</span></h5>
+                <Link to="/contact" className="tf-btn">
+                  Start a Project
+                </Link>
+              </div>
+              <img className="effectFade fadeRotateX" src={earthImg} alt="Earth" />
+            </div>
+          </div>
+          <div className="col-xxl-5 col-lg-6">
+            <div className="review-box mb-24">
+              <div className="desc fw-semibold text-body-1">We've provided advanced technology to 5000+ bank branches, manufacturing firms, and businesses for - <br /> transaction automation, customer service, compliance, and decision support.</div>
+              <div className="d-flex justify-content-between flex-wrap align-items-end gap-12">
+                <div>
+                  <div className="d-flex gap-4 text mb-10">
+                    <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.6792 18.3019L18.1887 16.9057L20.4906 24L12.6792 18.3019ZM25.3585 9.13208H15.6604L12.6792 0L9.69811 9.13208H0L7.84906 14.7925L4.86792 23.9245L12.717 18.2641L17.5472 14.7925L25.3585 9.13208Z" fill="#219653" />
+                    </svg>
+                    Employees
+                  </div>
+                  <div className="d-flex gap-2">
+                    {[1, 2, 3, 4, 5].map((item) => (
+                      <svg key={item} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="24" fill="#3F3F46" />
+                        <path d="M11.9996 16.4114L15.6496 15.4341L17.1746 20.4001L11.9996 16.4114ZM20.3996 9.99255H13.9746L11.9996 3.6001L10.0246 9.99255H3.59961L8.79961 13.9548L6.82461 20.3473L12.0246 16.385L15.2246 13.9548L20.3996 9.99255Z" fill="white" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <div className="desc fw-semibold text-body-1 mb-0"></div>
+                <div className="counter text-neutral-400">
+                  <span className="number" data-speed="1500" data-to="400" data-inviewport="yes">10</span><span>+</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="review-box mb-24 d-flex flex-column justify-content-center gap-4">
+              <div className="d-flex justify-content-between flex-wrap align-items-end gap-12 border-bottom pb-4 mb-2" style={{ borderColor: 'var(--neutral-300)' }}>
+                <div className="desc fw-semibold text-body-1 mb-0">Happy Clients</div>
+                <div className="counter text-neutral-400">
+                  <span className="number" data-speed="1500" data-to="180" data-inviewport="yes">180</span><span>+</span>
+                </div>
+              </div>
+              <div className="d-flex justify-content-between flex-wrap align-items-end gap-12">
+                <div className="desc fw-semibold text-body-1 mb-0">Years in Business</div>
+                <div className="counter text-neutral-400">
+                  <span className="number" data-speed="1500" data-to="28" data-inviewport="yes">28</span><span>+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  );
+}
+
+export default AboutSection;
