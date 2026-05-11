@@ -1,16 +1,18 @@
 import React from 'react';
 
-function ServiceSingleHero() {
+function ServiceSingleHero({ service }) {
+  if (!service) return null;
+
   return (
     <div className="section-hero v2">
-      <div className="hero-image"></div>
+      <div className="hero-image" style={{ backgroundImage: `url(${service.heroImage})` }}></div>
       <div className="container">
         <div className="content-wrap text-center">
           <div className="title text-display-2 effectFade fadeRotateX">
-            <span className="title1 fw-semibold text-gradient-1">AI UX & Product</span>
+            <span className="title1 fw-semibold text-gradient-1">{service.title}</span>
             <br />
             <div className="title2 d-flex gap-20 justify-content-center flex-wrap">
-              <span className="fw-semibold text-gradient-1">Design</span>
+              <span className="fw-semibold text-gradient-1">{service.subtitle}</span>
               <div className="title-icon">
                 <div className="box"></div>
                 <div className="title-icon-wrap">
@@ -22,7 +24,7 @@ function ServiceSingleHero() {
             </div>
           </div>
           <p className="text text-body-3 effectFade fadeUp">
-            Human-centered flows, prompts, and interfaces that build trust and adoption. We design intuitive AI <br /> experiences focused on transparency, usability, and engagement.
+            {service.description}
           </p>
         </div>
       </div>

@@ -17,6 +17,8 @@ import BlogGrid3 from './pages/BlogGrid3';
 import BlogSingle from './pages/BlogSingle';
 import Contact from './pages/Contact';
 import ProductSingle from './pages/ProductSingle';
+import Careers from './pages/Careers';
+import JobSingle from './pages/JobSingle';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -49,7 +51,7 @@ function App() {
           <Route path="/index-v2" element={<HomeV2 />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/service-single" element={<ServiceSingle />} />
+          <Route path="/services/:slug" element={<ServiceSingle />} />
           <Route path="/products/:slug" element={<ProductSingle />} />
           <Route path="/works" element={<Works />} />
           <Route path="/work-single" element={<WorkSingle />} />
@@ -58,6 +60,8 @@ function App() {
           <Route path="/blog-three-columns" element={<BlogGrid3 />} />
           <Route path="/blog-single" element={<BlogSingle />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:slug" element={<JobSingle />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

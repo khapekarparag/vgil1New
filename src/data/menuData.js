@@ -1,4 +1,5 @@
 import { PRODUCTS_DATA } from './productsData';
+import { SERVICES_DATA } from './servicesData';
 
 export const MENU_DATA = {
   products: PRODUCTS_DATA.map(p => ({
@@ -7,15 +8,11 @@ export const MENU_DATA = {
     logo: p.logo,
     link: `/products/${p.slug}`
   })),
-  services: [
-    { name: 'Application Development', icon: 'desktop-solid', link: '/services' },
-    { name: 'IT Infrastructure Development', icon: 'building', link: '#' },
-    { name: 'VGST', icon: 'clipboard-check-solid', link: '#' },
-    { name: 'Mobile Computing', icon: 'mobile-alt-solid', link: '#' },
-    { name: 'DR & DC', icon: 'tachometer-alt-solid', link: '#' },
-    { name: 'Digital Solutions', icon: 'bullseye-solid', link: '#' },
-    { name: 'AI & ML', icon: 'robot-solid', link: '#' },
-  ],
+  services: SERVICES_DATA.map(s => ({
+    name: s.title,
+    icon: s.icon,
+    link: `/services/${s.slug}`
+  })),
   investors: [
     { name: 'Board and Management', icon: 'user-friends-solid', link: '#' },
     { name: 'Group Companies', icon: 'building', link: '#' },

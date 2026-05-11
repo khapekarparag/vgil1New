@@ -110,7 +110,7 @@ function MobileMenu() {
                 </li>
                 <li>
                   <div className="item">
-                    <Link to="#" className="mb-menu-link text-display-1">
+                    <Link to="/careers" className="mb-menu-link text-display-1">
                       <span className="text">Careers</span>
                     </Link>
                   </div>

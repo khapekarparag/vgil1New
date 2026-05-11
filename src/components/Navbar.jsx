@@ -145,7 +145,7 @@ function Navbar() {
               {renderMegaMenu(MENU_DATA.resource, 1, '280px')}
             </li>
             <li className="menu-item">
-              <Link to="#" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', transition: 'color 0.2s', textDecoration: 'none' }}>Careers</Link>
+              <Link to="/careers" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', transition: 'color 0.2s', textDecoration: 'none' }}>Careers</Link>
             </li>
           </ul>
         </div>
