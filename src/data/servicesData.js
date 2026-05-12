@@ -1,3 +1,11 @@
+import imgAppDev from '../assets/Service-img/Application-Development.svg';
+import imgIT from '../assets/Service-img/ITInfrastructureDevelopment.svg';
+import imgVGST from '../assets/Service-img/VGST.svg';
+import imgMobile from '../assets/Service-img/MobileComputing.svg';
+import imgDR from '../assets/Service-img/DR&DC.svg';
+import imgDigital from '../assets/Service-img/DigitalSolutions.svg';
+import imgAI from '../assets/Service-img/AI&ML.svg';
+
 export const SERVICES_DATA = [
   {
     slug: 'application-development',
@@ -5,6 +13,7 @@ export const SERVICES_DATA = [
     subtitle: 'Custom Software Solutions for Modern Enterprises',
     description: 'We build robust, scalable, and user-centric applications tailored to your specific business needs, ensuring high performance and seamless integration.',
     icon: 'desktop-solid',
+    logo: imgAppDev,
     heroImage: '/assets/images/section/service-single-1.jpg',
     features: [
       { title: 'Custom Web Apps', description: 'Tailored web solutions using modern frameworks.' },
@@ -36,6 +45,7 @@ export const SERVICES_DATA = [
     subtitle: 'Building the Foundation for Digital Success',
     description: 'Design and implement robust IT infrastructures that provide a secure and scalable foundation for your digital operations.',
     icon: 'building',
+    logo: imgIT,
     heroImage: '/assets/images/section/service-single-1.jpg',
     features: [
       { title: 'Network Design', description: 'Optimized network architectures for maximum speed.' },
@@ -67,6 +77,7 @@ export const SERVICES_DATA = [
     subtitle: 'Virtual Galaxy Smart Technology',
     description: 'Advanced smart technology solutions for connected ecosystems, smart cities, and IoT-driven innovation.',
     icon: 'clipboard-check-solid',
+    logo: imgVGST,
     heroImage: '/assets/images/section/service-single-1.jpg',
     features: [
       { title: 'Smart City Solutions', description: 'Intelligent systems for urban management.' },
@@ -98,6 +109,7 @@ export const SERVICES_DATA = [
     subtitle: 'Seamless Experiences on Every Device',
     description: 'Develop high-performance mobile applications and solutions that provide a superior user experience across iOS and Android.',
     icon: 'mobile-alt-solid',
+    logo: imgMobile,
     heroImage: '/assets/images/section/service-single-1.jpg',
     features: [
       { title: 'Native App Dev', description: 'High-performance apps for iOS and Android.' },
@@ -129,6 +141,7 @@ export const SERVICES_DATA = [
     subtitle: 'Disaster Recovery & Data Center Solutions',
     description: 'Ensure business continuity and secure data management with our comprehensive DR and DC services.',
     icon: 'tachometer-alt-solid',
+    logo: imgDR,
     heroImage: '/assets/images/section/service-single-1.jpg',
     features: [
       { title: 'Data Center Mgmt', description: 'Secure and efficient data storage solutions.' },
@@ -156,10 +169,11 @@ export const SERVICES_DATA = [
   },
   {
     slug: 'digital-solutions',
-    title: 'Digital Solutions',
+    title: 'Digital Solutions', 
     subtitle: 'Strategic Tools for Digital Transformation',
     description: 'Optimize your business operations and enhance customer engagement with our suite of strategic digital solutions.',
     icon: 'bullseye-solid',
+    logo: imgDigital,
     heroImage: '/assets/images/section/service-single-1.jpg',
     features: [
       { title: 'Digital Strategy', description: 'Comprehensive roadmaps for digital success.' },
@@ -191,6 +205,7 @@ export const SERVICES_DATA = [
     subtitle: 'Harnessing the Power of Intelligence',
     description: 'Drive innovation and gain predictive insights with our advanced Artificial Intelligence and Machine Learning solutions.',
     icon: 'robot-solid',
+    logo: imgAI,
     heroImage: '/assets/images/section/service-single-1.jpg',
     features: [
       { title: 'Predictive Analytics', description: 'Forecasting trends and behaviors with data.' },

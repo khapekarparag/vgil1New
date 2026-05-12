@@ -19,6 +19,8 @@ import Contact from './pages/Contact';
 import ProductSingle from './pages/ProductSingle';
 import Careers from './pages/Careers';
 import JobSingle from './pages/JobSingle';
+import InvestorSingle from './pages/InvestorSingle';
+import ResourceSingle from './pages/ResourceSingle';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -62,6 +64,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:slug" element={<JobSingle />} />
+          <Route path="/investors/:slug" element={<InvestorSingle />} />
+          <Route path="/resource/:slug" element={<ResourceSingle />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
