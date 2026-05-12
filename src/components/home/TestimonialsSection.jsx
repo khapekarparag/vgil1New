@@ -6,7 +6,7 @@ import tes4 from "../../assets/Testimonials-img/testimonial-4.png";
 
 function TestimonialsSection() {
   return (
-    <div className="section-testimonials section-spacing">
+    <div className="section-testimonials section-spacing dark-section dark-section-bottom">
       <div className="container">
         <div className="row justify-content-between">
 
