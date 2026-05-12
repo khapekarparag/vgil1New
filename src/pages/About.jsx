@@ -8,6 +8,7 @@ import AboutTeamSection from '../components/about/AboutTeamSection';
 import StatisticSection from '../components/home/StatisticSection';
 import AwardsSection from '../components/home/AwardsSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
+import JourneySection from '../components/about/JourneySection';
 import FaqsSection from '../components/home/FaqsSection';
 import ContactSection from '../components/home/ContactSection';
 
@@ -34,6 +35,8 @@ function About() {
         <AwardsSection />
         <TestimonialsSection />
       </div>
+
+      <JourneySection />
 
       <FaqsSection />
       <ContactSection />

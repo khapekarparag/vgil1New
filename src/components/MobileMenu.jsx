@@ -126,7 +126,7 @@ function MobileMenu() {
             </div>
             <div className="canvas_foot">
               <div className="left">
-                <a href="mailto:aigocy@gmail.com" className="text-caption text-neutral-200">aigocy@gmail.com</a>
+                <a href="mailto:info@vgil.com" className="text-caption text-neutral-200">info@vgil.com</a>
                 <p className="text-caption text-neutral-200">
                   CUP <span className="clock"></span>
                 </p>

@@ -11,7 +11,7 @@ function AboutHero() {
       <div className="container">
         <div className="content-wrap text-center">
           <div className="title text-display-2 effectFade fadeRotateX">
-            <span className="title1 fw-semibold text-gradient-1">Aigocy Empowering</span>
+            <span className="title1 fw-semibold text-gradient-1">Virtual Galaxy Empowering</span>
             <br />
             <div className="title2 d-flex gap-20 justify-content-center flex-wrap">
               <span className="fw-semibold text-gradient-1">Industries</span>

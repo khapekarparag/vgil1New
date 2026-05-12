@@ -41,17 +41,19 @@ function AboutTeamSection() {
         <div className="founders-container mb-120 effectFade fadeUp">
 
           {/* Left Side - Avinash Shende */}
-          <div className="founder-item">
-            <div className="team-item" style={{ background: '#f9f9f9ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', textAlign: 'center' }}>
-              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '25px' }}>
+          <div className="founder-item" style={{ display: 'flex' }}>
+            <div className="team-item" style={{ background: '#f9f9f9ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column' }}>
+              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '25px', flexShrink: 0 }}>
                 <img src={team1Image} alt="Avinash Shende" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
-              <img src={avinashSignature} alt="Avinash Shende Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
-              <div className="sub" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Founder & CEO</div>
-              <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
-                Avinash oversees operations and finances at Virtual Galaxy Infotech, balancing market needs with cost efficiency. He’s also a gardening enthusiast with a love for all things green.
-              </p>
-              <div className="social-links-founder">
+              <div style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                <img src={avinashSignature} alt="Avinash Shende Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
+                <div className="sub" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Founder & CEO</div>
+                <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Avinash oversees operations and finances at Virtual Galaxy Infotech, balancing market needs with cost efficiency. He’s also a gardening enthusiast with a love for all things green.
+                </p>
+              </div>
+              <div className="social-links-founder" style={{ marginTop: 'auto' }}>
                 <a href="#"><i className="icon icon-twitter-x"></i></a>
                 <a href="#"><i className="icon icon-linkedin-in"></i></a>
                 <a href="#"><i className="icon icon-github"></i></a>
@@ -67,17 +69,19 @@ function AboutTeamSection() {
           </div>
 
           {/* Right Side - Sachin Pande */}
-          <div className="founder-item">
-            <div className="team-item" style={{ background: '#f9f7f3ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', textAlign: 'center' }}>
-              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '25px' }}>
+          <div className="founder-item" style={{ display: 'flex' }}>
+            <div className="team-item" style={{ background: '#f9f7f3ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column' }}>
+              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '25px', flexShrink: 0 }}>
                 <img src={team2Image} alt="Sachin Pande" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
-              <img src={sachinSignature} alt="Sachin Pande Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
-              <div className="sub" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Co-Founder & CTO</div>
-              <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
-                Sachin drives technology and business development at Virtual Galaxy Infotech, leveraging the latest advancements. Off duty, he enjoys music with a cup of tea in hand.
-              </p>
-              <div className="social-links-founder">
+              <div style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                <img src={sachinSignature} alt="Sachin Pande Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
+                <div className="sub" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Co-Founder & CTO</div>
+                <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Sachin drives technology and business development at Virtual Galaxy Infotech, leveraging the latest advancements. Off duty, he enjoys music with a cup of tea in hand.
+                </p>
+              </div>
+              <div className="social-links-founder" style={{ marginTop: 'auto' }}>
                 <a href="#"><i className="icon icon-twitter-x"></i></a>
                 <a href="#"><i className="icon icon-linkedin-in"></i></a>
                 <a href="#"><i className="icon icon-github"></i></a>
@@ -170,7 +174,7 @@ function AboutTeamSection() {
           .founders-container {
             display: flex;
             justify-content: center;
-            align-items: start;
+            align-items: stretch;
             flex-wrap: nowrap;
             max-width: 1100px;
             margin: 0 auto;

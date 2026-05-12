@@ -19,7 +19,7 @@ function BlogGrid3() {
 
   return (
     <>
-      <PageTitle title="Aigocy" breadcrumbs={breadcrumbs} />
+      <PageTitle title="VGIL Blog" breadcrumbs={breadcrumbs} />
 
       <section className="section-blog flat-spacing">
         <div className="container">

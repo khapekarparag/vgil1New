@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import vgilLogo from '../assets/home/vgil-logo.png';
 
 function Footer() {
   return (
     <footer>
-      <div className="footer-image">
-        <img className="effectFade fadeUp" src="/assets/images/logo/logo-footer.png" alt="" />
-      </div>
       <div className="container">
         <div className="footer-content">
           <Link to="/" className="footer-logo">
-            <img src="/assets/images/logo/logo-2.svg" alt="" />
+            <img src={vgilLogo} alt="VGIL Logo" />
           </Link>
           <div className="title h6 fw-semibold">
-            Get connected <br /> with Aigocy on social
+            Get connected <br /> with VGIL on social
           </div>
           <div className="text">Don’t miss our new updates!</div>
           <div className="tf-social-1 justify-content-center">
@@ -70,7 +68,7 @@ function Footer() {
               <Link to="/contact" className="fw-semibold link-underline link1">Contact</Link>
             </li>
           </ul>
-          <p className="text-secondary coppy-rights text-center">© 2026 Aigocy. All Rights Reserved.</p>
+          <p className="text-secondary coppy-rights text-center">© 2026 Virtual Galaxy Infotech Limited. All Rights Reserved.</p>
           <a href="#" className="action-go-top d-flex gap-8 align-items-center justify-content-end link1">
             <span className="fw-semibold">Back to top</span>
             <i className="icon icon-long-arrow-alt-up-solid fs-20"></i>

@@ -6,7 +6,7 @@ function AboutSection() {
   return (
     <div className="section-about-us section-spacing-lg" id="about">
       <div className="container">
-        <div className="row">
+        <div className="row align-items-stretch">
           <div className="col-12">
             <div className="heading-section">
               <div className="heading-sub fw-semibold effectFade fadeUp">About Us</div>
@@ -14,25 +14,25 @@ function AboutSection() {
                 Solutions</div>
             </div>
           </div>
-          <div className="col-xxl-7 col-lg-6 lg-mb-24">
-            <div className="col-left">
+          <div className="col-lg-6 lg-mb-24 d-flex">
+            <div className="col-left w-100 h-100 d-flex flex-column justify-content-between" style={{ minHeight: '100%' }}>
               <div className="position-relative z-5">
                 <div className="sub text-white">
                   <span className="dot"></span>
                   Available for worldwide project
                 </div>
-                <h5 className="title fw-semibold text-white">Based in <span className="text-brand">Nagpur & Pune , Maharashtra</span></h5>
+                <h5 className="title fw-semibold text-white">Based in <span className="text-brand">Nagpur & Pune, Maharashtra</span></h5>
                 <Link to="/contact" className="tf-btn">
                   Start a Project
                 </Link>
               </div>
-              <img className="effectFade fadeRotateX" src={earthImg} alt="Earth" />
+              <img className="effectFade fadeRotateX mt-auto" src={earthImg} alt="Earth" style={{ alignSelf: 'center', maxWidth: '100%' }} />
             </div>
           </div>
-          <div className="col-xxl-5 col-lg-6">
-            <div className="review-box mb-24">
+          <div className="col-lg-6 d-flex flex-column">
+            <div className="review-box mb-24 flex-grow-1 d-flex flex-column justify-content-center">
               <div className="desc fw-semibold text-body-1">We've provided advanced technology to 5000+ bank branches, manufacturing firms, and businesses for - <br /> transaction automation, customer service, compliance, and decision support.</div>
-              <div className="d-flex justify-content-between flex-wrap align-items-end gap-12">
+              <div className="d-flex justify-content-between flex-wrap align-items-end gap-12 mt-20">
                 <div>
                   <div className="d-flex gap-4 text mb-10">
                     <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,15 +49,14 @@ function AboutSection() {
                     ))}
                   </div>
                 </div>
-                <div className="desc fw-semibold text-body-1 mb-0"></div>
                 <div className="counter text-neutral-400">
                   <span className="number" data-speed="1500" data-to="400" data-inviewport="yes">10</span><span>+</span>
                 </div>
               </div>
             </div>
 
-            <div className="review-box mb-24 d-flex flex-column justify-content-center gap-4">
-              <div className="d-flex justify-content-between flex-wrap align-items-end gap-12 border-bottom pb-4 mb-2" style={{ borderColor: 'var(--neutral-300)' }}>
+            <div className="review-box flex-grow-1 d-flex flex-column justify-content-center">
+              <div className="d-flex justify-content-between flex-wrap align-items-end gap-12 border-bottom pb-4 mb-20" style={{ borderColor: 'var(--neutral-300)' }}>
                 <div className="desc fw-semibold text-body-1 mb-0">Happy Clients</div>
                 <div className="counter text-neutral-400">
                   <span className="number" data-speed="1500" data-to="180" data-inviewport="yes">180</span><span>+</span>

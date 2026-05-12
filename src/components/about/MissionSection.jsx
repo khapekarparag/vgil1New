@@ -5,15 +5,15 @@ function MissionSection() {
   return (
     <div className="section-about-us flat-spacing" id="about">
       <div className="container">
-        <div className="row">
+        <div className="row align-items-stretch">
           <div className="col-12">
             <div className="heading-section">
               <div className="heading-sub fw-semibold effectFade fadeUp">About Us</div>
               <div className="heading-title text-gradient-2 effectFade fadeRotateX">Human-Centered AI, <br /> Built for Production</div>
             </div>
           </div>
-          <div className="col-xxl-7 col-lg-6 lg-mb-24">
-            <div className="col-left">
+          <div className="col-lg-6 lg-mb-24 d-flex">
+            <div className="col-left w-100 h-100 d-flex flex-column justify-content-between" style={{ minHeight: '100%' }}>
               <div className="position-relative z-5">
                 <div className="sub text-white">
                   <span className="dot"></span>
@@ -24,11 +24,11 @@ function MissionSection() {
                   Start a Project
                 </a>
               </div>
-              <img className="effectFade fadeRotateX" src={earthImg} alt="Earth" />
+              <img className="effectFade fadeRotateX mt-auto" src={earthImg} alt="Earth" style={{ alignSelf: 'center', maxWidth: '100%' }} />
             </div>
           </div>
-          <div className="col-xxl-5 col-lg-6">
-            <div className="mission-box mb-24" style={{ background: '#f4f4f5', padding: '30px', borderRadius: '24px' }}>
+          <div className="col-lg-6 d-flex flex-column">
+            <div className="mission-box mb-24 flex-grow-1 d-flex flex-column justify-content-center" style={{ background: '#f4f4f5', padding: '30px', borderRadius: '24px' }}>
               <h4 className="title fw-semibold mb-10" style={{ color: '#ff4d00' }}>Our Mission</h4>
               <div className="line" style={{ height: '1px', background: '#e4e4e7', margin: '15px 0' }}></div>
               <p className="text" style={{ color: '#3f3f46', fontSize: '16px', lineHeight: '1.6' }}>
@@ -36,7 +36,7 @@ function MissionSection() {
               </p>
             </div>
 
-            <div className="mission-box mb-24" style={{ background: '#f4f4f5', padding: '30px', borderRadius: '24px' }}>
+            <div className="mission-box flex-grow-1 d-flex flex-column justify-content-center" style={{ background: '#f4f4f5', padding: '30px', borderRadius: '24px' }}>
               <h4 className="title fw-semibold mb-10" style={{ color: '#ff4d00' }}>Our Vision</h4>
               <div className="line" style={{ height: '1px', background: '#e4e4e7', margin: '15px 0' }}></div>
               <p className="text" style={{ color: '#3f3f46', fontSize: '16px', lineHeight: '1.6' }}>

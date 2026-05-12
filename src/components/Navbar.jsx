@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MENU_DATA } from '../data/menuData';
+import vgilLogo from '../assets/home/vgil-logo.png';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -103,7 +104,7 @@ function Navbar() {
         {/* Left Section: Logo Only */}
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
           <Link to="/" className="logo-site" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/assets/images/logo/vgil-logo.png" alt="Virtual Galaxy" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} />
+            <img src={vgilLogo} alt="Virtual Galaxy" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} />
           </Link>
         </div>
 
