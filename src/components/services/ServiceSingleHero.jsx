@@ -4,34 +4,79 @@ function ServiceSingleHero({ service }) {
   if (!service) return null;
 
   return (
-    <div className="section-hero v2">
-      <div className="hero-image" style={{ backgroundImage: `url(${service.heroImage})` }}></div>
+    <div className="section-hero-premium" style={{ 
+      padding: '120px 0', 
+      background: '#fff', 
+      position: 'relative', 
+      display: 'block',
+      width: '100%'
+    }}>
       <div className="container">
-        <div className="content-wrap text-center">
-          <div className="title text-display-2 effectFade fadeRotateX">
-            <span className="title1 fw-semibold text-gradient-1">{service.title}</span>
-            <br />
-            <div className="title2 d-flex gap-20 justify-content-center flex-wrap">
-              <span className="fw-semibold text-gradient-1">{service.subtitle}</span>
-              {service.logo ? (
-                <div className="product-logo d-flex justify-content-center align-items-center" style={{ marginLeft: '15px' }}>
-                  <img src={service.logo} alt={`${service.title} Logo`} style={{ maxWidth: '100px', height: 'auto', objectFit: 'contain' }} />
+        <div className="row align-items-center g-5">
+          {/* Left Content Area */}
+          <div className="col-lg-6 reveal-up active" style={{ position: 'relative', zIndex: 2 }}>
+            <div className="service-excellence-badge mb-40">
+              <div className="line" style={{ width: '40px', height: '3px', background: 'var(--svc-accent)', borderRadius: '2px' }}></div>
+              <div className="text" style={{ fontWeight: '900', letterSpacing: '3px' }}>Service Excellence</div>
+            </div>
+            
+            <h1 className="premium-heading" style={{ 
+              fontSize: 'clamp(40px, 6vw, 72px)', 
+              lineHeight: '1.2', 
+              fontWeight: '900', 
+              marginBottom: '32px', 
+              color: 'var(--svc-text-main)',
+              letterSpacing: '-2px'
+            }}>
+              {service.title}
+            </h1>
+            
+            <h2 className="text-body-1 fw-semibold mb-20" style={{ color: 'var(--svc-accent)', fontSize: '20px' }}>
+              {service.subtitle}
+            </h2>
+            
+            <p className="text-body-2 mb-48" style={{ 
+              color: 'var(--svc-text-muted)', 
+              lineHeight: '1.7', 
+              fontSize: '17px',
+              maxWidth: '90%'
+            }}>
+              {service.longDescription}
+            </p>
+            
+            <div className="d-flex flex-wrap gap-12 mt-40">
+              {service.features.map((feature, idx) => (
+                <div key={idx} className="feature-pill">
+                  <div style={{ width: '8px', height: '8px', background: 'var(--svc-accent)', borderRadius: '50%' }}></div>
+                  <span>{feature.title}</span>
                 </div>
-              ) : (
-                <div className="title-icon">
-                  <div className="box"></div>
-                  <div className="title-icon-wrap">
-                    <img src="/assets/images/item/item-13.svg" alt="" className="img-1 img-transform-3" />
-                    <img src="/assets/images/item/item-14.svg" alt="" className="img-2 img-transform-3" />
-                    <img src="/assets/images/item/item-15.svg" alt="" className="img-3 img-transform-3" />
-                  </div>
-                </div>
-              )}
+              ))}
             </div>
           </div>
-          <p className="text text-body-3 effectFade fadeUp">
-            {service.description}
-          </p>
+          
+          {/* Right Visual Area */}
+          <div className="col-lg-6 reveal-up active" style={{ position: 'relative', zIndex: 1 }}>
+            <div className="hero-img-box" style={{ 
+              background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+              boxShadow: 'inset 0 0 40px rgba(255,255,255,1)'
+            }}>
+              <img 
+                src={service.heroImage} 
+                alt={service.title} 
+                style={{ 
+                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.08))',
+                  borderRadius: '24px'
+                }} 
+              />
+              {/* Floating UI Elements */}
+              <div className="floating-ui ui-1 animate-float">
+                <i className="icon icon-code-solid"></i>
+              </div>
+              <div className="floating-ui ui-2 animate-float" style={{ animationDelay: '1s' }}>
+                <i className="icon icon-desktop-solid"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

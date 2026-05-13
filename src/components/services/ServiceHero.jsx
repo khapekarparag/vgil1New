@@ -2,30 +2,32 @@ import React from 'react';
 
 function ServiceHero() {
   return (
-    <div className="section-hero v1">
-      <div className="hero-image">
-      </div>
+    <div className="cinematic-hero" style={{ background: '#fff', borderBottom: '1px solid #eee' }}>
       <div className="container">
         <div className="content-wrap text-center">
-          <div className="title text-display-2 effectFade fadeRotateX">
-            <span className="title1 fw-semibold text-gradient-1">Build Smarter with</span>
-            <br />
-            <div className="title2 d-flex gap-20 justify-content-center flex-wrap">
-              <span className="fw-semibold text-gradient-1">Full-Stack AI</span>
-              <div className="title-icon">
-                <div className="box"></div>
-                <div className="title-icon-wrap">
-                  <img src="/assets/images/item/item-13.svg" alt="" className="img-1 img-transform-3" />
-                  <img src="/assets/images/item/item-14.svg" alt="" className="img-2 img-transform-3" />
-                  <img src="/assets/images/item/item-15.svg" alt="" className="img-3 img-transform-3" />
-                </div>
-              </div>
+          <div className="reveal-up active">
+            <h1 className="premium-heading" style={{ color: '#111827' }}>
+              Innovative <br />
+              Digital Ecosystems
+            </h1>
+            <p className="premium-subtitle" style={{ color: '#6b7280' }}>
+              Empowering global enterprises with full-stack AI solutions, robust infrastructure, 
+              and cutting-edge mobile computing designed for the next generation of business.
+            </p>
+            <div className="d-flex gap-20 justify-content-center flex-wrap">
+              <a href="#services" className="tf-btn">Explore Services</a>
+              <a href="/contact" className="tf-btn style-white">Get Started</a>
             </div>
           </div>
-          <p className="text effectFade fadeUp">
-            Unlock growth with our full-stack AI services, delivering smart, efficient solutions from <br /> strategy to deployment for innovative business success.
-          </p>
         </div>
+      </div>
+      
+      {/* Decorative elements */}
+      <div className="animate-float" style={{ position: 'absolute', top: '20%', left: '10%', opacity: 0.1 }}>
+        <img src="/assets/images/item/item-13.svg" alt="" width="100" />
+      </div>
+      <div className="animate-float" style={{ position: 'absolute', bottom: '20%', right: '10%', opacity: 0.1, animationDelay: '2s' }}>
+        <img src="/assets/images/item/item-15.svg" alt="" width="120" />
       </div>
     </div>
   );

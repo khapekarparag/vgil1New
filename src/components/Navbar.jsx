@@ -44,20 +44,21 @@ function Navbar() {
           className="mega-item-link"
           >
             <div className="icon-box" style={{
-              width: '36px',
-              height: '36px',
-              borderRadius: '8px',
+              width: '50px',
+              height: '50px',
+              borderRadius: '12px',
               backgroundColor: '#fff5f4',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
-              overflow: 'hidden'
+              overflow: 'hidden',
+              border: '1px solid #fee2e2'
             }}>
               {item.logo ? (
-                <img src={item.logo} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '4px' }} />
+                <img src={item.logo} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               ) : (
-                <i className={`icon icon-${item.icon}`} style={{ color: '#ff2d15', fontSize: '16px' }} />
+                <i className={`icon icon-${item.icon}`} style={{ color: '#ff2d15', fontSize: '22px' }} />
               )}
             </div>
             <span>{item.name}</span>
@@ -136,7 +137,7 @@ function Navbar() {
               {renderMegaMenu(MENU_DATA.investors, 2, '650px')}
             </li>
             <li className="menu-item">
-              <Link to="#" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', transition: 'color 0.2s', textDecoration: 'none' }}>IPO</Link>
+              <Link to="/ipo" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', transition: 'color 0.2s', textDecoration: 'none' }}>IPO</Link>
             </li>
             <li className="menu-item has-child">
               <a href="#" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '5px', transition: 'color 0.2s', textDecoration: 'none' }}>

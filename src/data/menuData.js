@@ -24,10 +24,10 @@ export const MENU_DATA = {
     link: `/investors/${i.slug}`
   })),
   resource: [
-    { name: 'Blog', icon: 'book-open-solid', logo: imgBlog, link: '/blog-standard' },
     ...RESOURCE_DATA.map(r => ({
       name: r.title,
       icon: r.icon,
+      logo: r.logo,
       link: `/resource/${r.slug}`
     }))
   ]

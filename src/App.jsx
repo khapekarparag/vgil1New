@@ -19,6 +19,7 @@ import Contact from './pages/Contact';
 import ProductSingle from './pages/ProductSingle';
 import Careers from './pages/Careers';
 import JobSingle from './pages/JobSingle';
+import IPO from './pages/IPO';
 import InvestorSingle from './pages/InvestorSingle';
 import ResourceSingle from './pages/ResourceSingle';
 import NotFound from './pages/NotFound';
@@ -60,10 +61,11 @@ function App() {
           <Route path="/blog-standard" element={<BlogStandard />} />
           <Route path="/blog-two-columns" element={<BlogGrid2 />} />
           <Route path="/blog-three-columns" element={<BlogGrid3 />} />
-          <Route path="/blog-single" element={<BlogSingle />} />
+          <Route path="/blog/:blogSlug" element={<BlogSingle />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:slug" element={<JobSingle />} />
+          <Route path="/ipo" element={<IPO />} />
           <Route path="/investors/:slug" element={<InvestorSingle />} />
           <Route path="/resource/:slug" element={<ResourceSingle />} />
           <Route path="*" element={<NotFound />} />
