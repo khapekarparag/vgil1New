@@ -70,6 +70,7 @@ function Navbar() {
 
   return (
     <header
+      id="main-nav"
       className={`tf-header header2 ${scrolled ? 'is-fixed is-small' : ''}`}
       style={{
         position: 'fixed',
@@ -185,15 +186,17 @@ function Navbar() {
           {/* Social Icons */}
           <div className="d-none d-xl-flex align-items-center" style={{ gap: '10px' }}>
             {[
-              { icon: 'linkedin-in', link: 'https://www.linkedin.com/' },
-              { icon: 'instagram', link: 'https://www.instagram.com/' },
-              { icon: 'facebook-f', link: 'https://www.facebook.com/' },
-              { icon: 'twitter-x', link: 'https://x.com/' },
-              { icon: 'youtube', link: 'https://www.youtube.com/' }
+              { icon: 'linkedin-in', link: 'https://www.linkedin.com/company/virtualgalaxy/' },
+              { icon: 'instagram', link: 'https://www.instagram.com/virtualgalaxyinfotech/' },
+              { icon: 'facebook-f', link: 'https://www.facebook.com/VirtualGalaxyInfotechLtd' },
+              { icon: 'twitter-x', link: 'https://x.com/Virtualvgipl' },
+              { icon: 'youtube', link: 'https://www.youtube.com/@virtualgalaxyinfotechpvtlt9340' }
             ].map((social, idx) => (
               <a
                 key={idx}
                 href={social.link}
+                target="_blank"
+                rel="noreferrer"
                 style={{
                   display: 'flex',
                   alignItems: 'center',

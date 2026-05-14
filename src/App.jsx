@@ -56,7 +56,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceSingle />} />
           <Route path="/products/:slug" element={<ProductSingle />} />
-          <Route path="/works" element={<Works />} />
+          <Route path="/products" element={<Works />} />
           <Route path="/work-single" element={<WorkSingle />} />
           <Route path="/blog-standard" element={<BlogStandard />} />
           <Route path="/blog-two-columns" element={<BlogGrid2 />} />

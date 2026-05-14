@@ -17,19 +17,19 @@ function ContactSection() {
                     Let’s Build <br /> Intelligent Things
                   </div>
                 </div>
-                <div>
-                  <div className="contact-item mb-20 effectFade fadeRotateX">
-                    <i className="icon icon-envelope-solid"></i>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                  <div className="contact-item effectFade fadeRotateX" style={{ border: '1px solid #000', padding: '20px', borderRadius: '16px' }}>
                     <div className="content">
-                      <div className="title fw-semibold mb-2">E-mail address</div>
-                      <div className="text">hello@youraiagency.com</div>
+                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff0000' }}>Marketing</div>
+                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2' }}>info@vgipl.in</div>
+                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2' }}>+91 62626 86865</div>
                     </div>
                   </div>
-                  <div className="contact-item effectFade fadeRotateX" data-delay="0.1">
-                    <i className="icon icon-headset-solid"></i>
+                  <div className="contact-item effectFade fadeRotateX" data-delay="0.1" style={{ border: '1px solid #000', padding: '20px', borderRadius: '16px' }}>
                     <div className="content">
-                      <div className="title fw-semibold mb-2">Phone number</div>
-                      <div className="text">+1 (647) 555 0172</div>
+                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff0000' }}>HR</div>
+                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2' }}>hr@vgipl.in</div>
+                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2' }}>+91 77988 80958</div>
                     </div>
                   </div>
                 </div>

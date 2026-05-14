@@ -86,7 +86,7 @@ function MobileMenu() {
                 </li>
                 <li>
                   <div className="item">
-                    <Link to="#" className="mb-menu-link text-display-1">
+                    <Link to="/ipo" className="mb-menu-link text-display-1">
                       <span className="text">IPO</span>
                     </Link>
                   </div>
@@ -132,15 +132,15 @@ function MobileMenu() {
                 </p>
               </div>
               <div className="right">
-                <a href="#" className="tf-link-icon text-caption text-neutral-200">
+                <a href="https://x.com/Virtualvgipl" target="_blank" rel="noreferrer" className="tf-link-icon text-caption text-neutral-200">
                   <i className="icon icon-arrow-top-right"></i>
                   TWITTER (X)
                 </a>
-                <a href="#" className="tf-link-icon text-caption text-neutral-200">
+                <a href="https://www.instagram.com/virtualgalaxyinfotech/" target="_blank" rel="noreferrer" className="tf-link-icon text-caption text-neutral-200">
                   <i className="icon icon-arrow-top-right"></i>
                   INSTAGRAM
                 </a>
-                <a href="#" className="tf-link-icon text-caption text-neutral-200">
+                <a href="https://www.linkedin.com/company/virtualgalaxy/" target="_blank" rel="noreferrer" className="tf-link-icon text-caption text-neutral-200">
                   <i className="icon icon-arrow-top-right"></i>
                   LINKEDIN
                 </a>
