@@ -1,4 +1,5 @@
 import React from 'react';
+import cyberLogo from '../../assets/home/cyber-logo.png';
 
 function WhyChooseUs() {
   return (
@@ -72,7 +73,7 @@ function WhyChooseUs() {
                 <div className="col-lg-5">
                     <div className="benefits-box benefits-secure ">
                         <div className="benefits-secure-inner text-center">
-                            <img src="/assets/images/item/benefits-1.svg" alt="" />
+                            <img src={cyberLogo} alt="Cyber Security Logo" />
                         </div>
                         <div className="content">
                             <h6 className="fw-semibold title">Secure by Design</h6>

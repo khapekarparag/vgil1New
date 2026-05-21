@@ -65,9 +65,9 @@ export const PRODUCTS_DATA = [
       }
     ],
     metrics: [
-      { value: '500+', label: 'Dashboards Created' },
-      { value: '50+', label: 'Data Sources Integrated' },
-      { value: '24/7', label: 'Automated Reporting' }
+      { value: '2M+', label: 'Transactions processed' },
+      { value: '10+', label: 'Total number of clients served' },
+      { value: '99.9%', label: 'System uptime' }
     ]
   },
   {
@@ -93,10 +93,9 @@ export const PRODUCTS_DATA = [
       }
     ],
     metrics: [
-      { value: '30%', label: 'Operational Cost Reduction' },
-      { value: '150+', label: 'Enterprise Clients' },
-      { value: '99.9%', label: 'System Reliability' },
-      { value: '40+', label: 'Modules Available' }
+      { value: '10+', label: 'Industrial Sectors' },
+      { value: '50+', label: 'Total number of clients served' },
+      { value: '30+', label: 'Ready External Integrations' }
     ]
   },
   {
@@ -122,10 +121,9 @@ export const PRODUCTS_DATA = [
       }
     ],
     metrics: [
-      { value: '5M+', label: 'Daily Transactions' },
-      { value: '0.01%', label: 'Fraud Rate' },
-      { value: '120+', label: 'Payment Methods' },
-      { value: '<2s', label: 'Settlement Time' }
+      { value: '30+', label: 'Services Enabled' },
+      { value: 'e-KYC', label: 'Seamless Onboarding' },
+      { value: '99.9%', label: 'System uptime' }
     ]
   },
   {
@@ -151,9 +149,9 @@ export const PRODUCTS_DATA = [
       }
     ],
     metrics: [
-      { value: '1M+', label: 'Active Farmers' },
-      { value: '$2B+', label: 'Traded Volume' },
-      { value: '50+', label: 'Commodity Types' }
+      { value: '125+', label: 'Total number of clients served' },
+      { value: '10M+', label: 'Auctioned Transactions' },
+      { value: '15B+', label: 'Cumulative Transaction Value' }
     ]
   },
   {
@@ -179,11 +177,9 @@ export const PRODUCTS_DATA = [
       }
     ],
     metrics: [
-      { value: '500k+', label: 'Digital Records' },
-      { value: '100%', label: 'Compliance Rate' },
-      { value: '200+', label: 'Agencies Connected' },
-      { value: '5x', label: 'Faster Reporting' },
-      { value: '0', label: 'Lost Evidence Incidents' }
+      { value: '30M+', label: 'Transactions processed' },
+      { value: 'e-KYC', label: 'Total number of banks served' },
+      { value: '99.9%', label: 'System uptime' }
     ]
   },
   {
@@ -209,9 +205,9 @@ export const PRODUCTS_DATA = [
       }
     ],
     metrics: [
-      { value: '24/7', label: 'Threat Monitoring' },
-      { value: '10M+', label: 'Threats Blocked Monthly' },
-      { value: '<5min', label: 'Incident Response Time' }
+      { value: '24/7', label: 'Round the clock availability' },
+      { value: 'Compliance', label: 'PCI-DSS, HIPPA, CERT-IN' },
+      { value: 'SOCaaS', label: 'Security Operations Centre as a Service' }
     ]
   },
   {

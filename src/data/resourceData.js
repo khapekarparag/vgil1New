@@ -10,6 +10,8 @@ export const RESOURCE_DATA = [
     title: 'News',
     icon: 'paper-plane',
     logo: imgNews,
+    heroImage: '/assets/images/resources/news_resource.png',
+    bgImage: '/assets/images/resources/news_bg.jpg',
     desc: 'Stay updated with the latest insights, events, and milestones from Virtual Galaxy.',
     gridItems: [
       {
@@ -97,6 +99,7 @@ export const RESOURCE_DATA = [
     title: 'Blog',
     icon: 'book-open-solid',
     logo: imgBlog,
+    heroImage: '/assets/images/resources/blog_resource.png',
     desc: 'Deep dives into technology, banking solutions, and enterprise innovation.',
     gridItems: [
       {
@@ -160,6 +163,7 @@ export const RESOURCE_DATA = [
     title: 'Press Coverage',
     icon: 'comment-quote',
     logo: imgPress,
+    heroImage: '/assets/images/resources/press_resource.png',
     desc: 'Explore our press releases, media coverage, and official statements.',
     categories: [
       {
@@ -219,6 +223,7 @@ export const RESOURCE_DATA = [
     title: 'Media',
     icon: 'video-solid',
     logo: imgMedia,
+    heroImage: '/assets/images/resources/media_resource.png',
     desc: 'Access our media kits, brand assets, and coverage across various platforms.',
     gridItems: []
   },
@@ -227,6 +232,7 @@ export const RESOURCE_DATA = [
     title: 'Video Coverage',
     icon: 'play-solid',
     logo: imgVideo,
+    heroImage: '/assets/images/resources/video_resource.png',
     desc: 'Watch our corporate presentations, listing ceremony highlights, and media interviews.',
     gridItems: [
       { title: 'Virtual Galaxy Infotech IPO Analysis', link: 'https://www.youtube.com/watch?v=R36-byUD6g0&feature=youtu.be', type: 'video' },

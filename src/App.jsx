@@ -17,6 +17,10 @@ import BlogGrid3 from './pages/BlogGrid3';
 import BlogSingle from './pages/BlogSingle';
 import Contact from './pages/Contact';
 import ProductSingle from './pages/ProductSingle';
+import ConversationalAI from './pages/ConversationalAI';
+import TransactCore from './pages/TransactCore';
+import AuditFlux from './pages/AuditFlux';
+import FinFlow from './pages/FinFlow';
 import Careers from './pages/Careers';
 import JobSingle from './pages/JobSingle';
 import IPO from './pages/IPO';
@@ -55,8 +59,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceSingle />} />
+          <Route path="/products/conversational-ai-companion" element={<ConversationalAI />} />
+          <Route path="/products/transact-core" element={<TransactCore />} />
+          <Route path="/products/audit-flux" element={<AuditFlux />} />
+          <Route path="/products/fin-flow" element={<FinFlow />} />
           <Route path="/products/:slug" element={<ProductSingle />} />
-          <Route path="/works" element={<Works />} />
+          <Route path="/products" element={<Works />} />
           <Route path="/work-single" element={<WorkSingle />} />
           <Route path="/blog-standard" element={<BlogStandard />} />
           <Route path="/blog-two-columns" element={<BlogGrid2 />} />

@@ -24,7 +24,7 @@ function AwardsSection() {
             <div className="text text-body-1 text-dark">Integrated MIS for Banking & Finance</div>
             <div className="year text-body-1 text-neutral-400">/ 2024</div>
           </div>
-          <div className="awards-item effectFade fadeUp" data-delay="0.2">
+          <div className="awards-item dark-card effectFade fadeUp" data-delay="0.2">
             <div className="image award-photo-wrapper">
               <img src="/assets/awards-image/award3.png" alt="Asia Leadership Awards" className="award-photo" />
             </div>
@@ -32,7 +32,7 @@ function AwardsSection() {
             <div className="text text-body-1 text-dark">Financial Services Tech of The Year</div>
             <div className="year text-body-1 text-neutral-400">/ 2024</div>
           </div>
-          <div className="awards-item effectFade fadeUp" data-delay="0.3">
+          <div className="awards-item dark-card effectFade fadeUp" data-delay="0.3">
             <div className="image award-photo-wrapper">
               <img src="/assets/awards-image/award4.png" alt="Navbharat Navarashtra Conclave" className="award-photo" />
             </div>

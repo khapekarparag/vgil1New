@@ -11,7 +11,7 @@ function WorksHero() {
             <span className="title1 fw-semibold text-gradient-1">Explore Our Finest</span>
             <br />
             <div className="title2 d-flex gap-20 justify-content-center flex-wrap">
-              <span className="fw-semibold text-gradient-1">AI Work</span>
+              <span className="fw-semibold text-gradient-1">Our Products</span>
               <div className="title-icon">
                 <div className="box"></div>
                 <div className="title-icon-wrap">

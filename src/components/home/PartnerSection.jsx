@@ -13,28 +13,28 @@ import partner8 from '../../assets/Government Projects/msamb.png';
 import partner9 from '../../assets/Government Projects/mumbai_apmc.png';
 import partner10 from '../../assets/Government Projects/nach.png';
 import partner11 from '../../assets/Government Projects/nmmc.png';
-import partner12 from '../../assets/inter-banking-projects/arusha_saccos.jpg';
-import partner13 from '../../assets/inter-banking-projects/dcb_bank.jpg';
-import partner14 from '../../assets/inter-banking-projects/maiic_bank.jpg';
-import partner15 from '../../assets/inter-banking-projects/nyombo_saccos.jpg';
-import partner16 from '../../assets/inter-banking-projects/trasaccos.jpg';
-import partner17 from '../../assets/inter-banking-projects/wazalendo_saccos.jpg';
-import partner18 from '../../assets/inter-banking-projects/wazo_hill_saccos_ltd.jpg';
-import partner19 from '../../assets/National-bank/apex_bank.jpg';
-import partner20 from '../../assets/National-bank/auranabad-dcc.jpg';
-import partner21 from '../../assets/National-bank/bdcc_bank.jpg';
-import partner22 from '../../assets/National-bank/bhandara_bank.jpg';
-import partner23 from '../../assets/National-bank/bhandara_urban_co_bank.jpg';
-import partner24 from '../../assets/National-bank/gdcc_bank.jpg';
+import partner12 from '../../assets/inter-banking-projects/arusha_saccos.png';
+import partner13 from '../../assets/inter-banking-projects/dcb_bank.png';
+import partner14 from '../../assets/inter-banking-projects/maiic_bank.png';
+import partner15 from '../../assets/inter-banking-projects/nyombo_saccos.png';
+import partner16 from '../../assets/inter-banking-projects/trasaccos.png';
+import partner17 from '../../assets/inter-banking-projects/wazalendo_saccos.png';
+import partner18 from '../../assets/inter-banking-projects/wazo_hill_saccos_ltd.png';
+import partner19 from '../../assets/National-bank/apex_bank.png';
+import partner20 from '../../assets/National-bank/auranabad-dcc.png';
+import partner21 from '../../assets/National-bank/bdcc_bank.png';
+import partner22 from '../../assets/National-bank/bhandara_bank.png';
+import partner23 from '../../assets/National-bank/bhandara_urban_co_bank.png';
+import partner24 from '../../assets/National-bank/gdcc_bank.png';
 import partner25 from '../../assets/National-bank/jalna-logo.png';
-import partner26 from '../../assets/National-bank/mahalaxmi_bank.jpg';
-import partner27 from '../../assets/National-bank/nagar_sahakari_bank.jpg';
-import partner28 from '../../assets/National-bank/osmanbad_dcc_bank.jpg';
-import partner29 from '../../assets/National-bank/pusad_urban_bank.jpg';
-import partner30 from '../../assets/National-bank/sadhana_sahkari_bank.jpg';
-import partner31 from '../../assets/National-bank/sanmitra_mahil_agri_sahakari_bank.jpg';
-import partner32 from '../../assets/National-bank/wardha_dcc_bank Ltd.jpg';
-import partner33 from '../../assets/National-bank/yavatmal_dcc_bank.jpg';
+import partner26 from '../../assets/National-bank/mahalaxmi_bank.png';
+import partner27 from '../../assets/National-bank/nagar_sahakari_bank.png';
+import partner28 from '../../assets/National-bank/osmanbad_dcc_bank.png';
+import partner29 from '../../assets/National-bank/pusad_urban_bank.png';
+import partner30 from '../../assets/National-bank/sadhana_sahkari_bank.png';
+import partner31 from '../../assets/National-bank/sanmitra_mahil_agri_sahakari_bank.png';
+import partner32 from '../../assets/National-bank/wardha_dcc_bank_Ltd.png';
+import partner33 from '../../assets/National-bank/yavatmal_dcc_bank.png';
 
 
 function PartnerSection() {
@@ -43,7 +43,7 @@ function PartnerSection() {
     width: '100%',
     objectFit: 'contain',
     margin: '0 auto',
-    maxWidth: '280px',
+    maxWidth: '180px',
     display: 'block'
   };
 
@@ -68,8 +68,8 @@ function PartnerSection() {
               `}} />
               <Swiper
                 modules={[Autoplay]}
-                spaceBetween={60}
-                slidesPerView={4}
+                spaceBetween={40}
+                slidesPerView={6}
                 loop={true}
                 autoplay={{
                   delay: 0,
@@ -77,9 +77,9 @@ function PartnerSection() {
                 }}
                 speed={3000}
                 breakpoints={{
-                  320: { slidesPerView: 2, spaceBetween: 30 },
-                  640: { slidesPerView: 3, spaceBetween: 40 },
-                  1024: { slidesPerView: 4, spaceBetween: 60 },
+                  320: { slidesPerView: 2, spaceBetween: 20 },
+                  640: { slidesPerView: 3, spaceBetween: 30 },
+                  1024: { slidesPerView: 6, spaceBetween: 40 },
                 }}
               >
                 {[
