@@ -7,22 +7,22 @@ import ITInfrastructureSection from '../components/services/ITInfrastructureSect
 import CTABannerSection from '../components/services/CTABannerSection';
 import { SERVICES_DATA } from '../data/servicesData';
 import DriveValueSection from '../components/services/DriveValueSection';
+import SimplifyGSTSection from '../components/services/SimplifyGSTSection';
+import VGSTServicesProvideSection from '../components/services/VGSTServicesProvideSection';
+import ExploreVGSTServicesSection from '../components/services/ExploreVGSTServicesSection';
+import ASPProgramSection from '../components/services/ASPProgramSection';
+import MobileComputingHero from '../components/services/MobileComputingHero';
+import MobileStrategiesSection from '../components/services/MobileStrategiesSection';
+import MobileBenefitsSection from '../components/services/MobileBenefitsSection';
+import MobileServicesProvideSection from '../components/services/MobileServicesProvideSection';
+import MobileTechnologiesSection from '../components/services/MobileTechnologiesSection';
+import DRDCHero from '../components/services/DRDCHero';
+import DRDCSolveSection from '../components/services/DRDCSolveSection';
+import DRDCBenefitsSection from '../components/services/DRDCBenefitsSection';
+import DRDCServicesProvideSection from '../components/services/DRDCServicesProvideSection';
+import DRDCOptimizeSection from '../components/services/DRDCOptimizeSection';
 
-const vgstTickerStyles = `
-.vgst-ticker-strip {
-  background: #E8380D; padding: 1rem 0; overflow: hidden; white-space: nowrap;
-}
-.vgst-ticker-inner {
-  display: inline-flex; gap: 2.5rem;
-  animation: vgstMarquee 20s linear infinite;
-}
-.vgst-ticker-inner span { color: #fff; font-weight: 600; font-size: 0.85rem; opacity: 0.9; }
-.vgst-ticker-dot { color: rgba(255,255,255,0.4) !important; }
-@keyframes vgstMarquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-`;
+
 
 function ServiceSingle() {
   const { slug } = useParams();
@@ -34,27 +34,35 @@ function ServiceSingle() {
 
   return (
     <>
-      <ServiceSingleHero service={service} />
-      
-      <style>{vgstTickerStyles}</style>
-      {slug === 'vgst' && (
-        <div className="vgst-ticker-strip">
-          <div className="vgst-ticker-inner">
-            {['Smart City Solutions','IoT Integration','Connected Ecosystems','Smart Analytics','Real-time Dashboards','Predictive Analytics','Hardware Integration','Managed Services',
-              'Smart City Solutions','IoT Integration','Connected Ecosystems','Smart Analytics','Real-time Dashboards','Predictive Analytics','Hardware Integration','Managed Services']
-              .map((item, i) => (
-                <React.Fragment key={i}>
-                  <span>{item}</span>
-                  <span className="vgst-ticker-dot">◆</span>
-                </React.Fragment>
-            ))}
-          </div>
-        </div>
-      )}
+      {slug !== 'mobile-computing' && slug !== 'dr-dc' && <ServiceSingleHero service={service} />}
       
       {/* Conditionally render sections based on the service slug */}
-      {slug === 'it-infrastructure-development' ? (
+      {slug === 'dr-dc' ? (
+        <>
+          <DRDCHero />
+          <DRDCSolveSection />
+          <DRDCBenefitsSection />
+          <DRDCServicesProvideSection />
+          <DRDCOptimizeSection />
+        </>
+      ) : slug === 'mobile-computing' ? (
+        <>
+          <MobileComputingHero />
+          <MobileStrategiesSection />
+          <MobileBenefitsSection />
+          <MobileServicesProvideSection />
+          <MobileTechnologiesSection />
+        </>
+      ) : slug === 'it-infrastructure-development' ? (
         <ITInfrastructureSection />
+      ) : slug === 'vgst' ? (
+        <>
+          <SimplifyGSTSection />
+          <VGSTServicesProvideSection />
+          
+          <ExploreVGSTServicesSection />
+          <ASPProgramSection />
+        </>
       ) : (
         <>
           <DriveValueSection />

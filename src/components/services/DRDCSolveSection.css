@@ -1,0 +1,96 @@
+.dr-solve-section {
+  background: #ffffff;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.dr-solve-image-wrapper {
+  position: relative;
+  padding: 20px;
+}
+
+.dr-solve-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 40px;
+  bottom: 40px;
+  background: #fff0eb;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.dr-solve-img {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.dr-solve-overlay-card {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(255, 51, 0, 0.1);
+  z-index: 2;
+  border: 1px solid #ffefe8;
+  max-width: 200px;
+  animation: dr-float 6s ease-in-out infinite;
+}
+
+.dr-solve-overlay-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.3;
+}
+
+@keyframes dr-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.dr-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.dr-section-title .text-red {
+  color: #ff3300;
+}
+
+.dr-solve-text-box {
+  border-left: 4px solid #ff3300;
+  padding-left: 20px;
+}
+
+.dr-section-desc {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.btn-outline-dr {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background-color: transparent;
+  color: #ff3300;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid #ff3300;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline-dr:hover {
+  background-color: #ff3300;
+  color: #ffffff;
+}

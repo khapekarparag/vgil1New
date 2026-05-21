@@ -81,16 +81,27 @@ function ServiceSingleHero({ service }) {
 
   return (
     <motion.div 
-      className="section-hero-premium"
+      className={`section-hero-premium ${service.slug === 'vgst' ? 'hero-vgst-specific' : ''}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       {/* Background Animated Elements */}
-      <div className="hero-bg-blobs">
-        <div className="hero-blob hero-blob-1"></div>
-        <div className="hero-blob hero-blob-2"></div>
-      </div>
+      {service.slug === 'vgst' ? (
+        <div className="hero-bg-shapes">
+          <motion.div 
+            className="hero-shape-square"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          ></motion.div>
+        </div>
+      ) : (
+        <div className="hero-bg-blobs">
+          <div className="hero-blob hero-blob-1"></div>
+          <div className="hero-blob hero-blob-2"></div>
+        </div>
+      )}
       <div className="hero-particles"></div>
 
       <div className="container position-relative" style={{ zIndex: 10 }}>
@@ -103,9 +114,9 @@ function ServiceSingleHero({ service }) {
               initial="hidden"
               animate="visible"
             >
-              <motion.div className="hero-badge-pill" variants={itemVariants}>
-                <span className="badge-dot"></span>
-                Service Excellence
+              <motion.div className="hero-badge-pill" variants={itemVariants} style={service.slug === 'vgst' ? { background: '#ffe4e1', color: '#ff3300', border: 'none' } : {}}>
+                <span className="badge-dot" style={service.slug === 'vgst' ? { background: '#ff3300' } : {}}></span>
+                {service.slug === 'vgst' ? 'GST Compliance Services' : 'Service Excellence'}
               </motion.div>
               
               <motion.h1 
@@ -113,60 +124,60 @@ function ServiceSingleHero({ service }) {
                 className="premium-heading" 
                 style={{ 
                   fontSize: 'clamp(2.6rem, 4.5vw, 4rem)', 
-                  lineHeight: '1.08', 
-                  fontWeight: '900', 
+                  lineHeight: '1.1', 
+                  fontWeight: '800', 
                   marginBottom: '1.5rem', 
                   color: '#0e0e0e',
-                  letterSpacing: '-1.5px'
+                  letterSpacing: '-1px'
                 }}
               >
-                <motion.span
-                  initial={{ letterSpacing: '-5px' }}
-                  animate={{ letterSpacing: '-1.5px' }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                >
-                  {service.title}
-                </motion.span>
+                {service.slug === 'vgst' ? (
+                  <>Simplify Your GST<br/>Compliance<br/>With <span style={{ color: '#ff3300' }}>VGST Solutions</span></>
+                ) : (
+                  <motion.span
+                    initial={{ letterSpacing: '-5px' }}
+                    animate={{ letterSpacing: '-1.5px' }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                  >
+                    {service.title}
+                  </motion.span>
+                )}
               </motion.h1>
-              
-              <motion.h2 
-                variants={textBlurVariants}
-                className="text-body-1 fw-semibold mb-20" 
-                style={{ color: '#E8380D', fontSize: '1.05rem' }}
-              >
-                {service.subtitle}
-              </motion.h2>
               
               <motion.p 
                 variants={textBlurVariants}
                 className="text-body-2 mb-48" 
                 style={{ 
-                  color: '#7a7570', 
+                  color: '#4b5563', 
                   lineHeight: '1.7', 
-                  fontSize: '17px',
+                  fontSize: '18px',
                   maxWidth: '90%'
                 }}
               >
-                {service.longDescription}
+                {service.slug === 'vgst' 
+                  ? 'VGST - GSP Suvidha Provider automates GST compliance with single login for all GSTINs & reduces return filing time significantly.'
+                  : service.longDescription}
               </motion.p>
               
-              <motion.div 
-                className="d-flex flex-wrap gap-12 mt-40 mb-4"
-                variants={tagContainerVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {service.features.map((feature, idx) => (
-                  <motion.div key={idx} variants={tagVariants} className="feature-pill">
-                    <div className="feature-pill-dot"></div>
-                    <span>{feature.title}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
+              {service.slug !== 'vgst' && (
+                <motion.div 
+                  className="d-flex flex-wrap gap-12 mt-40 mb-4"
+                  variants={tagContainerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {service.features.map((feature, idx) => (
+                    <motion.div key={idx} variants={tagVariants} className="feature-pill">
+                      <div className="feature-pill-dot"></div>
+                      <span>{feature.title}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
 
-              <motion.div className="hero-cta-btns" variants={itemVariants}>
-                <button className="btn-primary-hero">Get In Touch &rarr;</button>
-                <button className="btn-secondary-hero">Explore Services</button>
+              <motion.div className="hero-cta-btns mt-4" variants={itemVariants}>
+                <button className="btn-primary-hero" style={service.slug === 'vgst' ? { background: '#ff3300', borderColor: '#ff3300' } : {}}>Get In Touch &rarr;</button>
+                <button className="btn-secondary-hero" style={service.slug === 'vgst' ? { background: '#f8fafc', borderColor: '#cbd5e1' } : {}}>Explore Services</button>
               </motion.div>
             </motion.div>
           </div>
@@ -180,58 +191,89 @@ function ServiceSingleHero({ service }) {
               style={{ position: 'relative' }}
             >
               <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
               >
                 <div 
-                  className="vgst-hero-card"
+                  className={`vgst-hero-card ${service.slug === 'vgst' ? 'card-vgst-gst' : ''}`}
                   onMouseMove={onMouseMove}
                   onMouseLeave={onMouseLeave}
                 >
-                  <div className="vgst-card-topbar"></div>
-                  <div className="vgst-card-header">
-                    <div className="vgst-card-icon">
-                      <Layers size={20} color="#fff" />
-                    </div>
-                    <div>
-                      <div className="vgst-card-title"><span>VGST</span> Smart Technology</div>
-                      <div className="vgst-card-sub">Advanced connected ecosystem solutions</div>
-                    </div>
-                  </div>
-                  <div className="vgst-card-badge">IoT & Smart City Platform</div>
-                  
-                  <div className="vgst-feature-grid">
-                    {service.features.map((f, i) => (
-                      <div key={i} className="vgst-feature-item">
-                        <div className="vgst-feature-icon">
-                          <Activity size={16} color="#E8380D" />
+                  {service.slug === 'vgst' ? (
+                    <>
+                      <div className="vgst-card-header justify-content-center mb-3">
+                        <div className="vgst-card-title" style={{ fontSize: '1.2rem' }}><span style={{ color: '#ff3300' }}>VGST</span> GSP Suvidha Provider</div>
+                      </div>
+                      <div className="text-center mb-3" style={{ fontSize: '0.9rem', color: '#64748b' }}>
+                        Complete GST compliance solutions for businesses of all sizes
+                      </div>
+                      <div className="text-center mb-4">
+                        <div className="vgst-card-badge" style={{ background: 'transparent', color: '#ff3300', fontWeight: '700', padding: 0 }}>Automated & Hassle-Free</div>
+                      </div>
+                      
+                      <div className="vgst-feature-grid" style={{ gap: '1rem' }}>
+                        {[
+                          'GST Return Filing',
+                          'E-Way Bill Generation',
+                          'E-Invoicing Solutions',
+                          'GST API Integration'
+                        ].map((item, i) => (
+                          <div key={i} className="vgst-feature-item" style={{ background: '#fff', border: '1px solid #e2e8f0', padding: '1rem', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.02)' }}>
+                            <div className="vgst-feature-icon" style={{ background: '#ffe4e1', width: '28px', height: '28px' }}>
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff3300" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                            </div>
+                            <span style={{ fontSize: '0.85rem', fontWeight: '600' }}>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="vgst-card-topbar"></div>
+                      <div className="vgst-card-header">
+                        <div className="vgst-card-icon">
+                          <Layers size={20} color="#fff" />
                         </div>
-                        {f.title}
+                        <div>
+                          <div className="vgst-card-title"><span>VGST</span> Smart Technology</div>
+                          <div className="vgst-card-sub">Advanced connected ecosystem solutions</div>
+                        </div>
                       </div>
-                    ))}
-                    <div className="vgst-feature-item">
-                      <div className="vgst-feature-icon">
-                        <Activity size={16} color="#E8380D" />
+                      <div className="vgst-card-badge">IoT & Smart City Platform</div>
+                      
+                      <div className="vgst-feature-grid">
+                        {service.features.map((f, i) => (
+                          <div key={i} className="vgst-feature-item">
+                            <div className="vgst-feature-icon">
+                              <Activity size={16} color="#E8380D" />
+                            </div>
+                            {f.title}
+                          </div>
+                        ))}
+                        <div className="vgst-feature-item">
+                          <div className="vgst-feature-icon">
+                            <Activity size={16} color="#E8380D" />
+                          </div>
+                          Smart Analytics
+                        </div>
                       </div>
-                      Smart Analytics
-                    </div>
-                  </div>
-                  
-                  {/* Floating UI Elements */}
-                  <motion.div 
-                    className="floating-ui ui-1"
-                    animate={{ y: [0, 10, 0], rotate: [0, 5, 0] }}
-                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                  </motion.div>
-                  <motion.div 
-                    className="floating-ui ui-2"
-                    animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
-                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                  </motion.div>
+                      
+                      <motion.div 
+                        className="floating-ui ui-1"
+                        animate={{ y: [0, 10, 0], rotate: [0, 5, 0] }}
+                        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                      >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                      </motion.div>
+                      <motion.div 
+                        className="floating-ui ui-2"
+                        animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
+                        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+                      >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                      </motion.div>
+                    </>
+                  )}
                 </div>
               </motion.div>
             </motion.div>
