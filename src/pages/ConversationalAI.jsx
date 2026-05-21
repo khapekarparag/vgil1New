@@ -43,6 +43,12 @@ import csOverviewImg from '../assets/Products-img/Cyber-sentinel/overview.jpg';
 import csRealtimeImg from '../assets/Products-img/Cyber-sentinel/realtime-monitoring.jpg';
 import csAutomationImg from '../assets/Products-img/Cyber-sentinel/automation.jpg';
 import csAnalysisImg from '../assets/Products-img/Cyber-sentinel/analysis.jpg';
+import multiProcesserImg from '../assets/Products-img/conversational-AI-img/multi-processer.png';
+import neuralLanImg from '../assets/Products-img/conversational-AI-img/Neural-lan.png';
+import realtimeIntegrationImg from '../assets/Products-img/conversational-AI-img/realtime-integration.png';
+import comprehensiveAnalyticsImg from '../assets/Products-img/conversational-AI-img/compransive-analytic.png';
+import solutionOverviewImg from '../assets/Products-img/conversational-AI-img/solution-overview.png';
+import conversationalAIImg from '../assets/Products-img/conversational-AI-img/convational-AI.png';
 
 function ConversationalAI() {
   const slug = 'conversational-ai-companion';
@@ -375,163 +381,6 @@ function ConversationalAI() {
       </div>
 
 
-
-      {/* Metrics Section */}
-      {product.metrics && product.metrics.length > 0 && (
-        <div className="metrics-section section-spacing" style={{ backgroundColor: '#ffffff', position: 'relative' }}>
-          <style>
-            {`
-              .fintech-stat-card {
-                background: #ffffff;
-                border-radius: 24px;
-                padding: 8px;
-                box-shadow: 0 4px 24px rgba(0,0,0,0.03);
-                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                border: 1px solid rgba(0, 0, 0, 0.04);
-                height: 100%;
-                position: relative;
-                z-index: 1;
-              }
-              .fintech-stat-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(255, 43, 43, 0.12);
-                border-color: rgba(255, 43, 43, 0.2);
-              }
-              .fintech-inner-panel {
-                background: #0a0b10;
-                border-radius: 18px;
-                padding: 40px 30px;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                position: relative;
-                overflow: hidden;
-                border: 1px solid rgba(255, 255, 255, 0.05);
-              }
-              .fintech-card-glow {
-                position: absolute;
-                width: 250px;
-                height: 250px;
-                background: radial-gradient(circle, rgba(255, 43, 43, 0.15) 0%, rgba(255, 43, 43, 0) 60%);
-                border-radius: 50%;
-                opacity: 0.6;
-                transition: all 0.6s ease;
-                z-index: 0;
-              }
-              .fintech-stat-card:hover .fintech-card-glow {
-                opacity: 1;
-                transform: scale(1.2);
-              }
-              .fintech-inner-bg {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: radial-gradient(rgba(255, 43, 43, 0.15) 1px, transparent 1px);
-                background-size: 20px 20px;
-                z-index: 0;
-                opacity: 0;
-                transition: opacity 0.5s ease;
-              }
-              .fintech-stat-card:hover .fintech-inner-bg {
-                opacity: 1;
-                animation: slide-bg 15s linear infinite;
-              }
-              @keyframes slide-bg {
-                0% { background-position: 0 0; }
-                100% { background-position: 60px 60px; }
-              }
-              .fintech-icon-wrap {
-                width: 64px;
-                height: 64px;
-                border-radius: 50%;
-                background: rgba(255, 43, 43, 0.05);
-                border: 1px solid rgba(255, 43, 43, 0.3);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 28px;
-                position: relative;
-                z-index: 1;
-                transition: all 0.5s ease;
-              }
-              .fintech-stat-card:hover .fintech-icon-wrap {
-                transform: rotate(10deg) scale(1.05);
-                border-color: rgba(255, 43, 43, 0.8);
-                background: rgba(255, 43, 43, 0.1);
-                box-shadow: 0 0 20px rgba(255, 43, 43, 0.3);
-              }
-              .fintech-icon-wrap svg {
-                color: #ff2b2b;
-                transition: all 0.5s ease;
-              }
-              .fintech-stat-card:hover .fintech-icon-wrap svg {
-                filter: drop-shadow(0 0 8px rgba(255, 43, 43, 0.6));
-              }
-              .fintech-stat-value {
-                color: #ffffff;
-                font-size: 2.8rem;
-                font-weight: 700;
-                line-height: 1.1;
-                margin-bottom: 8px;
-                position: relative;
-                z-index: 1;
-                letter-spacing: -1px;
-              }
-              .fintech-stat-label {
-                color: #9496a1;
-                font-size: 1.05rem;
-                font-weight: 500;
-                margin: 0;
-                position: relative;
-                z-index: 1;
-                line-height: 1.5;
-              }
-            `}
-          </style>
-          <div className="container">
-            <div className="row g-4 justify-content-center">
-              {product.metrics.map((metric, index) => {
-                const icons = [
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" /></svg>,
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="21" width="18" height="2" /><rect x="5" y="10" width="3" height="9" /><rect x="10" y="10" width="4" height="9" /><rect x="16" y="10" width="3" height="9" /><path d="M3 8l9-5 9 5v2H3V8z" /></svg>,
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="6" rx="2" ry="2" /><rect x="2" y="15" width="20" height="6" rx="2" ry="2" /><path d="M6 6h.01M6 18h.01" /><path d="M18 6l-4 4-2-2" /><path d="M18 18l-4 4-2-2" /></svg>,
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>,
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
-                ];
-                
-                const glowPositions = [
-                  { top: '-80px', right: '-80px' },
-                  { bottom: '-80px', left: '-80px' },
-                  { top: '-80px', left: '-80px' },
-                  { bottom: '-80px', right: '-80px' },
-                  { top: '50%', right: '-100px', transform: 'translateY(-50%)' },
-                  { top: '50%', left: '-100px', transform: 'translateY(-50%)' },
-                ];
-
-                return (
-                  <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                    <div className="fintech-stat-card effectFade fadeUp">
-                      <div className="fintech-inner-panel">
-                        <div className="fintech-inner-bg"></div>
-                        <div className="fintech-card-glow" style={{...glowPositions[index % 6]}}></div>
-                        <div className="fintech-icon-wrap">
-                          {icons[index % 6]}
-                        </div>
-                        <h2 className="fintech-stat-value">{metric.value}</h2>
-                        <p className="fintech-stat-label">{metric.label}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Fintech Interactive Modules Section */}
       {currentModules.length > 0 && (
@@ -896,383 +745,2548 @@ function ConversationalAI() {
       </div>
       )}
 
-      {/* Core Platform Features & Benefits Section */}
-      <div className="features-benefits-wrapper" style={{ padding: '80px 20px 120px', backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden' }}>
-        
-        {/* Ambient background glow orbs */}
+      {/* Proposed Conversational AI Solution Section */}
+      <div className="conversational-solution-wrapper" style={{ padding: '80px 20px 120px', backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+        {/* Ambient background glows */}
         <div className="bg-glow-orb orb-left"></div>
         <div className="bg-glow-orb orb-right"></div>
         
-        {/* Floating gradient circles */}
-        <div className="floating-circle circle-1"></div>
-        <div className="floating-circle circle-2"></div>
-        
-        {/* Main premium section container */}
-        <div className="container premium-fintech-hero">
+        <div className="container conversational-premium-container">
           
-          {/* Subtle Connection Points & Lines overlaying the map background */}
-          <div className="connectivity-overlay">
-            <div className="connect-point pt-1" style={{ top: '25%', left: '15%' }}></div>
-            <div className="connect-point pt-2" style={{ top: '35%', right: '20%' }}></div>
-            <div className="connect-point pt-3" style={{ bottom: '30%', left: '30%' }}></div>
-            <div className="connect-point pt-4" style={{ bottom: '40%', right: '35%' }}></div>
-            
-            {/* SVG Connecting Paths with stroke animation */}
-            <svg className="connecting-lines" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M216 150 Q 430 80, 500 240 T 1152 210" stroke="rgba(255, 43, 43, 0.15)" strokeWidth="1.5" strokeDasharray="5,5" />
-              <path d="M432 420 Q 720 480, 936 240" stroke="rgba(255, 43, 43, 0.1)" strokeWidth="1" />
-            </svg>
+          {/* Top Header */}
+          <div className="solution-header d-flex align-items-center mb-5 effectFade fadeUp">
+            <div className="red-accent-line"></div>
+            <h2 className="header-title">Proposed Conversational AI Solution</h2>
           </div>
 
-          {/* Background Map Image */}
-          <div 
-            className="features-bg-image-premium"
-            style={{
-              backgroundImage: `url(${abstractWorldMapImg})`,
-            }}
-          ></div>
-
-          <div className="row justify-content-center text-center position-relative" style={{ zIndex: 10 }}>
-            <div className="col-lg-9 col-md-11">
-              
-              {/* Top Badge */}
-              <div className="feature-badge-premium">
-                <span className="badge-text">Core Platform</span>
-              </div>
-
-              {/* Main Heading */}
-              <h2 className="heading-premium">
-                Features & <span className="text-red-gradient">Benefits</span>
-              </h2>
-
-              {/* Divider */}
-              <div className="divider-wrapper-premium">
-                <div className="line-left"></div>
-                <div className="center-dot"></div>
-                <div className="line-right"></div>
-              </div>
-
-              {/* Paragraph Description */}
-              <p className="description-premium">
-                Discover how our intelligent platform integrates seamlessly into your operations, empowering your team with advanced automation, real-time insights, and enterprise-grade security to drive sustainable growth.
-              </p>
-
-              {showBrochureButton && (
-                <div style={{ marginTop: '40px' }}>
-                  <button 
-                    onClick={() => setShowBrochureModal(true)}
-                    className="tf-btn-premium"
-                  >
-                    <span>Download Brochure</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                  </button>
+          <div className="row g-5 align-items-center">
+            
+            {/* LEFT SIDE - Robot + Mobile Phone Illustration */}
+            <div className="col-lg-6">
+              <div className="illustration-area effectFade fadeUp">
+                {/* Connection lines and glow layers behind the image */}
+                <div className="illustration-bg-glow"></div>
+                <div className="orbit-lines-container">
+                  <div className="orbit-line orbit-1"></div>
+                  <div className="orbit-line orbit-2"></div>
+                  <div className="orbit-line orbit-3"></div>
                 </div>
-              )}
+                
+                {/* Floating dots & particles */}
+                <div className="floating-dot dot-1"></div>
+                <div className="floating-dot dot-2"></div>
+                <div className="floating-dot dot-3"></div>
+                <div className="floating-dot dot-4"></div>
+                
+                <img 
+                  src={multiProcesserImg} 
+                  alt="Conversational AI Solution Illustration" 
+                  className="solution-illustration"
+                />
+              </div>
             </div>
+
+            {/* RIGHT SIDE - Content & Feature Cards */}
+            <div className="col-lg-6">
+              <div className="solution-content effectFade fadeUp" style={{ transitionDelay: '0.2s' }}>
+                
+                <h3 className="platform-heading">
+                  <span className="text-red-gradient">Multi-Channel</span>
+                  <br />
+                  <span className="text-navy">Conversational AI Platform</span>
+                </h3>
+
+                {/* Glowing red divider line with dot */}
+                <div className="glowing-divider">
+                  <div className="divider-line"></div>
+                  <div className="divider-dot-glow"></div>
+                </div>
+
+                {/* Feature Cards Stack */}
+                <div className="feature-cards-stack">
+                  
+                  {/* Card 1 */}
+                  <div className="premium-glass-card">
+                    <div className="icon-box-wrapper">
+                      <div className="icon-box-glow"></div>
+                      <div className="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="card-icon">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                          <path d="M14.05 2A9 9 0 0 1 22 9.94" strokeWidth="2" strokeDasharray="2,2"/>
+                          <path d="M14.05 5.5A5.5 5.5 0 0 1 18.5 9.95" strokeWidth="2"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="card-content">
+                      <p className="card-text">
+                        The system will support automated voice calling, SMS messaging, WhatsApp integration, web-based self-service portals, and mobile app interfaces.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card 2 */}
+                  <div className="premium-glass-card">
+                    <div className="icon-box-wrapper">
+                      <div className="icon-box-glow"></div>
+                      <div className="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="card-icon">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                          <circle cx="9" cy="7" r="4"/>
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="card-content">
+                      <p className="card-text">
+                        Citizens can be reached through their preferred medium, enhancing engagement and improving success rates.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div className="premium-glass-card">
+                    <div className="icon-box-wrapper">
+                      <div className="icon-box-glow"></div>
+                      <div className="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="card-icon">
+                          <circle cx="12" cy="12" r="10" />
+                          <polyline points="12 6 12 12 15 14" />
+                          <path d="M12 2a10 10 0 1 0 10 10" />
+                          <text x="12" y="13.5" dominantBaseline="middle" textAnchor="middle" fill="currentColor" fontSize="6px" fontWeight="800" fontFamily="system-ui">24/7</text>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="card-content">
+                      <p className="card-text">
+                        The platform will be accessible 24/7, ensuring flexibility and convenience for citizens to respond or make payments at their convenience.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <style>
+          {`
+            /* Section Wrapper Styling */
+            .conversational-solution-wrapper {
+              position: relative;
+              background-color: #ffffff;
+              z-index: 1;
+            }
+
+            .conversational-premium-container {
+              position: relative;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+              backdrop-filter: blur(24px);
+              -webkit-backdrop-filter: blur(24px);
+              border: 1px solid rgba(255, 255, 255, 0.85);
+              border-radius: 32px;
+              padding: 50px 35px;
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              overflow: hidden;
+              transition: all 0.5s ease;
+            }
+
+            .conversational-premium-container::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 32px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 45, 21, 0.15), rgba(255, 255, 255, 0.9), rgba(255, 45, 21, 0.05));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            /* Ambient Glow */
+            .conversational-premium-container::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0; left: 0;
+              box-shadow: 0 0 80px rgba(255, 45, 21, 0.04);
+              pointer-events: none;
+              z-index: -1;
+            }
+
+            /* Ambient Background Glow Orbs */
+            .bg-glow-orb {
+              position: absolute;
+              width: 600px;
+              height: 600px;
+              border-radius: 50%;
+              filter: blur(100px);
+              opacity: 0.4;
+              z-index: 0;
+              pointer-events: none;
+            }
+
+            .orb-left {
+              top: -15%;
+              left: -15%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.06) 0%, transparent 70%);
+            }
+
+            .orb-right {
+              bottom: -15%;
+              right: -15%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.04) 0%, transparent 70%);
+            }
+
+            /* Top Header Styling */
+            .solution-header {
+              gap: 15px;
+            }
+
+            .red-accent-line {
+              width: 6px;
+              height: 32px;
+              background-color: #ff2d15;
+              border-radius: 3px;
+              box-shadow: 0 0 10px rgba(255, 45, 21, 0.6);
+            }
+
+            .header-title {
+              font-size: 2.2rem !important;
+              font-weight: 750 !important;
+              color: #0b132b !important;
+              margin: 0 !important;
+              letter-spacing: -0.5px;
+            }
+
+            /* Illustration Area Styling */
+            .illustration-area {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 40px;
+              z-index: 2;
+            }
+
+            .solution-illustration {
+              max-width: 95%;
+              height: auto;
+              position: relative;
+              z-index: 5;
+              animation: float-illustration 6s ease-in-out infinite;
+              filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.05));
+            }
+
+            .illustration-bg-glow {
+              position: absolute;
+              width: 320px;
+              height: 320px;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.12) 0%, transparent 70%);
+              filter: blur(30px);
+              z-index: 1;
+              pointer-events: none;
+            }
+
+            /* Orbit connection lines style */
+            .orbit-lines-container {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 100%;
+              height: 100%;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            .orbit-line {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              border: 1px dashed rgba(255, 45, 21, 0.08);
+              border-radius: 50%;
+            }
+
+            .orbit-1 { width: 380px; height: 380px; }
+            .orbit-2 { width: 500px; height: 500px; }
+            .orbit-3 { width: 620px; height: 620px; }
+
+            /* Floating dots & particles */
+            .floating-dot {
+              position: absolute;
+              background: #ff2d15;
+              border-radius: 50%;
+              box-shadow: 0 0 10px rgba(255, 45, 21, 0.8);
+              animation: pulse-dot 3s infinite alternate;
+            }
+
+            .dot-1 { width: 6px; height: 6px; top: 15%; left: 20%; animation-delay: 0s; }
+            .dot-2 { width: 8px; height: 8px; top: 25%; right: 15%; animation-delay: 0.5s; }
+            .dot-3 { width: 5px; height: 5px; bottom: 20%; left: 25%; animation-delay: 1s; }
+            .dot-4 { width: 7px; height: 7px; bottom: 30%; right: 20%; animation-delay: 1.5s; }
+
+            /* Right Content Area Styling */
+            .platform-heading {
+              font-size: 2.8rem;
+              font-weight: 800;
+              line-height: 1.15;
+              letter-spacing: -1px;
+              margin-bottom: 20px;
+            }
+
+            .text-navy {
+              color: #0b132b;
+            }
+
+            .text-red-gradient {
+              background: linear-gradient(135deg, #ff2d15 0%, #ff5b4f 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fillColor: transparent;
+              display: inline-block;
+            }
+
+            /* Glowing Red Divider Styling */
+            .glowing-divider {
+              display: flex;
+              align-items: center;
+              position: relative;
+              width: 100%;
+              height: 20px;
+              margin-bottom: 40px;
+            }
+
+            .divider-line {
+              width: 80px;
+              height: 2.5px;
+              background: linear-gradient(90deg, #ff2d15, transparent);
+              border-radius: 1px;
+            }
+
+            .divider-dot-glow {
+              width: 6px;
+              height: 6px;
+              background-color: #ff2d15;
+              border-radius: 50%;
+              margin-left: -4px;
+              box-shadow: 0 0 10px rgba(255, 45, 21, 0.8), 0 0 20px rgba(255, 45, 21, 0.4);
+              animation: pulse-glow-dot 2s infinite;
+            }
+
+            /* Feature Cards Stack Styling */
+            .feature-cards-stack {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            }
+
+            .premium-glass-card {
+              display: flex;
+              align-items: center;
+              background: rgba(255, 255, 255, 0.65);
+              backdrop-filter: blur(16px);
+              -webkit-backdrop-filter: blur(16px);
+              border: 1px solid rgba(255, 255, 255, 0.6);
+              border-radius: 16px;
+              padding: 16px 20px;
+              gap: 16px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.015), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+              transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+              cursor: default;
+              position: relative;
+              overflow: hidden;
+              animation: premiumCardFloat 6s ease-in-out infinite;
+            }
+
+            /* Stagger float animations for cards */
+            .premium-glass-card:nth-child(1) { animation-delay: 0s; }
+            .premium-glass-card:nth-child(2) { animation-delay: 1.5s; }
+            .premium-glass-card:nth-child(3) { animation-delay: 3s; }
+
+            @keyframes premiumCardFloat {
+              0% { transform: translateY(0px); }
+              50% { transform: translateY(-4px); }
+              100% { transform: translateY(0px); }
+            }
+
+            .premium-glass-card::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 20px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 45, 21, 0.0));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              transition: all 0.4s ease;
+            }
+
+            .premium-glass-card:hover {
+              animation-play-state: paused; /* Pause float on hover */
+              transform: translateY(-6px) scale(1.015);
+              background: rgba(255, 255, 255, 0.95);
+              border-color: rgba(255, 45, 21, 0.35);
+              box-shadow: 0 20px 40px rgba(255, 45, 21, 0.08),
+                          0 0 12px rgba(255, 45, 21, 0.04),
+                          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            }
+
+            .premium-glass-card:hover::before {
+              background: linear-gradient(135deg, rgba(255, 45, 21, 0.35), rgba(255, 255, 255, 0.9));
+            }
+
+            /* Icon Box Styling */
+            .icon-box-wrapper {
+              position: relative;
+              flex-shrink: 0;
+            }
+
+            .icon-box {
+              width: 42px;
+              height: 42px;
+              background: linear-gradient(135deg, #ff2d15 0%, #ff5b4f 100%);
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ffffff;
+              box-shadow: 0 6px 15px rgba(255, 45, 21, 0.25);
+              position: relative;
+              z-index: 2;
+              transition: all 0.4s ease;
+            }
+
+            .icon-box-glow {
+              position: absolute;
+              top: -4px; left: -4px; right: -4px; bottom: -4px;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.25) 0%, transparent 70%);
+              filter: blur(4px);
+              z-index: 1;
+              border-radius: 14px;
+              opacity: 0.8;
+              transition: all 0.4s ease;
+            }
+
+            .premium-glass-card:hover .icon-box {
+              transform: scale(1.05) rotate(-3deg);
+              box-shadow: 0 10px 20px rgba(255, 45, 21, 0.35);
+            }
+
+            .premium-glass-card:hover .icon-box-glow {
+              opacity: 1;
+              transform: scale(1.15);
+            }
+
+            .card-icon {
+              width: 20px;
+              height: 20px;
+            }
+
+            /* Card Content Typography */
+            .card-content {
+              flex: 1;
+            }
+
+            .card-text {
+              font-size: 0.95rem !important;
+              line-height: 1.5 !important;
+              color: #4a5568 !important;
+              margin: 0 !important;
+              font-weight: 500 !important;
+            }
+
+            /* Animations Keyframes */
+            @keyframes float-illustration {
+              0% { transform: translateY(0px); }
+              50% { transform: translateY(-12px); }
+              100% { transform: translateY(0px); }
+            }
+
+            @keyframes pulse-dot {
+              0% { transform: scale(1); opacity: 0.6; }
+              100% { transform: scale(1.3); opacity: 1; }
+            }
+
+            @keyframes pulse-glow-dot {
+              0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 45, 21, 0.8); }
+              50% { transform: scale(1.2); box-shadow: 0 0 18px rgba(255, 45, 21, 1), 0 0 30px rgba(255, 45, 21, 0.4); }
+              100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 45, 21, 0.8); }
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 991px) {
+              .conversational-premium-container {
+                padding: 40px 25px;
+                border-radius: 24px;
+              }
+
+              .header-title {
+                font-size: 1.8rem !important;
+              }
+
+              .platform-heading {
+                font-size: 2.2rem;
+              }
+
+              .illustration-area {
+                padding: 20px;
+              }
+              
+              .orbit-1 { width: 300px; height: 300px; }
+              .orbit-2 { width: 400px; height: 400px; }
+              .orbit-3 { width: 500px; height: 500px; }
+            }
+
+            @media (max-width: 575px) {
+              .conversational-premium-container {
+                padding: 30px 15px;
+                border-radius: 20px;
+              }
+
+              .header-title {
+                font-size: 1.5rem !important;
+              }
+
+              .platform-heading {
+                font-size: 1.8rem;
+              }
+
+              .premium-glass-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                gap: 15px;
+              }
+            }
+          `}
+        </style>
+      </div>
+
+      {/* NLP Capabilities Section */}
+      <div className="nlp-capabilities-wrapper" style={{ padding: '0px 20px 120px', backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+        {/* Ambient background glows */}
+        <div className="bg-glow-orb orb-left-nlp"></div>
+        <div className="bg-glow-orb orb-right-nlp"></div>
+
+        <div className="container nlp-premium-container">
+          <div className="row g-5 align-items-center">
+            
+            {/* LEFT SIDE - Content and List Items */}
+            <div className="col-lg-6">
+              <div className="nlp-content effectFade fadeUp">
+                
+                <h3 className="nlp-heading">
+                  Advanced <span className="text-red-gradient">Natural Language Processing</span> (NLP) Capabilities
+                </h3>
+
+                {/* Glowing red divider line with dots */}
+                <div className="glowing-divider">
+                  <div className="divider-line"></div>
+                  <div className="divider-dots-wrap">
+                    <span className="dot dot-glow"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                  </div>
+                </div>
+
+                {/* List items stack */}
+                <div className="nlp-list-stack">
+                  
+                  {/* Item 1 */}
+                  <div className="nlp-list-item d-flex align-items-start gap-4">
+                    <div className="nlp-icon-outer flex-shrink-0">
+                      <div className="nlp-icon-inner">
+                        {/* Translation Icon */}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="nlp-svg-icon">
+                          <path d="M5 8h14M4 4L1 20h6l1-5h8l1 5h6L19 4z"/>
+                          <path d="M12 8l-2.5 5h5z" strokeWidth="2"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="nlp-item-body d-flex align-items-start gap-2">
+                      <span className="red-arrow-bullet">►</span>
+                      <p className="nlp-text">
+                        The platform will leverage AI-driven NLP engines that support over 12 Indian languages.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Item 2 */}
+                  <div className="nlp-list-item d-flex align-items-start gap-4">
+                    <div className="nlp-icon-outer flex-shrink-0">
+                      <div className="nlp-icon-inner">
+                        {/* Audio Wave Icon */}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="nlp-svg-icon">
+                          <path d="M12 2v20M17 5v14M7 5v14M22 9v6M2 9v6" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="nlp-item-body d-flex align-items-start gap-2">
+                      <span className="red-arrow-bullet">►</span>
+                      <p className="nlp-text">
+                        It will understand and process voice inputs, respond intelligently, and adapt conversational tone and content based on the user's sentiment and behavior.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Item 3 */}
+                  <div className="nlp-list-item d-flex align-items-start gap-4">
+                    <div className="nlp-icon-outer flex-shrink-0">
+                      <div className="nlp-icon-inner">
+                        {/* User Group Icon */}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="nlp-svg-icon">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                          <circle cx="9" cy="7" r="4"/>
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="nlp-item-body d-flex align-items-start gap-2">
+                      <span className="red-arrow-bullet">►</span>
+                      <p className="nlp-text">
+                        Regional slang, tone sensitivity, and appropriate escalation logic will be embedded to maintain a citizen-friendly experience.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            {/* RIGHT SIDE - Image Area with floating Supporting Badge */}
+            <div className="col-lg-6">
+              <div className="nlp-image-area effectFade fadeUp" style={{ transitionDelay: '0.2s' }}>
+                <div className="nlp-image-bg-glow"></div>
+                
+                <img 
+                  src={neuralLanImg} 
+                  alt="Advanced NLP Capabilities Illustration" 
+                  className="nlp-illustration"
+                />
+
+                {/* Supporting Languages Badge */}
+                <div className="supporting-languages-badge">
+                  <div className="globe-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="globe-icon">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  </div>
+                  <span className="badge-label-text">Supporting <strong className="text-red">12+</strong> Indian Languages</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <style>
           {`
-            /* Container Styling */
-            .features-benefits-wrapper {
+            /* NLP Section Styling */
+            .nlp-capabilities-wrapper {
               position: relative;
+              background-color: #ffffff;
               z-index: 1;
             }
 
-            .premium-fintech-hero {
+            .nlp-premium-container {
               position: relative;
-              background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 100%);
-              backdrop-filter: blur(20px);
-              -webkit-backdrop-filter: blur(20px);
-              border: 1px solid rgba(255, 255, 255, 0.8);
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+              backdrop-filter: blur(24px);
+              -webkit-backdrop-filter: blur(24px);
+              border: 1px solid rgba(255, 255, 255, 0.85);
               border-radius: 32px;
-              padding: 100px 40px;
-              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.03), 
-                          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+              padding: 50px 35px;
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.8);
               overflow: hidden;
               transition: all 0.5s ease;
             }
 
-            .premium-fintech-hero:hover {
-              box-shadow: 0 45px 90px rgba(255, 43, 43, 0.04),
-                          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-              border-color: rgba(255, 43, 43, 0.08);
-            }
-
-            /* Ambient Glow Orbs */
-            .bg-glow-orb {
-              position: absolute;
-              width: 500px;
-              height: 500px;
-              border-radius: 50%;
-              filter: blur(80px);
-              opacity: 0.55;
-              z-index: 0;
-              pointer-events: none;
-              mix-blend-mode: multiply;
-              animation: orb-float-premium 12s ease-in-out infinite alternate;
-            }
-
-            .orb-left {
-              top: -10%;
-              left: -10%;
-              background: radial-gradient(circle, rgba(255, 43, 43, 0.08) 0%, transparent 70%);
-            }
-
-            .orb-right {
-              bottom: -10%;
-              right: -10%;
-              background: radial-gradient(circle, rgba(255, 43, 43, 0.05) 0%, transparent 70%);
-              animation-delay: -4s;
-            }
-
-            /* Floating Blurred Circles */
-            .floating-circle {
-              position: absolute;
-              border-radius: 50%;
-              background: radial-gradient(circle, rgba(255, 43, 43, 0.12) 0%, transparent 80%);
-              filter: blur(25px);
-              z-index: 1;
-              pointer-events: none;
-              animation: circle-bounce-premium 15s ease-in-out infinite alternate;
-            }
-
-            .circle-1 {
-              width: 140px;
-              height: 140px;
-              top: 20%;
-              left: 5%;
-            }
-
-            .circle-2 {
-              width: 180px;
-              height: 180px;
-              bottom: 15%;
-              right: 8%;
-              animation-delay: -6s;
-            }
-
-            /* Background Image styling */
-            .features-bg-image-premium {
-              position: absolute;
-              top: 0; left: 0;
-              width: 100%; height: 100%;
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-              opacity: 0.15;
-              filter: blur(1px);
-              z-index: 1;
-              mix-blend-mode: luminosity;
-              pointer-events: none;
-              transform: scale(1.02);
-              animation: map-parallax-premium 25s ease-in-out infinite alternate;
-            }
-
-            /* Connectivity points and lines overlay */
-            .connectivity-overlay {
+            .nlp-premium-container::before {
+              content: '';
               position: absolute;
               top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 32px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 45, 21, 0.15), rgba(255, 255, 255, 0.9), rgba(255, 45, 21, 0.05));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            /* Ambient Glow */
+            .nlp-premium-container::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0; left: 0;
+              box-shadow: 0 0 80px rgba(255, 45, 21, 0.045);
+              pointer-events: none;
+              z-index: -1;
+            }
+
+            .orb-left-nlp {
+              top: -10%;
+              left: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.04) 0%, transparent 70%);
+            }
+
+            .orb-right-nlp {
+              bottom: 10%;
+              right: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.05) 0%, transparent 70%);
+            }
+
+            /* Heading & Text styling */
+            .nlp-heading {
+              font-size: 2.8rem;
+              font-weight: 800;
+              line-height: 1.25;
+              letter-spacing: -1px;
+              color: #0b132b;
+              margin-bottom: 20px;
+            }
+
+            .divider-dots-wrap {
+              display: flex;
+              gap: 4px;
+              margin-left: 6px;
+              align-items: center;
+            }
+
+            .divider-dots-wrap .dot {
+              width: 4px;
+              height: 4px;
+              background-color: #ff2d15;
+              border-radius: 50%;
+              opacity: 0.6;
+            }
+
+            .divider-dots-wrap .dot-glow {
+              width: 6px;
+              height: 6px;
+              opacity: 1;
+              box-shadow: 0 0 8px rgba(255, 45, 21, 0.8);
+            }
+
+            /* List Styling */
+            .nlp-list-stack {
+              display: flex;
+              flex-direction: column;
+              gap: 18px;
+            }
+
+            .nlp-list-item {
+              transition: all 0.3s ease;
+            }
+
+            .nlp-icon-outer {
+              width: 46px;
+              height: 46px;
+              border-radius: 50%;
+              background: rgba(255, 45, 21, 0.04);
+              border: 1px solid rgba(255, 45, 21, 0.08);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            .nlp-icon-inner {
+              width: 34px;
+              height: 34px;
+              border-radius: 50%;
+              background: rgba(255, 45, 21, 0.06);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ff2d15;
+              transition: all 0.4s ease;
+            }
+
+            .nlp-list-item:hover .nlp-icon-outer {
+              transform: scale(1.08);
+              border-color: rgba(255, 45, 21, 0.3);
+              background: rgba(255, 45, 21, 0.08);
+              box-shadow: 0 0 15px rgba(255, 45, 21, 0.15);
+            }
+
+            .nlp-list-item:hover .nlp-icon-inner {
+              background: rgba(255, 45, 21, 0.12);
+              transform: rotate(5deg);
+            }
+
+            .nlp-svg-icon {
+              width: 18px;
+              height: 18px;
+            }
+
+            .nlp-item-body {
+              flex: 1;
+              padding-top: 4px;
+            }
+
+            .red-arrow-bullet {
+              color: #ff2d15;
+              font-size: 0.8rem;
+              margin-top: 3px;
+              margin-right: 6px;
+              display: inline-block;
+            }
+
+            .nlp-text {
+              font-size: 1rem !important;
+              line-height: 1.5 !important;
+              color: #4a5568 !important;
+              margin: 0 !important;
+              font-weight: 500 !important;
+            }
+
+            /* Image Styling Area */
+            .nlp-image-area {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               z-index: 2;
+            }
+
+            .nlp-illustration {
+              max-width: 90%;
+              height: auto;
+              position: relative;
+              z-index: 5;
+              animation: float-illustration 6s ease-in-out infinite;
+              filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.05));
+            }
+
+            .nlp-image-bg-glow {
+              position: absolute;
+              width: 350px;
+              height: 350px;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.12) 0%, transparent 70%);
+              filter: blur(35px);
+              z-index: 1;
               pointer-events: none;
             }
 
-            .connecting-lines {
+            /* Floating Languages Badge */
+            .supporting-languages-badge {
               position: absolute;
-              top: 0; left: 0; width: 100%; height: 100%;
-            }
-
-            .connect-point {
-              position: absolute;
-              width: 6px;
-              height: 6px;
-              background-color: #ff2b2b;
-              border-radius: 50%;
-              box-shadow: 0 0 10px rgba(255, 43, 43, 0.8),
-                          0 0 20px rgba(255, 43, 43, 0.4);
-              animation: point-pulse-premium 3s infinite;
-            }
-
-            .pt-1 { animation-delay: 0s; }
-            .pt-2 { animation-delay: 0.7s; }
-            .pt-3 { animation-delay: 1.4s; }
-            .pt-4 { animation-delay: 2.1s; }
-
-            /* Top Badge */
-            .feature-badge-premium {
-              display: inline-flex;
-              align-items: center;
-              background: linear-gradient(135deg, #ff2b2b 0%, #ff4b4b 100%);
-              padding: 8px 24px;
+              bottom: -5px;
+              left: 20%;
+              background: #ffffff;
+              border: 1px solid rgba(255, 45, 21, 0.15);
               border-radius: 100px;
-              margin-bottom: 30px;
-              box-shadow: 0 8px 20px rgba(255, 43, 43, 0.25);
-              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-              cursor: default;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              animation: badge-float-premium 4s ease-in-out infinite;
-            }
-
-            .feature-badge-premium:hover {
-              transform: translateY(-3px) scale(1.03);
-              box-shadow: 0 12px 25px rgba(255, 43, 43, 0.35);
-            }
-
-            .badge-text {
-              color: #ffffff;
-              font-size: 0.85rem;
-              font-weight: 600;
-              letter-spacing: 1.5px;
-              text-transform: uppercase;
-            }
-
-            /* Heading */
-            .heading-premium {
-              font-size: 4rem;
-              font-weight: 800;
-              line-height: 1.2;
-              margin-bottom: 24px;
-              letter-spacing: -1.5px;
-              color: #1a1a1a;
-            }
-
-            .text-red-gradient {
-              background: linear-gradient(to right, #ff2b2b, #ff5b5b);
-              -webkit-background-clip: text;
-              -webkit-text-fillColor: transparent;
-            }
-
-            /* Divider */
-            .divider-wrapper-premium {
+              padding: 10px 24px 10px 10px;
               display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 2px;
-              margin-bottom: 35px;
-            }
-
-            .line-left, .line-right {
-              height: 3px;
-              width: 70px;
-              border-radius: 10px;
-            }
-
-            .line-left {
-              background: linear-gradient(to right, transparent, #ff2b2b);
-            }
-
-            .line-right {
-              background: linear-gradient(to left, transparent, #ff2b2b);
-            }
-
-            .center-dot {
-              width: 10px;
-              height: 10px;
-              background-color: #ff2b2b;
-              border-radius: 50%;
-              box-shadow: 0 0 12px rgba(255,43,43,0.9), 0 0 24px rgba(255,43,43,0.5);
-              animation: center-pulse-premium 2s infinite;
-            }
-
-            /* Description Paragraph */
-            .description-premium {
-              color: #5b606c;
-              font-size: 1.25rem;
-              line-height: 1.8;
-              margin: 0 auto;
-              max-width: 760px;
-              font-weight: 400;
-            }
-
-            /* Download Brochure Button */
-            .tf-btn-premium {
-              background: transparent;
-              border: 2px solid #ff2b2b;
-              color: #ff2b2b;
-              padding: 16px 40px;
-              font-size: 1.1rem;
-              display: inline-flex;
               align-items: center;
               gap: 12px;
-              cursor: pointer;
-              font-weight: 600;
-              border-radius: 100px;
-              box-shadow: 0 4px 15px rgba(255, 43, 43, 0.05);
-              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              z-index: 10;
+              box-shadow: 0 10px 30px rgba(255, 45, 21, 0.08), 
+                          0 1px 3px rgba(0, 0, 0, 0.02);
+              animation: badge-float-premium 4s ease-in-out infinite;
+              animation-delay: 1s;
             }
 
-            .tf-btn-premium:hover {
-              background: #ff2b2b;
+            .globe-icon-box {
+              width: 36px;
+              height: 36px;
+              background: linear-gradient(135deg, #ff2d15 0%, #ff5b4f 100%);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               color: #ffffff;
-              transform: translateY(-4px);
-              box-shadow: 0 15px 30px rgba(255, 43, 43, 0.25);
+              box-shadow: 0 4px 10px rgba(255, 45, 21, 0.25);
             }
 
-            /* Animations */
-            @keyframes orb-float-premium {
-              0% { transform: translateY(0px) scale(1); }
-              100% { transform: translateY(-30px) scale(1.1); }
+            .globe-icon {
+              width: 18px;
+              height: 18px;
             }
 
-            @keyframes circle-bounce-premium {
-              0% { transform: translateY(0px) translateX(0px); }
-              100% { transform: translateY(-40px) translateX(20px); }
+            .badge-label-text {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #2d3748;
             }
 
-            @keyframes map-parallax-premium {
-              0% { transform: scale(1.02) translate(0, 0); }
-              100% { transform: scale(1.05) translate(-10px, -5px); }
-            }
-
-            @keyframes point-pulse-premium {
-              0% { transform: scale(1); opacity: 0.7; box-shadow: 0 0 10px rgba(255, 43, 43, 0.8); }
-              50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 20px rgba(255, 43, 43, 1); }
-              100% { transform: scale(1); opacity: 0.7; box-shadow: 0 0 10px rgba(255, 43, 43, 0.8); }
-            }
-
-            @keyframes badge-float-premium {
-              0% { transform: translateY(0px); }
-              50% { transform: translateY(-6px); }
-              100% { transform: translateY(0px); }
-            }
-
-            @keyframes center-pulse-premium {
-              0% { transform: scale(1); opacity: 0.8; }
-              50% { transform: scale(1.3); opacity: 1; }
-              100% { transform: scale(1); opacity: 0.8; }
+            .text-red {
+              color: #ff2d15;
             }
 
             /* Responsive Adjustments */
             @media (max-width: 991px) {
-              .premium-fintech-hero {
-                padding: 80px 30px;
+              .nlp-premium-container {
+                padding: 40px 25px;
                 border-radius: 24px;
               }
-              .heading-premium {
-                font-size: 3.2rem;
+
+              .nlp-heading {
+                font-size: 2.2rem;
               }
-              .description-premium {
-                font-size: 1.15rem;
+
+              .supporting-languages-badge {
+                left: 10%;
+                bottom: -20px;
               }
             }
 
             @media (max-width: 575px) {
-              .premium-fintech-hero {
-                padding: 60px 20px;
-                border-radius: 16px;
+              .nlp-premium-container {
+                padding: 30px 15px;
+                border-radius: 20px;
               }
-              .heading-premium {
-                font-size: 2.4rem;
-                letter-spacing: -1px;
+
+              .nlp-heading {
+                font-size: 1.8rem;
               }
-              .description-premium {
+
+              .nlp-icon-outer {
+                width: 48px;
+                height: 48px;
+              }
+
+              .nlp-icon-inner {
+                width: 36px;
+                height: 36px;
+              }
+
+              .nlp-text {
+                font-size: 1rem !important;
+              }
+
+              .supporting-languages-badge {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 20px;
+                align-self: center;
+              }
+            }
+          `}
+        </style>
+      </div>
+
+      {/* Real-Time Integration Section */}
+      <div className="realtime-integration-wrapper" style={{ padding: '0px 20px 120px', backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+        {/* Ambient background glows */}
+        <div className="bg-glow-orb orb-left-rti"></div>
+        <div className="bg-glow-orb orb-right-rti"></div>
+
+        <div className="container rti-premium-container">
+          <div className="row g-5 align-items-center">
+            
+            {/* LEFT SIDE - Robot Computer Illustration */}
+            <div className="col-lg-6">
+              <div className="rti-image-area effectFade fadeUp">
+                <div className="rti-image-bg-glow"></div>
+                
+                <img 
+                  src={realtimeIntegrationImg} 
+                  alt="Real-Time Integration Illustration" 
+                  className="rti-illustration"
+                />
+              </div>
+            </div>
+
+            {/* RIGHT SIDE - Content and Feature Cards */}
+            <div className="col-lg-6">
+              <div className="rti-content effectFade fadeUp" style={{ transitionDelay: '0.2s' }}>
+                
+                <h3 className="rti-heading">
+                  <span className="text-red-gradient">Real-Time Integration</span> with existing Billing Systems and Payment Gateways
+                </h3>
+
+                {/* Glowing red divider line with dots */}
+                <div className="glowing-divider">
+                  <div className="divider-line"></div>
+                  <div className="divider-dots-wrap">
+                    <span className="dot dot-glow"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                  </div>
+                </div>
+
+                {/* Vertical feature cards stack */}
+                <div className="rti-cards-stack">
+                  
+                  {/* Card 1 */}
+                  <div className="rti-premium-card d-flex align-items-center gap-4">
+                    <div className="rti-icon-box flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rti-svg-icon">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                        <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                      </svg>
+                    </div>
+                    <div className="rti-card-text-area">
+                      <p className="rti-card-text">
+                        Seamless connectivity with existing system database will allow the BOT to fetch up-to-date details and personalize outreach.
+                      </p>
+                    </div>
+                    <div className="rti-arrow-box flex-shrink-0">
+                      <span className="rti-chevron-arrow">❯</span>
+                    </div>
+                  </div>
+
+                  {/* Card 2 */}
+                  <div className="rti-premium-card d-flex align-items-center gap-4">
+                    <div className="rti-icon-box flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rti-svg-icon">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                      </svg>
+                    </div>
+                    <div className="rti-card-text-area">
+                      <p className="rti-card-text">
+                        Integration with existing databases, payment gateways, and UPI platforms will ensure instant payment confirmation and update the backend systems in real time.
+                      </p>
+                    </div>
+                    <div className="rti-arrow-box flex-shrink-0">
+                      <span className="rti-chevron-arrow">❯</span>
+                    </div>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div className="rti-premium-card d-flex align-items-center gap-4">
+                    <div className="rti-icon-box flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rti-svg-icon">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 11l2 2 4-4" strokeWidth="2.5"/>
+                      </svg>
+                    </div>
+                    <div className="rti-card-text-area">
+                      <p className="rti-card-text">
+                        This will eliminate redundancy, reduce manual errors, and enhance data reliability.
+                      </p>
+                    </div>
+                    <div className="rti-arrow-box flex-shrink-0">
+                      <span className="rti-chevron-arrow">❯</span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <style>
+          {`
+            /* RTI Section Styling */
+            .realtime-integration-wrapper {
+              position: relative;
+              background-color: #ffffff;
+              z-index: 1;
+            }
+
+            .rti-premium-container {
+              position: relative;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+              backdrop-filter: blur(24px);
+              -webkit-backdrop-filter: blur(24px);
+              border: 1px solid rgba(255, 255, 255, 0.85);
+              border-radius: 32px;
+              padding: 50px 35px;
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              overflow: hidden;
+              transition: all 0.5s ease;
+            }
+
+            .rti-premium-container::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 32px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 45, 21, 0.15), rgba(255, 255, 255, 0.9), rgba(255, 45, 21, 0.05));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            /* Ambient Glow */
+            .rti-premium-container::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0; left: 0;
+              box-shadow: 0 0 80px rgba(255, 45, 21, 0.045);
+              pointer-events: none;
+              z-index: -1;
+            }
+
+            .orb-left-rti {
+              top: -10%;
+              left: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.04) 0%, transparent 70%);
+            }
+
+            .orb-right-rti {
+              bottom: 10%;
+              right: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.05) 0%, transparent 70%);
+            }
+
+            /* Heading & Text styling */
+            .rti-heading {
+              font-size: 2.8rem;
+              font-weight: 800;
+              line-height: 1.25;
+              letter-spacing: -1px;
+              color: #0b132b;
+              margin-bottom: 20px;
+            }
+
+            /* Cards stack styling */
+            .rti-cards-stack {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            }
+
+            .rti-premium-card {
+              position: relative;
+              background: rgba(255, 255, 255, 0.4);
+              backdrop-filter: blur(12px);
+              -webkit-backdrop-filter: blur(12px);
+              border: 1px solid rgba(255, 255, 255, 0.8);
+              border-radius: 16px;
+              padding: 16px 20px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+              transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+              z-index: 1;
+              cursor: pointer;
+            }
+
+            .rti-premium-card::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 20px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 45, 21, 0.05));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              z-index: -1;
+              transition: opacity 0.4s ease;
+            }
+
+            .rti-premium-card:hover {
+              transform: translateY(-4px);
+              background: rgba(255, 255, 255, 0.9);
+              border-color: rgba(255, 45, 21, 0.2);
+              box-shadow: 0 15px 35px rgba(255, 45, 21, 0.06),
+                          0 4px 10px rgba(0, 0, 0, 0.01);
+            }
+
+            .rti-icon-box {
+              width: 42px;
+              height: 42px;
+              border-radius: 10px;
+              background: rgba(255, 45, 21, 0.05);
+              border: 1px solid rgba(255, 45, 21, 0.08);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ff2d15;
+              transition: all 0.4s ease;
+              box-shadow: 0 4px 12px rgba(255, 45, 21, 0.03);
+            }
+
+            .rti-premium-card:hover .rti-icon-box {
+              background: linear-gradient(135deg, #ff2d15 0%, #ff5b4f 100%);
+              color: #ffffff;
+              box-shadow: 0 6px 15px rgba(255, 45, 21, 0.25);
+              transform: scale(1.05) rotate(-3deg);
+            }
+
+            .rti-svg-icon {
+              width: 20px;
+              height: 20px;
+            }
+
+            .rti-card-text-area {
+              flex: 1;
+            }
+
+            .rti-card-text {
+              font-size: 0.95rem !important;
+              line-height: 1.5 !important;
+              color: #4a5568 !important;
+              margin: 0 !important;
+              font-weight: 500 !important;
+            }
+
+            .rti-arrow-box {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ff2d15;
+              opacity: 0.4;
+              transition: all 0.3s ease;
+            }
+
+            .rti-chevron-arrow {
+              font-size: 0.95rem;
+              font-weight: 700;
+            }
+
+            .rti-premium-card:hover .rti-arrow-box {
+              opacity: 1;
+              transform: translateX(3px);
+            }
+
+            /* Image Styling Area */
+            .rti-image-area {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 2;
+            }
+
+            .rti-illustration {
+              max-width: 90%;
+              height: auto;
+              position: relative;
+              z-index: 5;
+              animation: float-illustration 6s ease-in-out infinite;
+              filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.05));
+            }
+
+            .rti-image-bg-glow {
+              position: absolute;
+              width: 350px;
+              height: 350px;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.12) 0%, transparent 70%);
+              filter: blur(35px);
+              z-index: 1;
+              pointer-events: none;
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 991px) {
+              .rti-premium-container {
+                padding: 40px 25px;
+                border-radius: 24px;
+              }
+
+              .rti-heading {
+                font-size: 2.2rem;
+              }
+            }
+
+            @media (max-width: 575px) {
+              .rti-premium-container {
+                padding: 30px 15px;
+                border-radius: 20px;
+              }
+
+              .rti-heading {
+                font-size: 1.8rem;
+              }
+
+              .rti-premium-card {
+                padding: 16px 20px;
+                gap: 15px;
+              }
+
+              .rti-icon-box {
+                width: 46px;
+                height: 46px;
+                border-radius: 12px;
+              }
+
+              .rti-card-text {
+                font-size: 0.95rem !important;
+              }
+            }
+          `}
+        </style>
+      </div>
+
+      {/* Comprehensive Analytics Dashboard Section */}
+      <div className="comprehensive-analytics-wrapper" style={{ padding: '0px 20px 120px', backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+        {/* Ambient background glows */}
+        <div className="bg-glow-orb orb-left-cad"></div>
+        <div className="bg-glow-orb orb-right-cad"></div>
+
+        <div className="container cad-premium-container">
+          <div className="row g-5 align-items-center">
+            
+            {/* LEFT SIDE - Content and Sub-Cards */}
+            <div className="col-lg-6">
+              <div className="cad-content effectFade fadeUp">
+                
+                <h3 className="cad-heading">
+                  Comprehensive <span className="text-red-gradient">Analytics Dashboard</span>
+                </h3>
+
+                {/* Glowing red divider line with dots */}
+                <div className="glowing-divider">
+                  <div className="divider-line"></div>
+                  <div className="divider-dots-wrap">
+                    <span className="dot dot-glow"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                  </div>
+                </div>
+
+                {/* Bullets & sub-cards */}
+                <div className="cad-bullets-stack">
+                  
+                  {/* Bullet 1 */}
+                  <div className="cad-bullet-item">
+                    <div className="cad-bullet-header d-flex align-items-start gap-2">
+                      <span className="red-arrow-bullet">►</span>
+                      <p className="cad-bullet-title-text">
+                        The system will include an advanced analytics and reporting module to monitor:
+                      </p>
+                    </div>
+
+                    {/* Sub-cards stack */}
+                    <div className="cad-subcards-list">
+                      
+                      {/* Sub-card 1 */}
+                      <div className="cad-sub-card d-flex align-items-center gap-3">
+                        <div className="cad-sub-icon-box flex-shrink-0">
+                          {/* Daily recovery performance chart */}
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cad-sub-svg-icon">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                          </svg>
+                        </div>
+                        <p className="cad-sub-card-text">Daily and cumulative recovery performance</p>
+                      </div>
+
+                      {/* Sub-card 2 */}
+                      <div className="cad-sub-card d-flex align-items-center gap-3">
+                        <div className="cad-sub-icon-box flex-shrink-0">
+                          {/* Engagement metrics */}
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cad-sub-svg-icon">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                          </svg>
+                        </div>
+                        <p className="cad-sub-card-text">Engagement metrics (call success, drop off, refusal rates)</p>
+                      </div>
+
+                      {/* Sub-card 3 */}
+                      <div className="cad-sub-card d-flex align-items-center gap-3">
+                        <div className="cad-sub-icon-box flex-shrink-0">
+                          {/* Real-time escalation data */}
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cad-sub-svg-icon">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                          </svg>
+                        </div>
+                        <p className="cad-sub-card-text">Real-time escalation data (e.g., citizen requesting call-back, dispute resolution)</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  {/* Bullet 2 */}
+                  <div className="cad-bullet-item">
+                    <div className="cad-bullet-header d-flex align-items-start gap-2">
+                      <span className="red-arrow-bullet">►</span>
+                      <p className="cad-bullet-desc-text">
+                        These insights will help in optimizing the AI scripts, targeting defaulters more effectively, and adapting communication strategies dynamically.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Bottom row: 4 mini cards */}
+                <div className="cad-bottom-mini-grid">
+                  
+                  {/* Mini Card 1 */}
+                  <div className="cad-mini-card">
+                    <div className="cad-mini-icon-outer">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cad-mini-svg-icon">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                        <polyline points="16 7 22 7 22 13"/>
+                      </svg>
+                    </div>
+                    <span className="cad-mini-title">Real-Time Insights</span>
+                  </div>
+
+                  {/* Mini Card 2 */}
+                  <div className="cad-mini-card">
+                    <div className="cad-mini-icon-outer">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cad-mini-svg-icon">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2v10l8 4"/>
+                      </svg>
+                    </div>
+                    <span className="cad-mini-title">Advanced Reporting</span>
+                  </div>
+
+                  {/* Mini Card 3 */}
+                  <div className="cad-mini-card">
+                    <div className="cad-mini-icon-outer">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cad-mini-svg-icon">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                      </svg>
+                    </div>
+                    <span className="cad-mini-title">Smarter Decisions</span>
+                  </div>
+
+                  {/* Mini Card 4 */}
+                  <div className="cad-mini-card">
+                    <div className="cad-mini-icon-outer">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cad-mini-svg-icon">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                      </svg>
+                    </div>
+                    <span className="cad-mini-title">Better Outcomes</span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            {/* RIGHT SIDE - Laptop Analytics Illustration */}
+            <div className="col-lg-6">
+              <div className="cad-image-area effectFade fadeUp" style={{ transitionDelay: '0.2s' }}>
+                <div className="cad-image-bg-glow"></div>
+                
+                <img 
+                  src={comprehensiveAnalyticsImg} 
+                  alt="Comprehensive Analytics Dashboard Illustration" 
+                  className="cad-illustration"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <style>
+          {`
+            /* CAD Section Styling */
+            .comprehensive-analytics-wrapper {
+              position: relative;
+              background-color: #ffffff;
+              z-index: 1;
+            }
+
+            .cad-premium-container {
+              position: relative;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+              backdrop-filter: blur(24px);
+              -webkit-backdrop-filter: blur(24px);
+              border: 1px solid rgba(255, 255, 255, 0.85);
+              border-radius: 32px;
+              padding: 50px 35px;
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              overflow: hidden;
+              transition: all 0.5s ease;
+            }
+
+            .cad-premium-container::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 32px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 45, 21, 0.15), rgba(255, 255, 255, 0.9), rgba(255, 45, 21, 0.05));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            /* Ambient Glow */
+            .cad-premium-container::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0; left: 0;
+              box-shadow: 0 0 80px rgba(255, 45, 21, 0.045);
+              pointer-events: none;
+              z-index: -1;
+            }
+
+            .orb-left-cad {
+              top: -10%;
+              left: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.04) 0%, transparent 70%);
+            }
+
+            .orb-right-cad {
+              bottom: 10%;
+              right: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.05) 0%, transparent 70%);
+            }
+
+            /* Heading & Text styling */
+            .cad-heading {
+              font-size: 2.8rem;
+              font-weight: 800;
+              line-height: 1.25;
+              letter-spacing: -1px;
+              color: #0b132b;
+              margin-bottom: 20px;
+            }
+
+            .cad-bullets-stack {
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+            }
+
+            .cad-bullet-title-text {
+              font-size: 1.05rem !important;
+              line-height: 1.5 !important;
+              color: #2d3748 !important;
+              margin: 0 !important;
+              font-weight: 600 !important;
+            }
+
+            .cad-bullet-desc-text {
+              font-size: 1rem !important;
+              line-height: 1.5 !important;
+              color: #4a5568 !important;
+              margin: 0 !important;
+              font-weight: 500 !important;
+            }
+
+            /* Sub-cards styling */
+            .cad-subcards-list {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              margin-top: 10px;
+              margin-left: 20px;
+            }
+
+            .cad-sub-card {
+              background: rgba(255, 255, 255, 0.5);
+              border: 1px solid rgba(255, 45, 21, 0.06);
+              border-radius: 12px;
+              padding: 10px 16px;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+              transition: all 0.3s ease;
+            }
+
+            .cad-sub-card:hover {
+              background: #ffffff;
+              transform: translateX(4px);
+              border-color: rgba(255, 45, 21, 0.15);
+              box-shadow: 0 8px 20px rgba(255, 45, 21, 0.04);
+            }
+
+            .cad-sub-icon-box {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: rgba(255, 45, 21, 0.04);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ff2d15;
+            }
+
+            .cad-sub-svg-icon {
+              width: 15px;
+              height: 15px;
+            }
+
+            .cad-sub-card-text {
+              font-size: 0.92rem !important;
+              line-height: 1.5 !important;
+              color: #4a5568 !important;
+              margin: 0 !important;
+              font-weight: 500 !important;
+            }
+
+            /* Bottom Mini Cards Grid */
+            .cad-bottom-mini-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 10px;
+              margin-top: 25px;
+              border-top: 1px dashed rgba(255, 45, 21, 0.1);
+              padding-top: 20px;
+            }
+
+            .cad-mini-card {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              gap: 10px;
+              background: rgba(255, 255, 255, 0.4);
+              border: 1px solid rgba(255, 255, 255, 0.8);
+              border-radius: 10px;
+              padding: 12px 8px;
+              transition: all 0.3s ease;
+            }
+
+            .cad-mini-card:hover {
+              background: #ffffff;
+              transform: translateY(-3px);
+              border-color: rgba(255, 45, 21, 0.2);
+              box-shadow: 0 8px 20px rgba(255, 45, 21, 0.05);
+            }
+
+            .cad-mini-icon-outer {
+              width: 32px;
+              height: 32px;
+              border-radius: 8px;
+              background: rgba(255, 45, 21, 0.04);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ff2d15;
+              transition: all 0.3s ease;
+            }
+
+            .cad-mini-card:hover .cad-mini-icon-outer {
+              background: #ff2d15;
+              color: #ffffff;
+            }
+
+            .cad-mini-svg-icon {
+              width: 16px;
+              height: 16px;
+            }
+
+            .cad-mini-title {
+              font-size: 0.8rem;
+              font-weight: 600;
+              color: #4a5568;
+            }
+
+            /* Image Styling Area */
+            .cad-image-area {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 2;
+            }
+
+            .cad-illustration {
+              max-width: 95%;
+              height: auto;
+              position: relative;
+              z-index: 5;
+              animation: float-illustration 6s ease-in-out infinite;
+              filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.05));
+            }
+
+            .cad-image-bg-glow {
+              position: absolute;
+              width: 350px;
+              height: 350px;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.12) 0%, transparent 70%);
+              filter: blur(35px);
+              z-index: 1;
+              pointer-events: none;
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 991px) {
+              .cad-premium-container {
+                padding: 40px 25px;
+                border-radius: 24px;
+              }
+
+              .cad-heading {
+                font-size: 2.2rem;
+              }
+
+              .cad-bottom-mini-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
+            }
+
+            @media (max-width: 575px) {
+              .cad-premium-container {
+                padding: 30px 15px;
+                border-radius: 20px;
+              }
+
+              .cad-heading {
+                font-size: 1.8rem;
+              }
+
+              .cad-subcards-list {
+                margin-left: 10px;
+              }
+
+              .cad-sub-card {
+                padding: 10px 15px;
+              }
+
+              .cad-bottom-mini-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+              }
+            }
+          `}
+        </style>
+      </div>
+
+      {/* Solution Overview Section */}
+      <div className="solution-overview-wrapper" style={{ padding: '0px 20px 120px', backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+        <div className="container so-premium-container">
+          <div className="row g-5 align-items-center">
+            
+            {/* LEFT COLUMN - Title & List Stack */}
+            <div className="col-lg-6">
+              <div className="so-content effectFade fadeUp">
+                
+                <h3 className="so-heading">
+                  Solution <span className="so-highlight">Overview</span>
+                </h3>
+
+                {/* Divider */}
+                <div className="glowing-divider so-divider">
+                  <div className="divider-line"></div>
+                  <div className="divider-dots-wrap">
+                    <span className="dot dot-glow"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                  </div>
+                </div>
+
+                {/* List items stack */}
+                <div className="so-list-stack">
+                  
+                  {/* Item 1: Shield */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="so-svg-icon">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      </svg>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Robust, scalable, and secure.</p>
+                  </div>
+
+                  {/* Item 2: Sync */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="so-svg-icon">
+                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                      </svg>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Ensuring real time data synchronization</p>
+                  </div>
+
+                  {/* Item 3: Mic */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="so-svg-icon">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+                      </svg>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Automated, intelligent voice based outreach</p>
+                  </div>
+
+                  {/* Item 4: Phone */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="so-svg-icon">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                      </svg>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Personalized outbound voice calls</p>
+                  </div>
+
+                  {/* Item 5: Chat */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="so-svg-icon">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        <circle cx="8" cy="10" r="1" fill="currentColor"/>
+                        <circle cx="12" cy="10" r="1" fill="currentColor"/>
+                        <circle cx="16" cy="10" r="1" fill="currentColor"/>
+                      </svg>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Two way interactive conversation</p>
+                  </div>
+
+                  {/* Item 6: NLP */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0 text-nlp">
+                      <span className="icon-nlp-text">NLP</span>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Natural Language Processing (NLP) and Text-to-Speech (TTS)</p>
+                  </div>
+
+                  {/* Item 7: Translation */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="so-svg-icon">
+                        <path d="M5 8h14M4 4L1 20h6l1-5h8l1 5h6L19 4z"/>
+                        <path d="M12 8l-2.5 5h5z" strokeWidth="2"/>
+                      </svg>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Recognize and respond in Regional Language, Hindi, and English.</p>
+                  </div>
+
+                  {/* Item 8: Translation */}
+                  <div className="so-list-item d-flex align-items-center gap-3">
+                    <div className="so-icon-outer flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="so-svg-icon">
+                        <path d="M5 8h14M4 4L1 20h6l1-5h8l1 5h6L19 4z"/>
+                        <path d="M12 8l-2.5 5h5z" strokeWidth="2"/>
+                      </svg>
+                    </div>
+                    <span className="red-arrow-bullet">►</span>
+                    <p className="so-text">Recognize and respond in Marathi, Hindi, and English</p>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN - Laptop Robot Illustration */}
+            <div className="col-lg-6">
+              <div className="so-image-area effectFade fadeUp" style={{ transitionDelay: '0.2s' }}>
+                <div className="so-image-bg-glow"></div>
+                
+                <img 
+                  src={solutionOverviewImg} 
+                  alt="Solution Overview Illustration" 
+                  className="so-illustration"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <style>
+          {`
+            /* Solution Overview Section styling */
+            .so-premium-container {
+              position: relative;
+              background: linear-gradient(135deg, #9a0d0d 0%, #4a0000 100%);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 32px;
+              padding: 50px 35px;
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+              overflow: hidden;
+              transition: all 0.5s ease;
+            }
+
+            .so-premium-container::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 32px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            /* Ambient Glow */
+            .so-premium-container::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0; left: 0;
+              box-shadow: inset 0 0 100px rgba(255, 45, 21, 0.3);
+              pointer-events: none;
+              z-index: -1;
+            }
+
+            /* Heading styling */
+            .so-heading {
+              font-size: 2.8rem;
+              font-weight: 800;
+              line-height: 1.25;
+              letter-spacing: -1px;
+              color: #ffffff;
+              margin-bottom: 20px;
+            }
+
+            .so-highlight {
+              color: #ff5b4f;
+              text-shadow: 0 0 20px rgba(255, 91, 79, 0.3);
+            }
+
+            .so-divider .divider-line {
+              background: linear-gradient(90deg, #ff5b4f 0%, transparent 100%);
+            }
+
+            .so-divider .dot {
+              background-color: #ff5b4f;
+            }
+
+            .so-divider .dot-glow {
+              box-shadow: 0 0 8px #ff5b4f;
+            }
+
+            /* List styling */
+            .so-list-stack {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            }
+
+            .so-list-item {
+              background: rgba(255, 255, 255, 0.04);
+              border: 1px solid rgba(255, 255, 255, 0.08);
+              border-radius: 100px;
+              padding: 8px 18px;
+              transition: all 0.3s ease;
+            }
+
+            .so-list-item:hover {
+              background: rgba(255, 255, 255, 0.09);
+              transform: translateX(6px);
+              border-color: rgba(255, 255, 255, 0.2);
+            }
+
+            .so-icon-outer {
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+              background: linear-gradient(135deg, #c91a1a 0%, #7e0303 100%);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ffffff;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .so-list-item:hover .so-icon-outer {
+              transform: scale(1.1) rotate(5deg);
+              box-shadow: 0 0 15px rgba(255, 91, 79, 0.4);
+            }
+
+            .so-svg-icon {
+              width: 16px;
+              height: 16px;
+            }
+
+            .text-nlp {
+              font-size: 0.75rem;
+              font-weight: 700;
+              letter-spacing: -0.2px;
+            }
+
+            .icon-nlp-text {
+              line-height: 1;
+            }
+
+            .so-text {
+              font-size: 0.95rem !important;
+              line-height: 1.5 !important;
+              color: rgba(255, 255, 255, 0.9) !important;
+              margin: 0 !important;
+              font-weight: 500 !important;
+            }
+
+            /* Image styling area */
+            .so-image-area {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 2;
+            }
+
+            .so-illustration {
+              max-width: 95%;
+              height: auto;
+              position: relative;
+              z-index: 5;
+              animation: float-illustration 6s ease-in-out infinite;
+              filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3));
+            }
+
+            .so-image-bg-glow {
+              position: absolute;
+              width: 350px;
+              height: 350px;
+              background: radial-gradient(circle, rgba(255, 91, 79, 0.25) 0%, transparent 70%);
+              filter: blur(35px);
+              z-index: 1;
+              pointer-events: none;
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 991px) {
+              .so-premium-container {
+                padding: 40px 25px;
+                border-radius: 24px;
+              }
+
+              .so-heading {
+                font-size: 2.2rem;
+              }
+            }
+
+            @media (max-width: 575px) {
+              .so-premium-container {
+                padding: 30px 15px;
+                border-radius: 20px;
+              }
+
+              .so-heading {
+                font-size: 1.8rem;
+              }
+
+              .so-list-item {
+                border-radius: 20px;
+                padding: 12px 16px;
+                align-items: flex-start !important;
+              }
+
+              .so-text {
+                font-size: 0.95rem !important;
+              }
+            }
+          `}
+        </style>
+      </div>
+
+      {/* Conversational AI Use-Cases Section */}
+      <div className="use-cases-wrapper" style={{ padding: '0px 20px 120px', backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+        {/* Ambient background glows */}
+        <div className="bg-glow-orb orb-left-uc"></div>
+        <div className="bg-glow-orb orb-right-uc"></div>
+
+        <div className="container uc-premium-container">
+          
+          {/* Top Header inside container */}
+          <div className="uc-header effectFade fadeUp">
+            <span className="red-vertical-bar">|</span>
+            <h2 className="uc-main-heading">
+              Conversational <span className="text-red-gradient">AI Use-Cases</span>
+            </h2>
+            
+            {/* Divider */}
+            <div className="glowing-divider uc-divider">
+              <div className="divider-line"></div>
+              <div className="divider-dots-wrap">
+                <span className="dot dot-glow"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="row g-5 align-items-center mt-3">
+            
+            {/* LEFT COLUMN - Illustration */}
+            <div className="col-lg-5 col-md-12 text-center">
+              <div className="uc-image-area effectFade fadeUp">
+                <div className="uc-image-bg-glow"></div>
+                
+                <img 
+                  src={conversationalAIImg} 
+                  alt="Conversational AI Use-Cases Illustration" 
+                  className="uc-illustration"
+                />
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN - Use Cases Grid */}
+            <div className="col-lg-7 col-md-12">
+              <div className="uc-grid">
+                
+                {/* Card 1: Banking & Financial Services */}
+                <div className="uc-card effectFade fadeUp">
+                  <div className="uc-card-header d-flex align-items-center gap-3">
+                    <div className="uc-card-icon-box flex-shrink-0">
+                      {/* Bank building icon */}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="uc-card-svg-icon">
+                        <path d="M3 22v-6h18v6M6 16v-6M10 16v-6M14 16v-6M18 16v-6M2 10L12 2l10 8"/>
+                      </svg>
+                    </div>
+                    <h4 className="uc-card-title">Banking & Financial Services</h4>
+                  </div>
+                  
+                  {/* Subtle divider inside card */}
+                  <div className="uc-card-divider-wrap">
+                    <div className="uc-card-divider-line"></div>
+                    <div className="uc-card-divider-dots">
+                      <span className="c-dot"></span>
+                      <span className="c-dot"></span>
+                    </div>
+                  </div>
+
+                  <ul className="uc-bullets-list">
+                    <li>Loan EMI payments</li>
+                    <li>Credit card bill payments</li>
+                    <li>Utility auto-pay setup</li>
+                  </ul>
+                </div>
+
+                {/* Card 2: Traffic & Transport */}
+                <div className="uc-card effectFade fadeUp" style={{ transitionDelay: '0.1s' }}>
+                  <div className="uc-card-header d-flex align-items-center gap-3">
+                    <div className="uc-card-icon-box flex-shrink-0">
+                      {/* Car icon */}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="uc-card-svg-icon">
+                        <rect x="1" y="3" width="22" height="13" rx="2" ry="2"/>
+                        <path d="M7 16H3a2 2 0 0 0-2 2v3h2v-3h16v3h2v-3a2 2 0 0 0-2-2h-4M5 8h14M8 12h8"/>
+                      </svg>
+                    </div>
+                    <h4 className="uc-card-title">Traffic & Transport</h4>
+                  </div>
+
+                  {/* Subtle divider inside card */}
+                  <div className="uc-card-divider-wrap">
+                    <div className="uc-card-divider-line"></div>
+                    <div className="uc-card-divider-dots">
+                      <span className="c-dot"></span>
+                      <span className="c-dot"></span>
+                    </div>
+                  </div>
+
+                  <ul className="uc-bullets-list">
+                    <li>Traffic Challan payments</li>
+                    <li>Vehicle tax renewal</li>
+                    <li>Parking fee payments</li>
+                  </ul>
+                </div>
+
+                {/* Card 3: Telecom & Internet Services */}
+                <div className="uc-card effectFade fadeUp" style={{ transitionDelay: '0.15s' }}>
+                  <div className="uc-card-header d-flex align-items-center gap-3">
+                    <div className="uc-card-icon-box flex-shrink-0">
+                      {/* Mobile phone / wifi icon */}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="uc-card-svg-icon">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        <path d="M12 6a3 3 0 0 1 3 3M12 3a6 6 0 0 1 6 6"/>
+                      </svg>
+                    </div>
+                    <h4 className="uc-card-title">Telecom & Internet Services</h4>
+                  </div>
+
+                  {/* Subtle divider inside card */}
+                  <div className="uc-card-divider-wrap">
+                    <div className="uc-card-divider-line"></div>
+                    <div className="uc-card-divider-dots">
+                      <span className="c-dot"></span>
+                      <span className="c-dot"></span>
+                    </div>
+                  </div>
+
+                  <ul className="uc-bullets-list">
+                    <li>Mobile/DTH recharge</li>
+                    <li>Postpaid bill payments</li>
+                    <li>Internet subscription renewals</li>
+                  </ul>
+                </div>
+
+                {/* Card 4: Insurance Sector */}
+                <div className="uc-card effectFade fadeUp" style={{ transitionDelay: '0.2s' }}>
+                  <div className="uc-card-header d-flex align-items-center gap-3">
+                    <div className="uc-card-icon-box flex-shrink-0">
+                      {/* Shield icon */}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="uc-card-svg-icon">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      </svg>
+                    </div>
+                    <h4 className="uc-card-title">Insurance Sector</h4>
+                  </div>
+
+                  {/* Subtle divider inside card */}
+                  <div className="uc-card-divider-wrap">
+                    <div className="uc-card-divider-line"></div>
+                    <div className="uc-card-divider-dots">
+                      <span className="c-dot"></span>
+                      <span className="c-dot"></span>
+                    </div>
+                  </div>
+
+                  <ul className="uc-bullets-list">
+                    <li>Premium payment reminders & processing</li>
+                    <li>Policy renewal payments</li>
+                  </ul>
+                </div>
+
+                {/* Card 5: Utilities & Government Services */}
+                <div className="uc-card effectFade fadeUp" style={{ transitionDelay: '0.25s' }}>
+                  <div className="uc-card-header d-flex align-items-center gap-3">
+                    <div className="uc-card-icon-box flex-shrink-0">
+                      {/* Government / Utility building with flag */}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="uc-card-svg-icon">
+                        <path d="M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v18"/>
+                        <path d="M10 6h4M10 10h4M10 14h4M6 18h12"/>
+                      </svg>
+                    </div>
+                    <h4 className="uc-card-title">Utilities & Government Services</h4>
+                  </div>
+
+                  {/* Subtle divider inside card */}
+                  <div className="uc-card-divider-wrap">
+                    <div className="uc-card-divider-line"></div>
+                    <div className="uc-card-divider-dots">
+                      <span className="c-dot"></span>
+                      <span className="c-dot"></span>
+                    </div>
+                  </div>
+
+                  <ul className="uc-bullets-list">
+                    <li>Electricity, Water, Gas bill payments</li>
+                    <li>Property tax or municipal services</li>
+                  </ul>
+                </div>
+
+                {/* Card 6: Healthcare */}
+                <div className="uc-card effectFade fadeUp" style={{ transitionDelay: '0.3s' }}>
+                  <div className="uc-card-header d-flex align-items-center gap-3">
+                    <div className="uc-card-icon-box flex-shrink-0">
+                      {/* Heartbeat EKG icon */}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="uc-card-svg-icon">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                      </svg>
+                    </div>
+                    <h4 className="uc-card-title">Healthcare</h4>
+                  </div>
+
+                  {/* Subtle divider inside card */}
+                  <div className="uc-card-divider-wrap">
+                    <div className="uc-card-divider-line"></div>
+                    <div className="uc-card-divider-dots">
+                      <span className="c-dot"></span>
+                      <span className="c-dot"></span>
+                    </div>
+                  </div>
+
+                  <ul className="uc-bullets-list">
+                    <li>Hospital bill settlements</li>
+                    <li>Health insurance premium payments</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <style>
+          {`
+            /* Use Cases Section Styling */
+            .use-cases-wrapper {
+              position: relative;
+              background-color: #ffffff;
+              z-index: 1;
+            }
+
+            .uc-premium-container {
+              position: relative;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+              backdrop-filter: blur(24px);
+              -webkit-backdrop-filter: blur(24px);
+              border: 1px solid rgba(255, 255, 255, 0.85);
+              border-radius: 32px;
+              padding: 50px 35px;
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 
+                          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              overflow: hidden;
+              transition: all 0.5s ease;
+            }
+
+            .uc-premium-container::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              border-radius: 32px;
+              padding: 1px;
+              background: linear-gradient(135deg, rgba(255, 45, 21, 0.15), rgba(255, 255, 255, 0.9), rgba(255, 45, 21, 0.05));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            /* Ambient Glow */
+            .uc-premium-container::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0; left: 0;
+              box-shadow: 0 0 80px rgba(255, 45, 21, 0.045);
+              pointer-events: none;
+              z-index: -1;
+            }
+
+            .orb-left-uc {
+              top: -10%;
+              left: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.04) 0%, transparent 70%);
+            }
+
+            .orb-right-uc {
+              bottom: 10%;
+              right: 5%;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.05) 0%, transparent 70%);
+            }
+
+            /* Header Section inside container */
+            .uc-header {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              margin-bottom: 35px;
+              flex-wrap: wrap;
+            }
+
+            .red-vertical-bar {
+              color: #ff2d15;
+              font-size: 2.8rem;
+              font-weight: 800;
+              line-height: 1.1;
+            }
+
+            .uc-main-heading {
+              font-size: 2.8rem;
+              font-weight: 800;
+              line-height: 1.1;
+              letter-spacing: -1px;
+              color: #0b132b;
+              margin: 0;
+            }
+
+            .uc-divider {
+              width: 100%;
+              margin-top: 15px;
+            }
+
+            /* Illustration Styling */
+            .uc-image-area {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 2;
+            }
+
+            .uc-illustration {
+              max-width: 105%;
+              width: 100%;
+              height: auto;
+              position: relative;
+              z-index: 5;
+              animation: float-illustration 6s ease-in-out infinite;
+              filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.05));
+            }
+
+            .uc-image-bg-glow {
+              position: absolute;
+              width: 420px;
+              height: 420px;
+              background: radial-gradient(circle, rgba(255, 45, 21, 0.12) 0%, transparent 70%);
+              filter: blur(35px);
+              z-index: 1;
+              pointer-events: none;
+            }
+
+            /* Grid Layout for Use Cases Cards */
+            .uc-grid {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 16px;
+            }
+
+            .uc-card {
+              position: relative;
+              background: rgba(255, 255, 255, 0.5);
+              backdrop-filter: blur(12px);
+              -webkit-backdrop-filter: blur(12px);
+              border: 1px solid rgba(255, 255, 255, 0.85);
+              border-radius: 16px;
+              padding: 18px 22px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+              transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            .uc-card:hover {
+              transform: translateY(-4px);
+              background: rgba(255, 255, 255, 0.95);
+              border-color: rgba(255, 45, 21, 0.2);
+              box-shadow: 0 15px 35px rgba(255, 45, 21, 0.06),
+                          0 4px 10px rgba(0, 0, 0, 0.01);
+            }
+
+            .uc-card-header {
+              margin-bottom: 12px;
+            }
+
+            .uc-card-icon-box {
+              width: 36px;
+              height: 36px;
+              border-radius: 10px;
+              background: rgba(255, 45, 21, 0.04);
+              border: 1px solid rgba(255, 45, 21, 0.08);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #ff2d15;
+              transition: all 0.4s ease;
+            }
+
+            .uc-card:hover .uc-card-icon-box {
+              background: #ff2d15;
+              color: #ffffff;
+              transform: scale(1.05);
+            }
+
+            .uc-card-svg-icon {
+              width: 18px;
+              height: 18px;
+            }
+
+            .uc-card-title {
+              font-size: 1.05rem;
+              font-weight: 700;
+              color: #0b132b;
+              margin: 0;
+            }
+
+            /* Card Divider */
+            .uc-card-divider-wrap {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 16px;
+            }
+
+            .uc-card-divider-line {
+              flex: 1;
+              height: 1px;
+              background: linear-gradient(90deg, rgba(255, 45, 21, 0.25) 0%, transparent 100%);
+            }
+
+            .uc-card-divider-dots {
+              display: flex;
+              gap: 3px;
+            }
+
+            .uc-card-divider-dots .c-dot {
+              width: 3px;
+              height: 3px;
+              border-radius: 50%;
+              background: #ff2d15;
+              opacity: 0.5;
+            }
+
+            /* Bullets */
+            .uc-bullets-list {
+              list-style-type: disc;
+              margin-left: 20px !important;
+              padding: 0 !important;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            }
+
+            .uc-bullets-list li {
+              font-size: 0.9rem;
+              color: #4a5568;
+              font-weight: 500;
+              line-height: 1.4;
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 991px) {
+              .uc-premium-container {
+                padding: 40px 25px;
+                border-radius: 24px;
+              }
+
+              .uc-main-heading {
+                font-size: 2.2rem;
+              }
+
+              .uc-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+
+            @media (max-width: 575px) {
+              .uc-premium-container {
+                padding: 30px 15px;
+                border-radius: 20px;
+              }
+
+              .uc-main-heading {
+                font-size: 1.8rem;
+              }
+
+              .red-vertical-bar {
+                font-size: 1.8rem;
+              }
+
+              .uc-card {
+                padding: 20px;
+              }
+
+              .uc-card-title {
                 font-size: 1.05rem;
-                line-height: 1.7;
-              }
-              .tf-btn-premium {
-                padding: 12px 30px;
-                font-size: 1rem;
               }
             }
           `}

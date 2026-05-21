@@ -55,7 +55,7 @@
 
 /* Awards UI Improvements */
 .dark-section {
-  background-color: #09090B !important;
+  background-color: #ffffff !important;
 }
 
 .dark-section-top {
@@ -72,33 +72,112 @@
 
 .dark-section .heading-title,
 .dark-section .title,
-.dark-section .text,
-.dark-section .desc,
 .dark-section .number {
-  color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.dark-section .text,
+.dark-section .desc {
+  color: #374151 !important;
+}
+
+.dark-section .text-neutral-400 {
+  color: #6b7280 !important;
 }
 
 .dark-card {
-  background-color: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(225, 6, 0, 0.12) !important;
   border-radius: 24px !important;
-  padding: 30px !important;
-  transition: all 0.3s ease;
+  padding: 12px 24px !important;
+  box-shadow: 0 4px 20px rgba(225, 6, 0, 0.02) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .dark-card:hover {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: #ffffff !important;
+  border-color: rgba(225, 6, 0, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(225, 6, 0, 0.08) !important;
+  transform: translateY(-4px) !important;
 }
 
 .dark-card .award-photo-wrapper {
   background: transparent !important;
 }
 
+/* Light theme adjustments for Statistic Section */
+.dark-section.section-statistic::before,
+.dark-section.section-statistic::after {
+  background: linear-gradient(90deg, rgba(225, 6, 0, 0) 0%, rgba(225, 6, 0, 0.12) 50%, rgba(225, 6, 0, 0) 100%) !important;
+}
+
+.dark-section.section-statistic>.line {
+  background: linear-gradient(0deg, rgba(225, 6, 0, 0) 0%, rgba(225, 6, 0, 0.12) 50%, rgba(225, 6, 0, 0) 100%) !important;
+}
+
+.dark-section.section-statistic .swiper-slide {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(225, 6, 0, 0.12) !important;
+  border-radius: 24px !important;
+  padding: 24px 24px !important;
+  box-shadow: 0 4px 20px rgba(225, 6, 0, 0.02) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dark-section.section-statistic .swiper-slide:hover {
+  border-color: rgba(225, 6, 0, 0.35) !important;
+  box-shadow: 0 10px 25px rgba(225, 6, 0, 0.08) !important;
+  transform: translateY(-4px) !important;
+}
+
+.dark-section.section-statistic .progress-bar {
+  background-color: rgba(225, 6, 0, 0.1) !important;
+}
+
+/* Light theme adjustments for Testimonials Section */
+.dark-section .swiper-testimonial_wrap .group-slider::before {
+  background: linear-gradient(90deg, rgba(225, 6, 0, 0) 0%, rgba(225, 6, 0, 0.12) 50%, rgba(225, 6, 0, 0) 100%) !important;
+}
+
+.dark-section .swiper-testimonial .swiper-slide > div {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(225, 6, 0, 0.12) !important;
+  border-radius: 24px !important;
+  padding: 35px 30px !important;
+  box-shadow: 0 4px 20px rgba(225, 6, 0, 0.02) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.dark-section .swiper-testimonial .swiper-slide > div:hover {
+  border-color: rgba(225, 6, 0, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(225, 6, 0, 0.08) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Light theme slider navigation buttons */
+.dark-section .btn-slider {
+  border: 1px solid rgba(225, 6, 0, 0.15) !important;
+}
+
+.dark-section .btn-slider .icon {
+  color: #111827 !important;
+}
+
+.dark-section .btn-slider:hover {
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+}
+
+.dark-section .btn-slider:hover .icon {
+  color: #ffffff !important;
+}
+
 .section-awards .awards-item {
   display: flex;
   align-items: center !important; /* Vertically center items */
-  gap: 24px; /* Proper spacing between image and text */
+  gap: 20px; /* Proper spacing between image and text */
 }
 
 /* Ensure other columns don't overflow when gap is added */
@@ -107,10 +186,15 @@
   width: auto;
 }
 
+.section-awards .awards-item > div {
+  min-height: unset !important;
+  padding: 4px 0 !important;
+}
+
 .award-photo-wrapper {
-  flex: 0 0 160px !important; /* Prominent thumbnail width */
-  max-width: 160px !important;
-  height: 100px !important; /* Height between 80px-120px */
+  flex: 0 0 110px !important; /* Prominent thumbnail width */
+  max-width: 110px !important;
+  height: 66px !important; /* Height between 80px-120px */
   border-radius: 12px;
   overflow: hidden; /* Clean UI constraint */
   padding: 0 !important; 
@@ -176,4 +260,18 @@
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
   border-color: #d1d5db;
+}
+
+/* Specific overrides for Awards items on hover in light mode */
+.dark-section .awards-item {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(225, 6, 0, 0.12) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.dark-section .awards-item:hover {
+  background: #ffffff !important;
+  border-color: rgba(225, 6, 0, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(225, 6, 0, 0.08) !important;
+  transform: translateY(-4px) !important;
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function PageTitle({ title, breadcrumbs }) {
+function PageTitle({ title, breadcrumbs, bgImage }) {
+  const headerStyle = bgImage ? { backgroundImage: `url(${bgImage})` } : {};
   return (
-    <div className="section-page-title">
+    <div className="section-page-title" style={headerStyle}>
       <div className="container text-center">
         <h1 className="page-title fw-semibold effectFade fadeZoom">{title}</h1>
         <div className="breadcrumbs effectFade fadeUp">

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import homeBgImg from '../../assets/home bg.png';
+import homeBgImg from '../../assets/home/vgilbg.jpeg';
 
 function HeroAnimated() {
   return (
     <div className="section-hero">
-      <div className="hero-image">
-        <img src={homeBgImg} alt="Hero Background" />
+      <div className="hero-image" style={{ backgroundImage: `url(${homeBgImg})` }}>
       </div>
       <div className="container">
         <div className="content-wrap text-center">

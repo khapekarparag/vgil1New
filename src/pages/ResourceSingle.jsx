@@ -21,7 +21,7 @@ function ResourceSingle() {
 
   return (
     <>
-      <PageTitle title={resourceData.title} breadcrumbs={breadcrumbs} />
+      <PageTitle title={resourceData.title} breadcrumbs={breadcrumbs} bgImage={resourceData.bgImage} />
       {slug === 'video' ? (
         <VideoSection />
       ) : (

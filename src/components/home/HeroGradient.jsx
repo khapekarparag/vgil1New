@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import homeBgImg from '../../assets/home bg.png';
+import homeBgImg from '../../assets/home/vgilbg.jpeg';
 import eAutopsyImg from '../../assets/home/e-autopsy.png';
 import digitalIdentityImg from '../../assets/home/digital-identity.png';
 import imisImg from '../../assets/home/imis.png';
@@ -9,8 +9,7 @@ import imisImg from '../../assets/home/imis.png';
 function HeroGradient() {
   return (
     <div className="section-hero">
-      <div className="hero-image">
-        <img src={homeBgImg} alt="Hero Background" />
+      <div className="hero-image" style={{ backgroundImage: `url(${homeBgImg})` }}>
       </div>
       <div className="container">
         <div className="content-wrap text-center">

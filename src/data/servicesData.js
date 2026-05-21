@@ -14,7 +14,7 @@ export const SERVICES_DATA = [
     description: 'We build robust, scalable, and user-centric applications tailored to your specific business needs, ensuring high performance and seamless integration.',
     icon: 'desktop-solid',
     logo: imgAppDev,
-    heroImage: '/assets/images/section/service-single-1.jpg',
+    heroImage: '/assets/images/services/app_development.png',
     features: [
       { title: 'Custom Web Apps', description: 'Tailored web solutions using modern frameworks.' },
       { title: 'Enterprise Software', description: 'Scalable systems for complex business processes.' },
@@ -46,7 +46,7 @@ export const SERVICES_DATA = [
     description: 'Design and implement robust IT infrastructures that provide a secure and scalable foundation for your digital operations.',
     icon: 'building',
     logo: imgIT,
-    heroImage: '/assets/images/section/service-single-1.jpg',
+    heroImage: '/assets/images/services/it_infrastructure.png',
     features: [
       { title: 'Network Design', description: 'Optimized network architectures for maximum speed.' },
       { title: 'Server Solutions', description: 'Reliable and scalable server infrastructure.' },
@@ -78,7 +78,7 @@ export const SERVICES_DATA = [
     description: 'Advanced smart technology solutions for connected ecosystems, smart cities, and IoT-driven innovation.',
     icon: 'clipboard-check-solid',
     logo: imgVGST,
-    heroImage: '/assets/images/section/service-single-1.jpg',
+    heroImage: '/assets/images/services/smart_city_iot.png',
     features: [
       { title: 'Smart City Solutions', description: 'Intelligent systems for urban management.' },
       { title: 'IoT Integration', description: 'Connecting devices for data-driven insights.' },
@@ -110,7 +110,7 @@ export const SERVICES_DATA = [
     description: 'Develop high-performance mobile applications and solutions that provide a superior user experience across iOS and Android.',
     icon: 'mobile-alt-solid',
     logo: imgMobile,
-    heroImage: '/assets/images/section/service-single-1.jpg',
+    heroImage: '/assets/images/services/mobile_computing.png',
     features: [
       { title: 'Native App Dev', description: 'High-performance apps for iOS and Android.' },
       { title: 'Cross-Platform', description: 'Efficient solutions for multiple platforms.' },
@@ -142,7 +142,7 @@ export const SERVICES_DATA = [
     description: 'Ensure business continuity and secure data management with our comprehensive DR and DC services.',
     icon: 'tachometer-alt-solid',
     logo: imgDR,
-    heroImage: '/assets/images/section/service-single-1.jpg',
+    heroImage: '/assets/images/services/disaster_recovery.png',
     features: [
       { title: 'Data Center Mgmt', description: 'Secure and efficient data storage solutions.' },
       { title: 'Disaster Recovery', description: 'Robust plans for business continuity.' },
@@ -174,7 +174,7 @@ export const SERVICES_DATA = [
     description: 'Optimize your business operations and enhance customer engagement with our suite of strategic digital solutions.',
     icon: 'bullseye-solid',
     logo: imgDigital,
-    heroImage: '/assets/images/section/service-single-1.jpg',
+    heroImage: '/assets/images/services/digital_solutions.png',
     features: [
       { title: 'Digital Strategy', description: 'Comprehensive roadmaps for digital success.' },
       { title: 'CRM/ERP', description: 'Customized management systems for better efficiency.' },
@@ -206,7 +206,7 @@ export const SERVICES_DATA = [
     description: 'Drive innovation and gain predictive insights with our advanced Artificial Intelligence and Machine Learning solutions.',
     icon: 'robot-solid',
     logo: imgAI,
-    heroImage: '/assets/images/section/service-single-1.jpg',
+    heroImage: '/assets/images/services/ai_machine_learning.png',
     features: [
       { title: 'Predictive Analytics', description: 'Forecasting trends and behaviors with data.' },
       { title: 'NLP Solutions', description: 'Intelligent processing of human language.' },

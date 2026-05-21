@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { MENU_DATA } from '../data/menuData';
+import { Link, useLocation } from 'react-router-dom';
+import styles from './Navbar.module.css';
 import vgilLogo from '../assets/home/vgil-logo.png';
+
+// Import raw data for rich mega-menu content
+import { PRODUCTS_DATA } from '../data/productsData';
+import { SERVICES_DATA } from '../data/servicesData';
+import { INVESTORS_DATA } from '../data/investorsData';
+import { RESOURCE_DATA } from '../data/resourceData';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeMega, setActiveMega] = useState(null); // 'products', 'services', etc.
+  const [activeItem, setActiveItem] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -12,221 +21,244 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const renderMegaMenu = (items, columns = 2, width = '550px') => (
-    <ul className="sub-menu mega-menu-custom" style={{ 
-      borderRadius: '24px', 
-      padding: '25px', 
-      boxShadow: '0 20px 50px rgba(0,0,0,0.1)', 
-      border: '1px solid #f1f1f1',
-      backgroundColor: '#ffffff',
-      display: 'grid',
-      gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      gap: '15px',
-      width: width,
-      left: '50%',
-      transform: 'translateX(-50%)',
-      top: '100%',
-      marginTop: '15px'
-    }}>
-      {items.map((item, idx) => (
-        <li key={idx} className="sub-menu-item" style={{ marginBottom: 0 }}>
-          <Link to={item.link} style={{ 
-            fontSize: '14px', 
-            padding: '10px 12px', 
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '15px',
-            color: '#4b5563',
-            transition: 'all 0.2s',
-            fontWeight: '500'
-          }}
-          className="mega-item-link"
-          >
-            <div className="icon-box" style={{
-              width: '50px',
-              height: '50px',
-              borderRadius: '12px',
-              backgroundColor: '#fff5f4',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-              overflow: 'hidden',
-              border: '1px solid #fee2e2'
-            }}>
-              {item.logo ? (
-                <img src={item.logo} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              ) : (
-                <i className={`icon icon-${item.icon}`} style={{ color: '#ff2d15', fontSize: '22px' }} />
-              )}
-            </div>
-            <span>{item.name}</span>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
+  // Close mega menu on route change
+  useEffect(() => {
+    setActiveMega(null);
+    setActiveItem(null);
+  }, [location.pathname]);
+
+  // Data normalization for mega menu
+  const getMegaData = (type) => {
+    switch (type) {
+      case 'products':
+        return PRODUCTS_DATA.map(p => ({
+          id: p.slug,
+          title: p.title,
+          description: p.shortDescription,
+          image: p.heroImage,
+          logo: p.logo,
+          link: `/products/${p.slug}`,
+          icon: p.icon || 'box',
+          imageFit: 'contain'
+        }));
+      case 'services':
+        return SERVICES_DATA.map(s => ({
+          id: s.slug,
+          title: s.title,
+          description: s.description,
+          image: s.heroImage,
+          logo: s.logo,
+          link: `/services/${s.slug}`,
+          icon: s.icon || 'cog',
+          imageFit: 'cover'
+        }));
+      case 'investors':
+        return INVESTORS_DATA.map(i => ({
+          id: i.slug,
+          title: i.title,
+          description: i.desc,
+          image: i.logo, // Fallback to logo if no hero
+          logo: i.logo,
+          link: `/investors/${i.slug}`,
+          icon: i.icon || 'chart-line',
+          imageFit: 'contain'
+        }));
+      case 'resource':
+        return RESOURCE_DATA.map(r => ({
+          id: r.slug,
+          title: r.title,
+          description: r.description || r.shortDescription,
+          image: r.heroImage,
+          logo: r.logo,
+          link: `/resource/${r.slug}`,
+          icon: r.icon || 'file-alt',
+          imageFit: 'cover'
+        }));
+      default:
+        return [];
+    }
+  };
+
+  const handleMenuHover = (type) => {
+    setActiveMega(type);
+    const data = getMegaData(type);
+    if (data.length > 0) setActiveItem(data[0]);
+  };
+
+  const renderMegaMenu = (type) => {
+    const data = getMegaData(type);
+    if (!data.length) return null;
+
+    return (
+      <div className={styles.megaMenuWrapper}>
+        <div className={styles.megaMenuContent} onMouseLeave={() => {}}>
+          {/* Left Sidebar */}
+          <div className={styles.megaSidebar}>
+            <ul className={styles.categoryList}>
+              {data.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    to={item.link}
+                    className={`${styles.categoryItem} ${activeItem?.id === item.id ? styles.categoryActive : ''}`}
+                    onMouseEnter={() => setActiveItem(item)}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <div className={styles.categoryIcon}>
+                      <i className={`icon icon-${item.icon}`}></i>
+                    </div>
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Right Preview Card */}
+          <div className={styles.megaPreview}>
+            {activeItem && (
+              <Link to={activeItem.link} className={styles.previewCard} style={{ textDecoration: 'none' }}>
+                <div 
+                  className={styles.previewImageWrapper} 
+                  style={activeItem.imageFit === 'cover' ? { padding: '0px', background: 'transparent' } : {}}
+                >
+                  {activeItem.image ? (
+                    <img 
+                      src={activeItem.image} 
+                      alt={activeItem.title} 
+                      className={styles.previewImage} 
+                      style={{ objectFit: activeItem.imageFit || 'contain' }}
+                    />
+                  ) : activeItem.logo ? (
+                    <img src={activeItem.logo} alt={activeItem.title} className={styles.previewLogo} />
+                  ) : (
+                    <div className={styles.imagePlaceholder}>No Preview</div>
+                  )}
+                </div>
+                <div className={styles.previewInfo}>
+                  <h3 className={styles.previewTitle}>{activeItem.title}</h3>
+                  <p className={styles.previewDesc}>{activeItem.description}</p>
+                </div>
+                <div className={styles.previewBtn}>
+                  Learn More
+                  <i className="icon icon-long-arrow-alt-right-solid"></i>
+                </div>
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <header
-      id="main-nav"
-      className={`tf-header header2 ${scrolled ? 'is-fixed is-small' : ''}`}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 999,
-        display: 'flex',
-        justifyContent: 'center',
-        padding: scrolled ? '12px 20px' : '20px 20px',
-        transition: 'padding 0.3s ease',
-        background: 'transparent',
-      }}
-    >
-      <div
-        className="header-inner"
-        style={{
-          width: '100%',
-          maxWidth: scrolled ? '1200px' : '1350px',
-          margin: '0 auto',
-          padding: scrolled ? '8px 15px' : '12px 20px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          backgroundColor: '#ffffff',
-          borderRadius: '100px',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
-          border: '1px solid #f1f1f1',
-          transition: 'all 0.3s ease'
-        }}
-      >
-
-        {/* Left Section: Logo Only */}
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-          <Link to="/" className="logo-site" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={vgilLogo} alt="Virtual Galaxy" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} />
+    <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
+      <nav className={styles.navContainer}>
+        {/* Left: Logo */}
+        <div className={styles.logoSection}>
+          <Link to="/" className={styles.logoLink}>
+            <img src={vgilLogo} alt="VGIL Logo" className={styles.logoImg} />
           </Link>
         </div>
 
-        {/* Center Section: Navigation Menu */}
-        <div className="box-navigation d-none d-lg-flex" style={{ display: 'flex', justifyContent: 'center', padding: '0 10px' }}>
-          <ul className="nav-menu-main" style={{ display: 'flex', gap: '28px', margin: 0, padding: 0, alignItems: 'center' }}>
-            <li className="menu-item">
-              <Link to="/about" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', transition: 'color 0.2s', textDecoration: 'none' }}>About Us</Link>
+        {/* Center: Menu */}
+        <div className={styles.menuSection}>
+          <ul className={styles.menuList}>
+            <li className={styles.menuItem}>
+              <Link to="/about" className={styles.menuLink}>About Us</Link>
             </li>
-            <li className="menu-item has-child">
-              <a href="#" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '5px', transition: 'color 0.2s', textDecoration: 'none' }}>
+            <li 
+              className={styles.menuItem} 
+              onMouseEnter={() => handleMenuHover('products')}
+              onMouseLeave={() => setActiveMega(null)}
+            >
+              <span className={styles.menuLink}>
                 Products
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-              {renderMegaMenu(MENU_DATA.products, 2, '580px')}
+                <svg className={styles.dropdownArrow} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              {activeMega === 'products' && renderMegaMenu('products')}
             </li>
-            <li className="menu-item has-child">
-              <a href="#" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '5px', transition: 'color 0.2s', textDecoration: 'none' }}>
+            <li 
+              className={styles.menuItem}
+              onMouseEnter={() => handleMenuHover('services')}
+              onMouseLeave={() => setActiveMega(null)}
+            >
+              <span className={styles.menuLink}>
                 Services
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-              {renderMegaMenu(MENU_DATA.services, 2, '580px')}
+                <svg className={styles.dropdownArrow} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              {activeMega === 'services' && renderMegaMenu('services')}
             </li>
-            <li className="menu-item has-child">
-              <a href="#" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '5px', transition: 'color 0.2s', textDecoration: 'none' }}>
-                Investors Info
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-              {renderMegaMenu(MENU_DATA.investors, 2, '650px')}
+            <li 
+              className={styles.menuItem}
+              onMouseEnter={() => handleMenuHover('investors')}
+              onMouseLeave={() => setActiveMega(null)}
+            >
+              <span className={styles.menuLink}>
+                Investors
+                <svg className={styles.dropdownArrow} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              {activeMega === 'investors' && renderMegaMenu('investors')}
             </li>
-            <li className="menu-item">
-              <Link to="/ipo" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', transition: 'color 0.2s', textDecoration: 'none' }}>IPO</Link>
+            <li className={styles.menuItem}>
+              <Link to="/ipo" className={styles.menuLink}>IPO</Link>
             </li>
-            <li className="menu-item has-child">
-              <a href="#" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '5px', transition: 'color 0.2s', textDecoration: 'none' }}>
-                Resource
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-              {renderMegaMenu(MENU_DATA.resource, 1, '280px')}
+            <li 
+              className={styles.menuItem}
+              onMouseEnter={() => handleMenuHover('resource')}
+              onMouseLeave={() => setActiveMega(null)}
+            >
+              <span className={styles.menuLink}>
+                Resources
+                <svg className={styles.dropdownArrow} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              {activeMega === 'resource' && renderMegaMenu('resource')}
             </li>
-            <li className="menu-item">
-              <Link to="/careers" className="item-link" style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937', whiteSpace: 'nowrap', transition: 'color 0.2s', textDecoration: 'none' }}>Careers</Link>
+            <li className={styles.menuItem}>
+              <Link to="/careers" className={styles.menuLink}>Careers</Link>
             </li>
           </ul>
         </div>
 
-        {/* Right Section: Contact Button + Social Icons */}
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '10px' }}>
-          
-          {/* Contact Us Button */}
-          <Link
-            to="/contact"
-            className="d-none d-sm-flex"
-            style={{
-              backgroundColor: '#ff2d15',
-              color: '#ffffff',
-              borderRadius: '100px',
-              padding: '8px 10px 8px 18px',
-              fontSize: '13px',
-              fontWeight: '700',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              transition: 'all 0.3s ease',
-              border: 'none',
-              whiteSpace: 'nowrap',
-              textDecoration: 'none',
-              boxShadow: '0 4px 12px rgba(255, 45, 21, 0.2)'
-            }}
-          >
-            Contact Us
-            <div style={{ backgroundColor: '#ffffff', borderRadius: '50%', width: '22px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <i className="icon icon-long-arrow-alt-up-solid" style={{ color: '#ff2d15', fontSize: '10px', transform: 'rotate(45deg)', fontWeight: '900' }} />
-            </div>
-          </Link>
-
-          {/* Social Icons */}
-          <div className="d-none d-xl-flex align-items-center" style={{ gap: '10px' }}>
+        {/* Right: Actions */}
+        <div className={styles.actionSection}>
+          <div className={styles.socialList}>
             {[
-              { icon: 'linkedin-in', link: 'https://www.linkedin.com/company/virtualgalaxy/' },
-              { icon: 'instagram', link: 'https://www.instagram.com/virtualgalaxyinfotech/' },
-              { icon: 'facebook-f', link: 'https://www.facebook.com/VirtualGalaxyInfotechLtd' },
-              { icon: 'twitter-x', link: 'https://x.com/Virtualvgipl' },
-              { icon: 'youtube', link: 'https://www.youtube.com/@virtualgalaxyinfotechpvtlt9340' }
-            ].map((social, idx) => (
-              <a
-                key={idx}
-                href={social.link}
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '34px',
-                  height: '34px',
-                  backgroundColor: '#ff2d15',
-                  color: '#ffffff',
-                  borderRadius: '50%',
-                  fontSize: '15px',
-                  transition: 'all 0.2s',
-                  textDecoration: 'none',
-                  boxShadow: '0 2px 8px rgba(255, 45, 21, 0.15)'
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 45, 21, 0.3)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 45, 21, 0.15)'; }}
-              >
-                <i className={`icon icon-${social.icon}`}></i>
+              { icon: 'linkedin-in', link: 'https://linkedin.com' },
+              { icon: 'instagram', link: 'https://instagram.com' },
+              { icon: 'facebook-f', link: 'https://facebook.com' },
+              { icon: 'twitter-x', link: 'https://x.com' },
+              { icon: 'youtube', link: 'https://youtube.com' }
+            ].map((s, i) => (
+              <a key={i} href={s.link} target="_blank" rel="noreferrer" className={styles.socialIcon}>
+                <i className={`icon icon-${s.icon}`}></i>
               </a>
             ))}
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <a href="#" className="open-mb-menu mobile-menu d-lg-none d-flex" style={{ color: '#1f2937', fontSize: '26px', padding: '0 5px', textDecoration: 'none' }}>
+          <Link to="/contact" className={styles.contactBtn}>
+            Contact Us
+            <div className={styles.arrowCircle}>
+              <i className="icon icon-long-arrow-alt-up-solid" style={{ transform: 'rotate(45deg)' }}></i>
+            </div>
+          </Link>
+
+          {/* Mobile Toggle */}
+          <div className={`${styles.mobileToggle} open-mb-menu`}>
             <i className="icon icon-grip-lines-solid"></i>
-          </a>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
 
 export default Navbar;
+
