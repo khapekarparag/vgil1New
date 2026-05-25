@@ -10,7 +10,9 @@ import {
   ShieldCheck,
   Info,
   Download,
-  ArrowRight
+  ArrowRight,
+  BookOpen,
+  Users
 } from 'lucide-react';
 import './BoardManagement.css';
 
@@ -69,12 +71,62 @@ const GROUP_COMPANIES_DATA = [
   }
 ];
 
+const FINANCIAL_REPORTS_DATA = [
+  {
+    name: "Annual Reports",
+    icon: "book-open",
+    theme: "orange",
+    docs: [
+      { year: "FY 2024-2025", link: "#" },
+      { year: "FY 2023-2024", link: "#" },
+      { year: "FY 2022-2023", link: "#" },
+      { year: "FY 2021-2022", link: "#" }
+    ]
+  },
+  {
+    name: "Quarterly Financial Results",
+    icon: "trending-up",
+    theme: "blue",
+    docs: [
+      { year: "Q3 FY 2024-25", link: "#" },
+      { year: "Q2 FY 2024-25", link: "#" },
+      { year: "Q1 FY 2024-25", link: "#" },
+      { year: "Q4 FY 2023-24", link: "#" }
+    ]
+  },
+  {
+    name: "Shareholding Pattern",
+    icon: "users",
+    theme: "green",
+    docs: [
+      { year: "Q3 FY 2024-25", link: "#" },
+      { year: "Q2 FY 2024-25", link: "#" },
+      { year: "Q1 FY 2024-25", link: "#" }
+    ]
+  },
+  {
+    name: "Statutory Disclosures & Filings",
+    icon: "shield",
+    theme: "purple",
+    docs: [
+      { year: "FY 2024-2025", link: "#" },
+      { year: "FY 2023-2024", link: "#" },
+      { year: "FY 2022-2023", link: "#" },
+      { year: "FY 2021-2022", link: "#" }
+    ]
+  }
+];
+
 const getCompanyIcon = (iconName) => {
   switch (iconName) {
     case 'trending-up':
       return <TrendingUp className="company-icon-svg" />;
     case 'shield':
       return <ShieldCheck className="company-icon-svg" />;
+    case 'book-open':
+      return <BookOpen className="company-icon-svg" />;
+    case 'users':
+      return <Users className="company-icon-svg" />;
     case 'building':
     case 'building-2':
     default:
@@ -91,6 +143,9 @@ function InvestorSingle() {
   }
 
   const isGroupCompanies = slug === 'group-companies';
+  const isFinancialReports = slug === 'financial-information-reports';
+  const isDocDashboard = isGroupCompanies || isFinancialReports;
+  const dashboardData = isGroupCompanies ? GROUP_COMPANIES_DATA : FINANCIAL_REPORTS_DATA;
 
   return (
     <div className="board-mgmt-wrapper">
@@ -152,11 +207,11 @@ function InvestorSingle() {
         <div className="container">
           <div className="explore-divider"></div>
 
-          {isGroupCompanies ? (
-            /* GROUP COMPANIES CUSTOM VIEW */
+          {isDocDashboard ? (
+            /* GROUP COMPANIES & FINANCIAL REPORTS CUSTOM VIEW */
             <div className="group-companies-container">
               <div className="company-rows-list">
-                {GROUP_COMPANIES_DATA.map((company, idx) => (
+                {dashboardData.map((company, idx) => (
                   <div
                     key={idx}
                     className="company-row-card effect-fade-up"
@@ -195,7 +250,7 @@ function InvestorSingle() {
               {/* Bottom Support Banner */}
               <div
                 className="investor-help-banner effect-fade-up"
-                style={{ animationDelay: `${GROUP_COMPANIES_DATA.length * 0.08}s` }}
+                style={{ animationDelay: `${dashboardData.length * 0.08}s` }}
               >
                 <div className="help-banner-left">
                   <div className="help-banner-icon-wrap">
