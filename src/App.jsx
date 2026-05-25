@@ -26,6 +26,7 @@ import JobSingle from './pages/JobSingle';
 import IPO from './pages/IPO';
 import InvestorSingle from './pages/InvestorSingle';
 import ResourceSingle from './pages/ResourceSingle';
+import BoardManagement from './pages/BoardManagement';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -74,6 +75,8 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:slug" element={<JobSingle />} />
           <Route path="/ipo" element={<IPO />} />
+          <Route path="/investors/board-and-management" element={<BoardManagement />} />
+          <Route path="/investors/board-and-management/:subpage" element={<BoardManagement />} />
           <Route path="/investors/:slug" element={<InvestorSingle />} />
           <Route path="/resource/:slug" element={<ResourceSingle />} />
           <Route path="*" element={<NotFound />} />
