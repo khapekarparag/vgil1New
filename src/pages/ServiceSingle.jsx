@@ -21,6 +21,18 @@ import DRDCSolveSection from '../components/services/DRDCSolveSection';
 import DRDCBenefitsSection from '../components/services/DRDCBenefitsSection';
 import DRDCServicesProvideSection from '../components/services/DRDCServicesProvideSection';
 import DRDCOptimizeSection from '../components/services/DRDCOptimizeSection';
+import DigitalSolutionsHero from '../components/services/DigitalSolutionsHero';
+import DigitalSolutionAbout from '../components/services/DigitalSolutionAbout';
+import DigitalStrategySection from '../components/services/DigitalStrategySection';
+import DigitalProvideSection from '../components/services/DigitalProvideSection';
+import DigitalExploreSection from '../components/services/DigitalExploreSection';
+import DigitalSocialSection from '../components/services/DigitalSocialSection';
+import DigitalCTASection from '../components/services/DigitalCTASection';
+import AIMLHero from '../components/services/AIMLHero';
+import AIMLSolveSection from '../components/services/AIMLSolveSection';
+import AIMLDeploySection from '../components/services/AIMLDeploySection';
+import AIMLServicesSection from '../components/services/AIMLServicesSection';
+import AIMLGrowSection from '../components/services/AIMLGrowSection';
 
 
 
@@ -34,10 +46,28 @@ function ServiceSingle() {
 
   return (
     <>
-      {slug !== 'mobile-computing' && slug !== 'dr-dc' && <ServiceSingleHero service={service} />}
+      {slug !== 'mobile-computing' && slug !== 'dr-dc' && slug !== 'digital-solutions' && slug !== 'ai-ml' && <ServiceSingleHero service={service} />}
       
       {/* Conditionally render sections based on the service slug */}
-      {slug === 'dr-dc' ? (
+      {slug === 'ai-ml' ? (
+        <>
+          <AIMLHero />
+          <AIMLSolveSection />
+          <AIMLDeploySection />
+          <AIMLServicesSection />
+          <AIMLGrowSection />
+        </>
+      ) : slug === 'digital-solutions' ? (
+        <>
+          <DigitalSolutionsHero />
+          <DigitalSolutionAbout />
+          <DigitalStrategySection />
+          <DigitalProvideSection />
+          <DigitalExploreSection />
+          <DigitalSocialSection />
+          <DigitalCTASection />
+        </>
+      ) : slug === 'dr-dc' ? (
         <>
           <DRDCHero />
           <DRDCSolveSection />
@@ -80,3 +110,4 @@ function ServiceSingle() {
 }
 
 export default ServiceSingle;
+
