@@ -967,3 +967,337 @@
     align-self: flex-start;
   }
 }
+
+/* ==========================================================================
+   Policies (Corporate Governance) Subpage Layout Styles
+   ========================================================================== */
+
+.policies-page-container {
+  max-width: 1040px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.policies-section-block {
+  text-align: left;
+}
+
+.policies-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Policy Card */
+.policy-accordion-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.01);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.policy-accordion-card:hover {
+  border-color: #fee2e2;
+  box-shadow: 0 8px 24px rgba(255, 77, 0, 0.03);
+}
+
+.policy-accordion-card.is-open {
+  border-color: #fee2e2;
+  box-shadow: 0 12px 32px rgba(255, 77, 0, 0.05);
+}
+
+/* Accordion Header Button */
+.policy-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none !important;
+  transition: background-color 0.2s ease;
+}
+
+.policy-accordion-header:hover {
+  background-color: #fffcfb;
+}
+
+.policy-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.policy-brand-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff5f2;
+  color: #ff4d00;
+  border: 1px solid #fee2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.policy-accordion-card:hover .policy-brand-icon-wrap {
+  transform: scale(1.05);
+  background-color: #ff4d00;
+  color: #ffffff;
+  border-color: #ff4d00;
+}
+
+.policy-icon-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.policy-title-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.policy-accordion-card:hover .policy-title-text {
+  color: #ff4d00;
+}
+
+.policy-header-right {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.policy-accordion-card:hover .policy-header-right,
+.policy-accordion-card.is-open .policy-header-right {
+  border-color: #ff4d00;
+  background-color: #ff4d00;
+}
+
+.accordion-chevron-icon {
+  color: #94a3b8;
+  transition: color 0.25s ease;
+}
+
+.policy-accordion-card:hover .accordion-chevron-icon,
+.policy-accordion-card.is-open .accordion-chevron-icon {
+  color: #ffffff;
+}
+
+/* Accordion Content Inner Wrapper */
+.policy-accordion-content-wrap {
+  overflow: hidden;
+}
+
+.policy-accordion-content {
+  padding: 0 28px 24px 92px; /* Offset to align with header title text */
+  text-align: left;
+}
+
+.policy-desc-text {
+  font-size: 14px;
+  color: #576071;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.policy-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-policy-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: #ffffff;
+  color: #ff4d00;
+  border: 1.5px solid #fee2e2;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  text-decoration: none !important;
+}
+
+.btn-policy-download:hover {
+  background: #ff4d00;
+  color: #ffffff !important;
+  border-color: #ff4d00;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 77, 0, 0.15);
+}
+
+/* Annual Returns Styles */
+.annual-returns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.return-row-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.005);
+  transition: all 0.25s ease;
+  gap: 20px;
+}
+
+.return-row-card:hover {
+  border-color: #fee2e2;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(255, 77, 0, 0.02);
+}
+
+.return-row-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.return-doc-icon {
+  color: #ff4d00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.return-title-text {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.return-row-card:hover .return-title-text {
+  color: #ff4d00;
+}
+
+.btn-return-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: #ffffff;
+  color: #ff4d00;
+  border: 1.5px solid #fee2e2;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  text-decoration: none !important;
+  flex-shrink: 0;
+}
+
+.btn-return-download-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-return-download:hover {
+  background: #ff4d00;
+  color: #ffffff !important;
+  border-color: #ff4d00;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 77, 0, 0.15);
+}
+
+/* Media queries for Policies (Corporate Governance) page */
+@media (max-width: 768px) {
+  .policy-accordion-header {
+    padding: 16px 20px;
+  }
+  
+  .policy-header-left {
+    gap: 12px;
+  }
+  
+  .policy-accordion-content {
+    padding: 0 20px 20px 20px; /* Reset left padding offset on mobile */
+  }
+  
+  .return-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .btn-return-download {
+    align-self: flex-start;
+  }
+}
+
+/* Accordion Policy Inner Text Styles */
+.policy-section-block-inner {
+  margin-bottom: 24px;
+}
+
+.policy-section-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #ff4d00;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.policy-section-text {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.policy-section-bullets {
+  padding-left: 20px;
+  margin-bottom: 16px;
+  list-style-type: disc;
+  text-align: left;
+}
+
+.policy-section-bullet-item {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.policy-subsection-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  text-align: left;
+}
