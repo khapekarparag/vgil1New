@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import PageTitle from '../components/common/PageTitle';
 import ContactSection from '../components/home/ContactSection';
+import AnalystMeetContent from '../components/investors/AnalystMeetContent';
 import { INVESTORS_DATA } from '../data/investorsData';
 
 function InvestorSingle() {
@@ -42,17 +43,22 @@ function InvestorSingle() {
             </div>
           </div>
 
-          {/* Optional Grid Section */}
-          {investorData.gridItems && investorData.gridItems.length > 0 && (
-            <div className="row justify-content-center mt-48">
-              {investorData.gridItems.map((item, index) => (
-                <div className="col-md-6 col-lg-3 mb-24 effectFade fadeUp" data-delay={0.1 + (index * 0.1)} key={index}>
-                  <a href={item.link} className="investor-card">
-                    <div className="text-body-1 fw-semibold text-dark">{item.title}</div>
-                  </a>
-                </div>
-              ))}
+          {slug === 'investor-analyst-meet' ? (
+            <div className="mt-48">
+              <AnalystMeetContent />
             </div>
+          ) : (
+            investorData.gridItems && investorData.gridItems.length > 0 && (
+              <div className="row justify-content-center mt-48">
+                {investorData.gridItems.map((item, index) => (
+                  <div className="col-md-6 col-lg-3 mb-24 effectFade fadeUp" data-delay={0.1 + (index * 0.1)} key={index}>
+                    <a href={item.link} className="investor-card">
+                      <div className="text-body-1 fw-semibold text-dark">{item.title}</div>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )
           )}
         </div>
       </div>

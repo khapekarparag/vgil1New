@@ -8,9 +8,9 @@ function AboutSection() {
       <div className="container">
         <div className="row align-items-stretch">
           <div className="col-12">
-            <div className="heading-section">
-              <div className="heading-sub fw-semibold effectFade fadeUp">About Us</div>
-              <div className="heading-title text-gradient-2 effectFade fadeRotateX">Innovations and <br /> Digital
+            <div className="heading-section" style={{ marginBottom: '15px' }}>
+              <div className="heading-sub fw-semibold effectFade fadeUp" style={{ display: 'inline-block', marginBottom: '15px' }}>About Us</div>
+              <div className="heading-title text-gradient-2 effectFade fadeRotateX" style={{ lineHeight: '1.2' }}>Innovations and <br className="d-none d-md-block" /> Digital
                 Solutions</div>
             </div>
           </div>

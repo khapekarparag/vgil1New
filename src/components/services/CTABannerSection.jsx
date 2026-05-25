@@ -3,7 +3,10 @@ import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
 import './CTABannerSection.css';
 
-const CTABannerSection = () => {
+const CTABannerSection = ({ title, subtitle }) => {
+  const displayTitle = title || "Ready to Transform Your GST Compliance?";
+  const displaySubtitle = subtitle || "Schedule a free consultation with our VGST experts and discover how smart technology can streamline your compliance journey.";
+
   return (
     <section className="cta-banner-wrapper">
       <div className="cta-banner-container">
@@ -61,7 +64,7 @@ const CTABannerSection = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Ready to Transform Your GST Compliance?
+              {displayTitle}
             </motion.h2>
             
             <motion.p 
@@ -71,7 +74,7 @@ const CTABannerSection = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Schedule a free consultation with our VGST experts and discover how smart technology can streamline your compliance journey.
+              {displaySubtitle}
             </motion.p>
 
             <div className="cta-buttons-wrapper">

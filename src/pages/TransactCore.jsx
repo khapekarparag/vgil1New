@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import abstractWorldMapImg from '../assets/Products-img/image.png';
 import transactCoreImg from '../assets/Products-img/TransactCore.png';
+import CTABannerSection from '../components/services/CTABannerSection';
 
 function TransactCore() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
@@ -29,8 +30,37 @@ function TransactCore() {
 
   return (
     <>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .hero-title-responsive {
+              font-size: 2.2rem !important;
+            }
+            .hero-desc-responsive {
+              font-size: 1rem !important;
+            }
+            .hero-section-responsive {
+              padding-top: 100px !important;
+              padding-bottom: 40px !important;
+              min-height: auto !important;
+            }
+            .section-heading-responsive {
+              font-size: 2.2rem !important;
+            }
+            .section-spacing-responsive {
+              padding: 60px 0 !important;
+            }
+            .overview-card {
+              padding: 30px 20px !important;
+            }
+            .capability-card {
+              padding: 25px 20px !important;
+            }
+          }
+        `}
+      </style>
       {/* Product Hero Section */}
-      <div className="section-hero v2" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '160px', paddingBottom: '80px', position: 'relative', overflow: 'hidden' }}>
+      <div className="section-hero v2 hero-section-responsive" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '160px', paddingBottom: '80px', position: 'relative', overflow: 'hidden' }}>
         {/* Background glow lines */}
         <div style={{ position: 'absolute', top: '10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,43,43,0.08) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0, filter: 'blur(50px)' }}></div>
         <div style={{ position: 'absolute', bottom: '10%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(255,43,43,0.05) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0, filter: 'blur(60px)' }}></div>
@@ -43,10 +73,10 @@ function TransactCore() {
                 <div className="feature-badge" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(255, 43, 43, 0.08)', padding: '6px 20px', borderRadius: '50px', marginBottom: '24px', border: '1px solid rgba(255, 43, 43, 0.2)' }}>
                   <span style={{ color: '#ff2b2b', fontSize: '0.85rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>TRANSACT CORE 360°</span>
                 </div>
-                <h1 style={{ fontSize: '3.8rem', fontWeight: '800', color: '#1a1a1a', lineHeight: '1.15', marginBottom: '20px', letterSpacing: '-1.5px' }}>
+                <h1 className="hero-title-responsive" style={{ fontSize: '3.8rem', fontWeight: '800', color: '#1a1a1a', lineHeight: '1.15', marginBottom: '20px', letterSpacing: '-1.5px' }}>
                   Next-Gen <span style={{ background: 'linear-gradient(to right, #ff2b2b, #ff5b5b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Transaction Switching</span>
                 </h1>
-                <p style={{ fontSize: '1.25rem', color: '#555', lineHeight: '1.6', marginBottom: '35px' }}>
+                <p className="hero-desc-responsive" style={{ fontSize: '1.25rem', color: '#555', lineHeight: '1.6', marginBottom: '35px' }}>
                   {product.shortDescription} Empower your enterprise with absolute switching intelligence, microsecond response times, and bulletproof security.
                 </p>
                 <div className="d-flex align-items-center gap-16">
@@ -79,7 +109,7 @@ function TransactCore() {
       </div>
 
       {/* 1. Product Overview Section */}
-      <section id="overview" className="section-spacing" style={{ backgroundColor: '#ffffff', padding: '100px 0', borderTop: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}>
+      <section id="overview" className="section-spacing section-spacing-responsive" style={{ backgroundColor: '#ffffff', padding: '100px 0', borderTop: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}>
         <style>
           {`
             @keyframes pulse-dot {
@@ -142,7 +172,7 @@ function TransactCore() {
         <div className="container">
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px' }}>
+            <h2 className="section-heading-responsive" style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px' }}>
               Product <span style={{ color: '#ff2b2b' }}>Overview</span>
             </h2>
             
@@ -269,7 +299,7 @@ function TransactCore() {
       </section>
 
       {/* 2. Key Capabilities Section */}
-      <section id="capabilities" className="section-spacing" style={{ backgroundColor: '#ffffff', padding: '120px 0', borderTop: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}>
+      <section id="capabilities" className="section-spacing section-spacing-responsive" style={{ backgroundColor: '#ffffff', padding: '120px 0', borderTop: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}>
         <style>
           {`
             .capabilities-grid {
@@ -389,7 +419,7 @@ function TransactCore() {
         <div className="container">
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
+            <h2 className="section-heading-responsive" style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
               Key <span style={{ color: '#ff2b2b' }}>Capabilities</span>
             </h2>
             <p style={{ fontSize: '1.15rem', color: '#666', marginBottom: '24px' }}>
@@ -488,7 +518,7 @@ function TransactCore() {
       </section>
 
       {/* 3. Designed For Section */}
-      <section id="designed-for" className="section-spacing" style={{ backgroundColor: '#ffffff', padding: '120px 0', borderTop: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}>
+      <section id="designed-for" className="section-spacing section-spacing-responsive" style={{ backgroundColor: '#ffffff', padding: '120px 0', borderTop: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}>
         <style>
           {`
             .designed-grid {
@@ -714,7 +744,7 @@ function TransactCore() {
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(to left, transparent, #ff2b2b)' }}></div>
             </div>
 
-            <h2 style={{ fontSize: '3.5rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
+            <h2 className="section-heading-responsive" style={{ fontSize: '3.5rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
               Designed <span style={{ color: '#ff2b2b' }}>For</span>
             </h2>
             <p style={{ fontSize: '1.15rem', color: '#666', marginBottom: '24px' }}>
@@ -915,7 +945,7 @@ function TransactCore() {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px', lineHeight: '1.2' }}>
               Core Features
             </h2>
             <div style={{ height: '3px', width: '60px', backgroundColor: '#ff2b2b', margin: '0 auto', borderRadius: '10px' }}></div>
@@ -1203,7 +1233,7 @@ function TransactCore() {
             </div>
 
             {/* Main heading */}
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px', lineHeight: '1.2' }}>
               Why <span style={{ background: 'linear-gradient(to right, #ff2b2b, #ff5b5b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Transact Core 360</span>?
             </h2>
 
@@ -1560,7 +1590,7 @@ function TransactCore() {
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(to left, transparent, #ff2b2b)' }}></div>
             </div>
 
-            <h2 style={{ fontSize: '3.5rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
+            <h2 style={{ fontSize: '3.5rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px', lineHeight: '1.2' }}>
               Outcome
             </h2>
             
@@ -1611,78 +1641,12 @@ function TransactCore() {
       </section>
 
       {/* 7. Contact Us Section */}
-      <section id="contact-section" className="section-spacing" style={{ backgroundColor: '#ffffff', padding: '100px 0', borderTop: '1px solid #eaeaea' }}>
-        <div className="container">
-          <div className="row justify-content-center text-center mb-60">
-            <div className="col-lg-8">
-              <div style={{ fontSize: '0.9rem', color: '#ff2b2b', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>Get In Touch</div>
-              <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.2px' }}>Start a Conversation</h2>
-              <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '16px' }}>Have questions about integrating Transact Core 360? Fill out the form or reach out to our team directly.</p>
-              <div style={{ height: '3px', width: '60px', backgroundColor: '#ff2b2b', margin: '20px auto 0', borderRadius: '10px' }}></div>
-            </div>
-          </div>
-
-          <div className="row g-5">
-            {/* Left Contact Info */}
-            <div className="col-lg-5">
-              <div style={{ display: 'grid', gap: '24px' }}>
-                {/* Marketing */}
-                <div style={{ border: '1.5px solid #000000', borderRadius: '24px', padding: '30px', backgroundColor: '#ffffff', boxShadow: '0 8px 24px rgba(0,0,0,0.02)' }}>
-                  <h4 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#ff0000', marginBottom: '16px' }}>Marketing</h4>
-                  <div style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: '1.5' }}>
-                    <a href="mailto:info@vgipl.in" style={{ color: '#4b5563', display: 'block', marginBottom: '4px' }}>info@vgipl.in</a>
-                    <a href="mailto:virtualdigital@vgipl.in" style={{ color: '#4b5563', display: 'block', marginBottom: '12px' }}>virtualdigital@vgipl.in</a>
-                    <a href="tel:+916262686865" style={{ color: '#4b5563', display: 'block', marginBottom: '4px' }}>+91 62626 86865</a>
-                    <a href="tel:+917798880931" style={{ color: '#4b5563', display: 'block' }}>+91 77988 80931</a>
-                  </div>
-                </div>
-
-                {/* Support/IR */}
-                <div style={{ border: '1.5px solid #000000', borderRadius: '24px', padding: '30px', backgroundColor: '#ffffff', boxShadow: '0 8px 24px rgba(0,0,0,0.02)' }}>
-                  <h4 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#ff0000', marginBottom: '16px' }}>Support & Sales</h4>
-                  <div style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: '1.5' }}>
-                    <p style={{ margin: '0 0 12px', fontWeight: '600', color: '#1a1a1a' }}>Anjali Padhye (Compliance & IR)</p>
-                    <a href="mailto:investors@vgipl.in" style={{ color: '#4b5563', display: 'block', marginBottom: '4px' }}>investors@vgipl.in</a>
-                    <a href="tel:+919823290368" style={{ color: '#4b5563', display: 'block' }}>+91 98232 90368</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Contact Form */}
-            <div className="col-lg-7">
-              <form className="form-contact m-0" onSubmit={handleSubmit} style={{ backgroundColor: '#fdfdfd', border: '1px solid #eaeaea', borderRadius: '24px', padding: '40px', boxShadow: '0 15px 35px rgba(0,0,0,0.02)' }}>
-                <h4 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1a1a1a', marginBottom: '24px' }}>Request Product Information</h4>
-                
-                <div className="mb-24" style={{ marginBottom: '20px' }}>
-                  <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Your Name*</label>
-                  <input type="text" name="name" required value={formData.name} onChange={handleInputChange} placeholder="Enter your full name" style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem' }} />
-                </div>
-
-                <div className="row" style={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
-                  <div style={{ flex: 1 }}>
-                    <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Phone Number*</label>
-                    <input type="tel" name="phone" required value={formData.phone} onChange={handleInputChange} placeholder="Enter your phone number" style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem' }} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Your Email*</label>
-                    <input type="email" name="email" required value={formData.email} onChange={handleInputChange} placeholder="Enter your email address" style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem' }} />
-                  </div>
-                </div>
-
-                <div className="mb-24" style={{ marginBottom: '24px' }}>
-                  <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Project Requirements</label>
-                  <textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us more about your payment routing or switching requirements..." style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem', height: '120px', resize: 'vertical' }}></textarea>
-                </div>
-
-                <button type="submit" className="tf-btn w-100" style={{ background: '#ff2d15', borderColor: '#ff2d15', color: '#fff', padding: '16px', fontSize: '1.05rem', fontWeight: '600', borderRadius: '12px', width: '100%', cursor: 'pointer' }}>
-                  Submit Inquiry
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div id="contact-section">
+        <CTABannerSection 
+          title={`Ready to Scale Transactions with ${product.title}?`}
+          subtitle={`Schedule a free consultation with our transaction switching experts and discover how ${product.title} can power high-volume payments.`}
+        />
+      </div>
     </>
   );
 }

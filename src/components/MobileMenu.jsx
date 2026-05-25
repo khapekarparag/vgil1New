@@ -1,152 +1,322 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MENU_DATA } from '../data/menuData';
+import { CAREERS_DATA } from '../data/careersData';
 
 function MobileMenu() {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const closeMenu = () => {
+    document.querySelector('.offcanvas-menu')?.classList.remove('show');
+    document.body.classList.remove('overflow-hidden');
+  };
+
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
+
   return (
-    <div className="offcanvas-menu">
+    <div className="offcanvas-menu new-mobile-menu">
+      <style>
+        {`
+          .new-mobile-menu {
+            background-color: #ffffff !important;
+            display: flex;
+            flex-direction: column;
+            width: 320px; /* standard mobile drawer width */
+            max-width: 100vw;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+          }
+          
+          .new-mobile-menu .offcanvas-content {
+            background: #ffffff !important;
+            padding: 0 !important;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .new-mb-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: #ffffff;
+          }
+
+          .new-mb-logo img {
+            height: 30px;
+          }
+          
+          .new-mb-close {
+            width: 36px;
+            height: 36px;
+            background: #f0f2f5;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #555;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+
+          .new-mb-divider {
+            height: 4px;
+            background: #6c757d;
+            width: 100%;
+          }
+
+          .new-mb-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+          }
+
+          .new-mb-item {
+            border-bottom: 1px solid #f0f0f0;
+          }
+
+          .new-mb-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            color: #1a202c;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+          }
+
+          .new-mb-arrow {
+            color: #888;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+          }
+          .new-mb-arrow.open {
+            transform: rotate(90deg);
+          }
+
+          .new-mb-submenu {
+            background: #ffffff;
+            padding: 0 15px 15px 15px;
+            display: none;
+          }
+          .new-mb-submenu.show {
+            display: block;
+          }
+
+          .new-mb-subcard {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+            text-decoration: none;
+            background: #fff;
+          }
+          .new-mb-subcard:last-child {
+            margin-bottom: 0;
+          }
+
+          .new-mb-sublogo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-right: 15px;
+          }
+
+          .new-mb-subtitle {
+            color: #333;
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+
+          .new-mb-footer {
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+          }
+
+          .new-mb-socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 15px;
+          }
+
+          .new-mb-social-btn {
+            width: 36px;
+            height: 36px;
+            background: #e62310;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+          }
+
+          .new-mb-email {
+            color: #555;
+            font-size: 0.85rem;
+            margin: 0;
+            font-weight: 500;
+          }
+        `}
+      </style>
+
       <div className="offcanvas-content">
-        <div className="container h-100">
-          <div className="offcanvas-content_wrapin">
-            <div className="canvas_head">
-              <Link to="/" className="logo-site">
-                <i className="icon icon-davies-logo"></i>
-              </Link>
-              <div className="btn-mobile-menu close-mb-menu text-caption link">
-                <i className="icon icon-close"></i>
-                CLOSE
-              </div>
-            </div>
-            <div className="canvas_center">
-              <ul className="nav-ul-mb" id="mobile-menu">
-                <li>
-                  <div className="item">
-                    <Link to="/" className="mb-menu-link text-display-1">
-                      <span className="text">Home</span>
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <Link to="/about" className="mb-menu-link text-display-1">
-                      <span className="text">About Us</span>
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <div className="has-sub-menu">
-                      <a href="#dropdown-menu-products" className="mb-menu-link text-display-1 collapsed" data-bs-toggle="collapse"
-                        aria-expanded="false" aria-controls="dropdown-menu-products">
-                        <span className="text">Products</span>
-                      </a>
-                      <div id="dropdown-menu-products" className="collapse" data-bs-parent="#mobile-menu">
-                        <ul className="sub-nav-menu">
-                          {MENU_DATA.products.map((item, idx) => (
-                            <li key={idx}><Link to={item.link} className="sub-nav-link text-white">{item.name}</Link></li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <div className="has-sub-menu">
-                      <a href="#dropdown-menu-services" className="mb-menu-link text-display-1 collapsed" data-bs-toggle="collapse"
-                        aria-expanded="false" aria-controls="dropdown-menu-services">
-                        <span className="text">Services</span>
-                      </a>
-                      <div id="dropdown-menu-services" className="collapse" data-bs-parent="#mobile-menu">
-                        <ul className="sub-nav-menu">
-                          {MENU_DATA.services.map((item, idx) => (
-                            <li key={idx}><Link to={item.link} className="sub-nav-link text-white">{item.name}</Link></li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <div className="has-sub-menu">
-                      <a href="#dropdown-menu-investors" className="mb-menu-link text-display-1 collapsed" data-bs-toggle="collapse"
-                        aria-expanded="false" aria-controls="dropdown-menu-investors">
-                        <span className="text">Investors Info</span>
-                      </a>
-                      <div id="dropdown-menu-investors" className="collapse" data-bs-parent="#mobile-menu">
-                        <ul className="sub-nav-menu">
-                          {MENU_DATA.investors.map((item, idx) => (
-                            <li key={idx}><Link to={item.link} className="sub-nav-link text-white">{item.name}</Link></li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <Link to="#" className="mb-menu-link text-display-1">
-                      <span className="text">IPO</span>
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <div className="has-sub-menu">
-                      <a href="#dropdown-menu-resource" className="mb-menu-link text-display-1 collapsed" data-bs-toggle="collapse"
-                        aria-expanded="false" aria-controls="dropdown-menu-resource">
-                        <span className="text">Resource</span>
-                      </a>
-                      <div id="dropdown-menu-resource" className="collapse" data-bs-parent="#mobile-menu">
-                        <ul className="sub-nav-menu">
-                          {MENU_DATA.resource.map((item, idx) => (
-                            <li key={idx}><Link to={item.link} className="sub-nav-link text-white">{item.name}</Link></li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <Link to="/careers" className="mb-menu-link text-display-1">
-                      <span className="text">Careers</span>
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <Link to="/contact" className="mb-menu-link text-display-1">
-                      <span className="text">Contact</span>
-                    </Link>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="canvas_foot">
-              <div className="left">
-                <a href="mailto:info@vgil.com" className="text-caption text-neutral-200">info@vgil.com</a>
-                <p className="text-caption text-neutral-200">
-                  CUP <span className="clock"></span>
-                </p>
-              </div>
-              <div className="right">
-                <a href="#" className="tf-link-icon text-caption text-neutral-200">
-                  <i className="icon icon-arrow-top-right"></i>
-                  TWITTER (X)
-                </a>
-                <a href="#" className="tf-link-icon text-caption text-neutral-200">
-                  <i className="icon icon-arrow-top-right"></i>
-                  INSTAGRAM
-                </a>
-                <a href="#" className="tf-link-icon text-caption text-neutral-200">
-                  <i className="icon icon-arrow-top-right"></i>
-                  LINKEDIN
-                </a>
-              </div>
-            </div>
+        <div className="new-mb-header">
+          <Link to="/" className="new-mb-logo" onClick={closeMenu}>
+            <i className="icon icon-davies-logo" style={{ fontSize: '2rem', color: '#1a1a1a' }}></i>
+          </Link>
+          <div className="new-mb-close" onClick={closeMenu}>
+            &#x2715;
           </div>
+        </div>
+        <div className="new-mb-divider"></div>
+
+        <ul className="new-mb-body">
+          <li className="new-mb-item">
+            <Link to="/about" className="new-mb-link" onClick={closeMenu}>
+              About Us
+              <span className="new-mb-arrow">&#10095;</span>
+            </Link>
+          </li>
+          
+          <li className="new-mb-item">
+            <div className="new-mb-link" onClick={() => toggleDropdown('products')}>
+              Products
+              <span className={`new-mb-arrow ${openDropdown === 'products' ? 'open' : ''}`}>&#10095;</span>
+            </div>
+            <div className={`new-mb-submenu ${openDropdown === 'products' ? 'show' : ''}`}>
+              {MENU_DATA.products.map((item, idx) => (
+                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                  {item.logo ? (
+                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                  ) : (
+                    <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                       <i className={`icon icon-${item.icon || 'box'}`} style={{ color: '#888' }}></i>
+                    </div>
+                  )}
+                  <span className="new-mb-subtitle">{item.name}</span>
+                </Link>
+              ))}
+            </div>
+          </li>
+
+          <li className="new-mb-item">
+            <div className="new-mb-link" onClick={() => toggleDropdown('services')}>
+              Services
+              <span className={`new-mb-arrow ${openDropdown === 'services' ? 'open' : ''}`}>&#10095;</span>
+            </div>
+            <div className={`new-mb-submenu ${openDropdown === 'services' ? 'show' : ''}`}>
+              {MENU_DATA.services.map((item, idx) => (
+                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                  {item.logo ? (
+                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                  ) : (
+                    <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                       <i className={`icon icon-${item.icon || 'cog'}`} style={{ color: '#888' }}></i>
+                    </div>
+                  )}
+                  <span className="new-mb-subtitle">{item.name}</span>
+                </Link>
+              ))}
+            </div>
+          </li>
+
+          <li className="new-mb-item">
+            <div className="new-mb-link" onClick={() => toggleDropdown('investors')}>
+              Investors Info
+              <span className={`new-mb-arrow ${openDropdown === 'investors' ? 'open' : ''}`}>&#10095;</span>
+            </div>
+            <div className={`new-mb-submenu ${openDropdown === 'investors' ? 'show' : ''}`}>
+              {MENU_DATA.investors.map((item, idx) => (
+                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                  {item.logo ? (
+                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                  ) : (
+                    <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                       <i className={`icon icon-${item.icon || 'chart-line'}`} style={{ color: '#888' }}></i>
+                    </div>
+                  )}
+                  <span className="new-mb-subtitle">{item.name}</span>
+                </Link>
+              ))}
+            </div>
+          </li>
+
+          <li className="new-mb-item">
+            <Link to="/ipo" className="new-mb-link" onClick={closeMenu}>
+              IPO
+              <span className="new-mb-arrow">&#10095;</span>
+            </Link>
+          </li>
+
+          <li className="new-mb-item">
+            <div className="new-mb-link" onClick={() => toggleDropdown('resource')}>
+              Resource
+              <span className={`new-mb-arrow ${openDropdown === 'resource' ? 'open' : ''}`}>&#10095;</span>
+            </div>
+            <div className={`new-mb-submenu ${openDropdown === 'resource' ? 'show' : ''}`}>
+              {MENU_DATA.resource.map((item, idx) => (
+                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                  {item.logo ? (
+                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                  ) : (
+                    <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                       <i className={`icon icon-${item.icon || 'file-alt'}`} style={{ color: '#888' }}></i>
+                    </div>
+                  )}
+                  <span className="new-mb-subtitle">{item.name}</span>
+                </Link>
+              ))}
+            </div>
+          </li>
+
+          <li className="new-mb-item">
+            <div className="new-mb-link" onClick={() => toggleDropdown('careers')}>
+              Careers
+              <span className={`new-mb-arrow ${openDropdown === 'careers' ? 'open' : ''}`}>&#10095;</span>
+            </div>
+            <div className={`new-mb-submenu ${openDropdown === 'careers' ? 'show' : ''}`}>
+              {CAREERS_DATA.map((item, idx) => (
+                <Link to={item.slug === 'lets-connect' ? '/contact' : `/careers/${item.slug}`} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                  <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                    <i className={`icon icon-${item.icon || 'users'}`} style={{ color: '#888' }}></i>
+                  </div>
+                  <span className="new-mb-subtitle">{item.title}</span>
+                </Link>
+              ))}
+            </div>
+          </li>
+
+          <li className="new-mb-item">
+            <Link to="/contact" className="new-mb-link" onClick={closeMenu}>
+              Contact Us
+              <span className="new-mb-arrow">&#10095;</span>
+            </Link>
+          </li>
+        </ul>
+
+        <div className="new-mb-footer">
+          <div className="new-mb-socials">
+            <a href="#" className="new-mb-social-btn"><i className="icon icon-linkedin-in"></i></a>
+            <a href="#" className="new-mb-social-btn"><i className="icon icon-instagram"></i></a>
+            <a href="mailto:presales@vgipl.in" className="new-mb-social-btn"><i className="icon icon-envelope" style={{transform: 'translateY(1px)'}}></i></a>
+            <a href="#" className="new-mb-social-btn"><i className="icon icon-facebook-f"></i></a>
+            <a href="#" className="new-mb-social-btn"><i className="icon icon-youtube"></i></a>
+          </div>
+          <p className="new-mb-email">Email: presales@vgipl.in</p>
         </div>
       </div>
     </div>

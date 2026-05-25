@@ -18,13 +18,13 @@
 .navContainer {
   pointer-events: auto; /* Re-enable pointer events for the pill */
   width: 100%;
-  max-width: 1350px;
+  max-width: 1250px;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 100px;
-  padding: 8px 12px 8px 24px;
+  padding: 6px 12px 6px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +33,6 @@
 }
 
 .headerScrolled .navContainer {
-  max-width: 1200px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +43,7 @@
 }
 
 .logoImg {
-  height: 40px;
+  height: 32px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -63,7 +62,7 @@
 
 .menuList {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -72,7 +71,7 @@
 
 .menuItem {
   position: relative;
-  padding: 10px 0;
+  padding: 6px 0;
 }
 
 .menuLink {
@@ -80,7 +79,7 @@
   color: #4b5563;
   font-size: 14.5px;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 100px;
   transition: all 0.2s ease;
   display: flex;
@@ -287,17 +286,17 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .socialList {
   display: flex;
-  gap: 8px;
+  gap: 4px;
 }
 
 .socialIcon {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   background: #e10600;
   color: #ffffff;
   border-radius: 50%;
@@ -319,7 +318,7 @@
 .contactBtn {
   background: #e10600;
   color: #ffffff;
-  padding: 8px 10px 8px 20px;
+  padding: 6px 8px 6px 18px;
   border-radius: 100px;
   text-decoration: none;
   font-weight: 700;
@@ -338,8 +337,8 @@
 }
 
 .arrowCircle {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background: #000000;
   color: #ffffff;
   border-radius: 50%;

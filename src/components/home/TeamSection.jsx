@@ -58,7 +58,7 @@ function TeamSection() {
 
           {/* Right Box - Sachin Pande */}
           <div style={{ flex: '1 1 300px', maxWidth: '420px', position: 'relative', zIndex: 1, display: 'flex' }}>
-            <div className="team-item h-100 effectFade fadeUp" style={{ background: '#f9f7f3ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', display: 'flex', flexDirection: 'column', width: '100%' }}>
+            <div className="team-item h-100 effectFade fadeUp" style={{ background: '#f9f9f9ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', display: 'flex', flexDirection: 'column', width: '100%' }}>
               
               <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={team2Image} alt="Sachin Pande" style={{ width: '100%', height: 'auto', display: 'block' }} />

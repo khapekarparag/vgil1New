@@ -8,6 +8,7 @@ import { PRODUCTS_DATA } from '../data/productsData';
 import { SERVICES_DATA } from '../data/servicesData';
 import { INVESTORS_DATA } from '../data/investorsData';
 import { RESOURCE_DATA } from '../data/resourceData';
+import { CAREERS_DATA } from '../data/careersData';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -72,6 +73,17 @@ function Navbar() {
           logo: r.logo,
           link: `/resource/${r.slug}`,
           icon: r.icon || 'file-alt',
+          imageFit: 'cover'
+        }));
+      case 'careers':
+        return CAREERS_DATA.map(c => ({
+          id: c.slug,
+          title: c.title,
+          description: c.description,
+          image: c.heroImage,
+          logo: null,
+          link: c.slug === 'lets-connect' ? '/contact' : `/careers/${c.slug}`,
+          icon: c.icon || 'users',
           imageFit: 'cover'
         }));
       default:
@@ -221,8 +233,18 @@ function Navbar() {
               </span>
               {activeMega === 'resource' && renderMegaMenu('resource')}
             </li>
-            <li className={styles.menuItem}>
-              <Link to="/careers" className={styles.menuLink}>Careers</Link>
+            <li 
+              className={styles.menuItem}
+              onMouseEnter={() => handleMenuHover('careers')}
+              onMouseLeave={() => setActiveMega(null)}
+            >
+              <span className={styles.menuLink}>
+                Careers
+                <svg className={styles.dropdownArrow} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              {activeMega === 'careers' && renderMegaMenu('careers')}
             </li>
           </ul>
         </div>
@@ -251,7 +273,15 @@ function Navbar() {
           </Link>
 
           {/* Mobile Toggle */}
-          <div className={`${styles.mobileToggle} open-mb-menu`}>
+          <div 
+            className={`${styles.mobileToggle} open-mb-menu`} 
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              const menu = document.querySelector('.offcanvas-menu');
+              if (menu) menu.classList.add('show');
+              document.body.classList.add('overflow-hidden');
+            }}
+          >
             <i className="icon icon-grip-lines-solid"></i>
           </div>
         </div>

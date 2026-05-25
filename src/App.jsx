@@ -22,6 +22,9 @@ import TransactCore from './pages/TransactCore';
 import AuditFlux from './pages/AuditFlux';
 import FinFlow from './pages/FinFlow';
 import Careers from './pages/Careers';
+import WhyJoin from './pages/WhyJoin';
+import MeetOurPeople from './pages/MeetOurPeople';
+import CareerPath from './pages/CareerPath';
 import JobSingle from './pages/JobSingle';
 import IPO from './pages/IPO';
 import InvestorSingle from './pages/InvestorSingle';
@@ -72,6 +75,9 @@ function App() {
           <Route path="/blog/:blogSlug" element={<BlogSingle />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/why-join" element={<WhyJoin />} />
+          <Route path="/careers/meet-our-people" element={<MeetOurPeople />} />
+          <Route path="/careers/career-path" element={<CareerPath />} />
           <Route path="/careers/:slug" element={<JobSingle />} />
           <Route path="/ipo" element={<IPO />} />
           <Route path="/investors/:slug" element={<InvestorSingle />} />

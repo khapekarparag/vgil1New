@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import abstractWorldMapImg from '../assets/Products-img/image.png';
 import auditFluxImg from '../assets/Products-img/AuditFlux.png';
+import CTABannerSection from '../components/services/CTABannerSection';
 
 function AuditFlux() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
@@ -137,7 +138,7 @@ function AuditFlux() {
         <div className="container">
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px', lineHeight: '1.2' }}>
               Product <span style={{ color: '#ff2b2b' }}>Overview</span>
             </h2>
             
@@ -385,7 +386,7 @@ function AuditFlux() {
         <div className="container">
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px', lineHeight: '1.2' }}>
               Key <span style={{ color: '#ff2b2b' }}>Capabilities</span>
             </h2>
             <p style={{ fontSize: '1.15rem', color: '#666', marginBottom: '24px' }}>
@@ -702,7 +703,7 @@ function AuditFlux() {
             </div>
 
             {/* Main title */}
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px', lineHeight: '1.2' }}>
               Designed <span style={{ color: '#ff2b2b' }}>For</span>
             </h2>
             <p style={{ fontSize: '1.15rem', color: '#666', marginBottom: '24px' }}>
@@ -896,7 +897,7 @@ function AuditFlux() {
         <div className="container">
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '70px' }}>
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px', lineHeight: '1.2' }}>
               Core <span style={{ color: '#ff2b2b' }}>Components</span>
             </h2>
             
@@ -1184,7 +1185,7 @@ function AuditFlux() {
             </div>
 
             {/* Main heading */}
-            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '20px', lineHeight: '1.2' }}>
               Why Choose <span style={{ background: 'linear-gradient(to right, #ff2b2b, #ff5b5b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Audit Flux</span>?
             </h2>
 
@@ -1538,7 +1539,7 @@ function AuditFlux() {
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(to left, transparent, #ff2b2b)' }}></div>
             </div>
 
-            <h2 style={{ fontSize: '3.5rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px' }}>
+            <h2 style={{ fontSize: '3.5rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.5px', marginBottom: '15px', lineHeight: '1.2' }}>
               Outcome
             </h2>
             
@@ -1601,78 +1602,12 @@ function AuditFlux() {
       </section>
 
       {/* 7. Contact Us Section */}
-      <section id="contact-section" className="section-spacing" style={{ backgroundColor: '#ffffff', padding: '100px 0', borderTop: '1px solid #eaeaea' }}>
-        <div className="container">
-          <div className="row justify-content-center text-center mb-60">
-            <div className="col-lg-8">
-              <div style={{ fontSize: '0.9rem', color: '#ff2b2b', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>Get In Touch</div>
-              <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#1a1a1a', letterSpacing: '-1.2px' }}>Start a Conversation</h2>
-              <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '16px' }}>Have questions about implementing Audit Flux? Fill out the form or reach out to our GRC team directly.</p>
-              <div style={{ height: '3px', width: '60px', backgroundColor: '#ff2b2b', margin: '20px auto 0', borderRadius: '10px' }}></div>
-            </div>
-          </div>
-
-          <div className="row g-5">
-            {/* Left Contact Info */}
-            <div className="col-lg-5">
-              <div style={{ display: 'grid', gap: '24px' }}>
-                {/* Marketing */}
-                <div style={{ border: '1.5px solid #000000', borderRadius: '24px', padding: '30px', backgroundColor: '#ffffff', boxShadow: '0 8px 24px rgba(0,0,0,0.02)' }}>
-                  <h4 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#ff0000', marginBottom: '16px' }}>Marketing</h4>
-                  <div style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: '1.5' }}>
-                    <a href="mailto:info@vgipl.in" style={{ color: '#4b5563', display: 'block', marginBottom: '4px' }}>info@vgipl.in</a>
-                    <a href="mailto:virtualdigital@vgipl.in" style={{ color: '#4b5563', display: 'block', marginBottom: '12px' }}>virtualdigital@vgipl.in</a>
-                    <a href="tel:+916262686865" style={{ color: '#4b5563', display: 'block', marginBottom: '4px' }}>+91 62626 86865</a>
-                    <a href="tel:+917798880931" style={{ color: '#4b5563', display: 'block' }}>+91 77988 80931</a>
-                  </div>
-                </div>
-
-                {/* Support/IR */}
-                <div style={{ border: '1.5px solid #000000', borderRadius: '24px', padding: '30px', backgroundColor: '#ffffff', boxShadow: '0 8px 24px rgba(0,0,0,0.02)' }}>
-                  <h4 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#ff0000', marginBottom: '16px' }}>Support & Sales</h4>
-                  <div style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: '1.5' }}>
-                    <p style={{ margin: '0 0 12px', fontWeight: '600', color: '#1a1a1a' }}>Anjali Padhye (Compliance & IR)</p>
-                    <a href="mailto:investors@vgipl.in" style={{ color: '#4b5563', display: 'block', marginBottom: '4px' }}>investors@vgipl.in</a>
-                    <a href="tel:+919823290368" style={{ color: '#4b5563', display: 'block' }}>+91 98232 90368</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Contact Form */}
-            <div className="col-lg-7">
-              <form className="form-contact m-0" onSubmit={handleSubmit} style={{ backgroundColor: '#fdfdfd', border: '1px solid #eaeaea', borderRadius: '24px', padding: '40px', boxShadow: '0 15px 35px rgba(0,0,0,0.02)' }}>
-                <h4 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1a1a1a', marginBottom: '24px' }}>Request Product Information</h4>
-                
-                <div className="mb-24" style={{ marginBottom: '20px' }}>
-                  <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Your Name*</label>
-                  <input type="text" name="name" required value={formData.name} onChange={handleInputChange} placeholder="Enter your full name" style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem' }} />
-                </div>
-
-                <div className="row" style={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
-                  <div style={{ flex: 1 }}>
-                    <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Phone Number*</label>
-                    <input type="tel" name="phone" required value={formData.phone} onChange={handleInputChange} placeholder="Enter your phone number" style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem' }} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Your Email*</label>
-                    <input type="email" name="email" required value={formData.email} onChange={handleInputChange} placeholder="Enter your email address" style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem' }} />
-                  </div>
-                </div>
-
-                <div className="mb-24" style={{ marginBottom: '24px' }}>
-                  <label style={{ fontSize: '0.95rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '8px', display: 'block' }}>Project Requirements</label>
-                  <textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us more about your compliance and auditing automation requirements..." style={{ width: '100%', padding: '14px 18px', border: '1px solid #eaeaea', borderRadius: '12px', outline: 'none', fontSize: '1rem', height: '120px', resize: 'vertical' }}></textarea>
-                </div>
-
-                <button type="submit" className="tf-btn w-100" style={{ background: '#ff2d15', borderColor: '#ff2d15', color: '#fff', padding: '16px', fontSize: '1.05rem', fontWeight: '600', borderRadius: '12px', width: '100%', cursor: 'pointer' }}>
-                  Submit Inquiry
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div id="contact-section">
+        <CTABannerSection 
+          title={`Ready to Automate Compliance with ${product.title}?`}
+          subtitle={`Schedule a free consultation with our GRC auditing experts and discover how ${product.title} can streamline compliance tracking.`}
+        />
+      </div>
     </>
   );
 }

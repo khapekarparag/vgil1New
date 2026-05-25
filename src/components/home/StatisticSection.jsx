@@ -32,25 +32,25 @@ function StatisticSection() {
                   </div>
                 </div>
                 <div className="swiper-wrapper effectFade fadeUp">
-                  <div className="swiper-slide">
+                  <div className="swiper-slide" style={{ paddingRight: '20px' }}>
                     <div className="title fw-semibold text-body-1">OUR GROWTH</div>
                     <div className="statistic-number">
                       <span className="number text-dark fw-semibold">230</span>
-                      <span className="prefix text-brand">K</span>
+                      <span className="prefix text-brand" style={{ display: 'inline-block', paddingRight: '20px' }}>K</span>
                     </div>
                   </div>
-                  <div className="swiper-slide">
+                  <div className="swiper-slide" style={{ paddingRight: '20px' }}>
                     <div className="title fw-semibold text-body-1">UPTIME FOR KEY FLOWS</div>
                     <div className="statistic-number">
                       <span className="number text-dark fw-semibold">95</span>
-                      <span className="prefix text-brand">%</span>
+                      <span className="prefix text-brand" style={{ display: 'inline-block', paddingRight: '20px' }}>%</span>
                     </div>
                   </div>
-                  <div className="swiper-slide">
+                  <div className="swiper-slide" style={{ paddingRight: '20px' }}>
                     <div className="title fw-semibold text-body-1">ON TIME DELIVERY</div>
                     <div className="statistic-number">
                       <span className="number text-dark fw-semibold">99</span>
-                      <span className="prefix text-brand">%</span>
+                      <span className="prefix text-brand" style={{ display: 'inline-block', paddingRight: '20px' }}>%</span>
                     </div>
                   </div>
                 </div>

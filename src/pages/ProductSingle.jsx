@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import NotFound from './NotFound';
+import CTABannerSection from '../components/services/CTABannerSection';
 
 import overviewImg from '../assets/Products-img/banker-img/overview.png';
 import abstractWorldMapImg from '../assets/Products-img/image.png';
@@ -308,9 +309,34 @@ function ProductSingle() {
 
   return (
     <>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .hero-title-responsive {
+              font-size: 2.2rem !important;
+            }
+            .hero-desc-responsive {
+              font-size: 1rem !important;
+            }
+            .hero-section-responsive {
+              padding-top: 100px !important;
+              padding-bottom: 40px !important;
+              min-height: auto !important;
+            }
+            .metrics-section {
+              padding: 60px 0 !important;
+            }
+            .fintech-stat-value {
+              font-size: 2rem !important;
+            }
+            .fintech-inner-panel {
+              padding: 25px 20px !important;
+            }
+          }
+        `}
+      </style>
       {/* Product Hero Section */}
-      {/* Product Hero Section */}
-      <div className="section-hero v2" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '160px', paddingBottom: '60px', position: 'relative' }}>
+      <div className="section-hero v2 hero-section-responsive" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '160px', paddingBottom: '60px', position: 'relative' }}>
         <div className="hero-image"></div>
         <div className="container d-flex justify-content-end w-100">
           <div className="content-wrap text-center" style={{ maxWidth: '700px', marginTop: '100px' }}>
@@ -319,7 +345,7 @@ function ProductSingle() {
                 <img src={product.logo} alt={`${product.title} Logo`} style={{ maxWidth: '180px', height: 'auto', objectFit: 'contain' }} />
               </div>
             )}
-            <div className="title effectFade fadeRotateX" style={{ fontSize: '3.5rem', lineHeight: '1.15', marginBottom: '20px' }}>
+            <div className="title effectFade fadeRotateX hero-title-responsive" style={{ fontSize: '3.5rem', lineHeight: '1.15', marginBottom: '20px' }}>
               {product.title.includes(' Solution') ? (
                 <>
                   <span className="title1 fw-bold" style={{ color: '#1a1a1a' }}>{product.title.replace(' Solution', '')}</span>
@@ -334,7 +360,7 @@ function ProductSingle() {
                 <span className="fw-semibold" style={{ fontSize: '0.55em', color: '#444' }}>{product.subtitle}</span>
               </div>
             </div>
-            <p className="text text-body-3 effectFade fadeUp mt-4 mx-auto" style={{ fontSize: '1.15rem', color: '#666', lineHeight: '1.6' }}>
+            <p className="text text-body-3 effectFade fadeUp mt-4 mx-auto hero-desc-responsive" style={{ fontSize: '1.15rem', color: '#666', lineHeight: '1.6' }}>
               {product.shortDescription}
             </p>
             <div className="button-wrap effectFade fadeUp mt-40 d-flex justify-content-center">
@@ -767,7 +793,7 @@ function ProductSingle() {
             }
             @keyframes fadeIn {
               from { opacity: 0; transform: scale(1.05); }
-              to { opacity: 0.5; transform: scale(1); }
+              to { opacity: 1; transform: scale(1); }
             }
           `}
           </style>
@@ -957,18 +983,11 @@ function ProductSingle() {
       </div>
 
       {/* Final Call To Action */}
-
-      <div className="cta-section" style={{ backgroundColor: '#f8f9fa', padding: '100px 0', textAlign: 'center', borderTop: '1px solid #eaeaea' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#1a1a1a', marginBottom: '20px' }}>Ready to Transform Your Business?</h2>
-          <p style={{ color: '#666', fontSize: '1.15rem', maxWidth: '650px', margin: '0 auto 40px', lineHeight: '1.6' }}>
-            Get in touch with our experts to learn more about our comprehensive solutions and how we can help you achieve your goals.
-          </p>
-          <Link to="/contact" className="tf-btn md radius-100" style={{ background: '#ff2d15', borderColor: '#ff2d15', color: '#fff', padding: '16px 40px', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', gap: '8px', boxShadow: '0 10px 20px rgba(255, 45, 21, 0.2)' }}>
-            <span>Let's Connect</span>
-            <i className="icon icon-long-arrow-alt-up-solid" style={{ transform: 'rotate(45deg)' }}></i>
-          </Link>
-        </div>
+      <div id="contact-section">
+        <CTABannerSection 
+          title={`Ready to Transform Your Business with ${product.title}?`}
+          subtitle={`Get in touch with our experts to learn more about our comprehensive solutions and how ${product.title} can help you achieve your goals.`}
+        />
       </div>
 
       {/* Brochure Modal */}

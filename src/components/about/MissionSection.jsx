@@ -7,9 +7,9 @@ function MissionSection() {
       <div className="container">
         <div className="row align-items-stretch">
           <div className="col-12">
-            <div className="heading-section">
-              <div className="heading-sub fw-semibold effectFade fadeUp">About Us</div>
-              <div className="heading-title text-gradient-2 effectFade fadeRotateX">Human-Centered AI, <br /> Built for Production</div>
+            <div className="heading-section" style={{ marginBottom: '15px' }}>
+              <div className="heading-sub fw-semibold effectFade fadeUp" style={{ display: 'inline-block', marginBottom: '15px' }}>About Us</div>
+              <div className="heading-title text-gradient-2 effectFade fadeRotateX" style={{ lineHeight: '1.2' }}>Human-Centered AI, <br className="d-none d-md-block" /> Built for Production</div>
             </div>
           </div>
           <div className="col-lg-6 lg-mb-24 d-flex">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import NotFound from './NotFound';
+import CTABannerSection from '../components/services/CTABannerSection';
 
 import overviewImg from '../assets/Products-img/banker-img/overview.png';
 import abstractWorldMapImg from '../assets/Products-img/image.png';
@@ -3294,18 +3295,11 @@ function ConversationalAI() {
       </div>
 
       {/* Final Call To Action */}
-
-      <div className="cta-section" style={{ backgroundColor: '#f8f9fa', padding: '100px 0', textAlign: 'center', borderTop: '1px solid #eaeaea' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#1a1a1a', marginBottom: '20px' }}>Ready to Transform Your Business?</h2>
-          <p style={{ color: '#666', fontSize: '1.15rem', maxWidth: '650px', margin: '0 auto 40px', lineHeight: '1.6' }}>
-            Get in touch with our experts to learn more about our comprehensive solutions and how we can help you achieve your goals.
-          </p>
-          <Link to="/contact" className="tf-btn md radius-100" style={{ background: '#ff2d15', borderColor: '#ff2d15', color: '#fff', padding: '16px 40px', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', gap: '8px', boxShadow: '0 10px 20px rgba(255, 45, 21, 0.2)' }}>
-            <span>Let's Connect</span>
-            <i className="icon icon-long-arrow-alt-up-solid" style={{ transform: 'rotate(45deg)' }}></i>
-          </Link>
-        </div>
+      <div id="contact-section">
+        <CTABannerSection 
+          title={`Ready to Transform Customer Experience with ${product.title}?`}
+          subtitle={`Schedule a free consultation with our Conversational AI experts and discover how smart assistants can streamline customer interactions.`}
+        />
       </div>
 
       {/* Brochure Modal */}
