@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import vgilLogo from '../assets/home/vgil-logo.png';
+import ContactSection from '../components/home/ContactSection';
 
 const ipoDocuments = [
   {
@@ -141,51 +142,7 @@ function IPO() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="tf-section contact-cta" style={{ padding: '100px 0', background: '#f8fafc' }}>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-10">
-              <div className="cta-box" style={{
-                background: '#ff2d15',
-                borderRadius: '40px',
-                padding: '60px',
-                textAlign: 'center',
-                color: '#fff',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div style={{ position: 'relative', zIndex: 2 }}>
-                  <h2 style={{ fontSize: '42px', fontWeight: '800', marginBottom: '24px' }}>Questions about the IPO?</h2>
-                  <p style={{ fontSize: '18px', opacity: '0.9', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
-                    Our investor relations team is here to help. Reach out to us for any clarifications or additional information.
-                  </p>
-                  <Link 
-                    to="/contact" 
-                    className="btn-main" 
-                    style={{ 
-                      backgroundColor: '#fff', 
-                      color: '#ff2d15', 
-                      padding: '16px 40px', 
-                      borderRadius: '100px', 
-                      fontWeight: '800', 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
-                      gap: '10px',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    Contact Us <i className="icon icon-long-arrow-alt-right-solid"></i>
-                  </Link>
-                </div>
-                {/* Decorative background shapes */}
-                <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '200px', height: '200px', background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}></div>
-                <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '250px', height: '250px', background: 'rgba(255,255,255,0.05)', borderRadius: '50%' }}></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </div>
   );
 }

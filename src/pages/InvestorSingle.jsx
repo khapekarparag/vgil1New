@@ -799,6 +799,9 @@ function InvestorSingle() {
                 </div>
               </div>
             </div>
+          ) : slug === 'investor-analyst-meet' ? (
+            /* ANALYST MEET CUSTOM ROW/CARD VIEW */
+            <AnalystMeetContent />
           ) : isDocDashboard ? (
             /* GROUP COMPANIES & FINANCIAL REPORTS CUSTOM VIEW */
             <div className="group-companies-container">
@@ -828,9 +831,9 @@ function InvestorSingle() {
                           <a
                             href={doc.link}
                             className="fy-doc-download-btn"
-                            aria-label={`Download ${doc.year} report for ${company.name}`}
+                            aria-label={`Open ${doc.year} report for ${company.name}`}
                           >
-                            <Download className="fy-download-icon" />
+                            <FileText className="fy-download-icon" />
                           </a>
                         </div>
                       ))}
@@ -907,6 +910,7 @@ function InvestorSingle() {
           )}
         </div>
       </section>
+      <ContactSection />
     </div>
   );
 }

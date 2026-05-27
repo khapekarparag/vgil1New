@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import ContactSection from '../components/home/ContactSection';
 import { 
   Users, 
   FileText, 
@@ -519,6 +520,7 @@ function BoardManagement() {
           </AnimatePresence>
         </div>
       </section>
+      <ContactSection />
     </div>
   );
 }
