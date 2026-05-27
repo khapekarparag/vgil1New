@@ -5,6 +5,9 @@ import ContactSection from '../components/home/ContactSection';
 import AnalystMeetContent from '../components/investors/AnalystMeetContent';
 import { INVESTORS_DATA } from '../data/investorsData';
 import { motion, AnimatePresence } from 'framer-motion';
+import InvestorContacts from '../components/investors/InvestorContacts';
+import MaterialCreditors from '../components/investors/MaterialCreditors';
+import PreferentialWarrants from '../components/investors/PreferentialWarrants';
 import {
   Building2,
   TrendingUp,
@@ -587,6 +590,18 @@ function InvestorSingle() {
   const isDocDashboard = isGroupCompanies || isFinancialReports;
   const dashboardData = isGroupCompanies ? GROUP_COMPANIES_DATA : FINANCIAL_REPORTS_DATA;
 
+  if (slug === 'investor-contacts-grievances') {
+    return <InvestorContacts />;
+  }
+
+  if (slug === 'material-creditors') {
+    return <MaterialCreditors />;
+  }
+
+  if (slug === 'preferential-allotment-warrants') {
+    return <PreferentialWarrants />;
+  }
+
   return (
     <div className="board-mgmt-wrapper">
       {/* Hero Section */}
@@ -599,8 +614,8 @@ function InvestorSingle() {
             <div className="col-12 text-left">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb bg-transparent p-0 m-0" style={{ fontSize: '13px' }}>
-                  <li className="breadcrumb-item"><Link to="/" className="text-secondary">Home</Link></li>
-                  <li className="breadcrumb-item"><span className="text-secondary">Investors</span></li>
+                  <li className="breadcrumb-item"><Link to="/" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Home</Link></li>
+                  <li className="breadcrumb-item"><Link to="/investors/board-and-management" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Investors</Link></li>
                   <li className="breadcrumb-item active" aria-current="page">
                     <span className="text-primary font-weight-bold">
                       {isCorporateGovernance ? "Policies" : investorData.title}
