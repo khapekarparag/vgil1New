@@ -4,58 +4,86 @@ import { Calendar, Users, BarChart3, FileText, Info, ArrowRight } from 'lucide-r
 import ContactSection from '../home/ContactSection';
 import '../../pages/BoardManagement.css';
 
-const warrantGroups = [
+const contractGroups = [
   {
     id: 'group-1',
-    title: 'Certifications & Valuation',
+    title: 'Issuer & Registry Agreements',
     theme: 'orange',
     iconName: 'calendar',
     files: [
       {
-        title: 'Compliance Certificate Under Reg 163(2)',
+        title: 'Issuer Agreement',
         type: 'PDF',
-        url: '/assets/.pdf/Preferential Allotment of Warrants/Compliance Certificate Under Reg 163(2).pdf'
+        url: '/assets/.pdf/Material Contracts/Material Contracts/Issuer Agreement.pdf'
       },
       {
-        title: 'Valuation Report',
+        title: 'RTA Agreement - Maashitla',
         type: 'PDF',
-        url: '/assets/.pdf/Preferential Allotment of Warrants/Valuation Report.pdf'
+        url: '/assets/.pdf/Material Contracts/Material Contracts/RTA AGREEMENT - Maashitla - signed.pdf'
       }
     ]
   },
   {
     id: 'group-2',
-    title: 'EGM Notices & Proceedings',
+    title: 'Banking & Escrow Agreements',
     theme: 'blue',
     iconName: 'users',
     files: [
       {
-        title: 'Notice of Extra Ordinary General Meeting - 17 March 2026',
+        title: 'Banker to the Issuer Agreement',
         type: 'PDF',
-        url: '/assets/.pdf/Preferential Allotment of Warrants/Notice of Extra Ordinary General Meeting - 17 March 2026.pdf'
+        url: '/assets/.pdf/Material Contracts/Material Contracts/Banker to the issuer Agreement.pdf'
       },
       {
-        title: 'Scrutinizer Report - EGM 17 March 2026',
+        title: 'Amendment in Banker Agreement',
         type: 'PDF',
-        url: '/assets/.pdf/Preferential Allotment of Warrants/Scrutinizer Report - EGM 17 March 2026.pdf'
+        url: '/assets/.pdf/Material Contracts/Material Contracts/Amendment in the Banker to the issuer agreement.pdf'
       }
     ]
   },
   {
     id: 'group-3',
-    title: 'Approvals & Resolutions',
+    title: 'Market Making & Underwriting',
     theme: 'green',
     iconName: 'chart',
     files: [
       {
-        title: 'In-principle Approval',
+        title: 'Market Maker Agreement',
         type: 'PDF',
-        url: '/assets/.pdf/Preferential Allotment of Warrants/In-principle Approval.pdf'
+        url: '/assets/.pdf/Material Contracts/Material Contracts/Market Maker Agreement.pdf'
       },
       {
-        title: 'CTC BR Allotment of Warrants',
+        title: 'Underwriting Agreement',
         type: 'PDF',
-        url: '/assets/.pdf/Preferential Allotment of Warrants/CTC BR Allotment of Warrants.pdf'
+        url: '/assets/.pdf/Material Contracts/Material Contracts/Underwriting Agreement.pdf'
+      },
+      {
+        title: 'Syndicate Agreement',
+        type: 'PDF',
+        url: '/assets/.pdf/Material Contracts/Material Contracts/Syndicate Agreement.pdf'
+      }
+    ]
+  },
+  {
+    id: 'group-4',
+    title: 'Monitoring & Depository Agreements',
+    theme: 'purple',
+    iconName: 'users',
+    files: [
+      {
+        title: 'Monitoring Agency Agreement',
+        type: 'PDF',
+        url: '/assets/.pdf/Material Contracts/Material Contracts/Monitoring Agency Agreement.pdf'
+      },
+      {
+        title: 'CDSL Agreement',
+        type: 'PDF',
+        url: '/assets/.pdf/Material Contracts/Material Contracts/CDSL Agreement.pdf'
+      },
+      {
+        title: 'NSDL Agreement (30.04.2024)',
+        type: 'PDF',
+        url: '/assets/.pdf/Material Contracts/Material Contracts/NSDL Agreement_30.04.2024.pdf'
       }
     ]
   }
@@ -73,7 +101,7 @@ const getIcon = (iconName) => {
   }
 };
 
-function PreferentialWarrants() {
+function MaterialContracts() {
   return (
     <div className="board-mgmt-wrapper">
       {/* Hero Section */}
@@ -93,7 +121,7 @@ function PreferentialWarrants() {
                     <Link to="/investors/board-and-management" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Investors</Link>
                   </li>
                   <li className="breadcrumb-item active" aria-current="page">
-                    <span className="text-primary font-weight-bold">Preferential Allotment of Warrants</span>
+                    <span className="text-primary font-weight-bold">Material Contracts</span>
                   </li>
                 </ol>
               </nav>
@@ -108,12 +136,12 @@ function PreferentialWarrants() {
                 <span className="tag-text">Investor Relations</span>
               </div>
               <h1 className="hero-title">
-                <span>Preferential</span>{' '}
-                <span className="highlight">Allotment of Warrants</span>
+                <span>Material</span>{' '}
+                <span className="highlight">Contracts</span>
                 <div className="hero-title-underline"></div>
               </h1>
               <p className="hero-desc">
-                Information on the preferential allotment of warrants and related disclosures.
+                Key material contracts that govern our strategic partnerships and business operations.
               </p>
             </div>
           </div>
@@ -127,7 +155,7 @@ function PreferentialWarrants() {
           
           <div className="group-companies-container" style={{ marginTop: '0' }}>
             <div className="company-rows-list">
-              {warrantGroups.map((group, idx) => (
+              {contractGroups.map((group, idx) => (
                 <div
                   key={group.id}
                   className="company-row-card effect-fade-up"
@@ -183,7 +211,7 @@ function PreferentialWarrants() {
             {/* Bottom Support Banner */}
             <div
               className="investor-help-banner effect-fade-up"
-              style={{ animationDelay: `${warrantGroups.length * 0.08}s` }}
+              style={{ animationDelay: `${contractGroups.length * 0.08}s` }}
             >
               <div className="help-banner-left">
                 <div className="help-banner-icon-wrap">
@@ -215,4 +243,4 @@ function PreferentialWarrants() {
   );
 }
 
-export default PreferentialWarrants;
+export default MaterialContracts;

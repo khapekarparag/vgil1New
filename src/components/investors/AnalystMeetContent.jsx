@@ -259,7 +259,7 @@ const AnalystMeetContent = () => {
               style={{ gap: '24px' }}
             >
               {/* Left Brand Badge & Name */}
-              <div className="company-info-col" style={{ width: '280px' }}>
+              <div className="company-info-col" style={{ width: '100%', maxWidth: '280px' }}>
                 <div className={`company-brand-icon theme-${meet.theme}`}>
                   {getMeetIcon(meet.iconName)}
                 </div>
@@ -272,9 +272,19 @@ const AnalystMeetContent = () => {
               {/* Right Cards List */}
               <div className="company-docs-col">
                 {meet.files.map((file, fIdx) => (
-                  <div key={fIdx} className="fy-doc-card" style={{ width: '300px' }}>
-                    <div className="fy-doc-info">
-                      <span className="fy-doc-year" title={file.title} style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '220px' }}>
+                  <div key={fIdx} className="fy-doc-card" style={{ width: '100%', maxWidth: '300px' }}>
+                    <div className="fy-doc-info" style={{ flex: '1', minWidth: '0', marginRight: '12px' }}>
+                      <span 
+                        className="fy-doc-year" 
+                        title={file.title} 
+                        style={{ 
+                          display: 'block',
+                          whiteSpace: 'nowrap', 
+                          overflow: 'hidden', 
+                          textOverflow: 'ellipsis', 
+                          width: '100%' 
+                        }}
+                      >
                         {file.title}
                       </span>
                       <span className="fy-doc-label">{file.type}</span>

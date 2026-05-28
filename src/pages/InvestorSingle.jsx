@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import InvestorContacts from '../components/investors/InvestorContacts';
 import MaterialCreditors from '../components/investors/MaterialCreditors';
 import PreferentialWarrants from '../components/investors/PreferentialWarrants';
+import MaterialContracts from '../components/investors/MaterialContracts';
 import {
   Building2,
   TrendingUp,
@@ -600,6 +601,10 @@ function InvestorSingle() {
 
   if (slug === 'preferential-allotment-warrants') {
     return <PreferentialWarrants />;
+  }
+
+  if (slug === 'material-contracts') {
+    return <MaterialContracts />;
   }
 
   return (

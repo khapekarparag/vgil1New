@@ -1522,3 +1522,30 @@
   }
 }
 
+/* Custom Responsive Styles for Cards & Padding on mobile */
+@media (max-width: 576px) {
+  .profile-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 24px 20px !important;
+    gap: 16px !important;
+  }
+
+  .profile-avatar-wrap {
+    margin: 0 auto !important;
+  }
+
+  .profile-content {
+    text-align: center !important;
+  }
+
+  .mgmt-card {
+    padding: 32px 20px !important;
+  }
+
+  .committee-card, .advisor-card {
+    padding: 24px 20px !important;
+  }
+}
+
