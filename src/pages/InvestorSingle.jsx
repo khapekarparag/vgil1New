@@ -1,10 +1,14 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import PageTitle from '../components/common/PageTitle';
 import ContactSection from '../components/home/ContactSection';
 import AnalystMeetContent from '../components/investors/AnalystMeetContent';
 import { INVESTORS_DATA } from '../data/investorsData';
 import { motion, AnimatePresence } from 'framer-motion';
+import InvestorContacts from '../components/investors/InvestorContacts';
+import MaterialCreditors from '../components/investors/MaterialCreditors';
+import PreferentialWarrants from '../components/investors/PreferentialWarrants';
+import MaterialContracts from '../components/investors/MaterialContracts';
 import {
   Building2,
   TrendingUp,
@@ -28,11 +32,7 @@ import {
   ChevronDown,
   ChevronUp,
   Headphones,
-  FileCode,
-  X,
-  Eye,
-  Calendar,
-  ExternalLink
+  FileCode
 } from 'lucide-react';
 import './BoardManagement.css';
 
@@ -525,143 +525,6 @@ const ANNUAL_RETURNS_DATA = [
   { title: "Form MGT-7 for the financial year ending on 2020", link: "#" }
 ];
 
-const DIVIDEND_DOCUMENTS_DATA = [
-  {
-    id: 1,
-    title: "Record Date",
-    description: "Intimation of Record Date pursuant to Regulation 42 of the SEBI (LODR) Regulations, 2015 for 1st interim dividend for the financial year 2025-26.",
-    date: "14th November 2025",
-    category: "Interim Dividend",
-    detail: "Interim dividend of ₹1 per Equity Share (10% on paid-up capital). Record Date: Friday, 28th November 2025.",
-    pdfUrl: "https://www.vgipl.com/documents/investors-info/announcement/Record_Date.pdf",
-    fileName: "Record_Date.pdf"
-  }
-];
-
-const NOTICE_MEETINGS_DATA = [
-  {
-    name: "Extra Ordinary General Meeting — 17 March 2026",
-    icon: "building-2",
-    theme: "orange",
-    docs: [
-      {
-        year: "Notice of EGM",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/notice-of-extra-ordinary-general-meeting-17mar2026.pdf"
-      },
-      {
-        year: "Newspaper Ad",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/Newspaper_Advertisements_Extra_Ordinary_General_Meeting_Notice_17_03_2026.pdf"
-      },
-      {
-        year: "Corrigendum",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/Corrigendum-to-the-Notice-of-Extra-Ordinary-General-Meeting.pdf"
-      },
-      {
-        year: "Corrigendum Ad",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/Newspaper_Advertisements_Corrigendum_EGM_Notice_17_03_2026.pdf"
-      },
-      {
-        year: "Scrutinizer Report",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/Scrutinizer_Report_EGM_17_March_2026.pdf"
-      }
-    ]
-  },
-  {
-    name: "Extra Ordinary General Meeting — 29 September 2025",
-    icon: "building",
-    theme: "blue",
-    docs: [
-      {
-        year: "Notice of EGM",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/notice-of-extra-ordinary-general-meeting.pdf"
-      },
-      {
-        year: "Scrutinizer Report",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/Scrutinizers%20Report%20-%20EGM%20-%2029.09.2025.pdf"
-      },
-      {
-        year: "Newspaper Ad",
-        link: "https://www.vgipl.com/documents/investors-info/notice-of-meetings/Newspaper%20Advertisement%20-%20EGM%2029-09-2025.pdf"
-      }
-    ]
-  }
-];
-
-const ANNUAL_REPORTS_DATA = [
-  {
-    name: "Annual Reports",
-    icon: "bar-chart",
-    theme: "orange",
-    docs: [
-      {
-        year: "FY 2024-2025",
-        link: "https://www.vgipl.com/documents/Annual Reports & Returns/AnnualReports/Annual Report 2025.pdf"
-      },
-      {
-        year: "FY 2023-2024",
-        link: "https://www.vgipl.com/documents/Annual Reports & Returns/AnnualReports/Annual Report 2024.pdf"
-      },
-      {
-        year: "FY 2022-2023",
-        link: "https://www.vgipl.com/documents/Annual Reports & Returns/AnnualReports/Annual Report 2023.pdf"
-      },
-      {
-        year: "FY 2021-2022",
-        link: "https://www.vgipl.com/documents/Annual Reports & Returns/AnnualReports/Annual Report 2022.pdf"
-      },
-      {
-        year: "FY 2020-2021",
-        link: "https://www.vgipl.com/documents/Annual Reports & Returns/AnnualReports/Annual Report 2021.pdf"
-      },
-      {
-        year: "FY 2019-2020",
-        link: "https://www.vgipl.com/documents/Annual Reports & Returns/AnnualReports/Annual Report 2020.pdf"
-      }
-    ]
-  },
-  {
-    name: "AGM Documents",
-    icon: "file-text",
-    theme: "blue",
-    docs: [
-      {
-        year: "Scrutinizer Report FY 2023-24",
-        link: "https://www.vgipl.com/documents/Annual Reports & Returns/annual-general-meeting-scrutinizer-report.pdf"
-      }
-    ]
-  }
-];
-
-const ANNOUNCEMENTS_DATA = [
-  {
-    id: 1,
-    title: "Monitoring Agency Report",
-    description: "Monitoring Agency Report for Virtual Galaxy Infotech Limited for the Quarter ended March 31, 2026.",
-    date: "15th May 2026",
-    category: "Compliance",
-    pdfUrl: "https://www.vgipl.com/documents/investors-info/announcement/Monitoring_Agency_Report.pdf",
-    fileName: "Monitoring_Agency_Report.pdf"
-  },
-  {
-    id: 2,
-    title: "Intimation Regarding Credit Rating",
-    description: "Credit Rating update by Acuité Ratings & Research Limited. Long Term Rating: ACUITE BBB | Stable, Short Term Rating: ACUITE A3+.",
-    date: "10th March 2026",
-    category: "Rating",
-    pdfUrl: "https://www.vgipl.com/documents/investors-info/announcement/intimation_regarding_credit_rating.pdf",
-    fileName: "intimation_regarding_credit_rating.pdf"
-  },
-  {
-    id: 3,
-    title: "Submission of Monitoring Agency Report",
-    description: "Submission of Monitoring Agency Report for the Half Year ended September 30, 2025.",
-    date: "21st November 2025",
-    category: "Compliance",
-    pdfUrl: "https://www.vgipl.com/documents/investors-info/announcement/Monitoring_Agency_Report_Half_Year_Ended_30.09.2025.pdf",
-    fileName: "Monitoring_Agency_Report_Half_Year_Ended_30.09.2025.pdf"
-  }
-];
-
 const getCompanyIcon = (iconName) => {
   switch (iconName) {
     case 'trending-up':
@@ -717,17 +580,6 @@ function InvestorSingle() {
   const { slug } = useParams();
   const investorData = INVESTORS_DATA.find(i => i.slug === slug);
   const [activeAccordion, setActiveAccordion] = useState(null);
-  const [pdfModal, setPdfModal] = useState({ isOpen: false, url: '', title: '' });
-
-  const openPdfModal = useCallback((url, title) => {
-    setPdfModal({ isOpen: true, url, title });
-    document.body.style.overflow = 'hidden';
-  }, []);
-
-  const closePdfModal = useCallback(() => {
-    setPdfModal({ isOpen: false, url: '', title: '' });
-    document.body.style.overflow = '';
-  }, []);
 
   if (!investorData) {
     return <Navigate to="/404" />;
@@ -736,12 +588,24 @@ function InvestorSingle() {
   const isGroupCompanies = slug === 'group-companies';
   const isFinancialReports = slug === 'financial-information-reports';
   const isCorporateGovernance = slug === 'corporate-governance';
-  const isAnnouncement = slug === 'announcement';
-  const isDividend = slug === 'dividend';
-  const isNoticeMeetings = slug === 'notice-of-meetings';
-  const isAnnualReports = slug === 'annual-reports';
   const isDocDashboard = isGroupCompanies || isFinancialReports;
   const dashboardData = isGroupCompanies ? GROUP_COMPANIES_DATA : FINANCIAL_REPORTS_DATA;
+
+  if (slug === 'investor-contacts-grievances') {
+    return <InvestorContacts />;
+  }
+
+  if (slug === 'material-creditors') {
+    return <MaterialCreditors />;
+  }
+
+  if (slug === 'preferential-allotment-warrants') {
+    return <PreferentialWarrants />;
+  }
+
+  if (slug === 'material-contracts') {
+    return <MaterialContracts />;
+  }
 
   return (
     <div className="board-mgmt-wrapper">
@@ -755,8 +619,8 @@ function InvestorSingle() {
             <div className="col-12 text-left">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb bg-transparent p-0 m-0" style={{ fontSize: '13px' }}>
-                  <li className="breadcrumb-item"><Link to="/" className="text-secondary">Home</Link></li>
-                  <li className="breadcrumb-item"><span className="text-secondary">Investors</span></li>
+                  <li className="breadcrumb-item"><Link to="/" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Home</Link></li>
+                  <li className="breadcrumb-item"><Link to="/investors/board-and-management" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Investors</Link></li>
                   <li className="breadcrumb-item active" aria-current="page">
                     <span className="text-primary font-weight-bold">
                       {isCorporateGovernance ? "Policies" : investorData.title}
@@ -812,640 +676,7 @@ function InvestorSingle() {
         <div className="container">
           <div className="explore-divider"></div>
           
-          {isAnnualReports ? (
-            /* ANNUAL REPORTS PAGE CUSTOM VIEW */
-            <div className="notice-meetings-page-container">
-              {/* Section Header */}
-              <div className="notice-meetings-section-header">
-                <div className="notice-meetings-header-left">
-                  <h3 className="notice-meetings-section-title">Annual Reports & Returns</h3>
-                  <p className="notice-meetings-section-subtitle">
-                    Comprehensive annual reports detailing our financial health, achievements, and strategic outlook.
-                  </p>
-                </div>
-                <div className="notice-meetings-count-badge">
-                  <span className="notice-meetings-count-number">{ANNUAL_REPORTS_DATA.reduce((acc, g) => acc + g.docs.length, 0)}</span>
-                  <span className="notice-meetings-count-label">Documents</span>
-                </div>
-              </div>
-
-              {/* Annual Report Cards */}
-              <div className="notice-meetings-cards-list">
-                {ANNUAL_REPORTS_DATA.map((group, idx) => (
-                  <div
-                    key={idx}
-                    className="company-row-card effect-fade-up"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                  >
-                    <div className="company-info-col">
-                      <div className={`company-brand-icon theme-${group.theme}`}>
-                        {getCompanyIcon(group.icon)}
-                      </div>
-                      <h3 className="company-name">{group.name}</h3>
-                    </div>
-
-                    <div className="company-vertical-divider"></div>
-
-                    <div className="company-docs-col">
-                      {group.docs.map((doc, docIdx) => (
-                        <div key={docIdx} className="fy-doc-card">
-                          <div className="fy-doc-info">
-                            <span className="fy-doc-year">{doc.year}</span>
-                            <span className="fy-doc-label">PDF</span>
-                          </div>
-                          <button
-                            className="fy-doc-download-btn"
-                            onClick={() => openPdfModal(doc.link, doc.year + ' — ' + group.name)}
-                            aria-label={`View ${doc.year} for ${group.name}`}
-                          >
-                            <Download className="fy-download-icon" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Bottom Support Banner */}
-              <div
-                className="investor-help-banner effect-fade-up"
-                style={{ animationDelay: '0.3s' }}
-              >
-                <div className="help-banner-left">
-                  <div className="help-banner-icon-wrap">
-                    <Headphones className="help-banner-icon" />
-                  </div>
-                  <div className="help-banner-text">
-                    <h4 className="help-banner-title">Need any help?</h4>
-                    <p className="help-banner-desc">
-                      If you need any specific document or have any queries, feel free to contact our investor relations team.
-                    </p>
-                  </div>
-                </div>
-                <div className="help-banner-right">
-                  <Link to="/contact" className="btn-help-banner-cta">
-                    Get in Touch
-                    <span className="btn-help-banner-icon-wrap">
-                      <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* PDF Viewer Modal */}
-              <AnimatePresence>
-                {pdfModal.isOpen && (
-                  <motion.div
-                    className="pdf-modal-overlay"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    onClick={closePdfModal}
-                  >
-                    <motion.div
-                      className="pdf-modal-container"
-                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <div className="pdf-modal-header">
-                        <div className="pdf-modal-header-left">
-                          <div className="pdf-modal-title-icon">
-                            <FileText className="pdf-modal-title-icon-svg" />
-                          </div>
-                          <div>
-                            <h3 className="pdf-modal-title">{pdfModal.title}</h3>
-                            <span className="pdf-modal-subtitle">PDF Document Viewer</span>
-                          </div>
-                        </div>
-                        <div className="pdf-modal-header-right">
-                          <a
-                            href={pdfModal.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="pdf-modal-download-btn"
-                          >
-                            <Download className="pdf-modal-download-icon" />
-                            Download
-                          </a>
-                          <button className="pdf-modal-close-btn" onClick={closePdfModal}>
-                            <X className="pdf-modal-close-icon" />
-                          </button>
-                        </div>
-                      </div>
-                      <div className="pdf-modal-body">
-                        <iframe
-                          src={pdfModal.url}
-                          className="pdf-modal-iframe"
-                          title={pdfModal.title}
-                        />
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ) : isNoticeMeetings ? (
-            /* NOTICE OF MEETINGS PAGE CUSTOM VIEW */
-            <div className="notice-meetings-page-container">
-              {/* Section Header */}
-              <div className="notice-meetings-section-header">
-                <div className="notice-meetings-header-left">
-                  <h3 className="notice-meetings-section-title">Notice of Meetings</h3>
-                  <p className="notice-meetings-section-subtitle">
-                    Official notices for Extra Ordinary General Meetings (EGMs), Annual General Meetings (AGMs), corrigendums, newspaper advertisements, and scrutinizer reports.
-                  </p>
-                </div>
-                <div className="notice-meetings-count-badge">
-                  <span className="notice-meetings-count-number">{NOTICE_MEETINGS_DATA.reduce((acc, g) => acc + g.docs.length, 0)}</span>
-                  <span className="notice-meetings-count-label">Documents</span>
-                </div>
-              </div>
-
-              {/* Meeting Group Cards */}
-              <div className="notice-meetings-cards-list">
-                {NOTICE_MEETINGS_DATA.map((group, idx) => (
-                  <div
-                    key={idx}
-                    className="company-row-card effect-fade-up"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                  >
-                    <div className="company-info-col">
-                      <div className={`company-brand-icon theme-${group.theme}`}>
-                        {getCompanyIcon(group.icon)}
-                      </div>
-                      <h3 className="company-name">{group.name}</h3>
-                    </div>
-
-                    <div className="company-vertical-divider"></div>
-
-                    <div className="company-docs-col">
-                      {group.docs.map((doc, docIdx) => (
-                        <div key={docIdx} className="fy-doc-card">
-                          <div className="fy-doc-info">
-                            <span className="fy-doc-year">{doc.year}</span>
-                            <span className="fy-doc-label">PDF</span>
-                          </div>
-                          <button
-                            className="fy-doc-download-btn"
-                            onClick={() => openPdfModal(doc.link, doc.year + ' — ' + group.name)}
-                            aria-label={`View ${doc.year} for ${group.name}`}
-                          >
-                            <Download className="fy-download-icon" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Bottom Support Banner */}
-              <div
-                className="investor-help-banner effect-fade-up"
-                style={{ animationDelay: '0.3s' }}
-              >
-                <div className="help-banner-left">
-                  <div className="help-banner-icon-wrap">
-                    <Headphones className="help-banner-icon" />
-                  </div>
-                  <div className="help-banner-text">
-                    <h4 className="help-banner-title">Need any help?</h4>
-                    <p className="help-banner-desc">
-                      If you need any specific document or have any queries, feel free to contact our investor relations team.
-                    </p>
-                  </div>
-                </div>
-                <div className="help-banner-right">
-                  <Link to="/contact" className="btn-help-banner-cta">
-                    Get in Touch
-                    <span className="btn-help-banner-icon-wrap">
-                      <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* PDF Viewer Modal */}
-              <AnimatePresence>
-                {pdfModal.isOpen && (
-                  <motion.div
-                    className="pdf-modal-overlay"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    onClick={closePdfModal}
-                  >
-                    <motion.div
-                      className="pdf-modal-container"
-                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <div className="pdf-modal-header">
-                        <div className="pdf-modal-header-left">
-                          <div className="pdf-modal-title-icon">
-                            <FileText className="pdf-modal-title-icon-svg" />
-                          </div>
-                          <div>
-                            <h3 className="pdf-modal-title">{pdfModal.title}</h3>
-                            <span className="pdf-modal-subtitle">PDF Document Viewer</span>
-                          </div>
-                        </div>
-                        <div className="pdf-modal-header-right">
-                          <a
-                            href={pdfModal.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="pdf-modal-download-btn"
-                          >
-                            <Download className="pdf-modal-download-icon" />
-                            Download
-                          </a>
-                          <button className="pdf-modal-close-btn" onClick={closePdfModal}>
-                            <X className="pdf-modal-close-icon" />
-                          </button>
-                        </div>
-                      </div>
-                      <div className="pdf-modal-body">
-                        <iframe
-                          src={pdfModal.url}
-                          className="pdf-modal-iframe"
-                          title={pdfModal.title}
-                        />
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ) : isDividend ? (
-            /* DIVIDEND PAGE CUSTOM VIEW */
-            <div className="dividend-page-container">
-              {/* Section Header */}
-              <div className="dividend-section-header">
-                <div className="dividend-section-header-left">
-                  <h3 className="dividend-section-title">Dividend Documents</h3>
-                  <p className="dividend-section-subtitle">
-                    Information regarding our dividend policy, interim dividend declarations, and record date intimations.
-                  </p>
-                </div>
-                <div className="dividend-count-badge">
-                  <span className="dividend-count-number">{DIVIDEND_DOCUMENTS_DATA.length}</span>
-                  <span className="dividend-count-label">Document{DIVIDEND_DOCUMENTS_DATA.length !== 1 ? 's' : ''}</span>
-                </div>
-              </div>
-
-              {/* Dividend Document Cards */}
-              <div className="dividend-cards-list">
-                {DIVIDEND_DOCUMENTS_DATA.map((item, idx) => (
-                  <motion.div
-                    key={item.id}
-                    className="dividend-card effect-fade-up"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                    whileHover={{ y: -3 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    {/* Company row header */}
-                    <div className="dividend-card-row">
-                      {/* Left: Icon + Title */}
-                      <div className="dividend-card-info-col">
-                        <div className="dividend-brand-icon">
-                          <CreditCard className="dividend-brand-icon-svg" />
-                        </div>
-                        <div className="dividend-card-text">
-                          <h4 className="dividend-card-title">{item.title}</h4>
-                          <span className="dividend-card-category">{item.category}</span>
-                        </div>
-                      </div>
-
-                      {/* Vertical Divider */}
-                      <div className="dividend-vertical-divider"></div>
-
-                      {/* Right: FY Doc Cards */}
-                      <div className="dividend-docs-col">
-                        <div className="dividend-fy-card">
-                          <div className="dividend-fy-info">
-                            <span className="dividend-fy-year">FY 2025-2026</span>
-                            <span className="dividend-fy-label">PDF</span>
-                          </div>
-                          <button
-                            className="dividend-fy-download-btn"
-                            onClick={() => openPdfModal(item.pdfUrl, item.title)}
-                            aria-label={`View ${item.title} PDF`}
-                          >
-                            <Download className="dividend-download-icon" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Expandable detail section */}
-                    <div className="dividend-card-detail">
-                      <div className="dividend-detail-bar"></div>
-                      <div className="dividend-detail-content">
-                        <p className="dividend-detail-desc">{item.description}</p>
-                        <p className="dividend-detail-highlight">{item.detail}</p>
-                        <div className="dividend-detail-meta">
-                          <span className="dividend-detail-date">
-                            <Calendar className="dividend-detail-date-icon" />
-                            {item.date}
-                          </span>
-                        </div>
-                        <div className="dividend-detail-actions">
-                          <button
-                            className="btn-dividend-view"
-                            onClick={() => openPdfModal(item.pdfUrl, item.title)}
-                          >
-                            <Eye className="btn-dividend-action-icon" />
-                            View PDF
-                          </button>
-                          <a
-                            href={item.pdfUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-dividend-download"
-                          >
-                            <Download className="btn-dividend-action-icon" />
-                            Download
-                          </a>
-                          <a
-                            href={item.pdfUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-dividend-external"
-                          >
-                            <ExternalLink className="btn-dividend-ext-icon" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Bottom Support Banner */}
-              <div
-                className="investor-help-banner effect-fade-up mt-5"
-                style={{ animationDelay: '0.3s' }}
-              >
-                <div className="help-banner-left">
-                  <div className="help-banner-icon-wrap">
-                    <Headphones className="help-banner-icon" />
-                  </div>
-                  <div className="help-banner-text">
-                    <h4 className="help-banner-title">Need any help?</h4>
-                    <p className="help-banner-desc">
-                      If you need any specific document or have any queries, feel free to contact our investor relations team.
-                    </p>
-                  </div>
-                </div>
-                <div className="help-banner-right">
-                  <Link to="/contact" className="btn-help-banner-cta">
-                    Get in Touch
-                    <span className="btn-help-banner-icon-wrap">
-                      <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* PDF Viewer Modal */}
-              <AnimatePresence>
-                {pdfModal.isOpen && (
-                  <motion.div
-                    className="pdf-modal-overlay"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    onClick={closePdfModal}
-                  >
-                    <motion.div
-                      className="pdf-modal-container"
-                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <div className="pdf-modal-header">
-                        <div className="pdf-modal-header-left">
-                          <div className="pdf-modal-title-icon">
-                            <FileText className="pdf-modal-title-icon-svg" />
-                          </div>
-                          <div>
-                            <h3 className="pdf-modal-title">{pdfModal.title}</h3>
-                            <span className="pdf-modal-subtitle">PDF Document Viewer</span>
-                          </div>
-                        </div>
-                        <div className="pdf-modal-header-right">
-                          <a
-                            href={pdfModal.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="pdf-modal-download-btn"
-                          >
-                            <Download className="pdf-modal-download-icon" />
-                            Download
-                          </a>
-                          <button className="pdf-modal-close-btn" onClick={closePdfModal}>
-                            <X className="pdf-modal-close-icon" />
-                          </button>
-                        </div>
-                      </div>
-                      <div className="pdf-modal-body">
-                        <iframe
-                          src={pdfModal.url}
-                          className="pdf-modal-iframe"
-                          title={pdfModal.title}
-                        />
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ) : isAnnouncement ? (
-            /* ANNOUNCEMENT PAGE CUSTOM VIEW */
-            <div className="announcement-page-container">
-              {/* Section Header */}
-              <div className="announcement-section-header">
-                <div className="announcement-section-header-left">
-                  <h3 className="announcement-section-title">List of Announcements</h3>
-                  <p className="announcement-section-subtitle">
-                    Stay updated with the latest regulatory filings, compliance reports, and corporate disclosures.
-                  </p>
-                </div>
-                <div className="announcement-count-badge">
-                  <span className="announcement-count-number">{ANNOUNCEMENTS_DATA.length}</span>
-                  <span className="announcement-count-label">Documents</span>
-                </div>
-              </div>
-
-              {/* Announcement Cards */}
-              <div className="announcement-cards-list">
-                {ANNOUNCEMENTS_DATA.map((item, idx) => (
-                  <motion.div
-                    key={item.id}
-                    className="announcement-card effect-fade-up"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                    whileHover={{ y: -3 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    {/* Left accent bar */}
-                    <div className="announcement-card-accent"></div>
-                    
-                    <div className="announcement-card-body">
-                      {/* Top row: category badge + date */}
-                      <div className="announcement-card-meta">
-                        <span className={`announcement-category-badge category-${item.category.toLowerCase()}`}>
-                          {item.category}
-                        </span>
-                        <span className="announcement-date">
-                          <Calendar className="announcement-date-icon" />
-                          {item.date}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <h4 className="announcement-card-title">{item.title}</h4>
-                      
-                      {/* Description */}
-                      <p className="announcement-card-desc">{item.description}</p>
-
-                      {/* Actions row */}
-                      <div className="announcement-card-actions">
-                        <button 
-                          className="btn-announcement-view"
-                          onClick={() => openPdfModal(item.pdfUrl, item.title)}
-                        >
-                          <Eye className="btn-announcement-icon" />
-                          View PDF
-                        </button>
-                        <a
-                          href={item.pdfUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-announcement-download"
-                        >
-                          <Download className="btn-announcement-icon" />
-                          Download
-                        </a>
-                        <a
-                          href={item.pdfUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-announcement-external"
-                        >
-                          <ExternalLink className="btn-announcement-ext-icon" />
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Right side: PDF icon illustration */}
-                    <div className="announcement-card-visual">
-                      <div className="announcement-pdf-icon-wrap">
-                        <FileText className="announcement-pdf-icon" />
-                        <span className="announcement-pdf-label">PDF</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Bottom Support Banner */}
-              <div
-                className="investor-help-banner effect-fade-up mt-5"
-                style={{ animationDelay: '0.35s' }}
-              >
-                <div className="help-banner-left">
-                  <div className="help-banner-icon-wrap">
-                    <Headphones className="help-banner-icon" />
-                  </div>
-                  <div className="help-banner-text">
-                    <h4 className="help-banner-title">Need any help?</h4>
-                    <p className="help-banner-desc">
-                      If you need any specific document or have any queries, feel free to contact our investor relations team.
-                    </p>
-                  </div>
-                </div>
-                <div className="help-banner-right">
-                  <Link to="/contact" className="btn-help-banner-cta">
-                    Get in Touch
-                    <span className="btn-help-banner-icon-wrap">
-                      <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* PDF Viewer Modal */}
-              <AnimatePresence>
-                {pdfModal.isOpen && (
-                  <motion.div
-                    className="pdf-modal-overlay"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    onClick={closePdfModal}
-                  >
-                    <motion.div
-                      className="pdf-modal-container"
-                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {/* Modal Header */}
-                      <div className="pdf-modal-header">
-                        <div className="pdf-modal-header-left">
-                          <div className="pdf-modal-title-icon">
-                            <FileText className="pdf-modal-title-icon-svg" />
-                          </div>
-                          <div>
-                            <h3 className="pdf-modal-title">{pdfModal.title}</h3>
-                            <span className="pdf-modal-subtitle">PDF Document Viewer</span>
-                          </div>
-                        </div>
-                        <div className="pdf-modal-header-right">
-                          <a
-                            href={pdfModal.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="pdf-modal-download-btn"
-                          >
-                            <Download className="pdf-modal-download-icon" />
-                            Download
-                          </a>
-                          <button className="pdf-modal-close-btn" onClick={closePdfModal}>
-                            <X className="pdf-modal-close-icon" />
-                          </button>
-                        </div>
-                      </div>
-                      {/* Modal Body: Embedded PDF */}
-                      <div className="pdf-modal-body">
-                        <iframe
-                          src={pdfModal.url}
-                          className="pdf-modal-iframe"
-                          title={pdfModal.title}
-                        />
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ) : isCorporateGovernance ? (
+          {isCorporateGovernance ? (
             /* CORPORATE GOVERNANCE CUSTOM ACCORDION & RETURNS VIEW */
             <div className="policies-page-container">
               
@@ -1588,6 +819,9 @@ function InvestorSingle() {
                 </div>
               </div>
             </div>
+          ) : slug === 'investor-analyst-meet' ? (
+            /* ANALYST MEET CUSTOM ROW/CARD VIEW */
+            <AnalystMeetContent />
           ) : isDocDashboard ? (
             /* GROUP COMPANIES & FINANCIAL REPORTS CUSTOM VIEW */
             <div className="group-companies-container">
@@ -1617,9 +851,9 @@ function InvestorSingle() {
                           <a
                             href={doc.link}
                             className="fy-doc-download-btn"
-                            aria-label={`Download ${doc.year} report for ${company.name}`}
+                            aria-label={`Open ${doc.year} report for ${company.name}`}
                           >
-                            <Download className="fy-download-icon" />
+                            <FileText className="fy-download-icon" />
                           </a>
                         </div>
                       ))}
@@ -1696,6 +930,7 @@ function InvestorSingle() {
           )}
         </div>
       </section>
+      <ContactSection />
     </div>
   );
 }

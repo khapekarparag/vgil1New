@@ -9,7 +9,7 @@
 .hero-section {
   position: relative;
   overflow: hidden;
-  padding: 80px 0 50px;
+  padding: 105px 0 50px;
   background: linear-gradient(135deg, #fffcfb 0%, #ffffff 100%);
   border-bottom: 1px solid #f8fafc;
 }
@@ -1303,1080 +1303,249 @@
 }
 
 /* ==========================================================================
-   Announcement Page Styles
+   Investor Analyst Meet Custom Audio Player Styles
    ========================================================================== */
 
-.announcement-page-container {
-  max-width: 1040px;
-  margin: 40px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* Section Header */
-.announcement-section-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-  text-align: left;
-}
-
-.announcement-section-header-left {
-  flex: 1;
-}
-
-.announcement-section-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 6px;
-}
-
-.announcement-section-subtitle {
-  font-size: 14px;
-  color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 0;
-  max-width: 520px;
-}
-
-.announcement-count-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 24px;
-  background: linear-gradient(135deg, #fff5f2 0%, #fffbf8 100%);
-  border: 1.5px solid #fee2e2;
-  border-radius: 16px;
-  flex-shrink: 0;
-}
-
-.announcement-count-number {
-  font-size: 28px;
-  font-weight: 850;
-  color: #ff4d00;
-  line-height: 1;
-}
-
-.announcement-count-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-top: 4px;
-}
-
-/* Announcement Cards List */
-.announcement-cards-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Individual Announcement Card */
-.announcement-card {
-  display: flex;
-  align-items: stretch;
-  background: #ffffff;
-  border: 1.5px solid #edf2f7;
-  border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.015);
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-}
-
-.announcement-card:hover {
-  border-color: #fee2e2;
-  box-shadow: 0 12px 32px rgba(255, 77, 0, 0.06);
-}
-
-/* Left accent bar */
-.announcement-card-accent {
-  width: 5px;
-  background: linear-gradient(180deg, #ff4d00 0%, #ff8c66 100%);
-  flex-shrink: 0;
-  border-radius: 20px 0 0 20px;
-}
-
-.announcement-card:hover .announcement-card-accent {
-  background: linear-gradient(180deg, #ff4d00 0%, #ff2d15 100%);
-}
-
-/* Card body content */
-.announcement-card-body {
-  flex: 1;
-  padding: 28px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-align: left;
-}
-
-/* Meta row: Category + Date */
-.announcement-card-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.announcement-category-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 12px;
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  border-radius: 100px;
-}
-
-.announcement-category-badge.category-compliance {
+.am-audio-player {
   background: #fff5f2;
-  color: #ff4d00;
   border: 1px solid #fee2e2;
-}
-
-.announcement-category-badge.category-rating {
-  background: #f0f7ff;
-  color: #2563eb;
-  border: 1px solid #dbeafe;
-}
-
-.announcement-date {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #94a3b8;
-}
-
-.announcement-date-icon {
-  width: 13px;
-  height: 13px;
-}
-
-/* Title */
-.announcement-card-title {
-  font-size: 17px;
-  font-weight: 750;
-  color: #1e293b;
-  margin: 0;
-  line-height: 1.4;
-  transition: color 0.25s ease;
-}
-
-.announcement-card:hover .announcement-card-title {
-  color: #ff4d00;
-}
-
-/* Description */
-.announcement-card-desc {
-  font-size: 13.5px;
-  color: #64748b;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Actions row */
-.announcement-card-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 6px;
-  flex-wrap: wrap;
-}
-
-.btn-announcement-view {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 20px;
-  background: #ff4d00;
-  color: #ffffff;
-  font-size: 12.5px;
-  font-weight: 700;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 77, 0, 0.12);
-  transition: all 0.25s ease;
-}
-
-.btn-announcement-view:hover {
-  background: #ff2d15;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(255, 77, 0, 0.2);
-}
-
-.btn-announcement-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 20px;
-  background: #ffffff;
-  color: #ff4d00;
-  font-size: 12.5px;
-  font-weight: 700;
-  border-radius: 10px;
-  border: 1.5px solid #fee2e2;
-  text-decoration: none !important;
-  transition: all 0.25s ease;
-}
-
-.btn-announcement-download:hover {
-  background: #fff5f2;
-  border-color: #ff4d00;
-  transform: translateY(-1px);
-  color: #ff4d00 !important;
-}
-
-.btn-announcement-icon {
-  width: 14px;
-  height: 14px;
-}
-
-.btn-announcement-external {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  border: 1.5px solid #e2e8f0;
-  background: #ffffff;
-  color: #94a3b8;
-  text-decoration: none !important;
-  transition: all 0.25s ease;
-}
-
-.btn-announcement-external:hover {
-  border-color: #ff4d00;
-  color: #ff4d00 !important;
-  background: #fff5f2;
-}
-
-.btn-announcement-ext-icon {
-  width: 14px;
-  height: 14px;
-}
-
-/* Right: PDF visual illustration */
-.announcement-card-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 36px;
-  flex-shrink: 0;
-}
-
-.announcement-pdf-icon-wrap {
-  width: 80px;
-  height: 96px;
-  background: linear-gradient(135deg, #fff5f2 0%, #fee2e2 100%);
-  border: 1.5px solid #fed7cc;
   border-radius: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.3s ease;
-}
-
-.announcement-card:hover .announcement-pdf-icon-wrap {
-  background: linear-gradient(135deg, #ff4d00 0%, #ff8c66 100%);
-  border-color: #ff4d00;
-  transform: scale(1.04);
-  box-shadow: 0 6px 20px rgba(255, 77, 0, 0.15);
-}
-
-.announcement-pdf-icon {
-  width: 28px;
-  height: 28px;
-  color: #ff4d00;
-  transition: color 0.3s ease;
-}
-
-.announcement-card:hover .announcement-pdf-icon {
-  color: #ffffff;
-}
-
-.announcement-pdf-label {
-  font-size: 10px;
-  font-weight: 800;
-  color: #ff4d00;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.announcement-card:hover .announcement-pdf-label {
-  color: #ffffff;
-}
-
-
-/* ==========================================================================
-   PDF Modal Viewer Styles
-   ========================================================================== */
-
-.pdf-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.pdf-modal-container {
+  padding: 14px 20px;
+  margin-top: 16px;
   width: 100%;
-  max-width: 960px;
-  height: 90vh;
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
-}
-
-/* Modal Header */
-.pdf-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
-  background: #fafbfc;
-  border-bottom: 1.5px solid #edf2f7;
-  flex-shrink: 0;
-  gap: 16px;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(255, 77, 0, 0.02);
+  animation: slideDownIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.pdf-modal-header-left {
+@keyframes slideDownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.am-audio-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: #ff4d00;
+  color: #ffffff !important;
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex: 1;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 10px rgba(255, 77, 0, 0.2);
+  flex-shrink: 0;
+  outline: none;
+}
+
+.am-audio-btn:hover {
+  background: #ff2d15;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(255, 77, 0, 0.3);
+}
+
+.am-audio-timeline {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   min-width: 0;
 }
 
-.pdf-modal-title-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: #fff5f2;
-  border: 1px solid #fee2e2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.pdf-modal-title-icon-svg {
-  width: 18px;
-  height: 18px;
-  color: #ff4d00;
-}
-
-.pdf-modal-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1e293b;
-  margin: 0;
-  line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.pdf-modal-subtitle {
+.am-audio-time {
   font-size: 11px;
-  font-weight: 600;
-  color: #94a3b8;
-  display: block;
-}
-
-.pdf-modal-header-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.pdf-modal-download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 18px;
-  background: #ff4d00;
-  color: #ffffff !important;
-  font-size: 12px;
   font-weight: 700;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none !important;
-  transition: all 0.2s ease;
-  box-shadow: 0 3px 8px rgba(255, 77, 0, 0.12);
-}
-
-.pdf-modal-download-btn:hover {
-  background: #ff2d15;
-  transform: translateY(-1px);
-}
-
-.pdf-modal-download-icon {
-  width: 13px;
-  height: 13px;
-}
-
-.pdf-modal-close-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  border: 1.5px solid #e2e8f0;
-  background: #ffffff;
   color: #64748b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.pdf-modal-close-btn:hover {
-  border-color: #ff4d00;
-  color: #ff4d00;
-  background: #fff5f2;
-}
-
-.pdf-modal-close-icon {
-  width: 18px;
-  height: 18px;
-}
-
-/* Modal Body */
-.pdf-modal-body {
-  flex: 1;
-  overflow: hidden;
-}
-
-.pdf-modal-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-
-/* Responsive: Announcement Page */
-@media (max-width: 768px) {
-  .announcement-section-header {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .announcement-count-badge {
-    flex-direction: row;
-    gap: 10px;
-    padding: 10px 18px;
-    align-self: flex-start;
-  }
-
-  .announcement-card {
-    flex-direction: column;
-  }
-
-  .announcement-card-accent {
-    width: 100%;
-    height: 4px;
-    border-radius: 20px 20px 0 0;
-  }
-
-  .announcement-card-body {
-    padding: 20px;
-  }
-
-  .announcement-card-visual {
-    padding: 16px 20px 20px;
-    justify-content: flex-start;
-  }
-
-  .announcement-pdf-icon-wrap {
-    width: 64px;
-    height: 72px;
-  }
-
-  .announcement-pdf-icon {
-    width: 22px;
-    height: 22px;
-  }
-
-  .pdf-modal-overlay {
-    padding: 12px;
-  }
-
-  .pdf-modal-container {
-    height: 95vh;
-    border-radius: 14px;
-  }
-
-  .pdf-modal-header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 16px;
-    gap: 10px;
-  }
-
-  .pdf-modal-header-right {
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .pdf-modal-title {
-    font-size: 13px;
-  }
-
-  .announcement-card-actions {
-    gap: 8px;
-  }
-
-  .btn-announcement-view,
-  .btn-announcement-download {
-    padding: 8px 14px;
-    font-size: 11.5px;
-  }
-}
-
-/* ==========================================================================
-   Dividend Page Styles
-   ========================================================================== */
-
-.dividend-page-container {
-  max-width: 1140px;
-  margin: 40px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* Section Header */
-.dividend-section-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-  text-align: left;
-}
-
-.dividend-section-header-left {
-  flex: 1;
-}
-
-.dividend-section-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 6px;
-}
-
-.dividend-section-subtitle {
-  font-size: 14px;
-  color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 0;
-  max-width: 540px;
-}
-
-.dividend-count-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 24px;
-  background: linear-gradient(135deg, #fff5f2 0%, #fffbf8 100%);
-  border: 1.5px solid #fee2e2;
-  border-radius: 16px;
+  font-family: monospace;
+  font-variant-numeric: tabular-nums;
   flex-shrink: 0;
 }
 
-.dividend-count-number {
-  font-size: 28px;
-  font-weight: 850;
-  color: #ff4d00;
-  line-height: 1;
-}
-
-.dividend-count-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-top: 4px;
-}
-
-/* Dividend Cards List */
-.dividend-cards-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* Individual Dividend Card */
-.dividend-card {
-  background: #ffffff;
-  border: 1.5px solid #edf2f7;
-  border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.015);
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.dividend-card:hover {
-  border-color: #fee2e2;
-  box-shadow: 0 12px 32px rgba(255, 77, 0, 0.05);
-}
-
-/* Company Row (top section matching reference photo) */
-.dividend-card-row {
-  display: flex;
-  align-items: center;
-  padding: 24px 32px;
-  gap: 24px;
-}
-
-/* Left: Icon + Title */
-.dividend-card-info-col {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 320px;
-  flex-shrink: 0;
-}
-
-.dividend-brand-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  background-color: #fff5f2;
-  color: #ff4d00;
-  border: 1px solid #fee2e2;
-  transition: all 0.3s ease;
-}
-
-.dividend-card:hover .dividend-brand-icon {
-  background-color: #ff4d00;
-  color: #ffffff;
-  border-color: #ff4d00;
-  transform: scale(1.05);
-}
-
-.dividend-brand-icon-svg {
-  width: 24px;
-  height: 24px;
-}
-
-.dividend-card-text {
-  text-align: left;
-}
-
-.dividend-card-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1e293b;
-  margin: 0 0 4px 0;
-  line-height: 1.4;
-  transition: color 0.25s ease;
-}
-
-.dividend-card:hover .dividend-card-title {
-  color: #ff4d00;
-}
-
-.dividend-card-category {
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #ff4d00;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  background: #fff5f2;
-  padding: 3px 10px;
-  border-radius: 100px;
-  border: 1px solid #fee2e2;
-}
-
-/* Vertical separator */
-.dividend-vertical-divider {
-  width: 1.5px;
-  height: 48px;
-  background-color: #fee2e2;
-  flex-shrink: 0;
-}
-
-/* Right: FY Document Cards */
-.dividend-docs-col {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.am-slider-input {
   flex-grow: 1;
-  flex-wrap: wrap;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
 }
 
-.dividend-fy-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 160px;
-  padding: 10px 14px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  transition: all 0.25s ease;
+.am-slider-input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
-.dividend-fy-card:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-}
-
-.dividend-fy-info {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.dividend-fy-year {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #1e293b;
-}
-
-.dividend-fy-label {
-  font-size: 9px;
-  font-weight: 800;
-  color: #ff4d00;
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-
-.dividend-fy-download-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
+.am-slider-input::-webkit-slider-thumb {
+  height: 14px;
+  width: 14px;
   border-radius: 50%;
-  border: 1px solid #fee2e2;
-  background: #ffffff;
-  color: #ff4d00;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.dividend-download-icon {
-  width: 13px;
-  height: 13px;
-}
-
-.dividend-fy-download-btn:hover {
   background: #ff4d00;
-  color: #ffffff !important;
-  border-color: #ff4d00;
-  transform: translateY(-1px);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -4px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s ease;
 }
 
-/* Detail Section */
-.dividend-card-detail {
+.am-slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.am-slider-input::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #ff4d00;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s ease;
+}
+
+.am-slider-input::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+.am-audio-controls-right {
   display: flex;
-  border-top: 1px solid #f1f5f9;
-}
-
-.dividend-detail-bar {
-  width: 4px;
-  background: linear-gradient(180deg, #ff4d00 0%, #ff8c66 100%);
+  align-items: center;
+  gap: 18px;
   flex-shrink: 0;
 }
 
-.dividend-detail-content {
-  padding: 20px 32px;
-  text-align: left;
-  flex: 1;
-}
-
-.dividend-detail-desc {
-  font-size: 13.5px;
-  color: #64748b;
-  line-height: 1.6;
-  margin: 0 0 8px 0;
-}
-
-.dividend-detail-highlight {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #1e293b;
-  line-height: 1.6;
-  margin: 0 0 12px 0;
-  padding: 10px 16px;
-  background: linear-gradient(135deg, #fff5f2 0%, #fffbf8 100%);
-  border-left: 3px solid #ff4d00;
-  border-radius: 0 8px 8px 0;
-}
-
-.dividend-detail-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.dividend-detail-date {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #94a3b8;
-}
-
-.dividend-detail-date-icon {
-  width: 13px;
-  height: 13px;
-}
-
-/* Actions row */
-.dividend-detail-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.btn-dividend-view {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 20px;
-  background: #ff4d00;
-  color: #ffffff;
-  font-size: 12.5px;
-  font-weight: 700;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 77, 0, 0.12);
-  transition: all 0.25s ease;
-}
-
-.btn-dividend-view:hover {
-  background: #ff2d15;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(255, 77, 0, 0.2);
-}
-
-.btn-dividend-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 20px;
+.am-audio-speed {
   background: #ffffff;
-  color: #ff4d00;
-  font-size: 12.5px;
-  font-weight: 700;
-  border-radius: 10px;
-  border: 1.5px solid #fee2e2;
-  text-decoration: none !important;
-  transition: all 0.25s ease;
-}
-
-.btn-dividend-download:hover {
-  background: #fff5f2;
-  border-color: #ff4d00;
-  transform: translateY(-1px);
-  color: #ff4d00 !important;
-}
-
-.btn-dividend-action-icon {
-  width: 14px;
-  height: 14px;
-}
-
-.btn-dividend-external {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
   border: 1.5px solid #e2e8f0;
-  background: #ffffff;
-  color: #94a3b8;
-  text-decoration: none !important;
-  transition: all 0.25s ease;
-}
-
-.btn-dividend-external:hover {
-  border-color: #ff4d00;
-  color: #ff4d00 !important;
-  background: #fff5f2;
-}
-
-.btn-dividend-ext-icon {
-  width: 14px;
-  height: 14px;
-}
-
-/* Responsive: Dividend Page */
-@media (max-width: 991px) {
-  .dividend-card-row {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 24px;
-  }
-
-  .dividend-card-info-col {
-    width: 100%;
-  }
-
-  .dividend-vertical-divider {
-    width: 100%;
-    height: 1.5px;
-    margin: 4px 0;
-  }
-
-  .dividend-docs-col {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .dividend-section-header {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .dividend-count-badge {
-    flex-direction: row;
-    gap: 10px;
-    padding: 10px 18px;
-    align-self: flex-start;
-  }
-
-  .dividend-detail-content {
-    padding: 16px 20px;
-  }
-
-  .dividend-detail-actions {
-    gap: 8px;
-  }
-
-  .btn-dividend-view,
-  .btn-dividend-download {
-    padding: 8px 14px;
-    font-size: 11.5px;
-  }
-}
-
-/* ==========================================================================
-   Notice of Meetings Page Styles
-   ========================================================================== */
-
-.notice-meetings-page-container {
-  max-width: 1140px;
-  margin: 40px auto 0;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  height: 28px;
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* Section Header */
-.notice-meetings-section-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-  text-align: left;
-}
-
-.notice-meetings-header-left {
-  flex: 1;
-}
-
-.notice-meetings-section-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 6px;
-}
-
-.notice-meetings-section-subtitle {
-  font-size: 14px;
-  color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 0;
-  max-width: 560px;
-}
-
-.notice-meetings-count-badge {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
-  background: linear-gradient(135deg, #fff5f2 0%, #fffbf8 100%);
-  border: 1.5px solid #fee2e2;
-  border-radius: 16px;
-  flex-shrink: 0;
 }
 
-.notice-meetings-count-number {
-  font-size: 28px;
-  font-weight: 850;
+.am-audio-speed:hover {
+  border-color: #ff4d00;
   color: #ff4d00;
-  line-height: 1;
 }
 
-.notice-meetings-count-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-top: 4px;
-}
-
-/* Cards List */
-.notice-meetings-cards-list {
+.am-audio-volume {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .notice-meetings-section-header {
+.am-audio-vol-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  outline: none;
+  transition: color 0.15s ease;
+}
+
+.am-audio-vol-btn:hover {
+  color: #ff4d00;
+}
+
+.am-audio-vol-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70px;
+  height: 4px;
+  border-radius: 2px;
+  background: #e2e8f0;
+  outline: none;
+  cursor: pointer;
+}
+
+.am-audio-vol-slider::-webkit-slider-thumb {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #ff4d00;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3px;
+}
+
+.am-audio-vol-slider::-moz-range-thumb {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #ff4d00;
+  cursor: pointer;
+}
+
+/* Responsive adjustment for player */
+@media (max-width: 767px) {
+  .am-audio-player {
     flex-direction: column;
-    gap: 16px;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px;
+  }
+  
+  .am-audio-timeline {
+    width: 100%;
+  }
+  
+  .am-audio-controls-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* Custom Responsive Styles for Cards & Padding on mobile */
+@media (max-width: 576px) {
+  .profile-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 24px 20px !important;
+    gap: 16px !important;
   }
 
-  .notice-meetings-count-badge {
-    flex-direction: row;
-    gap: 10px;
-    padding: 10px 18px;
-    align-self: flex-start;
+  .profile-avatar-wrap {
+    margin: 0 auto !important;
+  }
+
+  .profile-content {
+    text-align: center !important;
+  }
+
+  .mgmt-card {
+    padding: 32px 20px !important;
+  }
+
+  .committee-card, .advisor-card {
+    padding: 24px 20px !important;
   }
 }
 

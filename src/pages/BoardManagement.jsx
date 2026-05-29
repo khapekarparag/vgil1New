@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import ContactSection from '../components/home/ContactSection';
 import { 
   Users, 
   FileText, 
@@ -240,11 +241,11 @@ function BoardManagement() {
             <div className="col-12 text-left">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb bg-transparent p-0 m-0" style={{ fontSize: '13px' }}>
-                  <li className="breadcrumb-item"><Link to="/" className="text-secondary">Home</Link></li>
-                  <li className="breadcrumb-item"><span className="text-secondary">Investors</span></li>
+                  <li className="breadcrumb-item"><Link to="/" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Home</Link></li>
+                  <li className="breadcrumb-item"><Link to="/investors/board-and-management" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Investors</Link></li>
                   <li className="breadcrumb-item active" aria-current="page">
                     {subpage ? (
-                      <Link to="/investors/board-and-management" className="text-secondary">Board & Management</Link>
+                      <Link to="/investors/board-and-management" className="text-secondary hover:text-[#ff4d00] transition-colors no-underline">Board & Management</Link>
                     ) : (
                       <span className="text-primary font-weight-bold">Board & Management</span>
                     )}
@@ -519,6 +520,7 @@ function BoardManagement() {
           </AnimatePresence>
         </div>
       </section>
+      <ContactSection />
     </div>
   );
 }
