@@ -655,6 +655,58 @@
   color: #475569;
 }
 
+/* ==========================================================================
+   Centered Hero Variant (Announcement Page)
+   ========================================================================== */
+
+.hero-center-badge {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-title-center {
+  text-align: center !important;
+}
+
+.hero-underline-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-desc-center {
+  text-align: center !important;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pulsing dot animation for the tag badge */
+.tag-dot-pulse {
+  position: relative;
+}
+
+.tag-dot-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ff4d00;
+  transform: translate(-50%, -50%);
+  animation: dotPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 77, 0, 0);
+  }
+}
+
 /* Animations helper */
 .effect-fade-up {
   opacity: 0;
