@@ -286,7 +286,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .section-hero-premium {
-    padding: 7rem 1.5rem 4rem;
+    padding: 6rem 1.5rem 2.5rem;
   }
   .section-hero-premium .row {
     display: flex;

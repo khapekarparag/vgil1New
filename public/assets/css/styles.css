@@ -1208,28 +1208,28 @@ h6,
 
 /* Spacing */
 .flat-spacing {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 @media (max-width: 1439px) {
   .flat-spacing {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 65px;
+    padding-bottom: 65px;
   }
 }
 
 @media (max-width: 991px) {
   .flat-spacing {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
 @media (max-width: 767px) {
   .flat-spacing {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 35px;
+    padding-bottom: 35px;
   }
 }
 
@@ -7483,12 +7483,12 @@ button.animate-btn::after,
 
   .section-statistic .swiper .statistic-number {
     font-size: 150px;
-    font-size: 40vw;
+    font-size: 32vw;
     line-height: 150px;
   }
 
   .section-statistic .swiper .statistic-number .prefix {
-    font-size: 40vw;
+    font-size: 32vw;
   }
 }
 
@@ -7599,7 +7599,9 @@ button.animate-btn::after,
   }
 
   .features-wrap .features-center {
-    display: none;
+    display: flex;
+    order: -1;
+    margin-bottom: 30px;
   }
 
   .features-wrap .features-col {
@@ -7765,7 +7767,7 @@ button.animate-btn::after,
 
 @media (max-width: 767px) {
   .tool-wrap .tool-image-box {
-    margin: 0;
+    margin: 0 0 50px;
     height: 238px;
   }
 
@@ -11202,7 +11204,8 @@ footer .footer-bottom::before {
     width: 100% !important;
   }
 
-  .features-center {
+  .features-wrap .features-center {
+    display: flex !important;
     order: -1 !important;
     /* Move logo to top on mobile */
     margin-bottom: 20px !important;

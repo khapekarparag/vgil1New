@@ -58,3 +58,13 @@
     background-position: -100% 0;
   }
 }
+
+.section-drive-value {
+  padding: 6rem 0;
+}
+
+@media (max-width: 900px) {
+  .section-drive-value {
+    padding: 2.5rem 0;
+  }
+}

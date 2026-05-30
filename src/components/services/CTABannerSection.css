@@ -254,6 +254,7 @@
 }
 
 @media (max-width: 768px) {
+  .cta-banner-wrapper { padding: 30px 15px 50px; }
   .cta-buttons-wrapper { flex-direction: column; }
   .cta-btn { justify-content: center; }
   .cta-headline { font-size: 32px; }

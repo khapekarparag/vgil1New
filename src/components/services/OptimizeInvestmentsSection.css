@@ -1,7 +1,7 @@
 .optimize-investments-section {
   position: relative;
   background-color: #fafcff;
-  padding: 120px 0;
+  padding: 90px 0;
   overflow: hidden;
   font-family: 'Inter', sans-serif;
   z-index: 1;
@@ -352,7 +352,11 @@
 }
 
 @media (max-width: 768px) {
-  .oi-title { font-size: 36px; }
-  .oi-tabs-container { justify-content: flex-start; overflow-x: auto; padding-bottom: 15px; flex-wrap: nowrap; }
+  .optimize-investments-section {
+    padding: 45px 0;
+  }
+  .oi-title { font-size: 32px; }
+  .oi-subtitle { margin-bottom: 30px; }
+  .oi-tabs-container { justify-content: flex-start; overflow-x: auto; padding-bottom: 15px; flex-wrap: nowrap; margin-bottom: 30px; }
   .oi-tab { white-space: nowrap; }
 }

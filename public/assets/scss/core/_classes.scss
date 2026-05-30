@@ -159,22 +159,22 @@
 
 /* Spacing */
 .flat-spacing {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
     @include res(xxl) {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 65px;
+        padding-bottom: 65px;
     }
 
     @include res(lg) {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     @include res(md) {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 35px;
+        padding-bottom: 35px;
     }
 }
 

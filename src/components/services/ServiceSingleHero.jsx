@@ -146,7 +146,7 @@ function ServiceSingleHero({ service }) {
               
               <motion.p 
                 variants={textBlurVariants}
-                className="text-body-2 mb-48" 
+                className="text-body-2 mb-24" 
                 style={{ 
                   color: '#4b5563', 
                   lineHeight: '1.7', 
@@ -161,7 +161,7 @@ function ServiceSingleHero({ service }) {
               
               {service.slug !== 'vgst' && (
                 <motion.div 
-                  className="d-flex flex-wrap gap-12 mt-40 mb-4"
+                  className="d-flex flex-wrap gap-12 mt-12 mb-24"
                   variants={tagContainerVariants}
                   initial="hidden"
                   animate="visible"

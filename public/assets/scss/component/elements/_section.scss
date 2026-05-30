@@ -2334,10 +2334,10 @@
         }
         .swiper .statistic-number {
             font-size: 150px;
-            font-size: 40vw;
+            font-size: 32vw;
             line-height: 150px;
             .prefix {
-                font-size: 40vw;
+                font-size: 32vw;
             }
         }
     }
@@ -2432,7 +2432,9 @@
     @include res(lg) {
         flex-direction: column;
         .features-center {
-            display: none;
+            display: flex;
+            order: -1;
+            margin-bottom: 30px;
         }
         .features-col {
             width: 100%;
@@ -2570,7 +2572,7 @@
     }
     @include res(md) {
         .tool-image-box {
-            margin: 0;
+            margin: 0 0 50px;
             height: 238px;
         }
         .image-center {

@@ -65,6 +65,19 @@ function PartnerSection() {
                 .partner-wrap .swiper {
                   width: 100%;
                 }
+                @media (max-width: 767px) {
+                  .partner-wrap .swiper {
+                    max-width: 290px;
+                    margin: 0 auto;
+                  }
+                  .partner-wrap img {
+                    height: 80px !important;
+                  }
+                  .section-partner {
+                    padding-top: 20px !important;
+                    padding-bottom: 20px !important;
+                  }
+                }
               `}} />
               <Swiper
                 modules={[Autoplay]}

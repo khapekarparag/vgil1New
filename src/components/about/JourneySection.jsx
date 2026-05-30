@@ -173,7 +173,7 @@ function JourneySection() {
             centeredSlides={false}
             initialSlide={0}
             autoplay={{
-              delay: 4500,
+              delay: 5000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
@@ -549,6 +549,7 @@ function JourneySection() {
           .journey-stats-bar {
             grid-template-columns: repeat(2, 1fr);
             gap: 30px 20px;
+            margin-top: 30px;
           }
           .journey-stat-item:nth-child(2)::after {
             display: none;
@@ -557,8 +558,27 @@ function JourneySection() {
 
         @media (max-width: 640px) {
           .journey-stats-bar {
-            grid-template-columns: 1fr;
-            gap: 24px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 12px;
+            padding: 20px 15px;
+            margin-top: 20px;
+          }
+          .journey-stat-item {
+            justify-content: flex-start;
+            padding-left: 10px;
+            gap: 10px;
+          }
+          .stat-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            flex-shrink: 0;
+          }
+          .stat-number {
+            font-size: 18px;
+          }
+          .stat-label {
+            font-size: 11px;
           }
           .journey-stat-item::after {
             display: none !important;
