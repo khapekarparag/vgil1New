@@ -90,6 +90,117 @@ function FeaturesSection() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Connector Lines & Sparks (visible below 990px) */}
+        <div className="side-line-mobile d-lg-none">
+          <div className="container" style={{ height: '100%' }}>
+            <div className="side-line-wrap-mobile">
+              {/* Left Curve SVG */}
+              <div className="svg-connector-container left-connector">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <radialGradient id="spark-glow-left" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#fd3b26" stopOpacity="1" />
+                      <stop offset="30%" stopColor="#fd3b26" stopOpacity="0.8" />
+                      <stop offset="70%" stopColor="#fd3b26" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="#fd3b26" stopOpacity="0" />
+                    </radialGradient>
+                  </defs>
+                  {/* Lines starting exactly at card edges (X=0) and ending at vertical line (X=100) */}
+                  <path d="M 0,0 L 70,0 Q 100,0 100,15 L 100,50" fill="none" stroke="#D4D4D8" strokeWidth="1.5" />
+                  <path d="M 0,50 L 100,50" fill="none" stroke="#D4D4D8" strokeWidth="1.5" />
+                  <path d="M 0,100 L 70,100 Q 100,100 100,85 L 100,50" fill="none" stroke="#D4D4D8" strokeWidth="1.5" />
+                  
+                  {/* Sparks traveling from vertical line (X=100) to card edges (X=0) */}
+                  <circle r="12" fill="url(#spark-glow-left)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 100,50 L 100,15 Q 100,0 70,0 L 0,0" keyTimes="0; 0.375; 1" keyPoints="0; 0; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.375; 0.40; 0.90; 1" values="0; 0; 1; 1; 0" calcMode="linear" />
+                  </circle>
+                  <circle r="12" fill="url(#spark-glow-left)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 100,50 L 0,50" keyTimes="0; 0.375; 1" keyPoints="0; 0; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.375; 0.40; 0.90; 1" values="0; 0; 1; 1; 0" calcMode="linear" />
+                  </circle>
+                  <circle r="12" fill="url(#spark-glow-left)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 100,50 L 100,85 Q 100,100 70,100 L 0,100" keyTimes="0; 0.375; 1" keyPoints="0; 0; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.375; 0.40; 0.90; 1" values="0; 0; 1; 1; 0" calcMode="linear" />
+                  </circle>
+                </svg>
+              </div>
+
+              {/* Center Line SVG */}
+              <div className="svg-connector-container center-connector">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <radialGradient id="spark-glow-center" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#fd3b26" stopOpacity="1" />
+                      <stop offset="30%" stopColor="#fd3b26" stopOpacity="0.8" />
+                      <stop offset="70%" stopColor="#fd3b26" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="#fd3b26" stopOpacity="0" />
+                    </radialGradient>
+                  </defs>
+                  <path d="M 0,50 L 100,50" fill="none" stroke="#D4D4D8" strokeWidth="1.5" />
+                  
+                  {/* Sparks from center outwards to intersections */}
+                  <circle r="12" fill="url(#spark-glow-center)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 50,50 L 0,50" keyTimes="0; 0.375; 1" keyPoints="0; 1; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.05; 0.35; 0.375; 1" values="0; 1; 1; 0; 0" calcMode="linear" />
+                  </circle>
+                  <circle r="12" fill="url(#spark-glow-center)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 50,50 L 100,50" keyTimes="0; 0.375; 1" keyPoints="0; 1; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.05; 0.35; 0.375; 1" values="0; 1; 1; 0; 0" calcMode="linear" />
+                  </circle>
+                </svg>
+              </div>
+
+              {/* Right Curve SVG */}
+              <div className="svg-connector-container right-connector">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <radialGradient id="spark-glow-right" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#fd3b26" stopOpacity="1" />
+                      <stop offset="30%" stopColor="#fd3b26" stopOpacity="0.8" />
+                      <stop offset="70%" stopColor="#fd3b26" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="#fd3b26" stopOpacity="0" />
+                    </radialGradient>
+                  </defs>
+                  {/* Lines starting exactly at vertical line (X=0) and ending at card edges (X=100) */}
+                  <path d="M 0,50 L 0,15 Q 0,0 30,0 L 100,0" fill="none" stroke="#D4D4D8" strokeWidth="1.5" />
+                  <path d="M 0,50 L 100,50" fill="none" stroke="#D4D4D8" strokeWidth="1.5" />
+                  <path d="M 0,50 L 0,85 Q 0,100 30,100 L 100,100" fill="none" stroke="#D4D4D8" strokeWidth="1.5" />
+                  
+                  {/* Sparks traveling from vertical line (X=0) to card edges (X=100) */}
+                  <circle r="12" fill="url(#spark-glow-right)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 0,50 L 0,15 Q 0,0 30,0 L 100,0" keyTimes="0; 0.375; 1" keyPoints="0; 0; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.375; 0.40; 0.90; 1" values="0; 0; 1; 1; 0" calcMode="linear" />
+                  </circle>
+                  <circle r="12" fill="url(#spark-glow-right)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 0,50 L 100,50" keyTimes="0; 0.375; 1" keyPoints="0; 0; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.375; 0.40; 0.90; 1" values="0; 0; 1; 1; 0" calcMode="linear" />
+                  </circle>
+                  <circle r="12" fill="url(#spark-glow-right)">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 0,50 L 0,85 Q 0,100 30,100 L 100,100" keyTimes="0; 0.375; 1" keyPoints="0; 0; 1" calcMode="linear" />
+                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite" keyTimes="0; 0.375; 0.40; 0.90; 1" values="0; 0; 1; 1; 0" calcMode="linear" />
+                  </circle>
+                </svg>
+              </div>
+
+              {/* Symmetrical 10 Dots matching layout card borders and intersections */}
+              {/* Left Side */}
+              <span className="connector-dot-mobile dot-top-left-card"></span>
+              <span className="connector-dot-mobile dot-mid-left-card"></span>
+              <span className="connector-dot-mobile dot-bot-left-card"></span>
+              <span className="connector-dot-mobile dot-left-intersection"></span>
+              <span className="connector-dot-mobile dot-left-logo"></span>
+
+              {/* Right Side */}
+              <span className="connector-dot-mobile dot-right-logo"></span>
+              <span className="connector-dot-mobile dot-right-intersection"></span>
+              <span className="connector-dot-mobile dot-top-right-card"></span>
+              <span className="connector-dot-mobile dot-mid-right-card"></span>
+              <span className="connector-dot-mobile dot-bot-right-card"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

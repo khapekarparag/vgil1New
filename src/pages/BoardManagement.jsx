@@ -15,6 +15,7 @@ import {
 // Import actual images from assets
 import avinashShendeImg from '../assets/home/ownwer-img/avinash-shende-clear-bg.png';
 import sachinPandeImg from '../assets/home/ownwer-img/sachin-pande-clear-bg.png';
+import anjaliPadhyeImg from '../assets/home/ownwer-img/Anjali_Padhye.jpg';
 import alhadImg from '../assets/home/ownwer-img/Alhad_Hardas.jpg';
 import anilImg from '../assets/home/ownwer-img/Anil_Katwale.jpg';
 import bharatImg from '../assets/home/ownwer-img/bharat-zade.jpg';
@@ -110,60 +111,25 @@ const SUBPAGES_DATA = {
     subtitle: "The executive leadership steering daily operations, business development, and software delivery.",
     items: [
       {
-        name: "Avinash Shende",
-        role: "Chief Executive Officer & MD",
-        department: "Executive Management",
-        bio: "Directs overall corporate operations, budget allocation, and investor affairs.",
-        img: avinashShendeImg
+        name: "Mr. Avinash Narayanrao Shende",
+        role: "Chairman, Executive Director & Chief Financial Officer",
+        bio: "Directs overall corporate operations, budget allocation, and investor affairs with a focus on growth and strategic banking innovation.",
+        img: avinashShendeImg,
+        linkedin: "https://www.linkedin.com/in/avinash-shende/"
       },
       {
-        name: "Sunil Dutt",
-        role: "Chief Financial Officer (CFO)",
-        department: "Finance & Accounts",
-        bio: "Leads global corporate finance, tax planning, audits, and statutory reporting.",
-        img: null
+        name: "Mr. Sachin Purushottam Pande",
+        role: "Managing Director & Chief Technology Officer",
+        bio: "Oversees technology engineering, core systems architecture, and IT operations, driving digital banking suites and technological advancements.",
+        img: sachinPandeImg,
+        linkedin: "https://www.linkedin.com/in/sachin-pande/"
       },
       {
-        name: "Neha Sharma",
+        name: "Mrs. Anjali Padhye",
         role: "Company Secretary & Compliance Officer",
-        department: "Legal & Compliance",
-        bio: "Manages corporate secretarial duties, legal compliance, and board listings.",
-        img: null
-      },
-      {
-        name: "Sachin Burghate",
-        role: "Director - Technical (BFSI)",
-        department: "Software Engineering",
-        bio: "Leads engineering, deployment, and customer support for E-Banker and digital banking suites.",
-        img: sachinBImg
-      },
-      {
-        name: "Ninad Mairal",
-        role: "Director - International Business Development",
-        department: "Sales & Expansion",
-        bio: "Heads foreign market outreach, strategic alliances, and global partner programs.",
-        img: ninadImg
-      },
-      {
-        name: "Bharat Zade",
-        role: "Director - Operations & Digital Transformation",
-        department: "Enterprise Delivery",
-        bio: "Spearheads operational processes, agile project delivery, and cloud infrastructure offerings.",
-        img: bharatImg
-      },
-      {
-        name: "Harshjit Deshmukh",
-        role: "Director - Domestic Business Development",
-        department: "Domestic Markets",
-        bio: "Manages national client relations, government bids, and domestic sales partnerships.",
-        img: harshjitImg
-      },
-      {
-        name: "Alhad Hardas",
-        role: "Director - Banking Domain Services",
-        department: "Domain Consultancy",
-        bio: "Directs functional specifications and advisory services for financial institution integrations.",
-        img: alhadImg
+        bio: "Manages corporate secretarial affairs, legal compliance, and board listings, ensuring the highest standards of corporate governance.",
+        img: anjaliPadhyeImg,
+        linkedin: "https://www.linkedin.com/"
       }
     ]
   },
@@ -461,26 +427,38 @@ function BoardManagement() {
 
                   {/* Key Managerial Personnel View */}
                   {subpage === 'key-personnel' && (
-                    <div className="row g-4 mt-2">
+                    <div className="row justify-content-center g-4 mt-2">
                       {currentSubpageData?.items.map((person, idx) => (
-                        <div key={idx} className="col-lg-6 col-md-12 col-12 effect-fade-up" style={{ animationDelay: `${idx * 0.08}s` }}>
-                          <div className="profile-card">
-                            <div className="profile-avatar-wrap">
-                              {person.img ? (
-                                <img src={person.img} alt={person.name} className="profile-avatar-img" />
-                              ) : (
-                                <div className="profile-avatar-initials">
-                                  {person.name.split(' ').map(n => n[0]).join('')}
-                                </div>
+                        <div key={idx} className="col-lg-4 col-md-6 col-12 effect-fade-up" style={{ animationDelay: `${idx * 0.08}s` }}>
+                          <div className="kmp-card">
+                            <div className="kmp-card-header">
+                              <div className="kmp-avatar-wrap">
+                                {person.img ? (
+                                  <img src={person.img} alt={person.name} className="kmp-avatar-img" />
+                                ) : (
+                                  <div className="kmp-avatar-initials">
+                                    {person.name.split(' ').filter(Boolean).map(n => n[0]).join('')}
+                                  </div>
+                                )}
+                              </div>
+                              {person.linkedin && (
+                                <a 
+                                  href={person.linkedin} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="kmp-linkedin-btn"
+                                  aria-label={`LinkedIn profile of ${person.name}`}
+                                >
+                                  <i className="icon icon-linkedin-in" style={{ fontSize: '16px' }}></i>
+                                </a>
                               )}
                             </div>
-                            <div className="profile-content">
-                              <h4 className="profile-name">{person.name}</h4>
-                              <span className="profile-role">{person.role}</span>
-                              <div>
-                                <span className="profile-dept">{person.department}</span>
+                            <div className="kmp-card-body">
+                              <h4 className="kmp-name">{person.name}</h4>
+                              <div className="kmp-role-badge-wrap">
+                                <span className="kmp-role-badge">{person.role}</span>
                               </div>
-                              <p className="profile-bio">{person.bio}</p>
+                              {person.bio && <p className="kmp-bio">{person.bio}</p>}
                             </div>
                           </div>
                         </div>
