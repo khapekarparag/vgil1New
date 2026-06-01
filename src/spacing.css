@@ -46,9 +46,11 @@
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .react-accordion-content.open {
   grid-template-rows: 1fr;
 }
+
 .react-accordion-inner {
   overflow: hidden;
 }
@@ -141,7 +143,7 @@
   background: linear-gradient(90deg, rgba(225, 6, 0, 0) 0%, rgba(225, 6, 0, 0.12) 50%, rgba(225, 6, 0, 0) 100%) !important;
 }
 
-.dark-section .swiper-testimonial .swiper-slide > div {
+.dark-section .swiper-testimonial .swiper-slide>div {
   background-color: #ffffff !important;
   border: 1px solid rgba(225, 6, 0, 0.12) !important;
   border-radius: 24px !important;
@@ -150,7 +152,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-.dark-section .swiper-testimonial .swiper-slide > div:hover {
+.dark-section .swiper-testimonial .swiper-slide>div:hover {
   border-color: rgba(225, 6, 0, 0.35) !important;
   box-shadow: 0 10px 30px rgba(225, 6, 0, 0.08) !important;
   transform: translateY(-4px) !important;
@@ -176,46 +178,56 @@
 
 .section-awards .awards-item {
   display: flex;
-  align-items: center !important; /* Vertically center items */
-  gap: 20px; /* Proper spacing between image and text */
+  align-items: center !important;
+  /* Vertically center items */
+  gap: 20px;
+  /* Proper spacing between image and text */
 }
 
 /* Ensure other columns don't overflow when gap is added */
-.section-awards .awards-item > div:not(.award-photo-wrapper) {
-  flex: 1; /* Distribute remaining space evenly */
+.section-awards .awards-item>div:not(.award-photo-wrapper) {
+  flex: 1;
+  /* Distribute remaining space evenly */
   width: auto;
 }
 
-.section-awards .awards-item > div {
+.section-awards .awards-item>div {
   min-height: unset !important;
   padding: 4px 0 !important;
 }
 
 .award-photo-wrapper {
-  flex: 0 0 110px !important; /* Prominent thumbnail width */
+  flex: 0 0 110px !important;
+  /* Prominent thumbnail width */
   max-width: 110px !important;
-  height: 66px !important; /* Height between 80px-120px */
+  height: 66px !important;
+  /* Height between 80px-120px */
   border-radius: 12px;
-  overflow: hidden; /* Clean UI constraint */
-  padding: 0 !important; 
+  overflow: hidden;
+  /* Clean UI constraint */
+  padding: 0 !important;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--neutral-900, #18181B);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slight shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* Slight shadow */
 }
 
 .award-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Clean crop without distortion */
+  object-fit: cover;
+  /* Clean crop without distortion */
   border-radius: 12px;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .awards-item:hover .award-photo {
-  transform: scale(1.1); /* Smooth zoom-in effect */
-  filter: brightness(1.15); /* Brightness enhancement */
+  transform: scale(1.1);
+  /* Smooth zoom-in effect */
+  filter: brightness(1.15);
+  /* Brightness enhancement */
 }
 
 /* Mobile Responsiveness */
@@ -223,6 +235,7 @@
   .section-awards .awards-item {
     gap: 16px;
   }
+
   .award-photo-wrapper {
     flex: 0 0 120px !important;
     max-width: 120px !important;
@@ -233,12 +246,15 @@
 @media (max-width: 767px) {
   .section-awards .awards-item {
     flex-direction: column;
-    align-items: flex-start !important; /* Stack nicely on mobile */
+    align-items: flex-start !important;
+    /* Stack nicely on mobile */
     gap: 12px;
   }
+
   .award-photo-wrapper {
     flex: 0 0 90px !important;
-    max-width: 140px !important; /* Slightly reduce image size */
+    max-width: 140px !important;
+    /* Slightly reduce image size */
     height: 90px !important;
   }
 }
@@ -252,13 +268,13 @@
   display: block;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
 .investor-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-color: #d1d5db;
 }
 
@@ -278,16 +294,20 @@
 
 /* Mobile Spacing Optimizations (320px–768px) */
 @media (max-width: 767px) {
+
   /* 1. Global / Hero Spacing Rules */
   .section-hero .content-wrap {
     padding: 80px 0 50px !important;
   }
+
   .section-hero.v1 .content-wrap {
     padding: 80px 0 24px !important;
   }
+
   .section-hero .content-wrap .title {
     margin-bottom: 20px !important;
   }
+
   .section-hero .content-wrap .text {
     margin-bottom: 16px !important;
   }
@@ -297,13 +317,16 @@
     padding: 20px 16px !important;
     border-radius: 20px !important;
   }
+
   .section-about-us .review-box .desc {
     margin-bottom: 16px !important;
   }
+
   .section-about-us .review-box .border-bottom {
     margin-bottom: 12px !important;
     padding-bottom: 8px !important;
   }
+
   .section-about-us .review-box .mt-20 {
     margin-top: 12px !important;
   }
@@ -313,18 +336,22 @@
     padding-top: 16px !important;
     padding-bottom: 16px !important;
   }
+
   .partner-wrap {
     padding: 8px 0 !important;
     gap: 12px !important;
     align-items: center !important;
     text-align: center !important;
   }
+
   .partner-wrap p.text {
     margin-bottom: 8px !important;
   }
+
   .partner-wrap .swiper {
     max-width: 100% !important;
   }
+
   .partner-wrap img {
     height: 55px !important;
   }
@@ -333,18 +360,22 @@
   .featured-works-item {
     margin-bottom: 20px !important;
   }
+
   .featured-works-item .image {
     height: 220px !important;
     padding: 20px !important;
     border-radius: 16px !important;
   }
+
   .featured-works-item .image img {
     max-width: 120px !important;
     max-height: 120px !important;
   }
+
   .featured-works-item .content {
     padding: 16px 12px !important;
   }
+
   .featured-works-item .content .pagi-dot {
     margin-bottom: 16px !important;
     padding-bottom: 12px !important;
@@ -354,9 +385,11 @@
   .process-card {
     padding: 16px !important;
   }
+
   .process-card .icon {
     margin-bottom: 16px !important;
   }
+
   .process-card .content {
     margin-bottom: 16px !important;
   }
@@ -368,19 +401,22 @@
     padding: 20px 16px !important;
     border-radius: 20px !important;
   }
+
   .section-team .flex-wrap {
     gap: 20px 12px !important;
   }
+
   .team-item .image {
     margin-bottom: 16px !important;
   }
 
   /* 8. Testimonials Cards */
-  .dark-section .swiper-testimonial .swiper-slide > div {
+  .dark-section .swiper-testimonial .swiper-slide>div {
     padding: 20px 16px !important;
     border-radius: 20px !important;
   }
-  .dark-section .swiper-testimonial .swiper-slide > div .desc {
+
+  .dark-section .swiper-testimonial .swiper-slide>div .desc {
     margin-bottom: 16px !important;
   }
 
@@ -389,18 +425,19 @@
     padding: 20px 16px !important;
     border-radius: 20px !important;
   }
-  .pricing-item > .line {
+
+  .pricing-item>.line {
     margin-top: 16px !important;
     margin-bottom: 16px !important;
   }
 
   /* 10. Contact Form Card */
-  .section-contact .col-lg-6 > div {
+  .section-contact .col-lg-6>div {
     padding: 20px !important;
     border-radius: 20px !important;
   }
-  .form-contact > div {
-  }
+
+  .form-contact>div {}
 }
 
 /* Features Section desktop-like sync overrides under 990px viewport widths */
@@ -460,7 +497,7 @@
     align-self: center !important;
     background: #ffffff !important;
     border: 1px solid #e4e4e7 !important;
-    box-shadow: 0 10px 25px rgba(253, 59, 38, 0.15), 0 0 1px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 10px 25px rgba(253, 59, 38, 0.15), 0 0 1px rgba(0, 0, 0, 0.1) !important;
     z-index: 10 !important;
     justify-content: center !important;
     align-items: center !important;
@@ -584,10 +621,12 @@
     left: calc((100% - var(--features-logo-width) - 2 * var(--features-gap)) / 2) !important;
     top: 0 !important;
   }
+
   .dot-mid-left-card {
     left: calc((100% - var(--features-logo-width) - 2 * var(--features-gap)) / 2) !important;
     top: 50% !important;
   }
+
   .dot-bot-left-card {
     left: calc((100% - var(--features-logo-width) - 2 * var(--features-gap)) / 2) !important;
     top: 100% !important;
@@ -598,6 +637,7 @@
     left: calc(50% - var(--features-logo-width) / 2 - var(--features-gap) / 2) !important;
     top: 50% !important;
   }
+
   .dot-left-logo {
     left: calc(50% - var(--features-logo-width) / 2) !important;
     top: 50% !important;
@@ -608,6 +648,7 @@
     right: calc(50% - var(--features-logo-width) / 2) !important;
     top: 50% !important;
   }
+
   .dot-right-intersection {
     right: calc(50% - var(--features-logo-width) / 2 - var(--features-gap) / 2) !important;
     top: 50% !important;
@@ -618,10 +659,12 @@
     right: calc((100% - var(--features-logo-width) - 2 * var(--features-gap)) / 2) !important;
     top: 0 !important;
   }
+
   .dot-mid-right-card {
     right: calc((100% - var(--features-logo-width) - 2 * var(--features-gap)) / 2) !important;
     top: 50% !important;
   }
+
   .dot-bot-right-card {
     right: calc((100% - var(--features-logo-width) - 2 * var(--features-gap)) / 2) !important;
     top: 100% !important;
@@ -653,5 +696,632 @@
     --features-icon-box-size: 32px;
     --features-icon-radius: 8px;
     --features-dot-size: 4px;
+  }
+}
+
+/* About Us Section Layout & Spacing Overrides */
+
+/* Desktop & Large Screens */
+@media (min-width: 1200px) {
+  .section-about-us {
+    padding-bottom: 24px !important;
+  }
+
+  .section-about-us .col-left {
+    padding: 50px 0 0px !important;
+  }
+
+  .section-about-us .col-left .title {
+    margin-bottom: 24px !important;
+  }
+
+  .section-about-us .review-box {
+    padding: 32px 36px 24px !important;
+    border-radius: 28px !important;
+  }
+
+  .section-about-us .review-box .desc {
+    margin-bottom: 24px !important;
+  }
+
+  .section-about-us .review-box .counter {
+    font-size: 85px !important;
+    line-height: 85px !important;
+    margin-bottom: -10px !important;
+  }
+
+  .section-about-us .review-box .border-bottom {
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .section-partner {
+    padding-top: 10px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .partner-wrap {
+    padding: 20px 0 40px !important;
+  }
+
+  .section-services {
+    padding-bottom: 20px !important;
+  }
+
+  .section-services .col-left {
+    margin-bottom: 0px !important;
+  }
+
+  .section-benefits {
+    padding-top: 20px !important;
+    padding-bottom: 30px !important;
+  }
+}
+
+/* Medium Screens (Tablets / Laptops) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .section-about-us {
+    padding-bottom: 20px !important;
+  }
+
+  .section-about-us .col-left {
+    padding: 40px 0 0px !important;
+  }
+
+  .section-about-us .col-left .title {
+    margin-bottom: 20px !important;
+  }
+
+  .section-about-us .review-box {
+    padding: 24px 24px 20px !important;
+    border-radius: 24px !important;
+  }
+
+  .section-about-us .review-box .desc {
+    margin-bottom: 20px !important;
+  }
+
+  .section-about-us .review-box .counter {
+    font-size: 75px !important;
+    line-height: 75px !important;
+    margin-bottom: -8px !important;
+  }
+
+  .section-about-us .review-box .border-bottom {
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .section-partner {
+    padding-top: 10px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .partner-wrap {
+    padding: 16px 0 32px !important;
+  }
+
+  .section-services {
+    padding-bottom: 20px !important;
+  }
+
+  .section-services .col-left {
+    margin-bottom: 0px !important;
+  }
+
+  .section-benefits {
+    padding-top: 20px !important;
+    padding-bottom: 24px !important;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 767px) {
+  .section-about-us {
+    padding-bottom: 16px !important;
+  }
+
+  .section-about-us .col-left {
+    padding: 30px 0 0px !important;
+  }
+
+  .section-about-us .review-box .counter {
+    font-size: 60px !important;
+    line-height: 60px !important;
+    margin-bottom: -6px !important;
+  }
+
+  .section-partner {
+    padding-top: 8px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .partner-wrap {
+    padding: 12px 0 24px !important;
+  }
+
+  .section-services {
+    padding-bottom: 15px !important;
+  }
+
+  .section-services .col-left {
+    margin-bottom: 0px !important;
+  }
+
+  .section-benefits {
+    padding-top: 15px !important;
+    padding-bottom: 16px !important;
+  }
+}
+
+/* Why Choose Us / Benefits Section Overrides */
+.benefits-box {
+  padding: 32px !important;
+  /* Uniform padding on all sides for identical padding height */
+  border-radius: 32px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.benefits-box .content {
+  margin-top: auto !important;
+  /* Force text to align perfectly at the bottom */
+}
+
+/* Desktop & Large Screens */
+@media (min-width: 992px) {
+  .benefits-box {
+    height: 340px !important;
+    /* Height increased to 340px to completely prevent text overflow */
+  }
+
+  .section-benefits .heading-section.mb-70 {
+    margin-bottom: 35px !important;
+    /* Keep section compact for single screen scroll */
+  }
+
+  .benefits-progress-inner {
+    margin-bottom: 0px !important;
+    /* Flexbox handles spacing */
+  }
+
+  .benefits-step .benefits-step-inner {
+    margin-top: 15px !important;
+    margin-bottom: 0px !important;
+    height: 80px !important;
+  }
+
+  .benefits-step-inner .step-item {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 12px !important;
+  }
+
+  .benefits-step-inner .step-item .icon {
+    font-size: 36px !important;
+  }
+
+  .benefits-secure-inner {
+    margin-top: -10px !important;
+    margin-bottom: 0px !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 150px !important;
+    /* Big shield height container */
+  }
+
+  .benefits-secure-inner img {
+    max-height: 150px !important;
+    /* Big shield image */
+    width: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+    display: inline-block !important;
+  }
+
+  .benefits-design .benefits-design-inner {
+    margin-top: -10px !important;
+    margin-bottom: 0px !important;
+    height: 110px !important;
+    position: relative !important;
+  }
+
+  .benefits-design .benefits-design-inner .item-img-1 {
+    max-height: 90px !important;
+    width: auto !important;
+  }
+
+  .benefits-design .benefits-design-inner .item-img-2 {
+    top: 15px !important;
+    right: 180px !important;
+    max-height: 60px !important;
+    width: auto !important;
+  }
+
+  .benefits-design .benefits-design-inner .item-img-3 {
+    bottom: -15px !important;
+    right: -30px !important;
+    max-height: 60px !important;
+    width: auto !important;
+  }
+}
+
+/* Tablets & Mobile Screens */
+@media (max-width: 991px) {
+  .benefits-box {
+    height: auto !important;
+    margin-bottom: 24px !important;
+  }
+
+  .benefits-secure-inner img {
+    max-height: 120px !important;
+  }
+
+  .benefits-secure-inner {
+    margin-bottom: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   Leadership / Team Section Redesign - Premium Corporate UI
+   ========================================================================== */
+
+.section-team-premium {
+  background-color: #ffffff !important;
+  padding: 80px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.leadership-grid-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: space-between !important;
+  position: relative !important;
+  gap: 32px !important;
+  z-index: 5 !important;
+}
+
+/* Symmetrical Connector Line for Desktop/Tablet/Mobile */
+.connector-line-desktop {
+  display: none !important;
+}
+
+/* Leader Card Item styles */
+.leader-card-item {
+  flex: 1 1 380px !important;
+  max-width: 420px !important;
+  background: #ffffff !important;
+  border: 1px solid #f1f1f1 !important;
+  border-radius: 24px !important;
+  padding: 32px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.01) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  z-index: 2 !important;
+  position: relative !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Float card on hover (desktop only) */
+@media (min-width: 992px) {
+  .leader-card-item:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 50px rgba(255, 90, 31, 0.06), 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+    border-color: rgba(255, 90, 31, 0.15) !important;
+  }
+}
+
+/* Image behavior */
+.leader-image-wrap {
+  position: relative !important;
+  margin-bottom: 28px !important;
+}
+
+.leader-image-wrap .image-bg-box {
+  background-color: #fdf5f0 !important;
+  /* Soft premium background */
+  border-radius: 20px !important;
+  aspect-ratio: 1.1 / 1 !important;
+  overflow: hidden !important;
+}
+
+.leader-profile-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.leader-card-item:hover .leader-profile-img {
+  transform: scale(1.04) !important;
+  /* Image zoom on hover */
+}
+
+/* Profile Icon Badge */
+.profile-icon-badge {
+  position: absolute !important;
+  bottom: -16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background-color: #ff5a1f !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 10px rgba(255, 90, 31, 0.3) !important;
+  border: 2px solid #ffffff !important;
+  z-index: 5 !important;
+}
+
+/* Typography & Info */
+.leader-info-wrap {
+  text-align: left !important;
+}
+
+.leader-name {
+  font-size: clamp(20px, 2.2vw, 24px) !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin-bottom: 8px !important;
+  line-height: 1.2 !important;
+}
+
+.leader-position {
+  font-size: clamp(12px, 1.4vw, 13.5px) !important;
+  font-weight: 600 !important;
+  color: #ff5a1f !important;
+  line-height: 1.45 !important;
+  margin-bottom: 16px !important;
+  min-height: 40px !important;
+  /* Keep aligned layout heights */
+}
+
+.leader-divider {
+  width: 40px !important;
+  height: 2px !important;
+  background-color: #ff5a1f !important;
+  margin-bottom: 20px !important;
+}
+
+.leader-desc {
+  font-size: clamp(13px, 1.5vw, 14.5px) !important;
+  color: #4b5563 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* Center Logo layout */
+.leader-logo-center-wrap {
+  flex: 0 0 160px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 3 !important;
+  position: relative !important;
+}
+
+.logo-circle-container {
+  width: 150px !important;
+  height: 150px !important;
+  background-color: #ffffff !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 90, 31, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(255, 90, 31, 0.12), 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  transition: all 0.3s ease !important;
+}
+
+.logo-center-img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* ==========================================================================
+   Leadership Section Responsive Breakpoints (Reducing Sync)
+   ========================================================================== */
+
+/* Breakpoint: Laptop / Large Screens (under 1440px) */
+@media (max-width: 1440px) {
+  .leadership-grid-container {
+    max-width: 1100px !important;
+    gap: 24px !important;
+  }
+}
+
+/* Breakpoint: Medium / Small Laptops (under 1200px) */
+@media (max-width: 1199px) {
+  .section-team-premium {
+    padding: 60px 0 !important;
+  }
+
+  .leadership-grid-container {
+    max-width: 960px !important;
+    gap: 16px !important;
+  }
+
+  .leader-card-item {
+    padding: 24px !important;
+    border-radius: 20px !important;
+  }
+
+  .logo-circle-container {
+    width: 120px !important;
+    height: 120px !important;
+    padding: 18px !important;
+  }
+
+  .leader-logo-center-wrap {
+    flex: 0 0 130px !important;
+  }
+}
+
+/* Breakpoint: Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .leadership-grid-container {
+    max-width: 720px !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    /* Ensure horizontal alignment is kept */
+  }
+
+  .leader-card-item {
+    padding: 20px !important;
+    border-radius: 16px !important;
+    flex: 1 1 200px !important;
+    max-width: 250px !important;
+  }
+
+  .leader-image-wrap {
+    margin-bottom: 12px !important;
+  }
+
+  .leader-image-wrap .image-bg-box {
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .logo-circle-container {
+    width: 90px !important;
+    height: 90px !important;
+    padding: 12px !important;
+  }
+
+  .leader-logo-center-wrap {
+    flex: 0 0 110px !important;
+  }
+
+  /* Hide details to fit layout horizontally */
+  .leader-desc,
+  .leader-divider {
+    display: none !important;
+  }
+
+  .leader-position {
+    min-height: unset !important;
+    margin-bottom: 0 !important;
+  }
+
+  .profile-icon-badge {
+    display: none !important;
+    /* Clean layout */
+  }
+}
+
+/* Breakpoint: Mobile Screens (under 768px) */
+@media (max-width: 767px) {
+  .section-team-premium {
+    padding: 40px 0 !important;
+  }
+
+  .leadership-grid-container {
+    flex-direction: row !important;
+    /* Maintain horizontal view as requested */
+    flex-wrap: nowrap !important;
+    /* Do not stack */
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 8px !important;
+    /* Tight responsive gap */
+    padding: 0 12px !important;
+  }
+
+  .leader-card-item {
+    flex: 1 1 120px !important;
+    max-width: 140px !important;
+    padding: 12px !important;
+    /* Tight padding to prevent overflow */
+    border-radius: 16px !important;
+    text-align: center !important;
+  }
+
+  .leader-image-wrap {
+    margin-bottom: 10px !important;
+  }
+
+  .leader-image-wrap .image-bg-box {
+    aspect-ratio: 1 / 1 !important;
+    /* Square image for perfect scaling */
+  }
+
+  .leader-info-wrap {
+    text-align: center !important;
+  }
+
+  .leader-name {
+    font-size: 11px !important;
+    /* Clean, small font sizes to fit view */
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .leader-position {
+    font-size: 9px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0 !important;
+    min-height: unset !important;
+  }
+
+  .leader-desc,
+  .leader-divider,
+  .profile-icon-badge {
+    display: none !important;
+    /* Hide description, divider line and icon badge to save space */
+  }
+
+  .leader-logo-center-wrap {
+    flex: 0 0 76px !important;
+    max-width: 76px !important;
+  }
+
+  .logo-circle-container {
+    width: 68px !important;
+    /* Scaled down logo container */
+    height: 68px !important;
+    padding: 8px !important;
+  }
+}
+
+/* Breakpoint: Extremely Small Mobile Viewports (under 360px) */
+@media (max-width: 359px) {
+  .leadership-grid-container {
+    padding: 0 6px !important;
+    gap: 4px !important;
+  }
+
+  .leader-card-item {
+    padding: 8px !important;
+  }
+
+  .leader-name {
+    font-size: 10px !important;
+  }
+
+  .leader-position {
+    font-size: 8px !important;
+  }
+
+  .logo-circle-container {
+    width: 58px !important;
+    height: 58px !important;
+    padding: 6px !important;
+  }
+
+  .leader-logo-center-wrap {
+    flex: 0 0 64px !important;
+    max-width: 64px !important;
   }
 }
