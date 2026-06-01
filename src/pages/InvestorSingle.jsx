@@ -9,6 +9,7 @@ import InvestorContacts from '../components/investors/InvestorContacts';
 import MaterialCreditors from '../components/investors/MaterialCreditors';
 import PreferentialWarrants from '../components/investors/PreferentialWarrants';
 import MaterialContracts from '../components/investors/MaterialContracts';
+import MaterialDocuments from '../components/investors/MaterialDocuments';
 import {
   Building2,
   TrendingUp,
@@ -606,6 +607,10 @@ function InvestorSingle() {
 
   if (slug === 'material-contracts') {
     return <MaterialContracts />;
+  }
+
+  if (slug === 'material-documents') {
+    return <MaterialDocuments />;
   }
 
   return (
