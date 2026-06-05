@@ -194,8 +194,6 @@ function MaterialContracts() {
                         </div>
                         <a
                           href={file.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className="fy-doc-download-btn"
                           aria-label={`Open ${file.title}`}
                         >

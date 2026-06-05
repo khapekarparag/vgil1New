@@ -274,8 +274,6 @@ function MaterialDocuments() {
                         </div>
                         <a
                           href={doc.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className="fy-doc-download-btn"
                           aria-label={`Open ${doc.label}`}
                         >

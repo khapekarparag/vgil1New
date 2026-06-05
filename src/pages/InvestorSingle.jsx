@@ -43,10 +43,10 @@ const GROUP_COMPANIES_DATA = [
     icon: "building-2",
     theme: "orange",
     docs: [
-      { year: "FY 2024-2025", link: "#" },
-      { year: "FY 2023-2024", link: "#" },
-      { year: "FY 2022-2023", link: "#" },
-      { year: "FY 2021-2022", link: "#" }
+      { year: "FY 2024-2025", link: "/assets/.pdf/Group Companies/Paynext Private Limited/FY 2024-2025.pdf" },
+      { year: "FY 2023-2024", link: "/assets/.pdf/Group Companies/Paynext Private Limited/FY 2023-2024.pdf" },
+      { year: "FY 2022-2023", link: "/assets/.pdf/Group Companies/Paynext Private Limited/FY 2022-2023.pdf" },
+      { year: "FY 2021-2022", link: "/assets/.pdf/Group Companies/Paynext Private Limited/FY 2021-2022.pdf" }
     ]
   },
   {
@@ -54,9 +54,9 @@ const GROUP_COMPANIES_DATA = [
     icon: "building",
     theme: "blue",
     docs: [
-      { year: "FY 2023-24", link: "#" },
-      { year: "FY 2022-23", link: "#" },
-      { year: "FY 2021-22", link: "#" }
+      { year: "FY 2023-24", link: "/assets/.pdf/Group Companies/Sampada Infosolutions Private Limited/FY 2023-24.pdf" },
+      { year: "FY 2022-23", link: "/assets/.pdf/Group Companies/Sampada Infosolutions Private Limited/FY 2022-23.pdf" },
+      { year: "FY 2021-22", link: "/assets/.pdf/Group Companies/Sampada Infosolutions Private Limited/FY 2021-22.pdf" }
     ]
   },
   {
@@ -64,9 +64,9 @@ const GROUP_COMPANIES_DATA = [
     icon: "trending-up",
     theme: "green",
     docs: [
-      { year: "FY 2023-2024", link: "#" },
-      { year: "FY 2022-2023", link: "#" },
-      { year: "FY 2021-2022", link: "#" }
+      { year: "FY 2023-2024", link: "/assets/.pdf/Group Companies/SIP Fund Private Limited/FY 2023-2024.pdf" },
+      { year: "FY 2022-2023", link: "/assets/.pdf/Group Companies/SIP Fund Private Limited/FY 2022-2023.pdf" },
+      { year: "FY 2021-2022", link: "/assets/.pdf/Group Companies/SIP Fund Private Limited/FY 2021-2022.pdf" }
     ]
   },
   {
@@ -74,10 +74,10 @@ const GROUP_COMPANIES_DATA = [
     icon: "building-2",
     theme: "purple",
     docs: [
-      { year: "FY 2024-2025", link: "#" },
-      { year: "FY 2023-2024", link: "#" },
-      { year: "FY 2022-2023", link: "#" },
-      { year: "FY 2021-2022", link: "#" }
+      { year: "FY 2024-2025", link: "/assets/.pdf/Group Companies/Virtual Galaxy Fintech Private Limited/FY 2024-2025.pdf" },
+      { year: "FY 2023-2024", link: "/assets/.pdf/Group Companies/Virtual Galaxy Fintech Private Limited/FY 2023-2024.pdf" },
+      { year: "FY 2022-2023", link: "/assets/.pdf/Group Companies/Virtual Galaxy Fintech Private Limited/FY 2022-2023.pdf" },
+      { year: "FY 2021-2022", link: "/assets/.pdf/Group Companies/Virtual Galaxy Fintech Private Limited/FY 2021-2022.pdf" }
     ]
   },
   {
@@ -85,55 +85,59 @@ const GROUP_COMPANIES_DATA = [
     icon: "shield",
     theme: "gold",
     docs: [
-      { year: "FY 2023-2024", link: "#" },
-      { year: "FY 2022-2023", link: "#" },
-      { year: "FY 2021-2022", link: "#" }
+      { year: "FY 2023-2024", link: "/assets/.pdf/Group Companies/Virtual Galaxy Insurance Brokers Private Limited/FY 2023-2024.pdf" },
+      { year: "FY 2022-2023", link: "/assets/.pdf/Group Companies/Virtual Galaxy Insurance Brokers Private Limited/FY 2022-2023.pdf" },
+      { year: "FY 2021-2022", link: "/assets/.pdf/Group Companies/Virtual Galaxy Insurance Brokers Private Limited/FY 2021-2022.pdf" }
     ]
   }
 ];
 
 const FINANCIAL_REPORTS_DATA = [
   {
-    name: "Annual Reports",
+    name: "FY 2025-2026",
     icon: "book-open",
     theme: "orange",
     docs: [
-      { year: "FY 2024-2025", link: "#" },
-      { year: "FY 2023-2024", link: "#" },
-      { year: "FY 2022-2023", link: "#" },
-      { year: "FY 2021-2022", link: "#" }
+      { year: "Independent Auditor's Report", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2025-2026/Independent Auditor's Report.pdf" },
+      { year: "Year End Results", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2025-2026/Year End Results.pdf" },
+      { year: "Unaudited Financial Result (30.09.25)", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2025-2026/Unaudited Financial Result as on 30.09.2025.pdf" },
+      { year: "Unaudited Financial Result (31.12.25)", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2025-2026/Unaudited Financial Result as on 31.12.2025.pdf" }
     ]
   },
   {
-    name: "Quarterly Financial Results",
+    name: "FY 2024-2025",
     icon: "trending-up",
     theme: "blue",
     docs: [
-      { year: "Q3 FY 2024-25", link: "#" },
-      { year: "Q2 FY 2024-25", link: "#" },
-      { year: "Q1 FY 2024-25", link: "#" },
-      { year: "Q4 FY 2023-24", link: "#" }
+      { year: "Independent Auditor's Report", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2024-2025/Independent Auditor's Report.pdf" },
+      { year: "Year End Results", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2024-2025/Year End Results.pdf" }
     ]
   },
   {
-    name: "Shareholding Pattern",
-    icon: "users",
+    name: "FY 2023-2024",
+    icon: "book-open",
     theme: "green",
     docs: [
-      { year: "Q3 FY 2024-25", link: "#" },
-      { year: "Q2 FY 2024-25", link: "#" },
-      { year: "Q1 FY 2024-25", link: "#" }
+      { year: "VGIPL Audited Financials", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2023-2024/VGIPL Audited Financials.pdf" },
+      { year: "VGIPL CFS", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2023-2024/VGIPL CFS.pdf" }
     ]
   },
   {
-    name: "Statutory Disclosures & Filings",
-    icon: "shield",
+    name: "FY 2022-2023",
+    icon: "trending-up",
     theme: "purple",
     docs: [
-      { year: "FY 2024-2025", link: "#" },
-      { year: "FY 2023-2024", link: "#" },
-      { year: "FY 2022-2023", link: "#" },
-      { year: "FY 2021-2022", link: "#" }
+      { year: "VGIPL Audited Financials", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2022-2023/VGIPL Audited Financials.pdf" },
+      { year: "VGIPL CFS", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2022-2023/VGIPL CFS.pdf" }
+    ]
+  },
+  {
+    name: "FY 2021-2022",
+    icon: "book-open",
+    theme: "gold",
+    docs: [
+      { year: "VGIPL Audited Financials", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2021-2022/VGIPL Audited Financials.pdf" },
+      { year: "VGIPL CFS", link: "/assets/.pdf/Financial Information Statutory Reports of VGIL/FY 2021-2022/VGIPL CFS.pdf" }
     ]
   }
 ];
