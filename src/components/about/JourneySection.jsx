@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -160,23 +160,18 @@ function JourneySection() {
             Roadmap of VGIL for the last 27 years
           </h2>
           <p className="text-body-2 text-neutral-600 max-w-700 mx-auto">
-            From a visionary startup in 1997 to a publicly listed technology company in 2025, 
+            From a visionary startup in 1997 to a publicly listed technology company in 2025,
             our journey reflects innovation, trust, growth, and transformation.
           </p>
         </div>
 
         <div className="journey-slider-wrap effectFade fadeUp">
           <Swiper
-            modules={[Pagination, Navigation, Autoplay]}
+            modules={[Pagination, Navigation]}
             spaceBetween={30}
             slidesPerView={1}
             centeredSlides={false}
             initialSlide={0}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
             navigation={{
               prevEl: '.journey-prev',
               nextEl: '.journey-next',
@@ -190,9 +185,9 @@ function JourneySection() {
           >
             {milestones.map((item, index) => (
               <SwiperSlide key={index}>
-                <div 
-                  className="timeline-slide-content" 
-                  style={{ 
+                <div
+                  className="timeline-slide-content"
+                  style={{
                     '--theme-color': item.theme,
                     '--shadow-color': item.shadow
                   }}
@@ -209,8 +204,8 @@ function JourneySection() {
                     <h4 className="card-title">{item.title}</h4>
                     <div className="card-divider"></div>
                     <p className="card-desc">{item.description}</p>
-                    <div 
-                      className="card-footer-graphic" 
+                    <div
+                      className="card-footer-graphic"
                       style={{ backgroundImage: `url(${item.footer})` }}
                     ></div>
                   </div>
@@ -234,7 +229,7 @@ function JourneySection() {
               <i className="icon icon-crown-solid"></i>
             </div>
             <div className="stat-info">
-              <span className="stat-number">27+</span>
+              <span className="stat-number">29+</span>
               <span className="stat-label">Years of Legacy</span>
             </div>
           </div>

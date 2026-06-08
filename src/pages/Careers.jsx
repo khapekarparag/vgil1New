@@ -3,6 +3,20 @@ import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+// Import VGIL Group Images
+import team6 from '../assets/group-img-vgil-team/vgiplteam-6.jpg';
+import team7 from '../assets/group-img-vgil-team/vgiplteam-7.jpg';
+import team8 from '../assets/group-img-vgil-team/vgiplteam-8.jpg';
+import team9 from '../assets/group-img-vgil-team/vgiplteam-9.jpg';
+import team10 from '../assets/group-img-vgil-team/vgiplteam-10.jpg';
+import team11 from '../assets/group-img-vgil-team/vgiplteam-11.jpg';
+import team12 from '../assets/group-img-vgil-team/vgiplteam-12.jpg';
+import team13 from '../assets/group-img-vgil-team/vgiplteam-13.jpg';
+import team14 from '../assets/group-img-vgil-team/vgiplteam-14.jpg';
+import team15 from '../assets/group-img-vgil-team/vgiplteam-15.jpg';
+import team16 from '../assets/group-img-vgil-team/vgiplteam-16.jpg';
+import team17 from '../assets/group-img-vgil-team/vgiplteam-17.jpg';
+
 // Red and white theme
 const Careers = () => {
   const { hash } = useLocation();
@@ -82,9 +96,18 @@ const Careers = () => {
           
           <div className="row">
             {[
-              { img: 'https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?auto=format&fit=crop&q=80&w=600', name: 'Diverse Teams', role: 'Collaborating globally' },
-              { img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=600', name: 'Creative Workshops', role: 'Brainstorming the future' },
-              { img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600', name: 'Tech Leaders', role: 'Driving innovation' },
+              { img: team6, name: 'Team Collaboration', role: 'Working together to build seamless solutions.' },
+              { img: team7, name: 'Innovation Workshops', role: 'Brainstorming and designing cutting-edge architectures.' },
+              { img: team8, name: 'Employee Engagement', role: 'Fostering team spirit and a collaborative workplace culture.' },
+              { img: team9, name: 'Leadership Sessions', role: 'Strategic planning and guidance from company visionaries.' },
+              { img: team10, name: 'Learning & Development', role: 'Continuous upskilling and knowledge sharing programs.' },
+              { img: team11, name: 'Team Celebrations', role: 'Celebrating milestones, festivals, and achievements together.' },
+              { img: team12, name: 'Project Discussions', role: 'Collaborative planning to deliver successful projects.' },
+              { img: team13, name: 'Corporate Events', role: 'Annual gatherings and key corporate milestones.' },
+              { img: team14, name: 'Office Celebrations', role: 'Creating memories and sharing smiles during work hours.' },
+              { img: team15, name: 'Team Outings', role: 'Bonding beyond the workplace during recreational outings.' },
+              { img: team16, name: 'Training Sessions', role: 'Nurturing skills to meet emerging industry challenges.' },
+              { img: team17, name: 'Employee Activities', role: 'Fun activities and engagement to boost team morale.' },
             ].map((person, idx) => (
               <div key={idx} className="col-md-4 mb-4">
                 <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', backgroundColor: '#fff' }}>

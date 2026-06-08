@@ -12,15 +12,15 @@ function ToolsSectionV2() {
           We design, build, and evaluate with a modern AI stack—LLMs, vector <br /> search, orchestration, and observability—so your features are fast, <br /> reliable, and secure.
         </div>
         <div className="position-relative tool-image-box">
-          <img className="img-item img-item-1" src="/assets/images/section/tool-1.svg" alt="" />
-          <img className="img-item img-item-2" src="/assets/images/section/tool-2.svg" alt="" />
-          <img className="img-item img-item-3" src="/assets/images/section/tool-3.svg" alt="" />
+          <img className="img-item img-item-1" src="/assets/images/about/tools-img/Ai Governance.jpg.jpeg" alt="AI Governance" />
+          <img className="img-item img-item-2" src="/assets/images/about/tools-img/Banking Solution.jpg.jpeg" alt="Banking Solution" />
+          <img className="img-item img-item-3" src="/assets/images/about/tools-img/Conversational AI.jpg.jpeg" alt="Conversational AI" />
           <div className="image-center flex-shrink">
-            <img src="/assets/images/section/tool-center.svg" alt="" />
+            <img src="/assets/images/about/tools-img/AI-Brain.png" alt="AI Brain" />
           </div>
-          <img className="img-item img-item-4" src="/assets/images/section/tool-4.svg" alt="" />
-          <img className="img-item img-item-5" src="/assets/images/section/tool-5.svg" alt="" />
-          <img className="img-item img-item-6" src="/assets/images/section/tool-6.svg" alt="" />
+          <img className="img-item img-item-4" src="/assets/images/about/tools-img/Cyber Security.jpg.jpeg" alt="Cyber Security" />
+          <img className="img-item img-item-5" src="/assets/images/about/tools-img/Data Center Enterprice.jpg.jpeg" alt="Data Center Enterprise" />
+          <img className="img-item img-item-6" src="/assets/images/about/tools-img/ERP.jpg.jpeg" alt="ERP" />
           <div className="side-line">
             <svg data-viewbox-desktop="0 0 302 157" data-viewbox-mobile="0 0 300 100" className="line-1" width="300" height="157" viewBox="0 0 302 157" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path id="line-path" d="M301 157V130C301 121.716 294.284 115 286 115H16C7.71572 115 0.999992 108.284 0.999992 100V0" stroke="white" strokeWidth="2" fill="none" />

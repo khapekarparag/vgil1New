@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 function ToolsSection() {
   return (
     <div className="section-tools section-spacing-lg">
-      <img className="img-1 img-grow-1" src="/assets/images/item/item-4.svg" alt="" />
-      <img className="img-2 img-grow-2" src="/assets/images/item/item-5.svg" alt="" />
-      <img className="img-3 img-grow-3" src="/assets/images/item/item-6.svg" alt="" />
-      <img className="img-4 img-grow-4" src="/assets/images/item/item-7.svg" alt="" />
-      <img className="img-5 img-grow-5" src="/assets/images/item/item-8.svg" alt="" />
-      <img className="img-6 img-grow-6" src="/assets/images/item/item-9.svg" alt="" />
+      <img className="img-1 img-grow-1" src="/assets/images/about/tools-img/Ai Governance.jpg.jpeg" alt="AI Governance" />
+      <img className="img-2 img-grow-2" src="/assets/images/about/tools-img/Banking Solution.jpg.jpeg" alt="Banking Solution" />
+      <img className="img-3 img-grow-3" src="/assets/images/about/tools-img/Conversational AI.jpg.jpeg" alt="Conversational AI" />
+      <img className="img-4 img-grow-4" src="/assets/images/about/tools-img/Cyber Security.jpg.jpeg" alt="Cyber Security" />
+      <img className="img-5 img-grow-5" src="/assets/images/about/tools-img/Data Center Enterprice.jpg.jpeg" alt="Data Center Enterprise" />
+      <img className="img-6 img-grow-6" src="/assets/images/about/tools-img/ERP.jpg.jpeg" alt="ERP" />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-5 col-md-8 text-center">

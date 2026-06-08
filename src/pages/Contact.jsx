@@ -201,7 +201,7 @@ function Contact() {
               </div>
             </div>
             <div className="col-lg-7">
-              <div className="wg-map" style={{ borderRadius: '32px', overflow: 'hidden', height: '420px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1.5px solid #000000' }}>
+              <div className="wg-map" style={{ borderRadius: '32px', overflow: 'hidden', height: '420px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1.5px solid #000000', margin: 0 }}>
                 <iframe
                   src="https://maps.google.com/maps?q=Virtual%20Galaxy%20Infotech%20Ltd,%20Vivekanand%20Nagar,%20Nagpur&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>
@@ -212,7 +212,7 @@ function Contact() {
           {/* Pune Branch */}
           <div className="row align-items-center effectFade fadeUp">
             <div className="col-lg-7 order-lg-1 order-2">
-              <div className="wg-map" style={{ borderRadius: '32px', overflow: 'hidden', height: '420px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1.5px solid #000000' }}>
+              <div className="wg-map" style={{ borderRadius: '32px', overflow: 'hidden', height: '420px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1.5px solid #000000', margin: 0 }}>
                 <iframe
                   src="https://maps.google.com/maps?q=GT%20Arcade,%20B%20T%20Kawade%20Road,%20Pune&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>

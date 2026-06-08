@@ -50,25 +50,25 @@ const SUBPAGES_DATA = {
       {
         name: "Mrs. Bhanupriya Nikhil Thakur",
         role: "Non-Executive, Independent Woman Director",
-        img: "/assets/images/team/team-1.jpg",
+        img: "/assets/images/about/founders/bhanupriya-clear-bg.png",
         linkedin: "https://www.linkedin.com/"
       },
       {
         name: "Mr. Ayush Munnalal Sharma",
         role: "Non-Executive Independent Director",
-        img: "/assets/images/team/team-2.jpg",
+        img: "/assets/images/about/founders/ayush-sharma-clear-bg.png",
         linkedin: "https://www.linkedin.com/"
       },
       {
         name: "Mr. Asit Oberoi",
         role: "Professional, Non-Executive Director",
-        img: "/assets/images/team/team-3.jpg",
+        img: "/assets/images/about/founders/asit-oberoi.jpg",
         linkedin: "https://www.linkedin.com/"
       },
       {
         name: "Mr. Jaideep Narayan Pawar",
         role: "Non-Executive Independent Director",
-        img: "/assets/images/team/team-4.jpg",
+        img: "/assets/images/about/founders/jaideep-pawar.jpg",
         linkedin: "https://www.linkedin.com/"
       }
     ]

@@ -1,18 +1,38 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Import VGIL Group Images
+import team6 from '../assets/group-img-vgil-team/vgiplteam-6.jpg';
+import team7 from '../assets/group-img-vgil-team/vgiplteam-7.jpg';
+import team8 from '../assets/group-img-vgil-team/vgiplteam-8.jpg';
+import team9 from '../assets/group-img-vgil-team/vgiplteam-9.jpg';
+import team10 from '../assets/group-img-vgil-team/vgiplteam-10.jpg';
+import team11 from '../assets/group-img-vgil-team/vgiplteam-11.jpg';
+import team12 from '../assets/group-img-vgil-team/vgiplteam-12.jpg';
+import team13 from '../assets/group-img-vgil-team/vgiplteam-13.jpg';
+import team14 from '../assets/group-img-vgil-team/vgiplteam-14.jpg';
+import team15 from '../assets/group-img-vgil-team/vgiplteam-15.jpg';
+import team16 from '../assets/group-img-vgil-team/vgiplteam-16.jpg';
+import team17 from '../assets/group-img-vgil-team/vgiplteam-17.jpg';
+
 const MeetOurPeople = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const peopleData = [
-    { img: 'https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?auto=format&fit=crop&q=80&w=800', title: 'Global Collaboration', desc: 'Our teams work seamlessly across borders to deliver enterprise solutions.' },
-    { img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800', title: 'Creative Thinkers', desc: 'Brainstorming and prototyping the next generation of digital finance.' },
-    { img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800', title: 'Engineering Leaders', desc: 'Architecting secure, scalable systems that power modern businesses.' },
-    { img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800', title: 'Customer Success', desc: 'Ensuring our clients achieve maximum value from our solutions.' },
-    { img: 'https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&q=80&w=800', title: 'Mentorship', desc: 'Guiding the next wave of tech talent through hands-on learning.' },
-    { img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800', title: 'Team Building', desc: 'Fostering a culture of trust, inclusion, and mutual respect.' },
+    { img: team6, title: 'Team Collaboration', desc: 'Working together to build seamless solutions.' },
+    { img: team7, title: 'Innovation Workshops', desc: 'Brainstorming and designing cutting-edge AI architectures.' },
+    { img: team8, title: 'Employee Engagement', desc: 'Fostering team spirit and a collaborative workplace culture.' },
+    { img: team9, title: 'Leadership Sessions', desc: 'Strategic planning and guidance from company visionaries.' },
+    { img: team10, title: 'Learning & Development', desc: 'Continuous upskilling and knowledge sharing programs.' },
+    { img: team11, title: 'Team Celebrations', desc: 'Celebrating milestones, festivals, and achievements together.' },
+    { img: team12, title: 'Project Discussions', desc: 'Collaborative planning to deliver successful projects.' },
+    { img: team13, title: 'Corporate Events', desc: 'Annual gatherings and key corporate milestones.' },
+    { img: team14, title: 'Office Celebrations', desc: 'Creating memories and sharing smiles during work hours.' },
+    { img: team15, title: 'Team Outings', desc: 'Bonding beyond the workplace during recreational outings.' },
+    { img: team16, title: 'Training Sessions', desc: 'Nurturing skills to meet emerging industry challenges.' },
+    { img: team17, title: 'Employee Activities', desc: 'Fun activities and engagement to boost team morale.' },
   ];
 
   return (
@@ -38,14 +58,41 @@ const MeetOurPeople = () => {
           <div className="row g-4">
             {peopleData.map((item, idx) => (
               <div key={idx} className="col-lg-4 col-md-6">
-                <div style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.06)', transition: 'transform 0.3s ease', cursor: 'pointer' }} 
-                     onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'}
-                     onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <img src={item.img} alt={item.title} style={{ width: '100%', height: '260px', objectFit: 'cover' }} />
-                  <div style={{ padding: '25px' }}>
-                    <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: '#1a1a1a', marginBottom: '10px' }}>{item.title}</h3>
-                    <p style={{ color: '#555', margin: 0, lineHeight: '1.5' }}>{item.desc}</p>
-                  </div>
+                <div 
+                  className="group-photo-card"
+                  style={{ 
+                    backgroundColor: '#fff', 
+                    borderRadius: '16px', 
+                    overflow: 'hidden', 
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.06)', 
+                    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)', 
+                    cursor: 'pointer',
+                    height: '300px'
+                  }} 
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.12)';
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.style.transform = 'scale(1.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.06)';
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.style.transform = 'scale(1)';
+                  }}
+                >
+                  <img 
+                    src={item.img} 
+                    alt="VGIL Team" 
+                    style={{ 
+                      width: '100%', 
+                      height: '100%', 
+                      objectFit: 'cover', 
+                      objectPosition: 'top center',
+                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }} 
+                  />
                 </div>
               </div>
             ))}

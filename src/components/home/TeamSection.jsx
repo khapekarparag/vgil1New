@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // Import local images
 import team1Image from '../../assets/home/ownwer-img/avinash-shende-clear-bg.png';
@@ -10,8 +9,10 @@ import sachinSignature from '../../assets/home/sachin-signature.png';
 
 function TeamSection() {
   return (
-    <div className="section-team section-spacing" style={{ backgroundColor: '#ffffff' }}>
+    <div className="section-team-premium" id="leadership">
       <div className="container">
+        
+        {/* Section Heading */}
         <div className="heading-section center mb-64">
           <div className="heading-sub fw-semibold style-1 effectFade fadeUp">Our Founder</div>
           <div className="heading-title text-dark effectFade fadeRotateX">
@@ -19,72 +20,89 @@ function TeamSection() {
           </div>
         </div>
 
-        {/* Precise layout with responsive wrapping */}
-        <div className="d-flex justify-content-center align-items-stretch flex-wrap" style={{ maxWidth: '1050px', margin: '0 auto', gap: '40px 20px' }}>
-
-          {/* Left Box - Avinash Shende */}
-          <div style={{ flex: '1 1 300px', maxWidth: '420px', position: 'relative', zIndex: 1, display: 'flex' }}>
-            <div className="team-item h-100 effectFade fadeUp" style={{ background: '#f9f9f9ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', display: 'flex', flexDirection: 'column', width: '100%' }}>
-              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', flexShrink: 0 }}>
-                <img src={team1Image} alt="Avinash Shende" style={{ width: '100%', height: 'auto', display: 'block' }} />
+        {/* Responsive Grid Wrapper */}
+        <div className="leadership-grid-container effectFade fadeUp">
+          
+          {/* Left Card - Mr. Avinash Shende */}
+          <div className="leader-card-item card-left">
+            <div className="leader-image-wrap">
+              <div className="image-bg-box">
+                <img src={team1Image} alt="Mr. Avinash Shende" className="leader-profile-img" />
               </div>
-              <div style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-                <img src={avinashSignature} alt="Mr. Avinash Shende Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
-                <div className="sub text-body-1" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Promoter, Chairman, Executive Director & CFO</div>
-                <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
-                  Avinash oversees operations and finances at Virtual Galaxy Infotech, balancing market needs with cost efficiency. He’s also a gardening enthusiast with a love for all things green.
-                </p>
+              <div className="profile-icon-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
               </div>
-              <div className="tf-social justify-content-center" style={{ marginTop: 'auto' }}>
-                <a href="#" className="social-item">
-                  <i className="icon icon-twitter-x"></i>
-                </a>
-                <a href="#" className="social-item">
-                  <i className="icon icon-linkedin-in"></i>
-                </a>
-                <a href="#" className="social-item">
-                  <i className="icon icon-github"></i>
-                </a>
-              </div>
+            </div>
+            <div className="leader-info-wrap">
+              <h3 className="leader-name">Mr. Avinash Shende</h3>
+              <img src={avinashSignature} alt="Mr. Avinash Shende Signature" className="leader-signature" />
+              <div className="leader-position">Promoter, Chairman, Executive Director & Chief Financial Officer</div>
+              <div className="leader-divider"></div>
+              <p className="leader-desc">
+                Avinash oversees operations and finances at Virtual Galaxy Infotech, balancing market needs with cost efficiency. He’s also a gardening enthusiast with a love for all things green.
+              </p>
             </div>
           </div>
 
-          {/* Center Logo - Precise Gap */}
-          <div style={{ flex: '0 0 200px', maxWidth: '200px', position: 'relative', zIndex: 2 }} className="d-flex justify-content-center align-items-center effectFade fadeUp">
-            <div className="center-logo-wrap" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <img src={logoImage} alt="Logo" className="img-fluid" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+          {/* Center Circular Logo Container */}
+          <div className="leader-logo-center-wrap">
+            <div className="logo-circle-container">
+              <img src={logoImage} alt="Virtual Galaxy Logo" className="logo-center-img" />
             </div>
           </div>
 
-          {/* Right Box - Sachin Pande */}
-          <div style={{ flex: '1 1 300px', maxWidth: '420px', position: 'relative', zIndex: 1, display: 'flex' }}>
-            <div className="team-item h-100 effectFade fadeUp" style={{ background: '#f9f9f9ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', display: 'flex', flexDirection: 'column', width: '100%' }}>
-              
-              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', flexShrink: 0 }}>
-                <img src={team2Image} alt="Sachin Pande" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          {/* Right Card - Mr. Sachin Pande */}
+          <div className="leader-card-item card-right">
+            <div className="leader-image-wrap">
+              <div className="image-bg-box">
+                <img src={team2Image} alt="Mr. Sachin Pande" className="leader-profile-img" />
               </div>
-              <div style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-                <img src={sachinSignature} alt="Mr. Sachin Pande Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
-                <div className="sub text-body-1" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Promoter, Managing Director & CTO</div>
-                <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
-                  Sachin drives technology and business development at Virtual Galaxy Infotech, leveraging the latest advancements. Off duty, he enjoys music with a cup of tea in hand.
-                </p>
+              <div className="profile-icon-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
               </div>
-              <div className="tf-social justify-content-center" style={{ marginTop: 'auto' }}>
-                <a href="#" className="social-item">
-                  <i className="icon icon-twitter-x"></i>
-                </a>
-                <a href="#" className="social-item">
-                  <i className="icon icon-linkedin-in"></i>
-                </a>
-                <a href="#" className="social-item">
-                  <i className="icon icon-github"></i>
-                </a>
-              </div>
+            </div>
+            <div className="leader-info-wrap">
+              <h3 className="leader-name">Mr. Sachin Pande</h3>
+              <img src={sachinSignature} alt="Mr. Sachin Pande Signature" className="leader-signature" />
+              <div className="leader-position">Promoter, Managing Director & Chief Technology Officer</div>
+              <div className="leader-divider"></div>
+              <p className="leader-desc">
+                Sachin drives technology and business development at Virtual Galaxy Infotech, leveraging the latest advancements. Off duty, he enjoys music with a cup of tea in hand.
+              </p>
             </div>
           </div>
 
         </div>
+
+        <style>{`
+          /* Default (Desktop) */
+          .leader-name {
+            display: none !important;
+          }
+          .leader-signature {
+            display: block !important;
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            margin: 5px 0 15px;
+          }
+
+          /* Mobile View */
+          @media (max-width: 768px) {
+            .leader-name {
+              display: block !important;
+            }
+            .leader-signature {
+              display: none !important;
+            }
+          }
+        `}</style>
       </div>
     </div>
   );

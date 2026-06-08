@@ -58,7 +58,8 @@ function PartnerSection() {
               </p>
 
 
-              <style dangerouslySetInnerHTML={{ __html: `
+              <style dangerouslySetInnerHTML={{
+                __html: `
                 .partner-wrap .swiper-wrapper {
                   transition-timing-function: linear !important;
                 }
@@ -74,8 +75,8 @@ function PartnerSection() {
                     height: 80px !important;
                   }
                   .section-partner {
-                    padding-top: 20px !important;
-                    padding-bottom: 20px !important;
+                    padding-top: 10px !important;
+                    padding-bottom: 10px !important;
                   }
                 }
               `}} />
@@ -99,7 +100,7 @@ function PartnerSection() {
                   partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8,
                   partner9, partner10, partner11, partner12, partner13, partner14, partner15,
                   partner16, partner17, partner18, partner19, partner20, partner21, partner22,
-                  partner23, partner24, partner25, partner26, 
+                  partner23, partner24, partner25, partner26,
                   partner27, partner28, partner29, partner30,
                   partner31, partner32, partner33
                 ].map((logo, index) => (

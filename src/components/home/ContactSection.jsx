@@ -70,18 +70,18 @@ function ContactSection() {
               </div>
             </div>
             <div className="col-lg-6">
-              <div style={{ backgroundColor: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.05)' }}>
-                <div style={{ marginBottom: '30px' }}>
-                  <div style={{ fontWeight: '700', color: '#1a1a1a', marginBottom: '10px' }}>Contact Us</div>
-                  <h2 style={{ fontSize: '2.5rem', fontWeight: '800', lineHeight: '1.2', color: '#1a1a1a' }}>
-                    How can we support <br/> your <span style={{ color: '#e10600' }}>needs?</span>
+              <div className="contact-form-card">
+                <div className="contact-form-header">
+                  <div className="sub-title" style={{ fontWeight: '700', color: '#1a1a1a', marginBottom: '6px', textTransform: 'uppercase', fontSize: '12px', letterSpacing: '1px' }}>Contact Us</div>
+                  <h2 style={{ fontSize: '2.2rem', fontWeight: '800', lineHeight: '1.2', color: '#1a1a1a', margin: '0' }}>
+                    How can we support <br /> your <span style={{ color: '#e10600' }}>needs?</span>
                   </h2>
                 </div>
 
-                <form className="form-contact">
-                  <div style={{ display: 'flex', gap: '20px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                    <div style={{ flex: '1 1 calc(50% - 10px)', minWidth: '250px' }}>
-                      <select style={{ width: '100%', padding: '15px 20px', borderRadius: '8px', border: '1px solid #d1d5db', color: '#111827', fontWeight: '500', appearance: 'none', background: '#fff url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23000\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'%3E%3C/polyline%3E%3C/svg%3E") no-repeat calc(100% - 15px) center' }}>
+                <form className="form-contact-compact">
+                  <div className="form-row-2col">
+                    <div className="form-field-half">
+                      <select className="form-select-compact">
                         <option style={{ backgroundColor: '#fff', color: '#111827' }}>Select your industry</option>
                         <option style={{ backgroundColor: '#fff', color: '#111827' }}>Bank</option>
                         <option style={{ backgroundColor: '#fff', color: '#111827' }}>Manufacturing</option>
@@ -89,8 +89,8 @@ function ContactSection() {
                         <option style={{ backgroundColor: '#fff', color: '#111827' }}>Other</option>
                       </select>
                     </div>
-                    <div style={{ flex: '1 1 calc(50% - 10px)', minWidth: '250px' }}>
-                      <select style={{ width: '100%', padding: '15px 20px', borderRadius: '8px', border: '1px solid #d1d5db', color: '#111827', fontWeight: '500', appearance: 'none', background: '#fff url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23000\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'%3E%3C/polyline%3E%3C/svg%3E") no-repeat calc(100% - 15px) center' }}>
+                    <div className="form-field-half">
+                      <select className="form-select-compact">
                         <option style={{ backgroundColor: '#fff', color: '#111827' }}>Select a product</option>
                         <option style={{ backgroundColor: '#fff', color: '#111827' }}>Core Banking</option>
                         <option style={{ backgroundColor: '#fff', color: '#111827' }}>Conversational AI</option>
@@ -99,70 +99,75 @@ function ContactSection() {
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '20px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                    <div style={{ flex: '1 1 calc(50% - 10px)', minWidth: '250px' }}>
-                      <input type="text" placeholder="Full name*" required style={{ width: '100%', padding: '15px 20px', borderRadius: '8px', border: '1px solid #d1d5db', color: '#111827', fontWeight: '500' }} />
+                  <div className="form-row-2col">
+                    <div className="form-field-half">
+                      <input type="text" placeholder="Full name*" required className="form-input-compact" />
                     </div>
-                    <div style={{ flex: '1 1 calc(50% - 10px)', minWidth: '250px' }}>
-                      <input type="email" placeholder="Email*" required style={{ width: '100%', padding: '15px 20px', borderRadius: '8px', border: '1px solid #d1d5db', color: '#111827', fontWeight: '500' }} />
+                    <div className="form-field-half">
+                      <input type="email" placeholder="Email*" required className="form-input-compact" />
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '20px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                    <div style={{ flex: '1 1 calc(50% - 10px)', minWidth: '250px', position: 'relative', display: 'flex' }}>
-                      <div ref={dropdownRef} style={{ position: 'relative', flex: '0 0 120px' }}>
-                        <div 
+                  <div className="form-row-2col">
+                    <div className="form-field-half phone-field-wrapper">
+                      <div ref={dropdownRef} style={{ position: 'relative' }}>
+                        <div
                           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                          style={{ width: '100%', height: '56px', padding: '0 15px', borderRadius: '8px 0 0 8px', border: '1px solid #d1d5db', borderRight: 'none', backgroundColor: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+                          className="country-select-trigger-compact"
                         >
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <img src={`https://flagcdn.com/${selectedCountry.flag}.svg`} alt={selectedCountry.flag} style={{ width: '24px', borderRadius: '2px' }} />
-                            <span style={{ color: '#111827', fontWeight: '500' }}>{selectedCountry.code}</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <img src={`https://flagcdn.com/${selectedCountry.flag}.svg`} alt={selectedCountry.flag} style={{ width: '20px', borderRadius: '1.5px' }} />
+                            <span style={{ fontSize: '13.5px', color: '#111827', fontWeight: '500' }}>{selectedCountry.code}</span>
                           </div>
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111827" strokeWidth="3" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
+                          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#111827" strokeWidth="3.5" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </div>
 
                         {isDropdownOpen && (
-                          <div style={{ position: 'absolute', top: '100%', left: '0', width: '280px', maxHeight: '250px', overflowY: 'auto', backgroundColor: '#fff', border: '1px solid #d1d5db', borderRadius: '8px', zIndex: 1000, boxShadow: '0 10px 25px rgba(0,0,0,0.1)', marginTop: '4px' }}>
+                          <div className="country-dropdown-compact">
                             {countries.map((country, idx) => (
-                              <div 
+                              <div
                                 key={idx}
                                 onClick={() => { setSelectedCountry(country); setIsDropdownOpen(false); }}
-                                style={{ padding: '10px 15px', display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', borderBottom: idx !== countries.length - 1 ? '1px solid #f0f0f0' : 'none' }}
-                                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f9fafb'}
-                                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                                className="country-option-compact"
                               >
-                                <img src={`https://flagcdn.com/${country.flag}.svg`} alt={country.flag} style={{ width: '24px', borderRadius: '2px' }} />
-                                <span style={{ color: '#111827', fontWeight: '500', flex: 1 }}>{country.name}</span>
-                                <span style={{ color: '#6b7280', fontSize: '0.9rem' }}>{country.code}</span>
+                                <img src={`https://flagcdn.com/${country.flag}.svg`} alt={country.flag} style={{ width: '20px', borderRadius: '1.5px' }} />
+                                <span style={{ flex: 1, color: '#111827', fontWeight: '500' }}>{country.name}</span>
+                                <span style={{ color: '#6b7280', fontSize: '0.8rem' }}>{country.code}</span>
                               </div>
                             ))}
                           </div>
                         )}
                       </div>
-                      <input type="tel" placeholder="Phone Number" required style={{ flex: '1', height: '56px', padding: '15px 20px', borderRadius: '0 8px 8px 0', border: '1px solid #d1d5db', borderLeft: '1px solid #d1d5db', color: '#111827', fontWeight: '500', width: '100%' }} />
+                      <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="phone-input-compact"
+                      />
                     </div>
-                    <div style={{ flex: '1 1 calc(50% - 10px)', minWidth: '250px' }}>
-                      <input type="text" placeholder="Website" style={{ width: '100%', padding: '15px 20px', borderRadius: '8px', border: '1px solid #d1d5db', color: '#111827', fontWeight: '500' }} />
+                    <div className="form-field-half">
+                      <input type="text" placeholder="Website" className="form-input-compact" />
                     </div>
                   </div>
 
-                  <div className="mb-4">
-                    <textarea placeholder="Message*" required style={{ width: '100%', padding: '15px 20px', borderRadius: '8px', border: '1px solid #d1d5db', minHeight: '120px', resize: 'vertical', color: '#111827', fontWeight: '500' }}></textarea>
+                  <div>
+                    <textarea placeholder="Message*" required className="textarea-compact"></textarea>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <input type="checkbox" id="terms" style={{ width: '16px', height: '16px', cursor: 'pointer' }} />
-                      <label htmlFor="terms" style={{ color: '#1a1a1a', fontSize: '0.9rem', cursor: 'pointer' }}>
+                  <div className="form-footer-row">
+                    <div className="terms-checkbox-wrap">
+                      <input type="checkbox" id="terms" />
+                      <label htmlFor="terms">
                         I agree with the <span style={{ color: '#e10600' }}>Terms & Conditions</span>
                       </label>
                     </div>
-                    
-                    <button type="submit" style={{ background: 'linear-gradient(90deg, #ff8a7a 0%, #e10600 100%)', color: '#fff', border: 'none', padding: '12px 30px', borderRadius: '100px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s ease', cursor: 'pointer' }}>
-                      Send Message 
-                      <div style={{ backgroundColor: '#fff', color: '#e10600', width: '20px', height: '20px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+
+                    <button type="submit" className="btn-submit-compact">
+                      Send Message
+                      <div className="btn-icon-circle">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                       </div>
                     </button>
                   </div>
@@ -172,6 +177,302 @@ function ContactSection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        /* Redesigned Contact Form Container */
+        .contact-form-card {
+          background-color: #ffffff;
+          border-radius: 24px;
+          padding: 24px !important;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+          border: 1px solid #f1f5f9;
+          transition: all 0.3s ease;
+        }
+
+        .contact-form-header {
+          margin-bottom: 20px;
+        }
+
+        .form-contact-compact {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .form-row-2col {
+          display: flex !important;
+          flex-direction: row !important;
+          gap: 16px !important;
+          width: 100% !important;
+          margin-bottom: 12px !important;
+        }
+
+        .form-field-half {
+          flex: 1 !important;
+          min-width: 0 !important;
+          max-width: calc(50% - 8px) !important;
+          width: calc(50% - 8px) !important;
+        }
+
+        /* Compact input and select fields */
+        .form-input-compact,
+        .form-select-compact {
+          width: 100%;
+          height: 44px;
+          padding: 5px 5px;
+          border-radius: 8px;
+          border: 1px solid #d1d5db;
+          color: #111827;
+          font-size: 14px;
+          font-weight: 500;
+          outline: none;
+          background-color: #ffffff;
+          transition: all 0.2s ease;
+        }
+
+        .form-input-compact:focus,
+        .form-select-compact:focus {
+          border-color: #e10600;
+          box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.08);
+        }
+
+        .form-select-compact {
+          appearance: none;
+          background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat calc(100% - 15px) center;
+        }
+
+        /* Nice Select overrides if jQuery nice-select is initialized */
+        .nice-select.form-select-compact,
+        .form-field-half .nice-select {
+          height: 44px !important;
+          line-height: 42px !important;
+          padding-left: 16px !important;
+          padding-right: 30px !important;
+          float: none !important;
+          width: 100% !important;
+          background-color: #ffffff !important;
+          border-radius: 8px !important;
+          border: 1px solid #d1d5db !important;
+          box-sizing: border-box !important;
+          display: block !important;
+          margin: 0 !important;
+        }
+
+        .nice-select.form-select-compact .current,
+        .form-field-half .nice-select .current {
+          color: #111827 !important;
+          font-size: 14px !important;
+          font-weight: 500 !important;
+        }
+
+        .nice-select.form-select-compact::after,
+        .form-field-half .nice-select::after {
+          border-bottom: 2px solid #111827 !important;
+          border-right: 2px solid #111827 !important;
+          right: 16px !important;
+          content: '' !important;
+          display: block !important;
+        }
+
+        /* Custom Phone Selector Input */
+        .phone-field-wrapper {
+          display: flex;
+          width: 100%;
+          position: relative;
+        }
+
+        .country-select-trigger-compact {
+          flex: 0 0 96px;
+          height: 44px;
+          padding: 0 10px;
+          border-radius: 8px 0 0 8px;
+          border: 1px solid #d1d5db;
+          border-right: none;
+          background-color: #fff;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          user-select: none;
+          transition: all 0.2s ease;
+        }
+
+        .country-select-trigger-compact:hover {
+          background-color: #f9fafb;
+        }
+
+        .phone-input-compact {
+          flex: 1;
+          height: 44px;
+          padding: 10px 16px;
+          border-radius: 0 8px 8px 0;
+          border: 1px solid #d1d5db;
+          color: #111827;
+          font-size: 14px;
+          font-weight: 500;
+          width: 100%;
+          outline: none;
+          transition: all 0.2s ease;
+        }
+
+        .phone-input-compact:focus {
+          border-color: #e10600;
+          box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.08);
+        }
+
+        .country-dropdown-compact {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 280px;
+          max-height: 200px;
+          overflow-y: auto;
+          background-color: #fff;
+          border: 1px solid #d1d5db;
+          border-radius: 8px;
+          z-index: 1000;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+          margin-top: 4px;
+        }
+
+        .country-option-compact {
+          padding: 8px 12px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          font-size: 13.5px;
+          border-bottom: 1px solid #f3f4f6;
+          transition: background-color 0.2s ease;
+          text-align: left;
+        }
+
+        .country-option-compact:hover {
+          background-color: #f9fafb;
+        }
+
+        /* Compact Textarea */
+        .textarea-compact {
+          width: 100%;
+          height: 70px;
+          min-height: 70px;
+          max-height: 200px;
+          padding: 10px 16px;
+          border-radius: 8px;
+          border: 1px solid #d1d5db;
+          color: #111827;
+          font-size: 14px;
+          font-weight: 500;
+          outline: none;
+          resize: vertical;
+          transition: all 0.2s ease;
+          margin-bottom: 12px;
+        }
+
+        .textarea-compact:focus {
+          border-color: #e10600;
+          box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.08);
+        }
+
+        /* Footer Section of Form */
+        .form-footer-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-top: 4px;
+        }
+
+        .terms-checkbox-wrap {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .terms-checkbox-wrap input[type="checkbox"] {
+          width: 15px;
+          height: 15px;
+          cursor: pointer;
+        }
+
+        .terms-checkbox-wrap label {
+          color: #1a1a1a;
+          font-size: 13px;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        /* Compact Send Button */
+        .btn-submit-compact {
+          background: linear-gradient(90deg, #ff8a7a 0%, #e10600 100%);
+          color: #fff;
+          border: none;
+          padding: 10px 24px;
+          border-radius: 100px;
+          font-size: 14px;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          transition: all 0.2s ease;
+          cursor: pointer;
+        }
+
+        .btn-submit-compact:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(225, 6, 0, 0.15);
+        }
+
+        .btn-submit-compact:active {
+          transform: translateY(0);
+        }
+
+        .btn-icon-circle {
+          background-color: #fff;
+          color: #e10600;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Mobile Media Queries (max-width: 768px) */
+        @media (max-width: 768px) {
+          .contact-form-card {
+            padding: 16px !important;
+            border-radius: 20px !important;
+          }
+
+          .form-input-compact,
+          .form-select-compact,
+          .nice-select.form-select-compact,
+          .country-select-trigger-compact,
+          .phone-input-compact {
+            height: 42px !important;
+            font-size: 13.5px !important;
+            padding: 5px 5px !important;
+          }
+
+          .nice-select.form-select-compact {
+            line-height: 40px !important;
+          }
+
+          .country-select-trigger-compact {
+            flex: 0 0 90px !important;
+          }
+
+          .textarea-compact {
+            height: 60px !important;
+            min-height: 60px !important;
+            font-size: 13.5px !important;
+            padding: 8px 12px !important;
+            margin-bottom: 12px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

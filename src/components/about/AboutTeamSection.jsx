@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import team1Image from '../../assets/home/ownwer-img/avinash-shende-clear-bg.png';
 import team2Image from '../../assets/home/ownwer-img/sachin-pande-clear-bg.png';
 import logoImage from '../../assets/home/ownwer-img/vg-logo-2.png';
@@ -16,15 +16,22 @@ import sachinBImg from '../../assets/home/ownwer-img/sachin_burghate.jpg';
 import satishImg from '../../assets/home/ownwer-img/Satish_Kukde.jpg';
 
 function AboutTeamSection() {
+  const [activeDirector, setActiveDirector] = useState(null);
+
+  const handleCardClick = (member) => {
+    if (window.innerWidth <= 768) {
+      setActiveDirector(member);
+    }
+  };
   const vgilTeam = [
+    { name: 'Alhad Hardas', role: 'Director - Banking Domain Services', img: alhadImg },
+    { name: 'Bharat Zade', role: 'Director - Operations & Digital Transformation', img: bharatImg },
+    { name: 'Harshjit Deshmukh', role: 'Director - Domestic Business Development', img: harshjitImg },
+    { name: 'Ninad Mairal', role: 'Director - International Business Development', img: ninadImg },
     { name: 'Nitendra Bisen', role: 'Principal Service Strategist', img: nitendraImg },
     { name: 'Anil Katwale', role: 'Principal Solution Architect', img: anilImg },
     { name: 'Satish Kukde', role: 'Principal Database Architect', img: satishImg },
-    { name: 'Sachin Burghate', role: 'Director - Technical (BFSI)', img: sachinBImg },
-    { name: 'Ninad Mairal', role: 'Director - International Business Development', img: ninadImg },
-    { name: 'Alhad Hardas', role: 'Director - Banking Domain Services', img: alhadImg },
-    { name: 'Bharat Zade', role: 'Director - Operations & Digital Transformation', img: bharatImg },
-    { name: 'Harshjit Deshmukh', role: 'Director - Domestic Business Development', img: harshjitImg }
+    { name: 'Sachin Burghate', role: 'Director - Technical (BFSI)', img: sachinBImg }
   ];
 
   const boardMembers = [
@@ -102,49 +109,59 @@ function AboutTeamSection() {
 
           {/* Left Side - Avinash Shende */}
           <div className="founder-item" style={{ display: 'flex' }}>
-            <div className="team-item" style={{ background: '#f9f9f9ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column' }}>
-              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '25px', flexShrink: 0 }}>
-                <img src={team1Image} alt="Avinash Shende" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <div className="leader-card-item card-left" style={{ width: '100%', background: '#ffffff', boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)', border: '1px solid #eef2f6', borderRadius: '32px' }}>
+              <div className="leader-image-wrap">
+                <div className="image-bg-box" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden' }}>
+                  <img src={team1Image} alt="Mr. Avinash Shende" className="leader-profile-img" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
+                <div className="profile-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
               </div>
-              <div style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-                <img src={avinashSignature} alt="Avinash Shende Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
-                <div className="sub" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Founder & CEO</div>
-                <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
+              <div className="leader-info-wrap">
+                <h3 className="leader-name">Mr. Avinash Shende</h3>
+                <img src={avinashSignature} alt="Mr. Avinash Shende Signature" className="leader-signature" />
+                <div className="leader-position">Founder & CEO</div>
+                <div className="leader-divider"></div>
+                <p className="leader-desc">
                   Avinash oversees operations and finances at Virtual Galaxy Infotech, balancing market needs with cost efficiency. He’s also a gardening enthusiast with a love for all things green.
                 </p>
-              </div>
-              <div className="social-links-founder" style={{ marginTop: 'auto' }}>
-                <a href="#"><i className="icon icon-twitter-x"></i></a>
-                <a href="https://www.linkedin.com/in/avinash-shende-a09b863/" target="_blank" rel="noopener noreferrer"><i className="icon icon-linkedin-in"></i></a>
-                <a href="#"><i className="icon icon-github"></i></a>
               </div>
             </div>
           </div>
 
-          {/* Center Logo */}
-          <div className="center-logo-box d-flex justify-content-center">
-            <div className="center-logo-wrap">
-              <img src={logoImage} alt="Logo" className="img-fluid" style={{ maxWidth: '200px' }} />
+          {/* Center Circular Logo Container */}
+          <div className="leader-logo-center-wrap">
+            <div className="logo-circle-container">
+              <img src={logoImage} alt="Virtual Galaxy Logo" className="logo-center-img" />
             </div>
           </div>
 
           {/* Right Side - Sachin Pande */}
           <div className="founder-item" style={{ display: 'flex' }}>
-            <div className="team-item" style={{ background: '#f9f9f9ff', border: '1px solid #e5e7eb', borderRadius: '32px', padding: '40px 30px', textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column' }}>
-              <div className="image" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '25px', flexShrink: 0 }}>
-                <img src={team2Image} alt="Sachin Pande" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <div className="leader-card-item card-right" style={{ width: '100%', background: '#ffffff', boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)', border: '1px solid #eef2f6', borderRadius: '32px' }}>
+              <div className="leader-image-wrap">
+                <div className="image-bg-box" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden' }}>
+                  <img src={team2Image} alt="Mr. Sachin Pande" className="leader-profile-img" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
+                <div className="profile-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
               </div>
-              <div style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-                <img src={sachinSignature} alt="Sachin Pande Signature" style={{ height: '110px', objectFit: 'contain', margin: '15px 0' }} />
-                <div className="sub" style={{ color: '#ff4d00', fontWeight: '600', marginBottom: '10px' }}>Co-Founder & CTO</div>
-                <p style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px' }}>
+              <div className="leader-info-wrap">
+                <h3 className="leader-name">Mr. Sachin Pande</h3>
+                <img src={sachinSignature} alt="Mr. Sachin Pande Signature" className="leader-signature" />
+                <div className="leader-position">Co-Founder & CTO</div>
+                <div className="leader-divider"></div>
+                <p className="leader-desc">
                   Sachin drives technology and business development at Virtual Galaxy Infotech, leveraging the latest advancements. Off duty, he enjoys music with a cup of tea in hand.
                 </p>
-              </div>
-              <div className="social-links-founder" style={{ marginTop: 'auto' }}>
-                <a href="#"><i className="icon icon-twitter-x"></i></a>
-                <a href="https://www.linkedin.com/in/sachin-pande-317620157/" target="_blank" rel="noopener noreferrer"><i className="icon icon-linkedin-in"></i></a>
-                <a href="#"><i className="icon icon-github"></i></a>
               </div>
             </div>
           </div>
@@ -167,7 +184,11 @@ function AboutTeamSection() {
           <div className="board-layout">
             <div className="board-col-left">
               {leftColumnMembers.map((member, i) => (
-                <div key={i} className="board-card effectFade fadeUp">
+                <div 
+                  key={i} 
+                  className="board-card effectFade fadeUp"
+                  onClick={() => handleCardClick(member)}
+                >
                   <div className="board-card-img-wrapper" style={{ backgroundColor: member.bg }}>
                     <img 
                       src={member.img} 
@@ -180,7 +201,13 @@ function AboutTeamSection() {
                     <h4 className="board-card-name">{member.name}</h4>
                     <p className="board-card-desc">{member.desc}</p>
                   </div>
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="board-linkedin-link">
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="board-linkedin-link"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <i className="icon icon-linkedin-in"></i>
                   </a>
                 </div>
@@ -230,7 +257,11 @@ function AboutTeamSection() {
 
             <div className="board-col-right">
               {rightColumnMembers.map((member, i) => (
-                <div key={i} className="board-card effectFade fadeUp">
+                <div 
+                  key={i} 
+                  className="board-card effectFade fadeUp"
+                  onClick={() => handleCardClick(member)}
+                >
                   <div className="board-card-img-wrapper" style={{ backgroundColor: member.bg }}>
                     <img 
                       src={member.img} 
@@ -243,7 +274,13 @@ function AboutTeamSection() {
                     <h4 className="board-card-name">{member.name}</h4>
                     <p className="board-card-desc">{member.desc}</p>
                   </div>
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="board-linkedin-link">
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="board-linkedin-link"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <i className="icon icon-linkedin-in"></i>
                   </a>
                 </div>
@@ -337,6 +374,9 @@ function AboutTeamSection() {
             box-shadow: 0 10px 20px rgba(255, 77, 0, 0.3);
             border-color: rgba(255,255,255,0.2);
           }
+          .founder-name-text {
+            display: none;
+          }
           .founders-container {
             display: flex;
             justify-content: center;
@@ -349,10 +389,7 @@ function AboutTeamSection() {
           .founder-item {
             flex: 0 0 420px;
           }
-          .center-logo-box {
-            flex: 0 0 120px;
-            padding-top: 150px;
-          }
+
           
           /* Board of Directors Styles */
           .board-layout {
@@ -613,14 +650,7 @@ function AboutTeamSection() {
               flex: 0 0 100%;
               max-width: 500px;
             }
-            .center-logo-box {
-              flex: 0 0 100%;
-              padding-top: 40px;
-              padding-bottom: 20px;
-            }
-            .center-logo-wrap img {
-              max-width: 150px !important;
-            }
+
             .team-grid-responsive {
               grid-template-columns: repeat(2, 1fr);
             }
@@ -674,10 +704,386 @@ function AboutTeamSection() {
             }
           }
 
+          @media (max-width: 768px) {
+            .founders-container {
+              display: flex !important;
+              flex-direction: row !important;
+              flex-wrap: nowrap !important;
+              justify-content: space-between !important;
+              align-items: center !important;
+              gap: 8px !important;
+              padding: 0 12px !important;
+            }
+
+            .founder-item {
+              flex: 1 1 120px !important;
+              max-width: 140px !important;
+            }
+
+            .founder-item .leader-card-item {
+              padding: 12px !important;
+              border-radius: 16px !important;
+              background: #ffffff !important;
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03) !important;
+              border: 1px solid #e5e7eb !important;
+            }
+
+            .founder-item .leader-card-item .image-bg-box {
+              margin-bottom: 10px !important;
+              border-radius: 12px !important;
+              aspect-ratio: 1 / 1 !important;
+              overflow: hidden;
+            }
+
+            .founder-item .leader-card-item .image-bg-box img {
+              width: 100% !important;
+              height: 100% !important;
+              object-fit: cover !important;
+            }
+
+            .founder-item .leader-card-item .profile-icon-badge {
+              display: none !important;
+            }
+
+            .founder-item .leader-card-item .leader-divider,
+            .founder-item .leader-card-item .leader-desc,
+            .founder-item .leader-card-item .leader-signature {
+              display: none !important;
+            }
+
+            .founder-item .leader-card-item .leader-name {
+              display: block !important;
+              font-size: 11px !important;
+              font-weight: 700 !important;
+              margin-bottom: 4px !important;
+              color: #111827 !important;
+              text-align: center !important;
+            }
+
+            .founder-item .leader-card-item .leader-position {
+              font-size: 9px !important;
+              line-height: 1.3 !important;
+              margin-bottom: 0 !important;
+              color: #ff4d00 !important;
+              text-align: center !important;
+              min-height: unset !important;
+            }
+
+
+
+            /* Mobile spacing overrides */
+            .section-team {
+              padding: 45px 0 !important;
+            }
+            .mb-120 {
+              margin-bottom: 30px !important;
+            }
+            .mb-64 {
+              margin-bottom: 20px !important;
+            }
+            .mb-80 {
+              margin-bottom: 24px !important;
+            }
+            .board-section-wrap {
+              margin-top: 40px !important;
+              margin-bottom: 40px !important;
+            }
+            .vgil-standalone-section {
+              margin-top: 40px !important;
+            }
+            .board-footer-text {
+              margin-top: 24px !important;
+            }
+            h2.heading-title {
+              font-size: 26px !important;
+            }
+
+            /* Board of Directors Mobile Grid Styles */
+            .board-layout {
+              display: grid !important;
+              grid-template-columns: 1fr 1fr !important;
+              gap: 12px !important;
+              padding: 0 12px !important;
+            }
+            .board-col-left, .board-col-right {
+              display: flex !important;
+              flex-direction: column !important;
+              gap: 12px !important;
+              width: 100% !important;
+            }
+            .board-card {
+              flex-direction: column !important;
+              align-items: center !important;
+              text-align: center !important;
+              padding: 20px 10px 16px !important;
+              min-height: 180px !important;
+              height: 100% !important;
+              cursor: pointer !important;
+              border-radius: 16px !important;
+              gap: 10px !important;
+              box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+              border: 1px solid #eef2f6 !important;
+            }
+            .board-card-img-wrapper {
+              width: 70px !important;
+              height: 70px !important;
+              border-radius: 12px !important;
+            }
+            .board-card-info {
+              border-left: none !important;
+              border-top: none !important;
+              padding-left: 0 !important;
+              padding-top: 0 !important;
+              margin-top: 6px !important;
+              align-items: center !important;
+              text-align: center !important;
+            }
+            .board-card-role {
+              font-size: 9px !important;
+              margin-bottom: 2px !important;
+            }
+            .board-card-name {
+              font-size: 13px !important;
+              font-weight: 700 !important;
+              margin-bottom: 4px !important;
+            }
+            .board-card-desc {
+              display: none !important;
+            }
+            .board-linkedin-link {
+              position: absolute !important;
+              top: 10px !important;
+              right: 10px !important;
+              width: 26px !important;
+              height: 26px !important;
+              font-size: 11px !important;
+            }
+
+            /* VGIL Standalone Team Grid Mobile overrides */
+            .team-grid-responsive {
+              grid-template-columns: 1fr 1fr !important;
+              gap: 20px 12px !important;
+              padding: 0 12px !important;
+            }
+            .vgil-card-unique {
+              width: 100% !important;
+              max-width: 150px !important;
+              height: 150px !important;
+              margin: 0 auto 10px !important;
+              border-radius: 18px !important;
+            }
+            .vgil-card-unique img {
+              padding: 14px !important;
+            }
+            .card-overlay {
+              display: none !important;
+            }
+            .member-info-static h6 {
+              font-size: 14px !important;
+              margin-bottom: 2px !important;
+            }
+            .member-info-static p {
+              font-size: 11px !important;
+              line-height: 1.3 !important;
+              max-width: 100% !important;
+            }
+          }
+
+          /* Default (Desktop) */
+          .leader-name {
+            display: none !important;
+          }
+          .leader-signature {
+            display: block !important;
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            margin: 5px 0 15px;
+          }
+
+          /* Modal Overlay Styles */
+          .board-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            padding: 20px;
+            animation: boardModalFadeIn 0.3s ease-out;
+          }
+
+          .board-modal-card {
+            background: #ffffff;
+            border-radius: 28px;
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 36px 24px 28px;
+            border: 1px solid rgba(225, 6, 0, 0.1);
+            animation: boardModalSlideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+          }
+
+          .board-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            border: none;
+            font-size: 22px;
+            line-height: 1;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+          }
+
+          .board-modal-close:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+          }
+
+          .board-modal-img-wrapper {
+            width: 140px;
+            height: 140px;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 2px solid #e10600;
+            padding: 4px;
+            background: #fff;
+          }
+
+          .board-modal-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+          }
+
+          .board-modal-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .board-modal-role {
+            font-size: 11px;
+            font-weight: 800;
+            color: #e10600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+          }
+
+          .board-modal-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 16px;
+            line-height: 1.2;
+          }
+
+          .board-modal-desc {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            padding: 0 10px;
+          }
+
+          .board-modal-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0077b5;
+            color: #ffffff !important;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 119, 181, 0.25);
+            border: 1px solid #0077b5;
+          }
+
+          .board-modal-linkedin:hover {
+            background: #006097;
+            border-color: #006097;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 119, 181, 0.35);
+          }
+
+          @keyframes boardModalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+
+          @keyframes boardModalSlideUp {
+            from {
+              opacity: 0;
+              transform: scale(0.9) translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1) translateY(0);
+            }
+          }
+
           .vgil-standalone-section .effectFade {
             animation-duration: 1s;
           }
         `}</style>
+
+        {/* Detail Modal for Mobile */}
+        {activeDirector && (
+          <div className="board-modal-overlay" onClick={() => setActiveDirector(null)}>
+            <div className="board-modal-card" onClick={(e) => e.stopPropagation()}>
+              <button className="board-modal-close" onClick={() => setActiveDirector(null)}>
+                &times;
+              </button>
+              <div className="board-modal-img-wrapper" style={{ backgroundColor: activeDirector.bg }}>
+                <img 
+                  src={activeDirector.img} 
+                  alt={activeDirector.name} 
+                  style={{ objectFit: activeDirector.fit }}
+                />
+              </div>
+              <div className="board-modal-content">
+                <span className="board-modal-role">{activeDirector.role}</span>
+                <h3 className="board-modal-name">{activeDirector.name}</h3>
+                <p className="board-modal-desc">{activeDirector.desc}</p>
+                <a 
+                  href={activeDirector.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="board-modal-linkedin"
+                >
+                  <i className="icon icon-linkedin-in"></i> Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

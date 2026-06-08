@@ -2114,6 +2114,7 @@
 .section-tools {
     position: relative;
     padding: 192px 0;
+    overflow: hidden;
     > img {
         position: absolute;
         box-shadow: 4.29817px 18.6254px 28.6545px rgba(0, 0, 0, 0.1);
@@ -2132,6 +2133,8 @@
         }
         @include res(md) {
             top: 10%;
+            left: 5%;
+            width: 45px;
         }
     }
     .img-2 {
@@ -2147,6 +2150,7 @@
         }
         @include res(md) {
             top: 73%;
+            left: 2%;
         }
     }
     .img-3 {
@@ -2162,7 +2166,7 @@
         }
         @include res(md) {
             top: 82%;
-            left: 20.7%;
+            left: 10%;
         }
     }
     .img-4 {
@@ -2178,6 +2182,7 @@
         }
         @include res(md) {
             top: 10%;
+            right: 5%;
         }
     }
     .img-5 {
@@ -2193,6 +2198,7 @@
         }
         @include res(md) {
             top: 72%;
+            right: 2%;
         }
     }
     .img-6 {
@@ -2208,7 +2214,8 @@
         }
         @include res(md) {
             top: 82%;
-            right: 17.92%;
+            right: 10%;
+            width: 45px;
         }
     }
     &.v2 {
@@ -2217,6 +2224,13 @@
     }
     .text {
         margin-bottom: 32px;
+    }
+    @include res(md) {
+        .tf-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     @include res(xl) {

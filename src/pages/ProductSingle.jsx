@@ -384,20 +384,20 @@ function ProductSingle() {
                 background: #ffffff;
                 border-radius: 24px;
                 padding: 8px;
-                box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
                 transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                border: 1px solid rgba(0, 0, 0, 0.04);
+                border: 1px solid rgba(255, 43, 43, 0.08);
                 height: 100%;
                 position: relative;
                 z-index: 1;
               }
               .fintech-stat-card:hover {
-                transform: translateY(-8px);
+                transform: translateY(-10px);
                 box-shadow: 0 20px 40px rgba(255, 43, 43, 0.12);
-                border-color: rgba(255, 43, 43, 0.2);
+                border-color: rgba(255, 43, 43, 0.3);
               }
               .fintech-inner-panel {
-                background: #0a0b10;
+                background: #ffffff;
                 border-radius: 18px;
                 padding: 40px 30px;
                 height: 100%;
@@ -406,20 +406,37 @@ function ProductSingle() {
                 justify-content: flex-start;
                 position: relative;
                 overflow: hidden;
-                border: 1px solid rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 43, 43, 0.12);
+                transition: all 0.5s ease;
+              }
+              /* Techy background SVG pattern with low opacity */
+              .fintech-inner-panel::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='grid' width='10' height='10' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 10 0 L 0 0 0 10' fill='none' stroke='%23ff2b2b' stroke-width='0.2' stroke-opacity='0.15'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23grid)'/%3E%3Ccircle cx='10' cy='10' r='0.8' fill='%23ff2b2b' fill-opacity='0.25'/%3E%3Ccircle cx='50' cy='30' r='0.8' fill='%23ff2b2b' fill-opacity='0.25'/%3E%3Ccircle cx='80' cy='70' r='0.8' fill='%23ff2b2b' fill-opacity='0.25'/%3E%3Cpath d='M 10 10 L 30 10 L 50 30 L 80 30 L 80 70' fill='none' stroke='%23ff2b2b' stroke-width='0.2' stroke-opacity='0.15'/%3E%3C/svg%3E");
+                background-size: cover;
+                opacity: 0.12;
+                z-index: 0;
+                pointer-events: none;
+                transition: all 0.5s ease;
+              }
+              .fintech-stat-card:hover .fintech-inner-panel::before {
+                opacity: 0.22;
+                transform: scale(1.08);
               }
               .fintech-card-glow {
                 position: absolute;
                 width: 250px;
                 height: 250px;
-                background: radial-gradient(circle, rgba(255, 43, 43, 0.15) 0%, rgba(255, 43, 43, 0) 60%);
+                background: radial-gradient(circle, rgba(255, 43, 43, 0.1) 0%, rgba(255, 43, 43, 0) 60%);
                 border-radius: 50%;
-                opacity: 0.6;
+                opacity: 0.4;
                 transition: all 0.6s ease;
                 z-index: 0;
               }
               .fintech-stat-card:hover .fintech-card-glow {
-                opacity: 1;
+                opacity: 0.8;
                 transform: scale(1.2);
               }
               .fintech-inner-bg {
@@ -428,14 +445,14 @@ function ProductSingle() {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-image: radial-gradient(rgba(255, 43, 43, 0.15) 1px, transparent 1px);
-                background-size: 20px 20px;
+                background-image: radial-gradient(rgba(255, 43, 43, 0.15) 1.5px, transparent 1.5px);
+                background-size: 24px 24px;
                 z-index: 0;
-                opacity: 0;
+                opacity: 0.1;
                 transition: opacity 0.5s ease;
               }
               .fintech-stat-card:hover .fintech-inner-bg {
-                opacity: 1;
+                opacity: 0.35;
                 animation: slide-bg 15s linear infinite;
               }
               @keyframes slide-bg {
@@ -447,7 +464,7 @@ function ProductSingle() {
                 height: 64px;
                 border-radius: 50%;
                 background: rgba(255, 43, 43, 0.05);
-                border: 1px solid rgba(255, 43, 43, 0.3);
+                border: 1px solid rgba(255, 43, 43, 0.25);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -457,10 +474,10 @@ function ProductSingle() {
                 transition: all 0.5s ease;
               }
               .fintech-stat-card:hover .fintech-icon-wrap {
-                transform: rotate(10deg) scale(1.05);
+                transform: translateY(-4px) rotate(10deg) scale(1.05);
                 border-color: rgba(255, 43, 43, 0.8);
                 background: rgba(255, 43, 43, 0.1);
-                box-shadow: 0 0 20px rgba(255, 43, 43, 0.3);
+                box-shadow: 0 5px 15px rgba(255, 43, 43, 0.25);
               }
               .fintech-icon-wrap svg {
                 color: #ff2b2b;
@@ -470,7 +487,7 @@ function ProductSingle() {
                 filter: drop-shadow(0 0 8px rgba(255, 43, 43, 0.6));
               }
               .fintech-stat-value {
-                color: #ffffff;
+                color: #1a1f36;
                 font-size: 2.8rem;
                 font-weight: 700;
                 line-height: 1.1;
@@ -478,9 +495,13 @@ function ProductSingle() {
                 position: relative;
                 z-index: 1;
                 letter-spacing: -1px;
+                transition: color 0.3s ease;
+              }
+              .fintech-stat-card:hover .fintech-stat-value {
+                color: #ff2b2b;
               }
               .fintech-stat-label {
-                color: #9496a1;
+                color: #4f566b;
                 font-size: 1.05rem;
                 font-weight: 500;
                 margin: 0;

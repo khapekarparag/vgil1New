@@ -22,132 +22,132 @@ import '../../pages/BoardManagement.css';
  * below with your actual relative file paths (e.g., "/assets/pdf/moa.pdf").
  */
 const documentsData = [
-  {
-    id: 'moa',
-    title: 'MOA',
-    iconName: 'file-text',
-    theme: 'orange',
-    docs: [{ label: 'MOA', url: '#' }]
-  },
-  {
-    id: 'aoa',
-    title: 'AOA',
-    iconName: 'file-text',
-    theme: 'blue',
-    docs: [{ label: 'AOA', url: '#' }]
-  },
-  {
+{
+  id: 'moa',
+  title: 'MOA',
+  iconName: 'file-text',
+  theme: 'orange',
+  docs: [{ label: 'MOA', url: '/assets/.pdf/Material%20Documents/Material%20Documents/MOA.pdf' }]
+},
+{
+  id: 'aoa',
+  title: 'AOA',
+  iconName: 'file-text',
+  theme: 'blue',
+  docs: [{ label: 'AOA', url: '/assets/.pdf/Material%20Documents/Material%20Documents/AOA.pdf' }]
+},
+{
     id: 'coi',
     title: 'Certificate of Incorporation',
     iconName: 'shield',
     theme: 'green',
-    docs: [{ label: 'Certificate of Incorporation', url: '#' }]
+    docs: [{ label: 'Certificate of Incorporation', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Certificate%20of%20Incorporation.pdf' }]
   },
   {
     id: 'coi-conversion',
     title: 'COI of conversion',
     iconName: 'shield',
     theme: 'purple',
-    docs: [{ label: 'COI of conversion', url: '#' }]
+    docs: [{ label: 'COI of conversion', url: '/assets/.pdf/Material%20Documents/Material%20Documents/COI%20of%20coversion.pdf' }]
   },
   {
     id: 'br-ipo',
     title: 'BR for IPO',
     iconName: 'gavel',
     theme: 'gold',
-    docs: [{ label: 'BR for IPO', url: '#' }]
+    docs: [{ label: 'BR for IPO', url: '/assets/.pdf/Material%20Documents/Material%20Documents/BR%20for%20IPO.pdf' }]
   },
-  {
+{
     id: 'sr-ipo',
     title: 'SR for IPO',
     iconName: 'gavel',
     theme: 'orange',
-    docs: [{ label: 'SR for IPO', url: '#' }]
+    docs: [{ label: 'SR for IPO', url: '/assets/.pdf/Material%20Documents/Material%20Documents/SR%20for%20IPO.pdf' }]
   },
   {
     id: 'restated-consolidated',
     title: 'Restated Consolidated',
     iconName: 'file-spreadsheet',
     theme: 'blue',
-    docs: [{ label: 'Restated Consolidated', url: '#' }]
+    docs: [{ label: 'Restated Consolidated', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Restated%20Consolidated.pdf' }]
   },
-  {
+{
     id: 'audited-financials',
     title: 'Audited Financial Statements',
     iconName: 'briefcase',
     theme: 'green',
     docs: [
-      { label: 'FY 2023-24', url: '#' },
-      { label: 'FY 2022-23', url: '#' },
-      { label: 'FY 2021-22', url: '#' }
+      { label: 'FY 2023-24', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Audited%20Financial%20Statements/Annual%20Report%202024.pdf' },
+      { label: 'FY 2022-23', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Audited%20Financial%20Statements/Annual%20Report%202023.pdf' },
+      { label: 'FY 2021-22', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Audited%20Financial%20Statements/Annual%20Report%202022.pdf' }
     ]
   },
-  {
+{
     id: 'restated-standalone',
     title: 'Restated Standalone Financial Statement',
     iconName: 'file-spreadsheet',
     theme: 'purple',
-    docs: [{ label: 'Restated Standalone', url: '#' }]
+    docs: [{ label: 'Restated Standalone', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Restated%20Standalone%20Financial%20Statement.pdf' }]
   },
   {
     id: 'tax-benefit',
     title: 'Tax Benefit Certificate Peer Review',
     iconName: 'award',
     theme: 'gold',
-    docs: [{ label: 'Tax Benefit Certificate', url: '#' }]
+    docs: [{ label: 'Tax Benefit Certificate', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Tax%20Benefit%20Certificate%20Peer%20Review.pdf' }]
   },
   {
     id: 'consents',
     title: 'Consents',
     iconName: 'check-circle',
     theme: 'orange',
-    docs: [{ label: 'Consents', url: '#' }]
+    docs: [{ label: 'Consents', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Consents.pdf' }]
   },
-  {
+{
     id: 'consents-10',
     title: '10. Consents',
     iconName: 'check-circle',
     theme: 'blue',
     docs: [
-      { label: 'Auditors Consent', url: '#' },
-      { label: 'Registrar Consent', url: '#' },
-      { label: 'Directors Consent', url: '#' }
+      { label: 'Auditors Consent', url: '/assets/.pdf/Material%20Documents/Material%20Documents/10.%20Consents/Consent%20Letter%20Stat%20Auditor.pdf' },
+      { label: 'Registrar Consent', url: '/assets/.pdf/Material%20Documents/Material%20Documents/10.%20Consents/Consent%20RTA.pdf' },
+      { label: 'Directors Consent', url: '/assets/.pdf/Material%20Documents/Material%20Documents/10.%20Consents/Consent%20of%20Directors%20-%20Mr.%20Asit%20Oberoi.pdf' }
     ]
   },
-  {
+{
     id: 'kpi-rhp',
     title: 'KPI Certificate RHP',
     iconName: 'award',
     theme: 'green',
-    docs: [{ label: 'KPI Certificate RHP', url: '#' }]
+    docs: [{ label: 'KPI Certificate RHP', url: '/assets/.pdf/Material%20Documents/Material%20Documents/KPI%20Certificate%20RHP.pdf' }]
   },
   {
     id: 'br-drhp',
     title: 'BR for Draft Red Herring Prospectus',
     iconName: 'gavel',
     theme: 'purple',
-    docs: [{ label: 'BR for DRHP', url: '#' }]
+    docs: [{ label: 'BR for DRHP', url: '/assets/.pdf/Material%20Documents/Material%20Documents/BR%20for%20Draft%20Red%20Herring%20Prospectus.pdf' }]
   },
   {
     id: 'br-rhp',
     title: 'BR for RHP',
     iconName: 'gavel',
     theme: 'gold',
-    docs: [{ label: 'BR for RHP', url: '#' }]
+    docs: [{ label: 'BR for RHP', url: '/assets/.pdf/Material%20Documents/Material%20Documents/BR%20for%20RHP.pdf' }]
   },
-  {
+{
     id: 'dd-certificate',
     title: 'DD Certificate',
     iconName: 'shield',
     theme: 'orange',
-    docs: [{ label: 'DD Certificate', url: '#' }]
+    docs: [{ label: 'DD Certificate', url: '/assets/.pdf/Material%20Documents/Material%20Documents/DD%20Certificate.pdf' }]
   },
   {
     id: 'inprinciple',
     title: 'Inprinciple',
     iconName: 'key',
     theme: 'blue',
-    docs: [{ label: 'Inprinciple', url: '#' }]
+    docs: [{ label: 'Inprinciple', url: '/assets/.pdf/Material%20Documents/Material%20Documents/Inprinciple.pdf' }]
   }
 ];
 

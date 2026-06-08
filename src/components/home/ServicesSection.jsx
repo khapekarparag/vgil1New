@@ -91,7 +91,7 @@ function ServicesSection() {
             {/* Parent container no longer needs a hardcoded min-height because a card is always open */}
             <div className="accordion-faq_list" id="accordion-services" onMouseLeave={handleMouseLeaveContainer}>
               
-              <div className="accordion-faq_item effectFade fadeUp" role="presentation" onMouseEnter={() => handleCardHover('faq-1', '/assets/images/section/service-1.jpg')}>
+              <div className={`accordion-faq_item effectFade fadeUp ${activeCard === 'faq-1' ? 'theme-dark' : 'theme-cream'}`} role="presentation" onMouseEnter={() => handleCardHover('faq-1', '/assets/images/section/service-1.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-1' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-1'}>
                   <div className="accordion-title">
                     Domain Expertise <br />
@@ -112,7 +112,7 @@ function ServicesSection() {
                 </div>
               </div>
 
-              <div className="accordion-faq_item effectFade fadeUp" role="presentation" onMouseEnter={() => handleCardHover('faq-2', '/assets/images/section/service-2.jpg')}>
+              <div className="accordion-faq_item effectFade fadeUp theme-cream" role="presentation" onMouseEnter={() => handleCardHover('faq-2', '/assets/images/section/service-2.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-2' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-2'}>
                   <div className="accordion-title">
                     Supporting 150+ Firms <br />
@@ -133,7 +133,7 @@ function ServicesSection() {
                 </div>
               </div>
 
-              <div className="accordion-faq_item effectFade fadeUp" role="presentation" onMouseEnter={() => handleCardHover('faq-3', '/assets/images/section/service-3.jpg')}>
+              <div className="accordion-faq_item effectFade fadeUp theme-cream" role="presentation" onMouseEnter={() => handleCardHover('faq-3', '/assets/images/section/service-3.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-3' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-3'}>
                   <div className="accordion-title">
                     350+ Strong Team <br />
@@ -154,7 +154,7 @@ function ServicesSection() {
                 </div>
               </div>
 
-              <div className="accordion-faq_item effectFade fadeUp" role="presentation" onMouseEnter={() => handleCardHover('faq-4', '/assets/images/section/service-4.jpg')}>
+              <div className="accordion-faq_item effectFade fadeUp theme-cream" role="presentation" onMouseEnter={() => handleCardHover('faq-4', '/assets/images/section/service-4.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-4' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-4'}>
                   <div className="accordion-title">
                     Our Expertise <br />

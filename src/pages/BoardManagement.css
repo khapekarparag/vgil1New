@@ -414,15 +414,15 @@
     gap: 20px;
     padding: 30px 24px;
   }
-  
+
   .director-row-avatar-wrap {
     order: -1 !important;
   }
-  
+
   .director-row-info {
     text-align: center !important;
   }
-  
+
   .director-row-social-wrap {
     justify-content: center !important;
   }
@@ -450,7 +450,8 @@
 .profile-avatar-wrap {
   width: 100px;
   height: 100px;
-  border-radius: 20px; /* Modern rounded-square style */
+  border-radius: 20px;
+  /* Modern rounded-square style */
   background: #f8fafc;
   border: 1.5px solid #e2e8f0;
   display: flex;
@@ -464,7 +465,7 @@
 .profile-avatar-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .profile-avatar-initials {
@@ -859,9 +860,12 @@
 }
 
 @keyframes dotPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.5);
   }
+
   50% {
     box-shadow: 0 0 0 8px rgba(255, 77, 0, 0);
   }
@@ -948,21 +952,25 @@
   color: #ff4d00;
   border: 1px solid #fee2e2;
 }
+
 .company-brand-icon.theme-blue {
   background-color: #f0f7ff;
   color: #2563eb;
   border: 1px solid #dbeafe;
 }
+
 .company-brand-icon.theme-green {
   background-color: #f0fdf4;
   color: #16a34a;
   border: 1px solid #dcfce7;
 }
+
 .company-brand-icon.theme-purple {
   background-color: #faf5ff;
   color: #7c3aed;
   border: 1px solid #f3e8ff;
 }
+
 .company-brand-icon.theme-gold {
   background-color: #fefce8;
   color: #d97706;
@@ -1153,28 +1161,28 @@
     align-items: flex-start;
     padding: 24px;
   }
-  
+
   .company-info-col {
     width: 100%;
   }
-  
+
   .company-vertical-divider {
     width: 100%;
     height: 1.5px;
     margin: 4px 0;
   }
-  
+
   .company-docs-col {
     width: 100%;
   }
-  
+
   .investor-help-banner {
     flex-direction: column;
     align-items: flex-start;
     padding: 24px;
     gap: 16px;
   }
-  
+
   .btn-help-banner-cta {
     align-self: flex-start;
   }
@@ -1320,7 +1328,8 @@
 }
 
 .policy-accordion-content {
-  padding: 0 28px 24px 92px; /* Offset to align with header title text */
+  padding: 0 28px 24px 92px;
+  /* Offset to align with header title text */
   text-align: left;
 }
 
@@ -1447,21 +1456,22 @@
   .policy-accordion-header {
     padding: 16px 20px;
   }
-  
+
   .policy-header-left {
     gap: 12px;
   }
-  
+
   .policy-accordion-content {
-    padding: 0 20px 20px 20px; /* Reset left padding offset on mobile */
+    padding: 0 20px 20px 20px;
+    /* Reset left padding offset on mobile */
   }
-  
+
   .return-row-card {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
   }
-  
+
   .btn-return-download {
     align-self: flex-start;
   }
@@ -1538,6 +1548,7 @@
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1723,11 +1734,11 @@
     gap: 14px;
     padding: 14px;
   }
-  
+
   .am-audio-timeline {
     width: 100%;
   }
-  
+
   .am-audio-controls-right {
     justify-content: space-between;
     width: 100%;
@@ -1756,7 +1767,8 @@
     padding: 32px 20px !important;
   }
 
-  .committee-card, .advisor-card {
+  .committee-card,
+  .advisor-card {
     padding: 24px 20px !important;
   }
 
@@ -1765,3 +1777,59 @@
   }
 }
 
+/* Policy Custom Table Styles */
+.policy-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 16px 0 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.005);
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+  background-color: #ffffff;
+}
+
+.policy-table th {
+  background-color: #fff5f2;
+  color: #ff4d00;
+  font-weight: 700;
+  padding: 12px 16px;
+  border: 1px solid #fee2e2;
+  border-bottom: 2px solid #fee2e2;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.policy-table td {
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.policy-table tr:hover td {
+  background-color: #fffcfb;
+  color: #1e293b;
+}
+
+/* Specific alignments for columns */
+.policy-table th:first-child,
+.policy-table td:first-child {
+  font-weight: 700;
+}
+
+.policy-table-title {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
