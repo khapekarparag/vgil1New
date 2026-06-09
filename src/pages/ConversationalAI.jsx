@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import homeBgImg from '../assets/home/• Homepage Background video size (896_678)px_.jpg';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import NotFound from './NotFound';
@@ -342,50 +343,60 @@ function ConversationalAI() {
 
   return (
     <>
-      {/* Product Hero Section */}
-      {/* Product Hero Section */}
-      <div className="section-hero v2" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '160px', paddingBottom: '60px', position: 'relative' }}>
-        <div className="hero-image"></div>
-        <div className="container d-flex justify-content-end w-100">
-          <div className="content-wrap text-center" style={{ maxWidth: '700px', marginTop: '100px' }}>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .prod-hero-title {
+              font-size: 2.2rem !important;
+            }
+            .prod-hero-text {
+              font-size: 1rem !important;
+            }
+          }
+        `}
+      </style>
+      {/* Product Hero Section - matches home page style */}
+      <div className="section-hero">
+        <div className="hero-image" style={{ backgroundImage: `url("${homeBgImg}")` }}></div>
+        <div className="container">
+          <div className="content-wrap text-center">
             {product.logo && (
               <div className="product-logo effectFade fadeUp mb-4 d-flex justify-content-center">
-                <img src={product.logo} alt={`${product.title} Logo`} style={{ maxWidth: '180px', height: 'auto', objectFit: 'contain' }} />
+                <img
+                  src={product.logo}
+                  alt={`${product.title} Logo`}
+                  style={{ maxWidth: '160px', height: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)', marginBottom: '8px' }}
+                />
               </div>
             )}
-            <div className="title effectFade fadeRotateX" style={{ fontSize: '3.5rem', lineHeight: '1.15', marginBottom: '20px' }}>
-              {product.title.includes(' Solution') ? (
-                <>
-                  <span className="title1 fw-bold" style={{ color: '#1a1a1a' }}>{product.title.replace(' Solution', '')}</span>
-                  <br />
-                  <span className="title1 fw-bold" style={{ color: '#1a1a1a' }}>Solution</span>
-                </>
-              ) : (
-                <span className="title1 fw-bold" style={{ color: '#1a1a1a' }}>{product.title}</span>
-              )}
+            <div className="title text-display-2 effectFade fadeRotateX prod-hero-title">
+              <span className="title1 fw-semibold text-gradient-1">{product.title}</span>
               <br />
-              <div className="title2 d-flex justify-content-center flex-wrap mt-3">
-                <span className="fw-semibold" style={{ fontSize: '0.55em', color: '#444' }}>{product.subtitle}</span>
+              <div className="title2 d-flex justify-content-center flex-wrap mt-2">
+                <span className="fw-semibold text-gradient-1" style={{ fontSize: '0.6em', opacity: 0.85 }}>{product.subtitle}</span>
               </div>
             </div>
-            <p className="text text-body-3 effectFade fadeUp mt-4 mx-auto" style={{ fontSize: '1.15rem', color: '#666', lineHeight: '1.6' }}>
+            <p className="text effectFade fadeUp prod-hero-text">
               {product.shortDescription}
             </p>
-            <div className="button-wrap effectFade fadeUp mt-40 d-flex justify-content-center">
-              <Link to="/contact" className="tf-btn md radius-100" style={{ background: '#ff2d15', borderColor: '#ff2d15', color: '#fff', padding: '12px 32px', fontSize: '1.1rem' }}>
-                <span>Let's Connect</span>
-                <i className="icon icon-long-arrow-alt-up-solid" style={{ transform: 'rotate(45deg)' }}></i>
+            <div className="bot-btns effectFade fadeRotateX">
+              <Link to="/contact" className="tf-btn">
+                Let's Connect
               </Link>
             </div>
           </div>
         </div>
+        <a href="#next-section" className="scroll-more">
+          <span className="fw-semibold link1">Scroll for more</span>
+          <i className="icon icon-long-arrow-alt-down-solid"></i>
+        </a>
       </div>
 
 
 
       {/* Fintech Interactive Modules Section */}
       {currentModules.length > 0 && (
-      <div className="modules-fintech-section section-spacing" style={{ backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden', paddingBottom: '20px' }}>
+      <div id="next-section" className="modules-fintech-section section-spacing" style={{ backgroundColor: '#ffffff', position: 'relative', overflow: 'hidden', paddingBottom: '20px' }}>
         <style>
           {`
             .fintech-modules-wrapper {

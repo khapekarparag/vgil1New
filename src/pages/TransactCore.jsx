@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import homeBgImg from '../assets/home/• Homepage Background video size (896_678)px_.jpg';
 import { Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import abstractWorldMapImg from '../assets/Products-img/image.png';
@@ -59,53 +60,63 @@ function TransactCore() {
           }
         `}
       </style>
-      {/* Product Hero Section */}
-      <div className="section-hero v2 hero-section-responsive" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '160px', paddingBottom: '80px', position: 'relative', overflow: 'hidden' }}>
-        {/* Background glow lines */}
-        <div style={{ position: 'absolute', top: '10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,43,43,0.08) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0, filter: 'blur(50px)' }}></div>
-        <div style={{ position: 'absolute', bottom: '10%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(255,43,43,0.05) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0, filter: 'blur(60px)' }}></div>
-
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="row align-items-center">
-            {/* Left Content */}
-            <div className="col-lg-6 md-mb-40">
-              <div className="content-wrap" style={{ maxWidth: '620px' }}>
-                <div className="feature-badge" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(255, 43, 43, 0.08)', padding: '6px 20px', borderRadius: '50px', marginBottom: '24px', border: '1px solid rgba(255, 43, 43, 0.2)' }}>
-                  <span style={{ color: '#ff2b2b', fontSize: '0.85rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>TRANSACT CORE 360°</span>
-                </div>
-                <h1 className="hero-title-responsive" style={{ fontSize: '3.8rem', fontWeight: '800', color: '#1a1a1a', lineHeight: '1.15', marginBottom: '20px', letterSpacing: '-1.5px' }}>
-                  Next-Gen <span style={{ background: 'linear-gradient(to right, #ff2b2b, #ff5b5b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Transaction Switching</span>
-                </h1>
-                <p className="hero-desc-responsive" style={{ fontSize: '1.25rem', color: '#555', lineHeight: '1.6', marginBottom: '35px' }}>
-                  {product.shortDescription} Empower your enterprise with absolute switching intelligence, microsecond response times, and bulletproof security.
-                </p>
-                <div className="d-flex align-items-center gap-16">
-                  <a href="#contact-section" className="tf-btn md radius-100" style={{ background: '#ff2d15', borderColor: '#ff2d15', color: '#fff', padding: '14px 36px', fontSize: '1.1rem', fontWeight: '600' }}>
-                    <span>Request Demo</span>
-                    <i className="icon icon-long-arrow-alt-up-solid" style={{ transform: 'rotate(45deg)' }}></i>
-                  </a>
-                  <a href="#capabilities" className="fw-bold" style={{ color: '#1a1a1a', fontSize: '1.05rem', textDecoration: 'underline', marginLeft: '10px' }}>
-                    Explore Capabilities
-                  </a>
-                </div>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .prod-hero-title {
+              font-size: 2.2rem !important;
+            }
+            .prod-hero-text {
+              font-size: 1rem !important;
+            }
+            .section-heading-responsive {
+              font-size: 2.2rem !important;
+            }
+            .section-spacing-responsive {
+              padding: 60px 0 !important;
+            }
+            .overview-card {
+              padding: 30px 20px !important;
+            }
+            .capability-card {
+              padding: 25px 20px !important;
+            }
+          }
+        `}
+      </style>
+      {/* Product Hero Section - matches home page style */}
+      <div className="section-hero">
+        <div className="hero-image" style={{ backgroundImage: `url("${homeBgImg}")` }}></div>
+        <div className="container">
+          <div className="content-wrap text-center">
+            <div className="product-logo effectFade fadeUp mb-4 d-flex justify-content-center">
+              <img
+                src={transactCoreImg}
+                alt={`${product.title} Logo`}
+                style={{ maxWidth: '160px', height: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)', marginBottom: '8px' }}
+              />
+            </div>
+            <div className="title text-display-2 effectFade fadeRotateX prod-hero-title">
+              <span className="title1 fw-semibold text-gradient-1">{product.title}</span>
+              <br />
+              <div className="title2 d-flex justify-content-center flex-wrap mt-2">
+                <span className="fw-semibold text-gradient-1" style={{ fontSize: '0.6em', opacity: 0.85 }}>{product.subtitle}</span>
               </div>
             </div>
-
-            {/* Right Graphic Panel */}
-            <div className="col-lg-6 d-flex justify-content-center">
-              <div style={{ position: 'relative', width: '100%', maxWidth: '500px', height: '420px', background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.5) 100%)', borderRadius: '32px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 30px 60px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', justifyStyle: 'center', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: `url(${abstractWorldMapImg})`, backgroundSize: 'cover', opacity: 0.1, zIndex: 0 }}></div>
-                <img src={transactCoreImg} alt="Transact Core Switching Engine" style={{ width: '85%', height: 'auto', objectFit: 'contain', zIndex: 1, filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.08))' }} />
-                
-                {/* Floating Status Indicator */}
-                <div style={{ position: 'absolute', bottom: '25px', right: '25px', backgroundColor: '#0a0b10', padding: '10px 20px', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', zIndex: 2 }}>
-                  <div style={{ width: '8px', height: '8px', backgroundColor: '#22c55e', borderRadius: '50%', boxShadow: '0 0 10px #22c55e' }}></div>
-                  <span style={{ color: '#fff', fontSize: '0.85rem', fontWeight: '600' }}>Switch Status: Active</span>
-                </div>
-              </div>
+            <p className="text effectFade fadeUp prod-hero-text">
+              {product.shortDescription}
+            </p>
+            <div className="bot-btns effectFade fadeRotateX">
+              <Link to="/contact" className="tf-btn">
+                Let's Connect
+              </Link>
             </div>
           </div>
         </div>
+        <a href="#overview" className="scroll-more">
+          <span className="fw-semibold link1">Scroll for more</span>
+          <i className="icon icon-long-arrow-alt-down-solid"></i>
+        </a>
       </div>
 
       {/* 1. Product Overview Section */}
