@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import homeBgImg from '../../assets/home/• Homepage Background video size (896_678)px_.jpg';
+import homeBgImg from '../../assets/home/• Homepage Background video size (896_678)px_@2x.jpg';
 
 import eAutopsyImg from '../../assets/home/e-autopsy.png';
 import digitalIdentityImg from '../../assets/home/digital-identity.png';

@@ -45,10 +45,31 @@ import csRealtimeImg from '../assets/Products-img/Cyber-sentinel/realtime-monito
 import csAutomationImg from '../assets/Products-img/Cyber-sentinel/automation.jpg';
 import csAnalysisImg from '../assets/Products-img/Cyber-sentinel/analysis.jpg';
 
+// Import Product Background Images
+import bgAutopsy from '../assets/Products-img/products-bg-img/Product Autopsy@2x.png';
+import bgCoreBanking from '../assets/Products-img/products-bg-img/Product Core Banking@2x.png';
+import bgCyberSecurity from '../assets/Products-img/products-bg-img/Product Cyber security@2x.png';
+import bgEapmc from '../assets/Products-img/products-bg-img/Product e apmc@2x.png';
+import bgErp from '../assets/Products-img/products-bg-img/Product ERP solution@2x.png';
+import bgMis from '../assets/Products-img/products-bg-img/Product MIS Solution@2x.png';
+import bgVpay from '../assets/Products-img/products-bg-img/Product V pay@2x.png';
+
 function ProductSingle() {
   const { slug } = useParams();
   const [activeModule, setActiveModule] = useState(0);
   const [showBrochureModal, setShowBrochureModal] = useState(false);
+
+  const slugBgImages = {
+    'core-banking-solution': bgCoreBanking,
+    'mis-solution': bgMis,
+    'end-to-end-cyber-security': bgCyberSecurity,
+    'digital-payments': bgVpay,
+    'post-mortem-mgmt': bgAutopsy,
+    'agriculture-trading': bgEapmc,
+    'erp-solution': bgErp,
+  };
+
+  const currentBg = slugBgImages[slug] || '';
 
   const allowedBrochureSlugs = ['core-banking-solution', 'mis-solution', 'digital-payments', 'end-to-end-cyber-security'];
   const showBrochureButton = allowedBrochureSlugs.includes(slug);
@@ -332,7 +353,7 @@ function ProductSingle() {
       </style>
       {/* Product Hero Section - matches home page style */}
       <div className="section-hero">
-        <div className="hero-image" style={{}}></div>
+        <div className="hero-image" style={currentBg ? { backgroundImage: `url(${currentBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' } : {}}></div>
         <div className="container">
           <div className="content-wrap text-center">
             {product.logo && (

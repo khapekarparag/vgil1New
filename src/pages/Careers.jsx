@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import careersBg from '../assets/careers-bg-img/Careers@2x.png';
 
 // Import VGIL Group Images
 import team6 from '../assets/group-img-vgil-team/vgiplteam-6.jpg';
@@ -41,9 +42,18 @@ const Careers = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="careers-hero" style={{ paddingTop: '150px', paddingBottom: '80px', backgroundColor: '#e10600', color: '#ffffff', textAlign: 'center' }}>
+      <section className="careers-hero" style={{ 
+        paddingTop: '150px', 
+        paddingBottom: '80px', 
+        backgroundImage: `url(${careersBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        color: '#ffffff', 
+        textAlign: 'center' 
+      }}>
         <div className="container">
-          <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '20px' }}>Build Your Future With Us</h1>
+          <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '20px', color: '#ffffff' }}>Build Your Future With Us</h1>
           <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', opacity: 0.9 }}>
             Join Virtual Galaxy and be part of a team that empowers global industries with human-centered AI and digital solutions.
           </p>

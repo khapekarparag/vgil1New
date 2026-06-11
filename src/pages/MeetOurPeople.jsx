@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import careersBg from '../assets/careers-bg-img/Careers@2x.png';
 
 // Import VGIL Group Images
 import team6 from '../assets/group-img-vgil-team/vgiplteam-6.jpg';
@@ -37,9 +38,18 @@ const MeetOurPeople = () => {
 
   return (
     <>
-      <section style={{ paddingTop: '160px', paddingBottom: '100px', backgroundColor: '#e10600', color: '#ffffff', textAlign: 'center' }}>
+      <section style={{ 
+        paddingTop: '160px', 
+        paddingBottom: '100px', 
+        backgroundImage: `url(${careersBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        color: '#ffffff', 
+        textAlign: 'center' 
+      }}>
         <div className="container">
-          <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '20px' }}>Meet Our People</h1>
+          <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '20px', color: '#ffffff' }}>Meet Our People</h1>
           <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
             We are a diverse, dynamic group of innovators united by a shared passion for technology. Discover the faces behind the magic at Virtual Galaxy.
           </p>

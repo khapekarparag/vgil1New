@@ -69,7 +69,7 @@
   }
 
   .footer-mobile-only {
-    background-color: #ffffff !important;
+    background-color: transparent !important;
     color: #1f2937 !important;
     padding: 36px 20px 24px !important;
     font-family: inherit !important;

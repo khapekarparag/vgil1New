@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import careersBg from '../assets/careers-bg-img/Careers@2x.png';
 
 const CareerPath = () => {
   useEffect(() => {
@@ -17,9 +18,18 @@ const CareerPath = () => {
 
   return (
     <>
-      <section style={{ paddingTop: '160px', paddingBottom: '100px', backgroundColor: '#e10600', color: '#ffffff', textAlign: 'center' }}>
+      <section style={{ 
+        paddingTop: '160px', 
+        paddingBottom: '100px', 
+        backgroundImage: `url(${careersBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        color: '#ffffff', 
+        textAlign: 'center' 
+      }}>
         <div className="container">
-          <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '20px' }}>Your Career Path</h1>
+          <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '20px', color: '#ffffff' }}>Your Career Path</h1>
           <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
             Explore open opportunities and start your journey with Virtual Galaxy. We offer competitive benefits and a clear path for professional growth.
           </p>

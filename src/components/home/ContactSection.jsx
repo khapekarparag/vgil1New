@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import contactBg from '../../assets/Contact-img/Contact@2x.png';
 
 function ContactSection() {
   const [phone, setPhone] = useState('');
@@ -37,33 +38,38 @@ function ContactSection() {
 
   return (
     <div id="contact" className="section-spacing-lg">
-      <div className="section-contact">
-        <div className="contact-image">
-          <img src="/assets/images/section/contact-image-bg.jpg" alt="" />
-        </div>
-        <div className="container">
+      <div className="section-contact" style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${contactBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        borderRadius: '40px',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="row">
             <div className="col-lg-6">
               <div className="col-left">
                 <div className="heading-section mb-48">
-                  <div className="heading-sub fw-semibold">Contact</div>
-                  <div className="heading-title text-gradient-3">
+                  <div className="heading-sub fw-semibold" style={{ color: '#ffffff', opacity: 0.9 }}>Contact</div>
+                  <div className="heading-title" style={{ color: '#ffffff', fontSize: '3rem', fontWeight: '800', lineHeight: '1.1' }}>
                     Let’s Build <br /> Intelligent Things
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                  <div className="contact-item" style={{ border: '1px solid #000', padding: '20px', borderRadius: '16px' }}>
+                  <div className="contact-item" style={{ border: '1px solid rgba(255, 255, 255, 0.25)', padding: '20px', borderRadius: '16px', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)' }}>
                     <div className="content">
-                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff0000' }}>Marketing</div>
-                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2' }}>info@vgipl.in</div>
-                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2' }}>+91 62626 86865</div>
+                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff4d4d' }}>Marketing</div>
+                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2', color: '#ffffff' }}>info@vgipl.in</div>
+                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2', color: '#ffffff' }}>+91 62626 86865</div>
                     </div>
                   </div>
-                  <div className="contact-item" style={{ border: '1px solid #000', padding: '20px', borderRadius: '16px' }}>
+                  <div className="contact-item" style={{ border: '1px solid rgba(255, 255, 255, 0.25)', padding: '20px', borderRadius: '16px', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)' }}>
                     <div className="content">
-                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff0000' }}>HR</div>
-                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2' }}>hr@vgipl.in</div>
-                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2' }}>+91 77988 80958</div>
+                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff4d4d' }}>HR</div>
+                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2', color: '#ffffff' }}>hr@vgipl.in</div>
+                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2', color: '#ffffff' }}>+91 77988 80958</div>
                     </div>
                   </div>
                 </div>

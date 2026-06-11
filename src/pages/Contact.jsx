@@ -1,11 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import HeroGradient from '../components/home/HeroGradient';
+import contactBg from '../assets/Contact-img/Contact@2x.png';
 
 function Contact() {
   return (
     <>
-      <HeroGradient />
+      {/* Hero Section */}
+      <section className="contact-hero" style={{ 
+        paddingTop: '160px', 
+        paddingBottom: '100px', 
+        backgroundImage: `url(${contactBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        color: '#ffffff', 
+        textAlign: 'center' 
+      }}>
+        <div className="container">
+          <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '20px', color: '#ffffff' }}>Contact Us</h1>
+          <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
+            Have a project in mind, need technical support, or want to explore our digital and AI solutions? Reach out to our experts.
+          </p>
+        </div>
+      </section>
 
       <div id="contact" className="flat-spacing">
         <div className="section-contact p-0">

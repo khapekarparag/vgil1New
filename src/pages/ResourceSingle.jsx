@@ -4,6 +4,7 @@ import PageTitle from '../components/common/PageTitle';
 import ContactSection from '../components/home/ContactSection';
 import { RESOURCE_DATA } from '../data/resourceData';
 import VideoSection from '../components/common/VideoSection';
+import resourceBgImg from '../assets/Resource-img/Resource@2x.png';
 
 function ResourceSingle() {
   const { slug } = useParams();
@@ -21,16 +22,16 @@ function ResourceSingle() {
 
   return (
     <>
-      <PageTitle title={resourceData.title} breadcrumbs={breadcrumbs} bgImage={resourceData.bgImage} />
+      <PageTitle title={resourceData.title} breadcrumbs={breadcrumbs} bgImage={resourceBgImg} />
       {slug === 'video' ? (
         <VideoSection />
       ) : (
-        <div className="section-spacing">
+        <div className="section-spacing" style={{ paddingTop: '10px' }}>
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-10 text-center">
-                <div className="heading-section mb-48">
-                  <div className="text-body-1 text-neutral-600 mt-24 effectFade fadeUp" data-delay="0.1">
+                <div className="heading-section mb-12">
+                  <div className="text-body-1 text-neutral-600 effectFade fadeUp" data-delay="0.1">
                     {resourceData.desc}
                   </div>
                 </div>
@@ -39,7 +40,7 @@ function ResourceSingle() {
 
             {/* Specialized News/Blog/Press Layouts */}
             {slug === 'news' || slug === 'blog' ? (
-              <div className="news-grid mt-48">
+              <div className="news-grid mt-24">
                 {resourceData.gridItems.map((item, index) => (
                   <div className="news-grid-item effectFade fadeUp" data-delay={0.1 + (index * 0.05)} key={index}>
                     {slug === 'news' ? (
@@ -108,7 +109,7 @@ function ResourceSingle() {
               </div>
             ) : slug === 'press' ? (
               /* Press Coverage Categorized List */
-              <div className="press-coverage-container mt-48">
+              <div className="press-coverage-container mt-24">
                 {resourceData.categories.map((category, catIndex) => (
                   <div className="press-category mb-60" key={catIndex}>
                     <h3 className="press-category-title mb-30">{category.name}</h3>
@@ -137,7 +138,7 @@ function ResourceSingle() {
             ) : (
               /* Default Grid Section */
               resourceData.gridItems && resourceData.gridItems.length > 0 && (
-                <div className="row justify-content-center mt-48">
+                <div className="row justify-content-center mt-24">
                   {resourceData.gridItems.map((item, index) => (
                     <div className="col-md-6 col-lg-3 mb-24 effectFade fadeUp" data-delay={0.1 + (index * 0.1)} key={index}>
                       <a href={item.link} className="investor-card">

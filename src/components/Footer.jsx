@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import vgilLogo from '../assets/home/vgil-logo.png';
+import footerBg from '../assets/home/Bottom@2x.png';
 
 function Footer() {
   return (
-    <footer>
+    <footer style={{ 
+      backgroundImage: `url(${footerBg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center top',
+      backgroundRepeat: 'no-repeat'
+    }}>
       {/* Desktop Footer (Hidden on mobile) */}
       <div className="footer-desktop-only container">
         <div className="footer-content">
