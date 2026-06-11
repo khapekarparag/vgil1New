@@ -332,6 +332,12 @@ function ProductSingle() {
     <>
       <style>
         {`
+          .metrics-section {
+            padding-bottom: 0px !important;
+          }
+          .metrics-section + .modules-fintech-section {
+            padding-top: 0px !important;
+          }
           @media (max-width: 768px) {
             .prod-hero-title {
               font-size: 2.2rem !important;
@@ -340,7 +346,14 @@ function ProductSingle() {
               font-size: 1rem !important;
             }
             .metrics-section {
-              padding: 60px 0 !important;
+              padding-top: 60px !important;
+              padding-bottom: 0px !important;
+            }
+            .metrics-section + .modules-fintech-section {
+              padding-top: 0px !important;
+            }
+            .fintech-modules-wrapper {
+              padding-top: 30px !important;
             }
             .fintech-stat-value {
               font-size: 2rem !important;
