@@ -6,7 +6,7 @@ function FeaturesSection() {
       <div className="container">
         <div className="heading-section center mb-64">
           <div className="heading-sub fw-semibold effectFade fadeUp">Features</div>
-          <div className="heading-title text-gradient-3 effectFade fadeRotateX">All Features in One</div>
+          <div className="heading-title text-gradient-3 effectFade fadeRotateX">The complete AI-native Feature Set</div>
         </div>
       </div>
       <div className="position-relative">
@@ -15,23 +15,23 @@ function FeaturesSection() {
             <div className="features-col col-left lg-mb-24">
               <div className="features-item effectFade fadeUp" style={{ padding: '24px 20px', marginBottom: '20px' }}>
                 <i className="icon icon-robot-solid" style={{ fontSize: '32px' }}></i>
-                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Agent-Powered Workflows</h6>
+                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Autonomous AI Operations</h6>
                 <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                  Turn repetitive tasks into autonomous flows—agents plan, execute, and report with guardrails, audit trails, and clear handoff to humans.
+                  Automate routine tasks end-to-end — AI plans, executes, and reports with safety checks, logs, and smooth human handover.
                 </p>
               </div>
               <div className="features-item effectFade fadeUp" style={{ padding: '24px 20px', marginBottom: '20px' }}>
                 <i className="icon icon-clipboard-check-solid" style={{ fontSize: '32px' }}></i>
-                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Eval-First Quality</h6>
+                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Quality-First Validation</h6>
                 <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                  Measure accuracy, latency, safety, and cost from day one. Our evals and dashboards keep models reliable and budgets predictable.
+                  Track accuracy, latency, safety, and spend from day zero. Our evals + dashboards ensure models stay dependable and costs stay controlled.
                 </p>
               </div>
               <div className="features-item effectFade fadeUp" style={{ padding: '24px 20px', marginBottom: '20px' }}>
                 <i className="icon icon-book-solid" style={{ fontSize: '32px' }}></i>
-                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Private Knowledge RAG</h6>
+                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Private Data Intelligence</h6>
                 <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                  Make your docs, tickets, and wikis instantly useful with retrieval augmented generation—freshness, citations, and explainability built in.
+                  Unlock docs, tickets, and wikis with secure RAG — delivers fresh, cited, and explainable responses from your own knowledge base.
                 </p>
               </div>
             </div>
@@ -43,23 +43,23 @@ function FeaturesSection() {
             <div className="features-col col-right">
               <div className="features-item effectFade fadeUp" data-delay="0.1" style={{ padding: '24px 20px', marginBottom: '20px' }}>
                 <i className="icon icon-user-check-solid" style={{ fontSize: '32px' }}></i>
-                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Human-Centered AI UX</h6>
+                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Intuitive AI Experience</h6>
                 <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                  Interfaces, prompts, and error states designed for trust and adoption—so the smart thing is also the obvious thing to do.
+                  Interfaces, prompts, and errors built for real people — so the smartest option is also the simplest one to use.
                 </p>
               </div>
               <div className="features-item effectFade fadeUp" data-delay="0.1" style={{ padding: '24px 20px', marginBottom: '20px' }}>
                 <i className="icon icon-shield-alt-solid" style={{ fontSize: '32px' }}></i>
-                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Secure by Design</h6>
+                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Built-in Enterprise Security</h6>
                 <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                  PII handling, SSO/SAML, RBAC, secrets management, and compliance workflows—ship AI that’s safe, auditable, and enterprise-ready.
+                  Hardened from day one — SSO, role-based access, secret management, and full compliance baked into the architecture.
                 </p>
               </div>
               <div className="features-item effectFade fadeUp" data-delay="0.1" style={{ padding: '24px 20px', marginBottom: '20px' }}>
                 <i className="icon icon-plug-solid" style={{ fontSize: '32px' }}></i>
-                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Seamless Integrations</h6>
+                <h6 className="title fw-semibold" style={{ fontSize: '18px', marginTop: '15px' }}>Universal Tool Connectivity</h6>
                 <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                  Plug into your stack (CRM, helpdesk, ERP, data warehouse) with webhooks and APIs to turn insights into action—fast.
+                  Connect to your current stack — CRM, helpdesk, ERP, data warehouse — via webhooks and APIs to convert data into action instantly.
                 </p>
               </div>
             </div>

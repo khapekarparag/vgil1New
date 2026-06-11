@@ -182,56 +182,7 @@ window.runCarouselJS = function() {
         mainSwiper.controller.control = thumbSwiper;
     }
 
-    if ($(".swiper-progressbar").length > 0) {
-        if ($(".swiper-progressbar")[0] && $(".swiper-progressbar")[0].swiper) {
-            $(".swiper-progressbar")[0].swiper.destroy(true, true);
-        }
 
-        const progressFill = document.getElementById("progressBar");
-        
-        const SLIDE_DURATION = 5000;
-        let startTime = null;
-        let rafID = null;
-
-        const swiper = new Swiper(".swiper-progressbar", {
-            loop: true,
-            speed: 600,
-            grabCursor: true,
-            allowTouchMove: true,
-            navigation: {
-            nextEl: ".progressbar-next",
-            prevEl: ".progressbar-prev",
-            },
-            on: {
-                slideChange: () => resetProgress(),
-                touchStart: () => resetProgress(),
-            }
-        });
-
-        function resetProgress() {
-            if (progressFill) progressFill.style.width = "0%";
-            startTime = performance.now();
-        }
-
-        function animateProgress(timestamp) {
-            if (!progressFill) return;
-            if (!startTime) startTime = timestamp;
-            const elapsed = timestamp - startTime;
-            let percent = (elapsed / SLIDE_DURATION) * 100;
-
-            if (percent >= 100) {
-                percent = 100;
-                swiper.slideNext();
-                resetProgress();
-            }
-
-            progressFill.style.width = percent + "%";
-            rafID = requestAnimationFrame(animateProgress);
-        }
-
-        resetProgress();
-        animateProgress(performance.now());
-    }
 };
 
 $(window).on("load", window.runCarouselJS);

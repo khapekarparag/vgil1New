@@ -10,8 +10,7 @@ function AboutSection() {
           <div className="col-12">
             <div className="heading-section" style={{ marginBottom: '15px' }}>
               <div className="heading-sub fw-semibold effectFade fadeUp" style={{ display: 'inline-block', marginBottom: '15px' }}>About Us</div>
-              <div className="heading-title text-gradient-2 effectFade fadeRotateX" style={{ lineHeight: '1.2' }}>Innovations and <br className="d-none d-md-block" /> Digital
-                Solutions</div>
+              <div className="heading-title text-gradient-2 effectFade fadeRotateX" style={{ lineHeight: '1.2' }}>A Legacy of Building  <br className="d-none d-md-block" /> Reliable IT Foundations!</div>
             </div>
           </div>
           <div className="col-lg-6 lg-mb-24 d-flex">
@@ -21,7 +20,7 @@ function AboutSection() {
                   <span className="dot"></span>
                   Available for worldwide project
                 </div>
-                <h5 className="title fw-semibold text-white">Based in <span className="text-brand">Nagpur & Pune, Maharashtra</span></h5>
+                <h5 className="title fw-semibold text-white">Global Software<span className="text-brand">Solution since 1997</span></h5>
                 <Link to="/contact" className="tf-btn">
                   Start a Project
                 </Link>
@@ -31,7 +30,10 @@ function AboutSection() {
           </div>
           <div className="col-lg-6 d-flex flex-column">
             <div className="review-box mb-24 flex-grow-1 d-flex flex-column justify-content-center">
-              <div className="desc fw-semibold text-body-1">We've provided advanced technology to 5000+ bank branches, manufacturing firms, and businesses for - <br /> transaction automation, customer service, compliance, and decision support.</div>
+              <div className="fw-bold mb-12 text-brand" style={{ fontSize: '0.95rem', letterSpacing: '1.2px', textTransform: 'uppercase' }}>
+                The Numbers Behind Our Impact
+              </div>
+              <div className="desc fw-semibold text-body-1" style={{ marginTop: '0' }}>Empowering 5,000+ bank branches, manufacturers, and global businesses through cutting-edge automation, seamless customer experiences, enhanced service delivery, and real-time decision support systems.</div>
               <div className="d-flex justify-content-between flex-wrap align-items-end gap-12 mt-20">
                 <div>
                   <div className="d-flex gap-4 text mb-10">
@@ -50,7 +52,7 @@ function AboutSection() {
                   </div>
                 </div>
                 <div className="counter text-neutral-400">
-                  <span className="number" data-speed="1500" data-to="400" data-inviewport="yes">10</span><span>+</span>
+                  <span className="number" data-speed="1500" data-to="400" data-inviewport="yes">400</span><span>+</span>
                 </div>
               </div>
             </div>
@@ -65,7 +67,7 @@ function AboutSection() {
               <div className="d-flex justify-content-between flex-wrap align-items-end gap-12">
                 <div className="desc fw-semibold text-body-1 mb-0">Years in Business</div>
                 <div className="counter text-neutral-400">
-                  <span className="number" data-speed="1500" data-to="28" data-inviewport="yes">28</span><span>+</span>
+                  <span className="number" data-speed="1500" data-to="27" data-inviewport="yes">27</span><span>+</span>
                 </div>
               </div>
             </div>

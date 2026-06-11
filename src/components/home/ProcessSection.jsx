@@ -30,11 +30,11 @@ function ProcessSection() {
                     <div className="process-card">
                       <i className="icon icon-search-solid"></i>
                       <div className="content">
-                        <h4 className="title fw-semibold">Discover & Scope</h4>
-                        <p className="text text-secondary">Align on problems, data reality, and success metrics. Opportunity brief, KPI model, phased roadmap, effort/cost ranges.</p>
+                        <h4 className="title fw-semibold">Str(AI)tegy for Enterprise Success</h4>
+                        <p className="text text-secondary">We don’t just implement AI, we optimize your core business processes for maximum efficiency and growth.</p>
                       </div>
                       <div className="bot">
-                        <div className="time fw-semibold">3-7 DAYS</div>
+                        <div className="time fw-semibold"> Explore AI Solutions</div>
                         <div className="number">
                           <span className="text-neutral-400">01</span>
                           <span className="text-neutral-200">/03</span>
@@ -46,11 +46,11 @@ function ProcessSection() {
                     <div className="process-card">
                       <i className="icon icon-bolt-solid"></i>
                       <div className="content">
-                        <h4 className="title fw-semibold">Prototype</h4>
-                        <p className="text text-secondary">De-risk unknowns and validate value quickly. Clickable UX, tech spike repo, initial eval rubric, demo.</p>
+                        <h4 className="title fw-semibold">Intelligence That Unlocks Real Business Growth</h4>
+                        <p className="text text-secondary">Designed to explore, built to innovate, and crafted to scale — Virtual Galaxy empowers your business with next-gen intelligence.</p>
                       </div>
                       <div className="bot">
-                        <div className="time fw-semibold">1-2 WEEKS</div>
+                        <div className="time fw-semibold">Learn more</div>
                         <div className="number">
                           <span className="text-neutral-400">02</span>
                           <span className="text-neutral-200">/03</span>
@@ -62,11 +62,11 @@ function ProcessSection() {
                     <div className="process-card">
                       <i className="icon icon-user-check-solid-1"></i>
                       <div className="content">
-                        <h4 className="title fw-semibold">Validate & Evals</h4>
-                        <p className="text text-secondary">Prove accuracy, usability, safety, and cost. Eval dashboard, acceptance thresholds, decision to iterate/ship.</p>
+                        <h4 className="title fw-semibold">Reimagining Tomorrow with AI Today.</h4>
+                        <p className="text text-secondary">Building intelligent systems that power the next era of business evolution.</p>
                       </div>
                       <div className="bot">
-                        <div className="time fw-semibold">1 WEEKS</div>
+                        <div className="time fw-semibold">Get Started</div>
                         <div className="number">
                           <span className="text-neutral-400">03</span>
                           <span className="text-neutral-200">/03</span>

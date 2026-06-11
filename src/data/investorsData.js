@@ -1,9 +1,18 @@
 import imgBoardManagement from '../assets/Investors-Info-img/Board_Managment.png';
-import imgCorporateGovernance from '../assets/Investors-Info-img/Corporate_Governance.png';
+import imgGroupCompanies from '../assets/Investors-Info-img/Group_Companies.png';
 import imgFinancialInfo from '../assets/Investors-Info-img/Financial_Information_Statutory_Reports.png';
+import imgCorporateGovernance from '../assets/Investors-Info-img/Corporate_Governance.png';
 import imgInvestorContacts from '../assets/Investors-Info-img/Investor_Contacts_Grievances.png';
 import imgMaterialCreditors from '../assets/Investors-Info-img/Material_Creditors.png';
-import imgGroupCompanies from '../assets/Investors-Info-img/Group_Companies.png';
+import imgPreferentialAllotmentofWarrants from '../assets/Investors-Info-img/Preferential Allotment of Warrants.png';
+import imgMaterialContracts from '../assets/Investors-Info-img/Material Contracts.png';
+import imgMaterialDocuments from '../assets/Investors-Info-img/Material Documents.png';
+import imgInvestorAnalystMeet from '../assets/Investors-Info-img/Investor Analyst Meet.png';
+import imgAnnualReports from '../assets/Investors-Info-img/Annual Reports.png';
+import imgNoticeofMeetings from '../assets/Investors-Info-img/Notice of Meetings.png';
+import imgDividend from '../assets/Investors-Info-img/Dividend.png';
+import imgAnnouncement from '../assets/Investors-Info-img/Announcement.png';
+
 import imgBlog from '../assets/Investors-Info-img/Blog.png';
 
 export const INVESTORS_DATA = [
@@ -64,7 +73,7 @@ export const INVESTORS_DATA = [
     slug: 'preferential-allotment-warrants',
     title: 'Preferential Allotment of Warrants',
     icon: 'box',
-    logo: '',
+    logo: imgPreferentialAllotmentofWarrants,
     desc: 'Information on the preferential allotment of warrants and related disclosures.',
     gridItems: []
   },
@@ -72,7 +81,7 @@ export const INVESTORS_DATA = [
     slug: 'material-contracts',
     title: 'Material Contracts',
     icon: 'book-solid',
-    logo: '',
+    logo: imgMaterialContracts,
     desc: 'Key material contracts that govern our strategic partnerships and business operations.',
     gridItems: []
   },
@@ -80,7 +89,7 @@ export const INVESTORS_DATA = [
     slug: 'material-documents',
     title: 'Material Documents',
     icon: 'paperclip-solid',
-    logo: '',
+    logo: imgMaterialDocuments,
     desc: 'Important material documents available for investor review and compliance.',
     gridItems: []
   },
@@ -88,7 +97,7 @@ export const INVESTORS_DATA = [
     slug: 'investor-analyst-meet',
     title: 'Investor Analyst Meet',
     icon: 'comments-solid',
-    logo: imgBlog,
+    logo: imgInvestorAnalystMeet,
     desc: 'Presentations, transcripts, and schedules for our investor and analyst meetings.',
     gridItems: []
   },
@@ -96,7 +105,7 @@ export const INVESTORS_DATA = [
     slug: 'annual-reports',
     title: 'Annual Reports',
     icon: 'book-open-solid',
-    logo: '',
+    logo: imgAnnualReports,
     desc: 'Comprehensive annual reports detailing our financial health, achievements, and strategic outlook.',
     gridItems: []
   },
@@ -104,7 +113,7 @@ export const INVESTORS_DATA = [
     slug: 'notice-of-meetings',
     title: 'Notice of Meetings',
     icon: 'bell',
-    logo: '',
+    logo: imgNoticeofMeetings,
     desc: 'Official notices for Annual General Meetings (AGMs) and Extraordinary General Meetings (EGMs).',
     gridItems: []
   },
@@ -112,7 +121,7 @@ export const INVESTORS_DATA = [
     slug: 'dividend',
     title: 'Dividend',
     icon: 'coins-solid',
-    logo: '',
+    logo: imgDividend,
     desc: 'Information regarding our dividend policy, declarations, and historical payouts.',
     gridItems: []
   },
@@ -120,7 +129,7 @@ export const INVESTORS_DATA = [
     slug: 'announcement',
     title: 'Announcement',
     icon: 'bullseye-solid',
-    logo: '',
+    logo: imgAnnouncement,
     desc: 'Latest corporate announcements, press releases, and regulatory filings.',
     gridItems: []
   }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import homeBgImg from '../assets/home/• Homepage Background video size (896_678)px_.jpg';
 import { Link } from 'react-router-dom';
 import { PRODUCTS_DATA } from '../data/productsData';
 import abstractWorldMapImg from '../assets/Products-img/image.png';
@@ -86,7 +85,7 @@ function TransactCore() {
       </style>
       {/* Product Hero Section - matches home page style */}
       <div className="section-hero">
-        <div className="hero-image" style={{ backgroundImage: `url("${homeBgImg}")` }}></div>
+        <div className="hero-image" style={{}}></div>
         <div className="container">
           <div className="content-wrap text-center">
             <div className="product-logo effectFade fadeUp mb-4 d-flex justify-content-center">

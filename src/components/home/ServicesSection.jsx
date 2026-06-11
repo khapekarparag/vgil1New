@@ -19,7 +19,7 @@ function ServicesSection() {
       const img = new Image();
       img.src = src;
     });
-    
+
     // Cleanup timeout on unmount
     return () => {
       if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
@@ -28,13 +28,13 @@ function ServicesSection() {
 
   const handleCardHover = (cardId, newImg) => {
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
-    
+
     // Add a slight delay (100ms) to prevent flickering/jumping when rapidly moving mouse across cards
     hoverTimeout.current = setTimeout(() => {
       if (activeCard !== cardId) {
         setActiveCard(cardId);
       }
-      
+
       if (newImg && newImg !== activeImage && !isFading) {
         setIsFading(true);
         setTimeout(() => {
@@ -47,7 +47,7 @@ function ServicesSection() {
 
   const handleMouseLeaveContainer = () => {
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
-    
+
     // Delay before reverting to the default card (faq-1)
     hoverTimeout.current = setTimeout(() => {
       setActiveCard("faq-1");
@@ -62,26 +62,26 @@ function ServicesSection() {
             <div className="d-flex flex-column justify-content-between h-100">
               <div className="col-left">
                 <div className="heading-section mb-48">
-                  <div className="heading-sub fw-semibold effectFade fadeUp">Why choose us?</div>
+                  <div className="heading-sub fw-semibold effectFade fadeUp">Why Choose Us</div>
                   <div className="heading-title text-gradient-3 effectFade fadeRotateX">End-to-End <br /> AI Services</div>
                 </div>
                 <p className="effectFade fadeUp mb-48">Serving Clients With Apt
                   Solutions Since 1997.</p>
-                
+
                 {/* Dynamic Image Container */}
                 <div className="dynamic-image-container effectFade fadeUp">
-                  <img 
-                    src={activeImage} 
-                    alt="Active Service" 
-                    style={{ 
-                      width: '100%', 
+                  <img
+                    src={activeImage}
+                    alt="Active Service"
+                    style={{
+                      width: '100%',
                       height: 'auto',
-                      opacity: isFading ? 0 : 1, 
+                      opacity: isFading ? 0 : 1,
                       transform: isFading ? 'scale(0.98)' : 'scale(1)',
                       transition: 'opacity 0.2s ease-out, transform 0.2s ease-out',
                       objectFit: 'cover',
                       borderRadius: '24px'
-                    }} 
+                    }}
                   />
                 </div>
               </div>
@@ -90,7 +90,7 @@ function ServicesSection() {
           <div className="col-xxl-6 col-lg-6">
             {/* Parent container no longer needs a hardcoded min-height because a card is always open */}
             <div className="accordion-faq_list" id="accordion-services" onMouseLeave={handleMouseLeaveContainer}>
-              
+
               <div className={`accordion-faq_item effectFade fadeUp ${activeCard === 'faq-1' ? 'theme-dark' : 'theme-cream'}`} role="presentation" onMouseEnter={() => handleCardHover('faq-1', '/assets/images/section/service-1.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-1' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-1'}>
                   <div className="accordion-title">
@@ -112,17 +112,17 @@ function ServicesSection() {
                 </div>
               </div>
 
-              <div className="accordion-faq_item effectFade fadeUp theme-cream" role="presentation" onMouseEnter={() => handleCardHover('faq-2', '/assets/images/section/service-2.jpg')}>
+              <div className={`accordion-faq_item effectFade fadeUp ${activeCard === 'faq-2' ? 'theme-dark' : 'theme-cream'}`} role="presentation" onMouseEnter={() => handleCardHover('faq-2', '/assets/images/section/service-2.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-2' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-2'}>
                   <div className="accordion-title">
-                    Supporting 150+ Firms <br />
+                    Trusted by 500+ Enterprises <br />
                     <div className="text-body-1 num">(02)</div>
                   </div>
                 </div>
                 <div className={`react-accordion-content ${activeCard === 'faq-2' ? 'open' : ''}`}>
                   <div className="react-accordion-inner">
                     <div className="accordion-content pt-3 mt-0">
-                      <div className="text-body-3 text-neutral-300 text">Support multiple types of organizations, including Bank Branches, Manufacturing Setups, and Business Houses..</div>
+                      <div className="text-body-3 text-neutral-300 text">Support multiple types of organizations, including Bank Branches, Manufacturing Setups, and Business Houses.</div>
                       <div className="list-tags">
                         <a href="#" className="tags-item fw-semibold">Banking Solutions</a>
                         <a href="#" className="tags-item fw-semibold">Manufacturing Support</a>
@@ -133,17 +133,19 @@ function ServicesSection() {
                 </div>
               </div>
 
-              <div className="accordion-faq_item effectFade fadeUp theme-cream" role="presentation" onMouseEnter={() => handleCardHover('faq-3', '/assets/images/section/service-3.jpg')}>
+              <div className={`accordion-faq_item effectFade fadeUp ${activeCard === 'faq-3' ? 'theme-dark' : 'theme-cream'}`} role="presentation" onMouseEnter={() => handleCardHover('faq-3', '/assets/images/section/service-3.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-3' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-3'}>
                   <div className="accordion-title">
-                    350+ Strong Team <br />
+                    400+ Engineers <br />
                     <div className="text-body-1 num">(03)</div>
                   </div>
                 </div>
                 <div className={`react-accordion-content ${activeCard === 'faq-3' ? 'open' : ''}`}>
                   <div className="react-accordion-inner">
                     <div className="accordion-content pt-3 mt-0">
-                      <div className="text-body-3 text-neutral-300 text">Our core strength - our team of dynamic professionals keeps itself constantly upgraded to maintain our edge.</div>
+                      <div className="text-body-3 text-neutral-300 text">Certified experts managing India's critical infrastructure.<br />
+                        PAN-India presence with 8+ years avg experience
+                      </div>
                       <div className="list-tags">
                         <a href="#" className="tags-item fw-semibold">Dynamic & Skilled Team</a>
                         <a href="#" className="tags-item fw-semibold">Maintaining a Competitive Edge</a>
@@ -154,17 +156,19 @@ function ServicesSection() {
                 </div>
               </div>
 
-              <div className="accordion-faq_item effectFade fadeUp theme-cream" role="presentation" onMouseEnter={() => handleCardHover('faq-4', '/assets/images/section/service-4.jpg')}>
+              <div className={`accordion-faq_item effectFade fadeUp ${activeCard === 'faq-4' ? 'theme-dark' : 'theme-cream'}`} role="presentation" onMouseEnter={() => handleCardHover('faq-4', '/assets/images/section/service-4.jpg')}>
                 <div className={`accordion-action services-image-btn ${activeCard === 'faq-4' ? 'active-img' : 'collapsed'}`} role="button" aria-expanded={activeCard === 'faq-4'}>
                   <div className="accordion-title">
-                    Our Expertise <br />
+                    Future Ready Solutions <br />
                     <div className="text-body-1 num">(04)</div>
                   </div>
                 </div>
                 <div className={`react-accordion-content ${activeCard === 'faq-4' ? 'open' : ''}`}>
                   <div className="react-accordion-inner">
                     <div className="accordion-content pt-3 mt-0">
-                      <div className="text-body-3 text-neutral-300 text">We build cutting edge technologies for Transaction Automation, Customer Service Delivery, Compliance & Decision Support.</div>
+                      <div className="text-body-3 text-neutral-300 text">End-to-end lifecycle management for critical IT infrastructure:<br />
+                        Consulting & Design → Implementation → 24x7 Operations → AMC Support
+                      </div>
                       <div className="list-tags">
                         <a href="#" className="tags-item fw-semibold">Automate Transactions Seamlessly</a>
                         <a href="#" className="tags-item fw-semibold">Intelligent Insights</a>

@@ -1,6 +1,71 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 function StatisticSection() {
+  const swiperRef = useRef(null);
+  const swiperInstanceRef = useRef(null);
+  const progressFillRef = useRef(null);
+  const rafIDRef = useRef(null);
+
+  useEffect(() => {
+    // Only run if Swiper exists globally (as loaded in index.html)
+    if (!window.Swiper) return;
+
+    const SLIDE_DURATION = 5000;
+    let startTime = null;
+
+    function resetProgress() {
+      if (progressFillRef.current) progressFillRef.current.style.width = "0%";
+      startTime = performance.now();
+    }
+
+    function animateProgress(timestamp) {
+      if (swiperInstanceRef.current && swiperInstanceRef.current.destroyed) return;
+      if (!progressFillRef.current) return;
+      if (!startTime) startTime = timestamp;
+
+      const elapsed = timestamp - startTime;
+      let percent = (elapsed / SLIDE_DURATION) * 100;
+
+      if (percent >= 100) {
+        percent = 100;
+        if (swiperInstanceRef.current) {
+          swiperInstanceRef.current.slideNext();
+        }
+        resetProgress();
+      }
+
+      progressFillRef.current.style.width = percent + "%";
+      rafIDRef.current = requestAnimationFrame(animateProgress);
+    }
+
+    // Initialize Swiper on component mount
+    swiperInstanceRef.current = new window.Swiper(swiperRef.current, {
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: '.progressbar-next',
+        prevEl: '.progressbar-prev',
+      },
+      on: {
+        slideChange: () => resetProgress(),
+        touchStart: () => resetProgress(),
+      }
+    });
+
+    resetProgress();
+    rafIDRef.current = requestAnimationFrame(animateProgress);
+
+    // Cleanup on unmount
+    return () => {
+      if (rafIDRef.current) cancelAnimationFrame(rafIDRef.current);
+      if (swiperInstanceRef.current) {
+        swiperInstanceRef.current.destroy(true, true);
+      }
+    };
+  }, []);
+
   return (
     <div className="section-statistic section-spacing-sm dark-section dark-section-top">
       <div className="line"></div>
@@ -17,10 +82,10 @@ function StatisticSection() {
               <div className="text text-body-1 text-neutral-400 effectFade fadeUp">
                 We shipped our first copilot in 7 weeks and cut support tickets by 31%. The eval dashboards made every decision obvious.
               </div>
-              <div className="swiper swiper-progressbar">
+              <div ref={swiperRef} className="swiper swiper-progressbar">
                 <div className="group-slider effectFade fadeUp">
                   <div className="progress-bar">
-                    <div className="progress-fill" id="progressBar"></div>
+                    <div ref={progressFillRef} className="progress-fill" id="progressBar"></div>
                   </div>
                   <div className="group-btn-slider">
                     <div className="btn-slider progressbar-prev">

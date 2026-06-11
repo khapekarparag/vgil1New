@@ -39,13 +39,13 @@ function HeroGradient() {
                 </linearGradient>
               </defs>
             </svg>
-            AI-Driven Agency
+            AIPowered Solutions
           </div>
           <div className="title text-display-2 effectFade fadeRotateX">
-            <span className="title1 fw-semibold text-gradient-1">Innovation and </span>
+            <span className="title1 fw-semibold text-gradient-1">Your-Complete </span>
             <br />
             <div className="title2 d-flex gap-20 justify-content-center flex-wrap">
-              <span className="fw-semibold text-gradient-1">Digital Solutions</span>
+              <span className="fw-semibold text-gradient-1">AI-TECH Partner </span>
               <div className="title-icon">
                 <div className="box"></div>
                 <div className="title-icon-wrap">
@@ -63,14 +63,14 @@ function HeroGradient() {
             </div>
           </div>
           <p className="text effectFade fadeUp">
-            From discovery to deployment, we plug into your stack to prototype, <br /> validate, and launch AI experiences your users actually love.
+            With AI powered execution, we transform ideas into scalable products that drive success in the tech world. <br /> into scalable products that drive success in the tech world.
           </p>
           <div className="bot-btns effectFade fadeRotateX">
             <Link to="/services" className="tf-btn">
               Explore Services
             </Link>
             <a href="#pricing" className="tf-btn-2">
-              View Pricing Plans
+              Start Your Journey
             </a>
           </div>
         </div>
