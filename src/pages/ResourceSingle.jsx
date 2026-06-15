@@ -5,6 +5,8 @@ import ContactSection from '../components/home/ContactSection';
 import { RESOURCE_DATA } from '../data/resourceData';
 import VideoSection from '../components/common/VideoSection';
 import resourceBgImg from '../assets/Resource-img/Resource@2x.png';
+import InstagramFeed from '../components/common/instagramFeed';
+
 
 function ResourceSingle() {
   const { slug } = useParams();
@@ -39,7 +41,7 @@ function ResourceSingle() {
             </div>
 
             {/* Specialized News/Blog/Press Layouts */}
-            {slug === 'news' || slug === 'blog' ? (
+         x   {slug === 'media' ? (<InstagramFeed />) : slug === 'news' || slug === 'blog' ?  (
               <div className="news-grid mt-24">
                 {resourceData.gridItems.map((item, index) => (
                   <div className="news-grid-item effectFade fadeUp" data-delay={0.1 + (index * 0.05)} key={index}>
