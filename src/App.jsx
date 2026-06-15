@@ -30,6 +30,7 @@ import IPO from './pages/IPO';
 import InvestorSingle from './pages/InvestorSingle';
 import ResourceSingle from './pages/ResourceSingle';
 import BoardManagement from './pages/BoardManagement';
+import AIPage from './pages/AIPage';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
           <Route path="/investors/board-and-management/:subpage" element={<BoardManagement />} />
           <Route path="/investors/:slug" element={<InvestorSingle />} />
           <Route path="/resource/:slug" element={<ResourceSingle />} />
+          <Route path="/ai" element={<AIPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
