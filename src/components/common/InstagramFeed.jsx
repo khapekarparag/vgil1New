@@ -9,7 +9,7 @@ const InstagramFeed = () => {
     if (!existing) {
       const script = document.createElement("script");
       script.src = "https://static.elfsight.com/platform/platform.js";
-      script.async = true;
+      script.async = true;      
       document.body.appendChild(script);
     }
 
