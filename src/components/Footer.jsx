@@ -71,6 +71,9 @@ function Footer() {
             <li>
               <Link to="/contact" className="fw-semibold link-underline link1">Contact</Link>
             </li>
+            <li>
+              <Link to="/ai" className="fw-semibold link-underline link1">AI</Link>
+            </li>
           </ul>
           <p className="text-secondary coppy-rights text-center">© 2026 Virtual Galaxy Infotech Limited. All Rights Reserved.</p>
           <a href="#" className="action-go-top d-flex gap-8 align-items-center justify-content-end link1">
@@ -146,6 +149,7 @@ function Footer() {
                 <li><Link to="/investors/board-and-management">Investors</Link></li>
                 <li><Link to="/ipo">IPO</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/ai">AI</Link></li>
               </ul>
             </div>
           </div>
