@@ -51,8 +51,8 @@ function WhyChooseUs() {
                                 </div>
                             </div>
                             <div className="content">
-                                <h6 className="fw-semibold title">Performance You Can Trust. </h6>
-                                <p className="text text-secondary">We measure what matters - accuracy, Rapid, Trusted , and <br /> Efficient - We measure what matters Accurate, Rapid , Trusted and Efficient - so every sprint ships business value, not just features.</p>
+                                <h6 className="fw-semibold title">Performance You Can Trust</h6>
+                                <p className="text text-secondary">We measure what matters: Accurate, Rapid, Trusted, and Efficient — so every sprint ships business value, not just features.</p>
                             </div>
                         </div>
                     </div>
@@ -99,6 +99,74 @@ function WhyChooseUs() {
                             <div className="content">
                                 <h6 className="fw-semibold title">Design-Led AI Experiences</h6>
                                 <p className="text text-secondary">We craft prompts, interfaces, and guardrails that feel intuitive - so adoption rises and support tickets fall.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Why Choose Us: Expertise Section */}
+                <div className="heading-section center" style={{ marginTop: '100px', marginBottom: '60px' }}>
+                    <div className="heading-sub fw-semibold effectFade fadeUp">Expertise</div>
+                    <div className="heading-title text-gradient-3 effectFade fadeRotateX">Expertise That Moves Business Forward</div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-6 col-md-6 mb-24">
+                        <div className="benefits-box h-100 effectFade fadeUp" style={{ padding: '30px' }}>
+                            <div className="content">
+                                <div className="d-flex align-items-center gap-12 mb-15">
+                                    <div style={{ display: 'inline-flex', padding: '10px', borderRadius: '10px', background: 'rgba(239, 68, 68, 0.08)' }}>
+                                        <i className="icon icon-bullseye-solid" style={{ color: '#ff3b30', fontSize: '1.2rem' }}></i>
+                                    </div>
+                                    <h6 className="fw-semibold title mb-0" style={{ fontSize: '18px' }}>1. DOMAIN EXPERTISE</h6>
+                                </div>
+                                <p className="text text-secondary" style={{ fontSize: '14px', lineHeight: '1.6' }}>
+                                    VGIL has been a pioneer in the ever-evolving technology space in the verticals of Banking & Finance, eGovernance, ERP & DC / DR Solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6 mb-24">
+                        <div className="benefits-box h-100 effectFade fadeUp" style={{ padding: '30px' }}>
+                            <div className="content">
+                                <div className="d-flex align-items-center gap-12 mb-15">
+                                    <div style={{ display: 'inline-flex', padding: '10px', borderRadius: '10px', background: 'rgba(239, 68, 68, 0.08)' }}>
+                                        <i className="icon icon-user-check-solid" style={{ color: '#ff3b30', fontSize: '1.2rem' }}></i>
+                                    </div>
+                                    <h6 className="fw-semibold title mb-0" style={{ fontSize: '18px' }}>2. Trusted by 500+ Enterprises</h6>
+                                </div>
+                                <p className="text text-secondary" style={{ fontSize: '14px', lineHeight: '1.6' }}>
+                                    Support multiple types of organizations, including Bank Branches, Manufacturing Setups, and Business Houses.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6 mb-24 mb-md-0">
+                        <div className="benefits-box h-100 effectFade fadeUp" style={{ padding: '30px' }}>
+                            <div className="content">
+                                <div className="d-flex align-items-center gap-12 mb-15">
+                                    <div style={{ display: 'inline-flex', padding: '10px', borderRadius: '10px', background: 'rgba(239, 68, 68, 0.08)' }}>
+                                        <i className="icon icon-bolt-solid" style={{ color: '#ff3b30', fontSize: '1.2rem' }}></i>
+                                    </div>
+                                    <h6 className="fw-semibold title mb-0" style={{ fontSize: '18px' }}>3. 400+ Engineers</h6>
+                                </div>
+                                <p className="text text-secondary" style={{ fontSize: '14px', lineHeight: '1.6' }}>
+                                    Certified experts managing India's critical infrastructure. PAN-India presence with 8+ years avg experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6">
+                        <div className="benefits-box h-100 effectFade fadeUp" style={{ padding: '30px' }}>
+                            <div className="content">
+                                <div className="d-flex align-items-center gap-12 mb-15">
+                                    <div style={{ display: 'inline-flex', padding: '10px', borderRadius: '10px', background: 'rgba(239, 68, 68, 0.08)' }}>
+                                        <i className="icon icon-cog" style={{ color: '#ff3b30', fontSize: '1.2rem' }}></i>
+                                    </div>
+                                    <h6 className="fw-semibold title mb-0" style={{ fontSize: '18px' }}>4. Future Ready Solutions</h6>
+                                </div>
+                                <p className="text text-secondary" style={{ fontSize: '14px', lineHeight: '1.6' }}>
+                                    End-to-end lifecycle management for critical IT infrastructure: Consulting & Design → Implementation → 24x7 Operations → AMC Support
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -16,11 +16,15 @@ function AboutSection() {
           <div className="col-lg-6 lg-mb-24 d-flex">
             <div className="col-left w-100 h-100 d-flex flex-column justify-content-between" style={{ minHeight: '100%' }}>
               <div className="position-relative z-5">
-                <div className="sub text-white">
+                <div className="sub text-white d-flex align-items-center gap-8 flex-wrap" style={{ fontSize: '0.8rem', lineHeight: '1.4', marginBottom: '16px' }}>
                   <span className="dot"></span>
-                  Available for worldwide project
+                  <span>📍 Headquartered in Nagpur, India</span>
+                  <span className="dot" style={{ marginLeft: '4px' }}></span>
+                  <span>PAN-India presence across 18+ states</span>
+                  <span className="dot" style={{ marginLeft: '4px' }}></span>
+                  <span>Active projects in Indonesia, Africa & more</span>
                 </div>
-                <h5 className="title fw-semibold text-white">Global Software<span className="text-brand">Solution since 1997</span></h5>
+                <h5 className="title fw-semibold text-white">Global Software <span className="text-brand">Solution since 1997</span></h5>
                 <Link to="/contact" className="tf-btn">
                   Start a Project
                 </Link>
