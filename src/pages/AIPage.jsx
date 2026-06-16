@@ -695,7 +695,7 @@ function AIPage() {
             </p>
             {/* Partners Logo Simulation */}
             <div className="row justify-content-center align-items-center g-4 flex-wrap" style={{ opacity: 0.6 }}>
-              {['AWS Cloud', 'Microsoft Azure', 'Google Cloud', 'NVIDIA AI', 'OpenAI', 'RedHat Enterprise'].map((p, idx) => (
+              {['Oracle', 'Microsoft', 'redhat', 'Yotta', 'AWS', 'netmagic','Nxtra Data', 'Oracle Cloud', 'NVDIA', 'CISCO', 'LENOVO', 'Hewlett Packard', 'Fortnite'].map((p, idx) => (
                 <div className="col-6 col-md-4 col-lg-2" key={idx}>
                   <div style={{
                     padding: '15px 10px',
