@@ -255,7 +255,8 @@
     text-align: center !important;
     padding: 16px 12px !important;
     height: 100% !important;
-    min-height: 280px !important; /* Force equal height for all cards on mobile */
+    min-height: 280px !important;
+    /* Force equal height for all cards on mobile */
     justify-content: flex-start !important;
     gap: 8px !important;
     box-sizing: border-box !important;
@@ -486,6 +487,7 @@
 
 /* Testimonial Mobile Preview & Card Optimizations (max-width: 768px) */
 @media (max-width: 768px) {
+
   /* Hide right-side image column containing main images */
   .section-testimonials .col-lg-6 {
     display: none !important;
@@ -504,7 +506,7 @@
   }
 
   /* Make testimonial card a clickable, compact preview card */
-  .section-testimonials .swiper-testimonial .swiper-slide > div {
+  .section-testimonials .swiper-testimonial .swiper-slide>div {
     cursor: pointer !important;
     padding: 16px !important;
     border-radius: 20px !important;
@@ -562,7 +564,7 @@
   }
 
   /* Align stars left */
-  .section-testimonials .swiper-testimonial .swiper-slide > div .top-icon {
+  .section-testimonials .swiper-testimonial .swiper-slide>div .top-icon {
     justify-content: flex-start !important;
     margin-bottom: 8px !important;
     width: 100% !important;
@@ -570,7 +572,7 @@
   }
 
   /* Clamp text to 3 lines max for preview */
-  .section-testimonials .swiper-testimonial .swiper-slide > div .desc {
+  .section-testimonials .swiper-testimonial .swiper-slide>div .desc {
     display: -webkit-box !important;
     -webkit-line-clamp: 3 !important;
     -webkit-box-orient: vertical !important;
@@ -1132,7 +1134,7 @@
 
 /* Why Choose Us / Benefits Section Overrides */
 .benefits-box {
-  padding: 32px !important;
+  padding: 15px !important;
   /* Uniform padding on all sides for identical padding height */
   border-radius: 32px !important;
   box-sizing: border-box !important;
@@ -1186,12 +1188,12 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    height: 150px !important;
+    height: 250px !important;
     /* Big shield height container */
   }
 
   .benefits-secure-inner img {
-    max-height: 150px !important;
+    max-height: 240px !important;
     /* Big shield image */
     width: auto !important;
     object-fit: contain !important;
@@ -1234,7 +1236,7 @@
   }
 
   .benefits-secure-inner img {
-    max-height: 120px !important;
+    max-height: 155px !important;
   }
 
   .benefits-secure-inner {
@@ -1609,8 +1611,10 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(15, 23, 42, 0.75); /* Sleek translucent slate background */
-  backdrop-filter: blur(10px); /* Modern blur effect */
+  background-color: rgba(15, 23, 42, 0.75);
+  /* Sleek translucent slate background */
+  backdrop-filter: blur(10px);
+  /* Modern blur effect */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1690,7 +1694,8 @@
 .award-modal-year {
   font-size: 14px;
   font-weight: 600;
-  color: #ef4444; /* Brand Red accent */
+  color: #ef4444;
+  /* Brand Red accent */
   letter-spacing: 0.05em;
 }
 
@@ -1720,8 +1725,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
@@ -1729,6 +1739,7 @@
     transform: translateY(20px) scale(0.95);
     opacity: 0;
   }
+
   to {
     transform: translateY(0) scale(1);
     opacity: 1;
@@ -1737,11 +1748,11 @@
 
 /* Core Values Section Mobile Redesign (max-width: 768px) */
 @media (max-width: 768px) {
-  .section-features.flat-spacing .row > div {
+  .section-features.flat-spacing .row>div {
     margin-bottom: 12px !important;
   }
-  
-  .section-features.flat-spacing .row > div:last-child {
+
+  .section-features.flat-spacing .row>div:last-child {
     margin-bottom: 0 !important;
   }
 
@@ -1874,7 +1885,8 @@
 }
 
 .accordion-faq_item.theme-cream .list-tags a:hover {
-  color: #ff3b30 !important; /* Accent red hover */
+  color: #ff3b30 !important;
+  /* Accent red hover */
   border-color: #ff3b30 !important;
   background: #FFFFFF !important;
 }
@@ -1883,6 +1895,7 @@
    Our Products Mobile view optimization (max-width: 767px)
    ========================================================================== */
 @media (max-width: 767px) {
+
   /* Hide details by default on mobile */
   .section-featured-works .expanded-details-container {
     max-height: 0;
@@ -1890,7 +1903,7 @@
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
   }
-  
+
   .section-featured-works .expanded-details-container.expanded {
     max-height: 500px;
     opacity: 1;

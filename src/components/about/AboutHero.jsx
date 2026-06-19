@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import earthImg from '../../assets/earth.png';
+import imisImg from '../../assets/home/imis.png';
+import digitalIdentityImg from '../../assets/home/digital-identity.png';
+import eBankerImg from '../../assets/Products-img/e-banker.png';
 
 
 function AboutHero() {
@@ -18,9 +20,15 @@ function AboutHero() {
               <div className="title-icon">
                 <div className="box"></div>
                 <div className="title-icon-wrap">
-                  <img src="/assets/images/item/item-10.svg" alt="" className="img-1 img-transform-3" />
-                  <img src="/assets/images/item/item-11.svg" alt="" className="img-2 img-transform-3" />
-                  <img src="/assets/images/item/item-12.svg" alt="" className="img-3 img-transform-3" />
+                  <div className="img-1 img-transform-3" style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', padding: '1px', width: 'clamp(50px, 8vw, 70px)', height: 'clamp(50px, 8vw, 70px)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-25deg)' }}>
+                    <img src={imisImg} alt="IMIS" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
+                  <div className="img-2 img-transform-3" style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', padding: '1px', width: 'clamp(50px, 8vw, 70px)', height: 'clamp(50px, 8vw, 70px)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(15deg)' }}>
+                    <img src={digitalIdentityImg} alt="Digital Identity" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
+                  <div className="img-3 img-transform-3" style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', padding: '1px', width: 'clamp(50px, 8vw, 70px)', height: 'clamp(50px, 8vw, 70px)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-10deg)' }}>
+                    <img src={eBankerImg} alt="Core Banking" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
                 </div>
               </div>
             </div>
