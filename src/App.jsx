@@ -58,38 +58,40 @@ function App() {
       <ScrollTop />
       <main id="wrapper">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomeV1 />} />
-          <Route path="/index-v2" element={<HomeV2 />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceSingle />} />
-          <Route path="/products/conversational-ai-companion" element={<ConversationalAI />} />
-          <Route path="/products/transact-core" element={<TransactCore />} />
-          <Route path="/products/audit-flux" element={<AuditFlux />} />
-          <Route path="/products/fin-flow" element={<FinFlow />} />
-          <Route path="/products/:slug" element={<ProductSingle />} />
-          <Route path="/products" element={<Works />} />
-          <Route path="/work-single" element={<WorkSingle />} />
-          <Route path="/blog-standard" element={<BlogStandard />} />
-          <Route path="/blog-two-columns" element={<BlogGrid2 />} />
-          <Route path="/blog-three-columns" element={<BlogGrid3 />} />
-          <Route path="/blog/:blogSlug" element={<BlogSingle />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/careers/why-join" element={<WhyJoin />} />
-          <Route path="/careers/meet-our-people" element={<MeetOurPeople />} />
-          <Route path="/careers/career-path" element={<CareerPath />} />
-          <Route path="/careers/:slug" element={<JobSingle />} />
-          <Route path="/ipo" element={<IPO />} />
-          <Route path="/investors/board-and-management" element={<BoardManagement />} />
-          <Route path="/investors/board-and-management/:subpage" element={<BoardManagement />} />
-          <Route path="/investors/:slug" element={<InvestorSingle />} />
-          <Route path="/resource/:slug" element={<ResourceSingle />} />
-          <Route path="/ai" element={<AIPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
+        <div id="page-content">
+          <Routes>
+            <Route path="/" element={<HomeV1 />} />
+            <Route path="/index-v2" element={<HomeV2 />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceSingle />} />
+            <Route path="/products/conversational-ai-companion" element={<ConversationalAI />} />
+            <Route path="/products/transact-core" element={<TransactCore />} />
+            <Route path="/products/audit-flux" element={<AuditFlux />} />
+            <Route path="/products/fin-flow" element={<FinFlow />} />
+            <Route path="/products/:slug" element={<ProductSingle />} />
+            <Route path="/products" element={<Works />} />
+            <Route path="/work-single" element={<WorkSingle />} />
+            <Route path="/blog-standard" element={<BlogStandard />} />
+            <Route path="/blog-two-columns" element={<BlogGrid2 />} />
+            <Route path="/blog-three-columns" element={<BlogGrid3 />} />
+            <Route path="/blog/:blogSlug" element={<BlogSingle />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/careers/why-join" element={<WhyJoin />} />
+            <Route path="/careers/meet-our-people" element={<MeetOurPeople />} />
+            <Route path="/careers/career-path" element={<CareerPath />} />
+            <Route path="/careers/:slug" element={<JobSingle />} />
+            <Route path="/ipo" element={<IPO />} />
+            <Route path="/investors/board-and-management" element={<BoardManagement />} />
+            <Route path="/investors/board-and-management/:subpage" element={<BoardManagement />} />
+            <Route path="/investors/:slug" element={<InvestorSingle />} />
+            <Route path="/resource/:slug" element={<ResourceSingle />} />
+            <Route path="/ai" element={<AIPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </div>
       </main>
       <MobileMenu />
     </>

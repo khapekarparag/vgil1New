@@ -77,20 +77,24 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
+
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
+
   @media (max-width: 1024px) {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -196,18 +200,19 @@ code {
 }
 
 .center-logo-wrap img {
-  filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
   transition: all 0.3s ease;
 }
 
 .center-logo-wrap:hover img {
-  filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
   opacity: 1 !important;
 }
 
 /* Journey Section Styles */
 .journey-section {
-  background: #ffffff; /* Premium white background */
+  background: #ffffff;
+  /* Premium white background */
   position: relative;
   overflow: hidden;
   padding: 100px 0;
@@ -302,8 +307,15 @@ code {
 }
 
 @keyframes pulse-ring {
-  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.5; }
-  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
 }
 
 .milestone-title {

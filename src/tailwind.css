@@ -382,3 +382,36 @@
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
+
+/* Page Content Wrapper — mirrors the navbar pill boundary exactly */
+#page-content {
+  width: 100%;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Responsive: reduce side padding on smaller screens */
+@media (max-width: 1290px) {
+  #page-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #page-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #page-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
