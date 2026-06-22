@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MENU_DATA } from '../data/menuData';
 import { CAREERS_DATA } from '../data/careersData';
+import vgilLogo from "../assets/home/vgil-logo.png";
 
 function MobileMenu() {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const closeMenu = () => {
     document.querySelector('.offcanvas-menu')?.classList.remove('show');
-    document.body.classList.remove('overflow-hidden');
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   };
 
   const toggleDropdown = (name) => {
@@ -16,7 +18,10 @@ function MobileMenu() {
   };
 
   return (
-    <div className="offcanvas-menu new-mobile-menu">
+    <div
+      className="offcanvas-menu"
+      onClick={closeMenu}
+    >
       <style>
         {`
           .new-mobile-menu {
@@ -170,153 +175,200 @@ function MobileMenu() {
             margin: 0;
             font-weight: 500;
           }
+
+          .new-mb-logo img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+  .offcanvas-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  background: rgba(0,0,0,.55);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: .3s;
+}
+
+.offcanvas-menu.show {
+  opacity: 1;
+  visibility: visible;
+}
+  .new-mobile-menu {
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  width: 320px;
+  max-width: 100vw;
+
+  height: 100vh;
+
+  background: #fff;
+
+  transform: translateX(100%);
+
+  transition: .3s ease;
+}
+  .offcanvas-menu.show .new-mobile-menu {
+  transform: translateX(0);
+}
         `}
       </style>
-
-      <div className="offcanvas-content">
-        <div className="new-mb-header">
-          <Link to="/" className="new-mb-logo" onClick={closeMenu}>
-            <i className="icon icon-davies-logo" style={{ fontSize: '2rem', color: '#1a1a1a' }}></i>
-          </Link>
-          <div className="new-mb-close" onClick={closeMenu}>
-            &#x2715;
+      <div
+  className="new-mobile-menu"
+  onClick={(e) => e.stopPropagation()}
+>
+        <div className="offcanvas-content ">
+          <div className="new-mb-header">
+            <Link to="/" className="new-mb-logo" onClick={closeMenu}>
+              <img src={vgilLogo} alt="VGIL Logo" />
+            </Link>
+            <div className="new-mb-close" onClick={closeMenu}>
+              &#x2715;
+            </div>
           </div>
-        </div>
-        <div className="new-mb-divider"></div>
+          <div className="new-mb-divider"></div>
 
-        <ul className="new-mb-body">
-          <li className="new-mb-item">
-            <Link to="/about" className="new-mb-link" onClick={closeMenu}>
-              About Us
-              <span className="new-mb-arrow">&#10095;</span>
-            </Link>
-          </li>
-          
-          <li className="new-mb-item">
-            <div className="new-mb-link" onClick={() => toggleDropdown('products')}>
-              Products
-              <span className={`new-mb-arrow ${openDropdown === 'products' ? 'open' : ''}`}>&#10095;</span>
-            </div>
-            <div className={`new-mb-submenu ${openDropdown === 'products' ? 'show' : ''}`}>
-              {MENU_DATA.products.map((item, idx) => (
-                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
-                  {item.logo ? (
-                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
-                  ) : (
+          <ul className="new-mb-body">
+            <li className="new-mb-item">
+              <Link to="/about" className="new-mb-link" onClick={closeMenu}>
+                About Us
+                <span className="new-mb-arrow">&#10095;</span>
+              </Link>
+            </li>
+
+            <li className="new-mb-item">
+              <div className="new-mb-link" onClick={() => toggleDropdown('products')}>
+                Products
+                <span className={`new-mb-arrow ${openDropdown === 'products' ? 'open' : ''}`}>&#10095;</span>
+              </div>
+              <div className={`new-mb-submenu ${openDropdown === 'products' ? 'show' : ''}`}>
+                {MENU_DATA.products.map((item, idx) => (
+                  <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                    {item.logo ? (
+                      <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                    ) : (
+                      <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                        <i className={`icon icon-${item.icon || 'box'}`} style={{ color: '#888' }}></i>
+                      </div>
+                    )}
+                    <span className="new-mb-subtitle">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </li>
+
+            <li className="new-mb-item">
+              <div className="new-mb-link" onClick={() => toggleDropdown('services')}>
+                Services
+                <span className={`new-mb-arrow ${openDropdown === 'services' ? 'open' : ''}`}>&#10095;</span>
+              </div>
+              <div className={`new-mb-submenu ${openDropdown === 'services' ? 'show' : ''}`}>
+                {MENU_DATA.services.map((item, idx) => (
+                  <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                    {item.logo ? (
+                      <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                    ) : (
+                      <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                        <i className={`icon icon-${item.icon || 'cog'}`} style={{ color: '#888' }}></i>
+                      </div>
+                    )}
+                    <span className="new-mb-subtitle">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </li>
+
+            <li className="new-mb-item">
+              <div className="new-mb-link" onClick={() => toggleDropdown('investors')}>
+                Investors Info
+                <span className={`new-mb-arrow ${openDropdown === 'investors' ? 'open' : ''}`}>&#10095;</span>
+              </div>
+              <div className={`new-mb-submenu ${openDropdown === 'investors' ? 'show' : ''}`}>
+                {MENU_DATA.investors.map((item, idx) => (
+                  <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                    {item.logo ? (
+                      <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                    ) : (
+                      <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                        <i className={`icon icon-${item.icon || 'chart-line'}`} style={{ color: '#888' }}></i>
+                      </div>
+                    )}
+                    <span className="new-mb-subtitle">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </li>
+
+            <li className="new-mb-item">
+              <Link to="/ipo" className="new-mb-link" onClick={closeMenu}>
+                IPO
+                <span className="new-mb-arrow">&#10095;</span>
+              </Link>
+            </li>
+
+            <li className="new-mb-item">
+              <div className="new-mb-link" onClick={() => toggleDropdown('resource')}>
+                Resource
+                <span className={`new-mb-arrow ${openDropdown === 'resource' ? 'open' : ''}`}>&#10095;</span>
+              </div>
+              <div className={`new-mb-submenu ${openDropdown === 'resource' ? 'show' : ''}`}>
+                {MENU_DATA.resource.map((item, idx) => (
+                  <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
+                    {item.logo ? (
+                      <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
+                    ) : (
+                      <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
+                        <i className={`icon icon-${item.icon || 'file-alt'}`} style={{ color: '#888' }}></i>
+                      </div>
+                    )}
+                    <span className="new-mb-subtitle">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </li>
+
+            <li className="new-mb-item">
+              <div className="new-mb-link" onClick={() => toggleDropdown('careers')}>
+                Careers
+                <span className={`new-mb-arrow ${openDropdown === 'careers' ? 'open' : ''}`}>&#10095;</span>
+              </div>
+              <div className={`new-mb-submenu ${openDropdown === 'careers' ? 'show' : ''}`}>
+                {CAREERS_DATA.map((item, idx) => (
+                  <Link to={item.slug === 'lets-connect' ? '/contact' : `/careers/${item.slug}`} key={idx} className="new-mb-subcard" onClick={closeMenu}>
                     <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
-                       <i className={`icon icon-${item.icon || 'box'}`} style={{ color: '#888' }}></i>
+                      <i className={`icon icon-${item.icon || 'users'}`} style={{ color: '#888' }}></i>
                     </div>
-                  )}
-                  <span className="new-mb-subtitle">{item.name}</span>
-                </Link>
-              ))}
-            </div>
-          </li>
+                    <span className="new-mb-subtitle">{item.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </li>
 
-          <li className="new-mb-item">
-            <div className="new-mb-link" onClick={() => toggleDropdown('services')}>
-              Services
-              <span className={`new-mb-arrow ${openDropdown === 'services' ? 'open' : ''}`}>&#10095;</span>
-            </div>
-            <div className={`new-mb-submenu ${openDropdown === 'services' ? 'show' : ''}`}>
-              {MENU_DATA.services.map((item, idx) => (
-                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
-                  {item.logo ? (
-                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
-                  ) : (
-                    <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
-                       <i className={`icon icon-${item.icon || 'cog'}`} style={{ color: '#888' }}></i>
-                    </div>
-                  )}
-                  <span className="new-mb-subtitle">{item.name}</span>
-                </Link>
-              ))}
-            </div>
-          </li>
+            <li className="new-mb-item">
+              <Link to="/contact" className="new-mb-link" onClick={closeMenu}>
+                Contact Us
+                <span className="new-mb-arrow">&#10095;</span>
+              </Link>
+            </li>
+          </ul>
 
-          <li className="new-mb-item">
-            <div className="new-mb-link" onClick={() => toggleDropdown('investors')}>
-              Investors Info
-              <span className={`new-mb-arrow ${openDropdown === 'investors' ? 'open' : ''}`}>&#10095;</span>
+          <div className="new-mb-footer">
+            <div className="new-mb-socials">
+              <a href="#" className="new-mb-social-btn"><i className="icon icon-linkedin-in"></i></a>
+              <a href="#" className="new-mb-social-btn"><i className="icon icon-instagram"></i></a>
+              <a href="mailto:presales@vgipl.in" className="new-mb-social-btn"><i className="icon icon-envelope" style={{ transform: 'translateY(1px)' }}></i></a>
+              <a href="#" className="new-mb-social-btn"><i className="icon icon-facebook-f"></i></a>
+              <a href="#" className="new-mb-social-btn"><i className="icon icon-youtube"></i></a>
             </div>
-            <div className={`new-mb-submenu ${openDropdown === 'investors' ? 'show' : ''}`}>
-              {MENU_DATA.investors.map((item, idx) => (
-                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
-                  {item.logo ? (
-                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
-                  ) : (
-                    <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
-                       <i className={`icon icon-${item.icon || 'chart-line'}`} style={{ color: '#888' }}></i>
-                    </div>
-                  )}
-                  <span className="new-mb-subtitle">{item.name}</span>
-                </Link>
-              ))}
-            </div>
-          </li>
-
-          <li className="new-mb-item">
-            <Link to="/ipo" className="new-mb-link" onClick={closeMenu}>
-              IPO
-              <span className="new-mb-arrow">&#10095;</span>
-            </Link>
-          </li>
-
-          <li className="new-mb-item">
-            <div className="new-mb-link" onClick={() => toggleDropdown('resource')}>
-              Resource
-              <span className={`new-mb-arrow ${openDropdown === 'resource' ? 'open' : ''}`}>&#10095;</span>
-            </div>
-            <div className={`new-mb-submenu ${openDropdown === 'resource' ? 'show' : ''}`}>
-              {MENU_DATA.resource.map((item, idx) => (
-                <Link to={item.link} key={idx} className="new-mb-subcard" onClick={closeMenu}>
-                  {item.logo ? (
-                    <img src={item.logo} alt={item.name} className="new-mb-sublogo" />
-                  ) : (
-                    <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
-                       <i className={`icon icon-${item.icon || 'file-alt'}`} style={{ color: '#888' }}></i>
-                    </div>
-                  )}
-                  <span className="new-mb-subtitle">{item.name}</span>
-                </Link>
-              ))}
-            </div>
-          </li>
-
-          <li className="new-mb-item">
-            <div className="new-mb-link" onClick={() => toggleDropdown('careers')}>
-              Careers
-              <span className={`new-mb-arrow ${openDropdown === 'careers' ? 'open' : ''}`}>&#10095;</span>
-            </div>
-            <div className={`new-mb-submenu ${openDropdown === 'careers' ? 'show' : ''}`}>
-              {CAREERS_DATA.map((item, idx) => (
-                <Link to={item.slug === 'lets-connect' ? '/contact' : `/careers/${item.slug}`} key={idx} className="new-mb-subcard" onClick={closeMenu}>
-                  <div className="new-mb-sublogo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0f0f0', borderRadius: '4px' }}>
-                    <i className={`icon icon-${item.icon || 'users'}`} style={{ color: '#888' }}></i>
-                  </div>
-                  <span className="new-mb-subtitle">{item.title}</span>
-                </Link>
-              ))}
-            </div>
-          </li>
-
-          <li className="new-mb-item">
-            <Link to="/contact" className="new-mb-link" onClick={closeMenu}>
-              Contact Us
-              <span className="new-mb-arrow">&#10095;</span>
-            </Link>
-          </li>
-        </ul>
-
-        <div className="new-mb-footer">
-          <div className="new-mb-socials">
-            <a href="#" className="new-mb-social-btn"><i className="icon icon-linkedin-in"></i></a>
-            <a href="#" className="new-mb-social-btn"><i className="icon icon-instagram"></i></a>
-            <a href="mailto:presales@vgipl.in" className="new-mb-social-btn"><i className="icon icon-envelope" style={{transform: 'translateY(1px)'}}></i></a>
-            <a href="#" className="new-mb-social-btn"><i className="icon icon-facebook-f"></i></a>
-            <a href="#" className="new-mb-social-btn"><i className="icon icon-youtube"></i></a>
+            <p className="new-mb-email">Email: presales@vgipl.in</p>
           </div>
-          <p className="new-mb-email">Email: presales@vgipl.in</p>
         </div>
       </div>
     </div>
