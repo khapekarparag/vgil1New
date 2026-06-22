@@ -26,7 +26,7 @@ function HomeV1() {
       <AboutSection />
       <PartnerSection />
       
-      <div className="box-white" style={{marginLeft:"140px", marginRight:"140px"}}>
+      <div className="box-white" >
         <ServicesSection />
         <WhyChooseUs />
         <PerformanceComparison />

@@ -48,7 +48,7 @@ function PartnerSection() {
   };
 
   return (
-    <div className="section-partner section-spacing-sm" style={{marginLeft:"130px", marginRight:"130px"}}>
+    <div className="section-partner section-spacing-sm" >
       <div className="container">
         <div className="row">
           <div className="col-12">
