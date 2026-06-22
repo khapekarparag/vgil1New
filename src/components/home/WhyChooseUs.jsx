@@ -105,11 +105,11 @@ function WhyChooseUs() {
                 </div>
 
                 {/* Why Choose Us: Expertise Section */}
-                <div className="heading-section center" style={{ marginTop: '100px', marginBottom: '60px' }}>
+                {/* <div className="heading-section center" style={{ marginTop: '100px', marginBottom: '60px' }}>
                     <div className="heading-sub fw-semibold effectFade fadeUp">Expertise</div>
                     <div className="heading-title text-gradient-3 effectFade fadeRotateX">Expertise That Moves Business Forward</div>
-                </div>
-                <div className="row">
+                </div> */}
+                {/* <div className="row">
                     <div className="col-lg-6 col-md-6 mb-24">
                         <div className="benefits-box h-100 effectFade fadeUp" style={{ padding: '30px' }}>
                             <div className="content">
@@ -170,7 +170,7 @@ function WhyChooseUs() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

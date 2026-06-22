@@ -9,7 +9,7 @@ import imisImg from '../../assets/home/imis.png';
 
 function HeroGradient() {
   return (
-    <div className="section-hero">
+    <div className="section-hero" style={{marginLeft:"130px", marginRight:"130px", marginTop:"20px"}} >
       <div className="hero-image" style={{ backgroundImage: `url("${homeBgImg}")` }}>
       </div>
       <div className="container">
