@@ -10635,7 +10635,7 @@ button.animate-btn::after,
 .accordion-faq_item .accordion-title {
   width: 100%;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 48px;
   letter-spacing: -0.01em;
   color: var(--secondary);
@@ -10693,7 +10693,7 @@ button.animate-btn::after,
 }
 
 .accordion-faq_item .accordion-action:not(.collapsed) .accordion-title {
-  font-size: 48px;
+  font-size: 36px;
   line-height: 56px;
   letter-spacing: -0.02em;
 }
