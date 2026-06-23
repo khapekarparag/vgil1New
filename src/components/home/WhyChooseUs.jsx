@@ -1,5 +1,6 @@
 import React from 'react';
 import cyberLogo from '../../assets/home/cyber-logo.png';
+import styles from "./WhyChooseUs.module.css";
 
 function WhyChooseUs() {
     return (
@@ -12,43 +13,51 @@ function WhyChooseUs() {
                 <div className="row mb-24">
                     <div className="col-lg-7">
                         <div className="benefits-box benefits-progress">
-                            <div className="benefits-progress-inner">
-                                <div className="benefits-progress-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '15px' }}>
-                                    <div style={{ flex: 1, marginRight: '15px', background: 'rgba(255, 59, 48, 0.1)', borderRadius: '16px', height: '32px' }}>
-                                        <div className="progress-line" data-progress="95" style={{ backgroundColor: '#ff3b30', height: '32px', borderRadius: '16px', width: '95%' }}></div>
+                            <div className={styles.performanceGrid}>
+                                {[
+                                    { value: 95, label: "Accuracy", icon: "" },
+                                    { value: 90, label: "Rapid", icon: "" },
+                                    { value: 98, label: "Trusted", icon: "" },
+                                    { value: 85, label: "Efficient", icon: "" },
+                                ].map((metric) => (
+                                    <div
+                                        key={metric.label}
+                                        className={`${styles.metricCard} effectFade fadeUp`}
+                                    >
+                                        <div
+                                            className={styles.progressCircle}
+                                            style={{
+                                                "--progress": metric.value,
+                                            }}
+                                        >
+                                            <svg viewBox="0 0 120 120">
+                                                <circle
+                                                    className={styles.bgCircle}
+                                                    cx="60"
+                                                    cy="60"
+                                                    r="52"
+                                                />
+                                                <circle
+                                                    className={styles.progressRing}
+                                                    cx="60"
+                                                    cy="60"
+                                                    r="52"
+                                                />
+                                            </svg>
+
+                                            <div className={styles.metricCenter}>
+                                                <span className={styles.metricValue}>
+                                                    {metric.value}%
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className={styles.metricLabel}>
+                                            <span>{metric.icon}</span>
+                                            {metric.label}
+                                        </div>
                                     </div>
-                                    <div className="fw-semibold" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#fff', padding: '6px 16px', borderRadius: '100px', fontSize: '0.9rem', color: '#1a1a1a', boxShadow: '0 4px 12px rgba(0,0,0,0.08)', margin: 0, width: '130px', justifyContent: 'flex-start' }}>
-                                        <i className="icon icon-bullseye-solid" style={{ color: '#ff3b30', fontSize: '1rem' }}></i>
-                                        Accuracy
-                                    </div>
-                                </div>
-                                <div className="benefits-progress-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '15px' }}>
-                                    <div style={{ flex: 1, marginRight: '15px', background: 'rgba(255, 59, 48, 0.1)', borderRadius: '16px', height: '32px' }}>
-                                        <div className="progress-line" data-progress="90" style={{ backgroundColor: '#ff3b30', height: '32px', borderRadius: '16px', width: '90%' }}></div>
-                                    </div>
-                                    <div className="fw-semibold" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#fff', padding: '6px 16px', borderRadius: '100px', fontSize: '0.9rem', color: '#1a1a1a', boxShadow: '0 4px 12px rgba(0,0,0,0.08)', margin: 0, width: '130px', justifyContent: 'flex-start' }}>
-                                        <i className="icon icon-tachometer-alt-solid" style={{ color: '#ff3b30', fontSize: '1rem' }}></i>
-                                        Rapid
-                                    </div>
-                                </div>
-                                <div className="benefits-progress-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '15px' }}>
-                                    <div style={{ flex: 1, marginRight: '15px', background: 'rgba(255, 59, 48, 0.1)', borderRadius: '16px', height: '32px' }}>
-                                        <div className="progress-line" data-progress="98" style={{ backgroundColor: '#ff3b30', height: '32px', borderRadius: '16px', width: '98%' }}></div>
-                                    </div>
-                                    <div className="fw-semibold" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#fff', padding: '6px 16px', borderRadius: '100px', fontSize: '0.9rem', color: '#1a1a1a', boxShadow: '0 4px 12px rgba(0,0,0,0.08)', margin: 0, width: '130px', justifyContent: 'flex-start' }}>
-                                        <i className="icon icon-shield-alt-solid" style={{ color: '#ff3b30', fontSize: '1rem' }}></i>
-                                        Trusted
-                                    </div>
-                                </div>
-                                <div className="benefits-progress-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '15px' }}>
-                                    <div style={{ flex: 1, marginRight: '15px', background: 'rgba(255, 59, 48, 0.1)', borderRadius: '16px', height: '32px' }}>
-                                        <div className="progress-line" data-progress="85" style={{ backgroundColor: '#ff3b30', height: '32px', borderRadius: '16px', width: '85%' }}></div>
-                                    </div>
-                                    <div className="fw-semibold" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#fff', padding: '6px 16px', borderRadius: '100px', fontSize: '0.9rem', color: '#1a1a1a', boxShadow: '0 4px 12px rgba(0,0,0,0.08)', margin: 0, width: '130px', justifyContent: 'flex-start' }}>
-                                        <i className="icon icon-coins-solid" style={{ color: '#ff3b30', fontSize: '1rem' }}></i>
-                                        Efficient
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                             <div className="content">
                                 <h6 className="fw-semibold title">Performance You Can Trust</h6>
@@ -61,13 +70,13 @@ function WhyChooseUs() {
                             <div className="benefits-step-inner">
                                 <div className="line-step"></div>
                                 <div className="step-item">
-                                    <i className="icon icon-check-solid"></i>
+                                    <i className={`icon icon-check-solid ${styles.checkIcon}`}></i>
                                 </div>
                                 <div className="step-item">
-                                    <i className="icon icon-check-solid"></i>
+                                    <i className={`icon icon-check-solid ${styles.checkIcon}`}></i>
                                 </div>
                                 <div className="step-item">
-                                    <i className="icon icon-check-solid"></i>
+                                    <i className={`icon icon-check-solid ${styles.checkIcon}`}></i>
                                 </div>
                             </div>
                             <div className="content">
