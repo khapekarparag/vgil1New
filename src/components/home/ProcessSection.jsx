@@ -30,7 +30,7 @@ function ProcessSection() {
   ];
 
   return (
-    <div className="section-process section-spacing-grouped" id="process">
+    <div className="section-process section-spacing-grouped mb-20" id="process">
       <div className="container">
         <div className="row">
           <div className="col-lg-5">
@@ -55,10 +55,10 @@ function ProcessSection() {
                 data-loop="false" data-center="false" data-space-lg="24" data-space-md="24" data-space="30" >
                 <div className="swiper-wrapper">
                   {steps.map((step, index) => (
-                    <div className="swiper-slide" key={index}>
-                      <div className="process-card d-flex flex-column justify-content-between h-100" style={{ minHeight: '380px', padding: '30px' }}>
-                        <div>
-                          <div className="mb-20" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(239, 68, 68, 0.08)' }}>
+                    <div className="swiper-slide " key={index}>
+                      <div className="process-card d-flex flex-column justify-content-between h-100 " style={{ minHeight: '380px', padding: '30px' }}>
+                        <div className=''>
+                          <div className="mb-10" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(239, 68, 68, 0.08)' }}>
                             {step.icon}
                           </div>
                           <div className="content">
@@ -66,7 +66,7 @@ function ProcessSection() {
                             <p className="text text-secondary" style={{ fontSize: '14px', lineHeight: '1.6', color: '#6b7280' }}>{step.text}</p>
                           </div>
                         </div>
-                        <div className="bot d-flex justify-content-between align-items-center mt-20 pt-15 border-top" style={{ borderColor: '#f3f4f6' }}>
+                        <div className="bot d-flex justify-content-between align-items-center pt-15 border-top" style={{ borderColor: '#f3f4f6' }}>
                           <div className="time fw-semibold text-brand" style={{ fontSize: '0.85rem', letterSpacing: '0.05em' }}>PHASE {step.number}</div>
                           <div className="number">
                             <span className="text-neutral-400 fw-bold">{step.number}</span>

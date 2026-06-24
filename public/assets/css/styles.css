@@ -5914,7 +5914,7 @@ button.animate-btn::after,
 
 .process-card .content {
   flex-grow: 1;
-  margin-bottom: 96px;
+  margin-bottom: 56px;
 }
 
 .process-card .content .title {
