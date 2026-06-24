@@ -811,10 +811,10 @@
     width: var(--features-icon-box-size) !important;
     height: var(--features-icon-box-size) !important;
     font-size: var(--features-icon-size) !important;
-    color: #ffffff !important;
-    background-color: #272727 !important;
+    /* color: #ffffff !important; */
+    /* background-color: #272727 !important; */
     border-radius: var(--features-icon-radius) !important;
-    box-shadow: 0px -2px 0px 0px #080808 inset, 0px 0.8px 0px 0px rgba(255, 255, 255, 0.3) inset !important;
+    /* box-shadow: 0px -2px 0px 0px #080808 inset, 0px 0.8px 0px 0px rgba(255, 255, 255, 0.3) inset !important; */
     margin: 0 auto 10px auto !important;
     line-height: 1 !important;
   }
