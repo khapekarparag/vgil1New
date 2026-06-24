@@ -304,6 +304,11 @@
 /* Tool Section V2 Images Styling to prevent stretching */
 .tool-wrap .img-item {
   object-fit: cover !important;
+  filter: hue-rotate(160deg) saturate(1.5) !important;
+}
+
+.tool-wrap .image-center img {
+  filter: hue-rotate(160deg) saturate(1.5) !important;
 }
 
 .tool-wrap .image-center {
@@ -322,8 +327,8 @@
 
 @media (min-width: 768px) {
   .tool-wrap .image-center {
-    width: 150px !important;
-    height: 150px !important;
+    width: 152px !important;
+    height: 75px !important;
   }
 
   .tool-wrap .img-item-1,
@@ -347,8 +352,8 @@
 
 @media (max-width: 767px) {
   .tool-wrap .image-center {
-    width: 80px !important;
-    height: 80px !important;
+    width: 82px !important;
+    height: 40px !important;
   }
 
   .tool-wrap .img-item-1,
@@ -371,6 +376,7 @@
 .section-tools > img {
   object-fit: cover !important;
   aspect-ratio: 1 / 1 !important;
+  filter: hue-rotate(160deg) saturate(1.5) !important;
 }
 
 /* Global Container Override to align with Navbar (.navContainer max-width 1250px) */

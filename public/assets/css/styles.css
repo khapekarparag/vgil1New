@@ -7184,6 +7184,7 @@ button.animate-btn::after,
   position: absolute;
   box-shadow: 4.29817px 18.6254px 28.6545px rgba(0, 0, 0, 0.1);
   border-radius: 11px;
+  filter: hue-rotate(160deg) saturate(1.5);
 }
 
 .section-tools .img-1 {
@@ -7650,6 +7651,7 @@ button.animate-btn::after,
   box-shadow: 0px -3px 0px 0px #E9E9E9 inset, 0px 1px 0px 0px rgba(255, 255, 255, 0.6980392157) inset, 0px 3px 3px 0px rgba(0, 0, 0, 0.1411764706);
   border-radius: 8px;
   z-index: 2;
+  filter: hue-rotate(160deg) saturate(1.5);
 }
 
 .tool-wrap .img-item-1 {
@@ -7696,6 +7698,7 @@ button.animate-btn::after,
 
 .tool-wrap .image-center img {
   width: 100%;
+  filter: hue-rotate(160deg) saturate(1.5);
 }
 
 .tool-wrap .line-1 {
@@ -7793,7 +7796,7 @@ button.animate-btn::after,
   }
 
   .tool-wrap .image-center {
-    width: 100px;
+    width: 102px;
   }
 
   .tool-wrap .img-item-5,
