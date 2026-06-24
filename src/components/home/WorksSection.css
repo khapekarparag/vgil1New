@@ -1,0 +1,54 @@
+@media (min-width: 768px) {
+
+  .featured-works-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+}
+@media (min-width: 768px) {
+
+  .mobile-view-product-btn-wrap {
+    margin-top: 20px;
+  }
+
+  .mobile-view-product-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 24px;
+
+    background: #e10600;
+    color: #fff !important;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(225, 6, 0, 0.18);
+  }
+
+  .mobile-view-product-btn:hover {
+    background: #c00500;
+    color: #fff !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 28px rgba(225, 6, 0, 0.25);
+  }
+
+  .mobile-view-product-btn i {
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-view-product-btn:hover i {
+    transform: translate(3px, -3px);
+  }
+}

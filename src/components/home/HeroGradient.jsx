@@ -5,7 +5,7 @@ import homeBgImg from '../../assets/home/• Homepage Background video size (896
 import eAutopsyImg from '../../assets/home/e-autopsy.png';
 import digitalIdentityImg from '../../assets/home/digital-identity.png';
 import imisImg from '../../assets/home/imis.png';
-
+import  './HeroGradient.css'
 
 function HeroGradient() {
   return (

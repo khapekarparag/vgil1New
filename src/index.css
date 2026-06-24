@@ -66,6 +66,12 @@ body {
   box-sizing: border-box;
 }
 
+html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 h1,
 h2 {
   font-family: var(--heading);

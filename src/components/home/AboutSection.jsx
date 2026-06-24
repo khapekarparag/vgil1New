@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import earthImg from '../../assets/earth.png';
+import styles from "./AboutSection.module.css";
 
 function AboutSection() {
+  const locations = [
+  "📍 Headquartered in Nagpur, India",
+  "PAN-India presence across 18+ states",
+  "Active projects in Indonesia, Africa & more",
+];
   return (
     <div className="section-about-us section-spacing-lg" id="about">
       <div className="container">
@@ -16,14 +22,16 @@ function AboutSection() {
           <div className="col-lg-6 lg-mb-24 d-flex">
             <div className="col-left w-100 h-100 d-flex flex-column justify-content-between" style={{ minHeight: '100%' }}>
               <div className="position-relative z-5">
-                <div className="sub text-white d-flex align-items-center gap-8 flex-wrap" style={{ fontSize: '0.8rem', lineHeight: '1.4', marginBottom: '16px' }}>
-                  <span className="dot"></span>
-                  <span>📍 Headquartered in Nagpur, India</span>
-                  <span className="dot" style={{ marginLeft: '4px' }}></span>
-                  <span>PAN-India presence across 18+ states</span>
-                  <span className="dot" style={{ marginLeft: '4px' }}></span>
-                  <span>Active projects in Indonesia, Africa & more</span>
-                </div>
+                <div className='${styles.locationMarquee} sub'>
+  <div className={styles.locationTrack}>
+    {[...locations, ...locations, ...locations].map((item, index) => (
+      <React.Fragment key={index}>
+        <span>{item}</span>
+        <span className={styles.dot}></span>
+      </React.Fragment>
+    ))}
+  </div>
+</div>
                 <h5 className="title fw-semibold text-white">Global Software <span className="text-brand">Solution since 1997</span></h5>
                 <Link to="/contact" className="tf-btn">
                   Start a Project

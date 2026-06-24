@@ -8,6 +8,8 @@ import featuredWork2 from '../../assets/home/feature-work/-2 Featured Work of be
 import featuredWork3 from '../../assets/home/feature-work/3- Featured Work of best work (824_427.54px)-2.jpg';
 import featuredWork4 from '../../assets/home/feature-work/4- Featured Work of best work (824_427.54px)-1.jpg';
 
+import './WorksSection.css'
+
 function WorksSection({ className = "section-featured-works section-spacing-grouped" }) {
   const [expandedSlug, setExpandedSlug] = useState(null);
   const navigate = useNavigate();
@@ -93,7 +95,15 @@ function WorksSection({ className = "section-featured-works section-spacing-grou
                   </div>
                   <div className="bot">
                     <h4 className="heading fw-semibold">{product.title}</h4>
-                    <div className={`expanded-details-container ${expandedSlug === product.slug ? 'expanded' : 'collapsed'}`}>
+                    <div
+  className={`expanded-details-container ${
+    window.innerWidth > 767
+      ? 'expanded'
+      : expandedSlug === product.slug
+      ? 'expanded'
+      : 'collapsed'
+  }`}
+>
                       <div className="grid-text">
                         <div className="item">
                           <div className="title text-secondary">DESCRIPTION</div>

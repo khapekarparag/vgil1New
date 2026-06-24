@@ -34,9 +34,9 @@ function PerformanceComparison() {
           <div className="heading-title text-gradient-3 effectFade fadeRotateX">From Disconnected Systems <br /> to Connected Growth</div>
         </div>
 
-        <div className="row justify-content-center">
+        <div className="row justify-content-center gap-24">
           {/* Without Virtual Galaxy */}
-          <div className="col-lg-5 col-md-6 mb-24 mb-lg-0">
+          <div className="col-lg-5 col-md-6 ">
             <div className="performance-card-v" style={{
               background: '#fff',
               border: '1px solid rgba(239, 68, 68, 0.15)',
@@ -65,7 +65,7 @@ function PerformanceComparison() {
           </div>
 
           {/* With Virtual Galaxy */}
-          <div className="col-lg-5 col-md-6">
+          <div className="col-lg-5 col-md-6 ">
             <div className="performance-card-v" style={{
               background: '#fff',
               border: '2px solid rgba(34, 197, 94, 0.3)',

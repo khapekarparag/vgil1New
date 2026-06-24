@@ -279,7 +279,8 @@ function Navbar() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
               const menu = document.querySelector('.offcanvas-menu');
               if (menu) menu.classList.add('show');
-              document.body.classList.add('overflow-hidden');
+              document.body.style.overflow = "hidden";
+document.documentElement.style.overflow = "hidden";
             }}
           >
             <i className="icon icon-grip-lines-solid"></i>

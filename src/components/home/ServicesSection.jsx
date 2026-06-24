@@ -55,7 +55,7 @@ function ServicesSection() {
   };
 
   return (
-    <div id="services" className="section-services section-spacing-grouped" >
+    <div id="services" className="section-services section-spacing-grouped mb-6" >
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-xxl-4 col-lg-6">

@@ -49,7 +49,7 @@
   --neutral-800: #27272A;
   --neutral-900: #18181B;
   --neutral-950: #09090B;
-  --body: #ffffff;
+  --body: #EDECEC;
 }
 
 [data-color-primary=color-primary-1] {
@@ -5075,7 +5075,7 @@ button.animate-btn::after,
 
 .heading-section .heading-title {
   font-weight: 600;
-  font-size: 72px;
+  font-size: 56px;
   line-height: 72px;
   letter-spacing: -0.03em;
 }
@@ -5777,17 +5777,19 @@ button.animate-btn::after,
 
 .featured-works-item .content .bot {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .featured-works-item .content .bot .heading {
-  width: 39.765%;
+  width: 100%;
 }
 
 .featured-works-item .content .grid-text {
-  width: 58.22%;
+  width: 100%;
   display: flex;
-  gap: 12px 40px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .featured-works-item .content .grid-text .item:nth-child(1) {
@@ -5912,7 +5914,7 @@ button.animate-btn::after,
 
 .process-card .content {
   flex-grow: 1;
-  margin-bottom: 96px;
+  margin-bottom: 56px;
 }
 
 .process-card .content .title {
@@ -9620,7 +9622,7 @@ button.animate-btn::after,
 .benefits-box {
   padding: 40px;
   border-radius: 40px;
-  height: 91%;
+  height: 100%;
   background-color: var(--neutral-100);
   box-shadow: 0px 7.77px 16px 0px rgba(0, 0, 0, 0.0588235294), 0px 3px 3px 0px rgba(0, 0, 0, 0.1019607843), 0px -8px 0px 0px rgba(0, 0, 0, 0.0509803922) inset, 0px 4px 0px 0px rgba(255, 255, 255, 0.6) inset;
 }
@@ -9839,11 +9841,12 @@ button.animate-btn::after,
   width: 60px;
   height: 60px;
   font-size: 32px;
-  color: var(--white);
+  color: #e10600;
   margin-bottom: 32px;
   border-radius: 16px;
-  background-color: #272727;
-  box-shadow: 0px -3px 0px 0px #080808 inset, 0px 1px 0px 0px rgba(255, 255, 255, 0.3019607843) inset, 0px 2.77px 2.21px 0px rgba(0, 0, 0, 0.1215686275), 0px 3px 3px 0px rgba(0, 0, 0, 0.1411764706), 0px 12.52px 10.02px 0px rgba(0, 0, 0, 0.1333333333), 0px 22.34px 17.87px 0px rgba(0, 0, 0, 0.1411764706), 0px 41.78px 33.42px 0px rgba(0, 0, 0, 0.1490196078), 0px 100px 80px 0px rgba(0, 0, 0, 0.1490196078);
+  background-color: var(--white);
+  box-shadow: 0px 7.77px 16px 0px rgba(0, 0, 0, 0.0588235294), 0px 3px 3px 0px rgba(0, 0, 0, 0.1019607843), 0px -8px 0px 0px rgba(0, 0, 0, 0.0509803922) inset, 0px 4px 0px 0px rgba(255, 255, 255, 0.6) inset;
+
 }
 
 .features-item .title {
@@ -10635,7 +10638,7 @@ button.animate-btn::after,
 .accordion-faq_item .accordion-title {
   width: 100%;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 48px;
   letter-spacing: -0.01em;
   color: var(--secondary);
@@ -10693,7 +10696,7 @@ button.animate-btn::after,
 }
 
 .accordion-faq_item .accordion-action:not(.collapsed) .accordion-title {
-  font-size: 48px;
+  font-size: 36px;
   line-height: 56px;
   letter-spacing: -0.02em;
 }
@@ -11272,3 +11275,5 @@ footer .footer-bottom::before {
 .section-hero .content-wrap .text {
   color: rgba(255, 255, 255, 0.9) !important;
 }
+
+
