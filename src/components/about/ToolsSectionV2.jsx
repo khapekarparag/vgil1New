@@ -17,7 +17,7 @@ function ToolsSectionV2() {
           <img className="img-item img-item-2" src="/assets/images/about/tools-img/Banking Solution.jpg.jpeg" alt="Banking Solution" />
           <img className="img-item img-item-3" src="/assets/images/about/tools-img/Conversational AI.jpg.jpeg" alt="Conversational AI" />
           <div className="image-center flex-shrink">
-            <img src={vgilLogo} alt="Virtual Galaxy Logo" />
+            <img src={vgilLogo} alt="Virtual Galaxy Logo" style={{background:"white", borderRadius:"20px", display:"flex"}} />
           </div>
           <img className="img-item img-item-4" src="/assets/images/about/tools-img/Cyber Security.jpg.jpeg" alt="Cyber Security" />
           <img className="img-item img-item-5" src="/assets/images/about/tools-img/Data Center Enterprice.jpg.jpeg" alt="Data Center Enterprise" />
