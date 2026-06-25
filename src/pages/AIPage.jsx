@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Terminal as TerminalIcon, Cpu, Network, Bot, Sparkles, Send, ShieldAlert, 
-  Sliders, Database, Play, RefreshCw, Layers, CheckCircle2, 
-  X, RefreshCcw, HelpCircle, ArrowRight, Activity, ArrowLeft,
-  Server, Workflow, BrainCircuit, ShieldCheck, Zap, Globe
+import {
+  BrainCircuit, Bot, Sparkles, Send, ShieldAlert,
+  Sliders, Database, Play, RefreshCw, Layers, CheckCircle2,
+  HelpCircle, ArrowRight, Activity, Server, Workflow, ShieldCheck, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -96,7 +95,7 @@ function AIPage() {
   const triggerOptimization = () => {
     if (isOptimizing) return;
     setIsOptimizing(true);
-    
+
     setHistory(prev => [
       ...prev,
       { type: 'command', text: 'optimize --force' },
@@ -113,7 +112,7 @@ function AIPage() {
         setHistory(prev => [...prev, { type: 'info', text: '-> Aligning semantic vectors...' }]);
       } else if (step === 3) {
         setHistory(prev => [
-          ...prev, 
+          ...prev,
           { type: 'success', text: 'System Optimization Complete! Hyperparameters synchronized.' }
         ]);
         setIsOptimizing(false);
@@ -136,51 +135,51 @@ function AIPage() {
         newHistory.push({
           type: 'info',
           text: 'Available Mainframe Commands:\n' +
-                '  about     - Learn about VGIL Virtual Galaxy AI architectures\n' +
-                '  status    - View quantum node diagnostics and coherence levels\n' +
-                '  agents    - Review active AI subroutines and background workers\n' +
-                '  neural    - Run simulated synaptic feedback assessment\n' +
-                '  optimize  - Trigger dynamic calibration sequence\n' +
-                '  clear     - Clean terminal logs and screen buffer'
+            '  about     - Learn about VGIL Virtual Galaxy AI architectures\n' +
+            '  status    - View quantum node diagnostics and coherence levels\n' +
+            '  agents    - Review active AI subroutines and background workers\n' +
+            '  neural    - Run simulated synaptic feedback assessment\n' +
+            '  optimize  - Trigger dynamic calibration sequence\n' +
+            '  clear     - Clean terminal logs and screen buffer'
         });
         break;
       case 'about':
         newHistory.push({
           type: 'info',
           text: 'VGIL (Virtual Galaxy) Neural Architectures represent the frontier of cognitive engineering.\n' +
-                'By blending multi-agent orchestration, advanced Retrieval-Augmented Generation, and secure ' +
-                'on-prem transactional intelligence, we build robust digital minds that power global systems.'
+            'By blending multi-agent orchestration, advanced Retrieval-Augmented Generation, and secure ' +
+            'on-prem transactional intelligence, we build robust digital minds that power global systems.'
         });
         break;
       case 'status':
         newHistory.push({
           type: 'info',
           text: `SYSTEM DIAGNOSTICS:\n` +
-                `  - Core Temperature: Nominal (${(25 + temperature * 15).toFixed(1)}°C)\n` +
-                `  - Coherence Rate: ${calculatedCoherence}%\n` +
-                `  - Active Node Clusters: 1,024 / 1,024\n` +
-                `  - Quantum Latency: ${calculatedLatency}ms\n` +
-                `  - Encryption Index: AES-GCM-256 (Enforced)`
+            `  - Core Temperature: Nominal (${(25 + temperature * 15).toFixed(1)}°C)\n` +
+            `  - Coherence Rate: ${calculatedCoherence}%\n` +
+            `  - Active Node Clusters: 1,024 / 1,024\n` +
+            `  - Quantum Latency: ${calculatedLatency}ms\n` +
+            `  - Encryption Index: AES-GCM-256 (Enforced)`
         });
         break;
       case 'agents':
         newHistory.push({
           type: 'info',
           text: 'ACTIVE COGNITIVE AGENTS:\n' +
-                '  [1] Transact-Core-V4 (Idle) - Transaction anomaly watchdog.\n' +
-                '  [2] Conversational-Companion (Active) - Handling user query parsing.\n' +
-                '  [3] Audit-Flux-Sentinel (Monitoring) - Smart-contract validity audit.\n' +
-                '  [4] Fin-Flow-Optimizer (Active) - Dynamic asset routing modeling.'
+            '  [1] Transact-Core-V4 (Idle) - Transaction anomaly watchdog.\n' +
+            '  [2] Conversational-Companion (Active) - Handling user query parsing.\n' +
+            '  [3] Audit-Flux-Sentinel (Monitoring) - Smart-contract validity audit.\n' +
+            '  [4] Fin-Flow-Optimizer (Active) - Dynamic asset routing modeling.'
         });
         break;
       case 'neural':
         newHistory.push({
           type: 'info',
           text: 'Synaptic network trace initiated...\n' +
-                '  [PATHWAY A]: Core Node -> Layer 2 Node -> Active. Weight = 0.982\n' +
-                '  [PATHWAY B]: Attention Matrix -> Semantic Store -> Active. Weight = 0.871\n' +
-                '  [PATHWAY C]: Context Window -> Model Head -> Active. Weight = 0.994\n' +
-                'Dynamic route health score: 99.8%'
+            '  [PATHWAY A]: Core Node -> Layer 2 Node -> Active. Weight = 0.982\n' +
+            '  [PATHWAY B]: Attention Matrix -> Semantic Store -> Active. Weight = 0.871\n' +
+            '  [PATHWAY C]: Context Window -> Model Head -> Active. Weight = 0.994\n' +
+            'Dynamic route health score: 99.8%'
         });
         break;
       case 'optimize':
@@ -212,101 +211,118 @@ function AIPage() {
   };
 
   return (
-    <div className="neural-lab-wrapper">
+    <div className="vgil-ai-page">
       <style>
         {`
-          .neural-lab-wrapper {
-            background-color: #06070a;
-            background-image: 
-              radial-gradient(at 0% 0%, rgba(189, 0, 255, 0.08) 0px, transparent 50%),
-              radial-gradient(at 100% 50%, rgba(0, 240, 255, 0.08) 0px, transparent 50%),
-              radial-gradient(at 50% 100%, rgba(239, 68, 68, 0.05) 0px, transparent 50%),
-              linear-gradient(rgba(255, 255, 255, 0.002) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.002) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 50px 50px, 50px 50px;
-            color: #e2e8f0;
+          .vgil-ai-page {
+            background-color: #ffffff;
+            color: #1f2937;
             font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            min-height: 100vh;
-            padding: 120px 0 0;
+            padding: 40px 0 20px;
             overflow: hidden;
             position: relative;
           }
 
-          .neon-glow-header {
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+          .orange-glow-spot {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.65;
+          }
+
+          .orange-glow-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(253, 58, 37, 0.07);
+            top: 15%;
+            left: -10%;
+          }
+
+          .orange-glow-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(253, 58, 37, 0.05);
+            bottom: 15%;
+            right: -10%;
+          }
+
+          .ai-badge {
+            background: rgba(253, 58, 37, 0.06);
+            border: 1px solid rgba(253, 58, 37, 0.2);
+            color: #fd3a25;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 100px;
+            padding: 6px 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+          }
+
+          .gradient-text-orange {
+            background: linear-gradient(135deg, #111827 40%, #fd3a25 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
           }
 
           .glass-panel {
-            background: rgba(13, 16, 26, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
             padding: 30px;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
           }
 
           .glass-panel:hover {
-            border-color: rgba(0, 240, 255, 0.25);
-            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.1);
-          }
-
-          .cyber-badge {
-            background: linear-gradient(135deg, rgba(189, 0, 255, 0.2), rgba(0, 240, 255, 0.2));
-            border: 1px solid rgba(0, 240, 255, 0.4);
-            border-radius: 9999px;
-            color: #00f0ff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            padding: 4px 12px;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            border-color: rgba(253, 58, 37, 0.25);
+            box-shadow: 0 15px 40px rgba(253, 58, 37, 0.06);
           }
 
           .custom-slider {
             -webkit-appearance: none;
             width: 100%;
-            height: 6px;
+            height: 5px;
             border-radius: 3px;
-            background: #1e293b;
+            background: #e5e7eb;
             outline: none;
-            transition: background 0.3s;
           }
 
           .custom-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: #ff3b30;
+            background: #fd3a25;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 59, 48, 0.6);
+            box-shadow: 0 0 6px rgba(253, 58, 37, 0.4);
             transition: transform 0.2s;
           }
 
           .custom-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.25);
+            transform: scale(1.2);
           }
 
           .terminal-window {
-            background: #06070a;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #0f172a;
+            border: 1px solid #1e293b;
             border-radius: 12px;
             font-family: 'Fira Code', 'Courier New', Courier, monospace;
             display: flex;
             flex-direction: column;
-            height: 400px;
-            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9);
+            height: 380px;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
           }
 
           .terminal-header {
-            background: #0e111a;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: #1e293b;
+            border-bottom: 1px solid #334155;
             padding: 10px 16px;
             display: flex;
             align-items: center;
@@ -332,20 +348,21 @@ function AIPage() {
             flex: 1;
             overflow-y: auto;
             padding: 16px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             line-height: 1.5;
+            color: #cbd5e1;
           }
 
           .terminal-input-row {
             display: flex;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: #0b0d14;
+            border-top: 1px solid #1e293b;
+            background: #0f172a;
             padding: 12px 16px;
           }
 
           .prompt-symbol {
-            color: #ff3b30;
+            color: #fd3a25;
             font-weight: bold;
             margin-right: 8px;
           }
@@ -355,16 +372,16 @@ function AIPage() {
             border: none;
             color: #ffffff;
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             width: 100%;
             outline: none;
           }
 
           .shortcut-pill {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
             border-radius: 8px;
-            color: #94a3b8;
+            color: #4b5563;
             cursor: pointer;
             font-family: 'Fira Code', monospace;
             font-size: 0.75rem;
@@ -373,81 +390,52 @@ function AIPage() {
           }
 
           .shortcut-pill:hover {
-            background: rgba(255, 59, 48, 0.08);
-            border-color: rgba(255, 59, 48, 0.4);
-            color: #ff3b30;
-            box-shadow: 0 0 10px rgba(255, 59, 48, 0.1);
+            background: rgba(253, 58, 37, 0.08);
+            border-color: rgba(253, 58, 37, 0.4);
+            color: #fd3a25;
           }
 
-          .interactive-btn {
-            background: linear-gradient(135deg, #ff3b30, #bd00ff);
+          .btn-orange-primary {
+            background: #fd3a25;
+            color: #ffffff !important;
             border: none;
-            border-radius: 8px;
-            color: #ffffff;
-            cursor: pointer;
+            border-radius: 12px;
             font-weight: 600;
-            padding: 12px 24px;
-            transition: opacity 0.2s, transform 0.2s;
+            padding: 14px 28px;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 0 15px rgba(255, 59, 48, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(253, 58, 37, 0.25);
+            text-decoration: none !important;
+            cursor: pointer;
           }
 
-          .interactive-btn:hover {
-            opacity: 0.9;
+          .btn-orange-primary:hover {
+            background: #e02f1b;
             transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(255, 59, 48, 0.35);
-          }
-
-          .glow-ring {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            pointer-events: none;
-            z-index: 0;
-          }
-
-          .glow-ring-1 {
-            width: 400px;
-            height: 400px;
-            background: rgba(189, 0, 255, 0.08);
-            top: 20%;
-            left: -10%;
-          }
-
-          .glow-ring-2 {
-            width: 400px;
-            height: 400px;
-            background: rgba(0, 240, 255, 0.08);
-            bottom: 20%;
-            right: -10%;
-          }
-
-          .hero-slider-height {
-            min-height: 500px;
-            display: flex;
-            align-items: center;
+            box-shadow: 0 6px 20px rgba(253, 58, 37, 0.35);
           }
 
           .layer-card {
-            background: rgba(18, 20, 29, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 24px;
-            padding: 40px 30px;
+            padding: 36px 30px;
             height: 100%;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
           }
 
           .layer-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 59, 48, 0.3);
-            box-shadow: 0 15px 35px rgba(255, 59, 48, 0.08);
+            border-color: rgba(253, 58, 37, 0.3);
+            box-shadow: 0 15px 35px rgba(253, 58, 37, 0.08);
           }
 
           .industry-card {
-            background: rgba(13, 16, 26, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 16px;
             padding: 24px;
             transition: all 0.3s ease;
@@ -455,43 +443,135 @@ function AIPage() {
           }
 
           .industry-card:hover {
-            border-color: #ff3b30;
-            background: rgba(255, 59, 48, 0.03);
+            border-color: #fd3a25;
+            box-shadow: 0 10px 25px rgba(253, 58, 37, 0.06);
+          }
+
+          /* ---- Partner Marquee Carousel ---- */
+          .partner-marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+          }
+
+          .partner-marquee-track {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            will-change: transform;
+          }
+
+          .track-forward {
+            animation: marquee-forward 40s linear infinite;
+          }
+
+          .track-reverse {
+            animation: marquee-reverse 55s linear infinite;
+          }
+
+          .partner-marquee-wrapper:hover .track-forward,
+          .partner-marquee-wrapper:hover .track-reverse {
+            animation-play-state: paused;
+          }
+
+          @keyframes marquee-forward {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+
+          @keyframes marquee-reverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+          }
+
+          .partner-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 18px 22px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            min-width: 130px;
+            max-width: 150px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            cursor: default;
+            flex-shrink: 0;
+          }
+
+          .partner-card:hover {
+            border-color: rgba(253, 58, 37, 0.35);
+            box-shadow: 0 8px 24px rgba(253, 58, 37, 0.08);
+            transform: translateY(-4px);
+          }
+
+          .partner-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+          }
+
+          .partner-card:hover .partner-logo-img {
+            filter: grayscale(0%);
+          }
+
+          .partner-logo-fallback {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fd3a25;
+            font-family: monospace;
+            letter-spacing: -0.05em;
+          }
+
+          .partner-name {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-align: center;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
           }
         `}
       </style>
 
-      {/* Decorative Glow Background Spheres */}
-      <div className="glow-ring glow-ring-1"></div>
-      <div className="glow-ring glow-ring-2"></div>
+      {/* Decorative Glow Spots */}
+      <div className="orange-glow-spot orange-glow-1"></div>
+      <div className="orange-glow-spot orange-glow-2"></div>
 
-      {/* SECTION 1: HERO CAROUSEL */}
-      <section className="position-relative overflow-hidden mb-80" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', paddingBottom: '40px' }}>
-        <div className="container">
-          <div className="row align-items-center hero-slider-height">
-            <div className="col-lg-7">
+      <div className="container relative z-10">
+
+        {/* SECTION 1: HERO CAROUSEL */}
+        <section className="py-24 position-relative overflow-hidden mb-24" style={{ borderBottom: '1px solid rgba(229, 231, 235, 0.5)', paddingBottom: '30px' }}>
+          <div className="row align-items-center" style={{ minHeight: '400px' }}>
+            <div className="col-lg-7 text-start">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeSlide}
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  <div className="d-flex mb-3">
-                    <span className="cyber-badge">
+                  <div className="d-flex mb-2">
+                    <span className="ai-badge">
                       <Sparkles size={12} className="me-2" />
                       Virtual Galaxy AI
                     </span>
                   </div>
-                  <h1 className="fw-bold text-white mb-20 neon-glow-header" style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)', lineHeight: '1.1', letterSpacing: '-0.02em' }}>
+                  <h1 className="fw-bold text-dark mb-16 gradient-text-orange" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
                     {slides[activeSlide].title}
                   </h1>
-                  <p className="mb-40" style={{ color: '#94a3b8', fontSize: '1.2rem', lineHeight: '1.6', maxWidth: '600px' }}>
+                  <p className="mb-32 text-secondary font-weight-500" style={{ fontSize: '1.15rem', lineHeight: '1.6', maxWidth: '580px' }}>
                     {slides[activeSlide].desc}
                   </p>
                   <div className="d-flex gap-16 align-items-center">
-                    <a href={slides[activeSlide].btnLink} className="tf-btn" style={{ textDecoration: 'none' }}>
+                    <a href={slides[activeSlide].btnLink} className="btn-orange-primary" style={{ textDecoration: 'none' }}>
                       {slides[activeSlide].btnText}
                     </a>
                     <div className="d-flex gap-8">
@@ -500,10 +580,10 @@ function AIPage() {
                           key={index}
                           onClick={() => setActiveSlide(index)}
                           style={{
-                            width: '12px',
-                            height: '12px',
+                            width: '10px',
+                            height: '10px',
                             borderRadius: '50%',
-                            background: activeSlide === index ? '#ff3b30' : 'rgba(255, 255, 255, 0.2)',
+                            background: activeSlide === index ? '#fd3a25' : 'rgba(253, 58, 37, 0.2)',
                             border: 'none',
                             cursor: 'pointer',
                             padding: 0,
@@ -516,463 +596,519 @@ function AIPage() {
                 </motion.div>
               </AnimatePresence>
             </div>
-            
+
             <div className="col-lg-5 d-none d-lg-block">
-              <div className="position-relative d-flex justify-content-center align-items-center" style={{ height: '400px' }}>
+              <div className="position-relative d-flex justify-content-center align-items-center" style={{ height: '360px' }}>
                 <div style={{
                   position: 'absolute',
-                  width: '300px',
-                  height: '300px',
+                  width: '260px',
+                  height: '260px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, rgba(255,59,48,0.2), rgba(189,0,255,0.2))',
-                  filter: 'blur(40px)',
+                  background: 'radial-gradient(circle, rgba(253,58,37,0.12) 0%, transparent 70%)',
+                  filter: 'blur(30px)',
                   animation: 'pulse 4s infinite alternate'
                 }} />
-                <BrainCircuit size={200} className="text-brand" style={{ opacity: 0.85, zIndex: 1 }} />
+                <BrainCircuit size={180} className="text-orange" style={{ color: '#fd3a25', opacity: 0.85, zIndex: 1 }} />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION 2: BEYOND AI HYPE */}
-      <section className="section-spacing-lg mb-80" id="hype">
-        <div className="container">
-          <div className="glass-panel" style={{ borderLeft: '4px solid #ff3b30' }}>
+        {/* SECTION 2: BEYOND AI HYPE */}
+        <section className="py-24 mb-16" id="hype">
+          <div className="glass-panel" style={{ borderLeft: '4px solid #fd3a25' }}>
             <div className="row align-items-center">
-              <div className="col-lg-8">
-                <div className="heading-sub fw-semibold text-brand mb-15">Quantum Flow Engine</div>
-                <h2 className="fw-bold text-white mb-20" style={{ fontSize: '2.2rem' }}>
+              <div className="col-lg-8 text-start">
+                <div className="fw-bold mb-8 text-orange uppercase tracking-[1px]" style={{ color: '#fd3a25', fontSize: '0.82rem' }}>Quantum Flow Engine</div>
+                <h2 className="fw-bold text-dark mb-16" style={{ fontSize: '2.1rem', letterSpacing: '-0.01em' }}>
                   Beyond AI Hype: Software That Actually Ships
                 </h2>
-                <h5 className="fw-semibold text-light mb-20" style={{ lineHeight: '1.5', color: '#cbd5e1' }}>
+                <h5 className="fw-semibold text-secondary mb-16" style={{ lineHeight: '1.5' }}>
                   AI is trending. Impact is missing. We bridge the gap—turning ideas into intelligent, scalable systems.
                 </h5>
-                <p className="text-secondary mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                <p className="text-secondary mb-0" style={{ fontSize: '1.05rem', lineHeight: '1.6' }}>
                   Because real transformation isn’t about tools—it’s about systems, strategy, and scale. At Virtual Galaxy, we turn AI into real business results with our AI Quantum Flow Engine.
                 </p>
               </div>
-              <div className="col-lg-4 text-center mt-30 mt-lg-0">
-                <div style={{ display: 'inline-flex', padding: '30px', borderRadius: '50%', background: 'rgba(255,59,48,0.06)' }}>
-                  <Zap size={64} className="text-brand animate-pulse" />
+              <div className="col-lg-4 text-center mt-24 mt-lg-0">
+                <div style={{ display: 'inline-flex', padding: '24px', borderRadius: '50%', background: 'rgba(253,58,37,0.06)' }}>
+                  <Zap size={56} className="text-orange animate-pulse" style={{ color: '#fd3a25' }} />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION 3: THREE LAYERS OF AI */}
-      <section className="section-spacing-lg mb-80" id="layers">
-        <div className="container">
-          <div className="heading-section center mb-60">
-            <div className="heading-sub fw-semibold text-brand">The Architecture</div>
-            <h2 className="heading-title text-white">The AI Quantum Flow Engine Layers</h2>
-            <p className="mx-auto text-secondary mt-15" style={{ maxWidth: '600px', fontSize: '1.05rem' }}>
+        {/* SECTION 3: THREE LAYERS OF AI */}
+        <section className="py-24" id="layers">
+          <div className="text-center mb-28">
+            <span className="ai-badge">The Architecture</span>
+            <h2 className="fw-bold text-dark mb-8" style={{ fontSize: '2.2rem', letterSpacing: '-0.01em' }}>The AI Quantum Flow Engine Layers</h2>
+            <p className="mx-auto text-secondary" style={{ maxWidth: '600px', fontSize: '1.02rem', lineHeight: '1.5' }}>
               We orchestrate AI solutions through three discrete layers to ensure security, high performance, and domain alignment.
             </p>
           </div>
 
-          <div className="row">
+          <div className="row g-4">
             {/* Layer 1: Infrastructure */}
-            <div className="col-lg-4 col-md-6 mb-24 mb-lg-0">
+            <div className="col-lg-4 col-md-6 text-start">
               <div className="layer-card">
-                <div className="mb-20" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(255,59,48,0.08)' }}>
-                  <Server className="text-brand" size={28} />
+                <div className="mb-20" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(253,58,37,0.06)' }}>
+                  <Server className="text-orange" size={24} style={{ color: '#fd3a25' }} />
                 </div>
-                <h4 className="fw-bold text-white mb-15" style={{ fontSize: '20px' }}>AI Infrastructure Layer</h4>
-                <p className="text-secondary mb-0" style={{ fontSize: '14px', lineHeight: '1.6', color: '#94a3b8' }}>
+                <h4 className="fw-bold text-dark mb-12" style={{ fontSize: '1.2rem' }}>AI Infrastructure Layer</h4>
+                <p className="text-secondary mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                   The foundation that powers scalable, secure, and high-performance AI systems. It enables organizations to manage compute efficiently while maintaining cost visibility and operational control. With cloud-flexible architecture and optimized resource utilization, it ensures consistent performance across workloads. Built-in governance, monitoring, and security frameworks provide reliability and compliance, allowing businesses to scale AI initiatives confidently without compromising on efficiency or control.
                 </p>
               </div>
             </div>
 
             {/* Layer 2: Orchestration */}
-            <div className="col-lg-4 col-md-6 mb-24 mb-lg-0">
+            <div className="col-lg-4 col-md-6 text-start">
               <div className="layer-card">
-                <div className="mb-20" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(189,0,255,0.08)' }}>
-                  <Workflow className="text-violet-500" size={28} style={{ color: '#a855f7' }} />
+                <div className="mb-20" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(253,58,37,0.06)' }}>
+                  <Workflow className="text-orange" size={24} style={{ color: '#fd3a25' }} />
                 </div>
-                <h4 className="fw-bold text-white mb-15" style={{ fontSize: '20px' }}>AI Orchestration Layer</h4>
-                <p className="text-secondary mb-0" style={{ fontSize: '14px', lineHeight: '1.6', color: '#94a3b8' }}>
+                <h4 className="fw-bold text-dark mb-12" style={{ fontSize: '1.2rem' }}>AI Orchestration Layer</h4>
+                <p className="text-secondary mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                   The layer that brings together agents, workflows, and systems into a unified, intelligent ecosystem. It streamlines operations by enabling seamless coordination across teams and technologies. Automated workflows enhance scalability while reducing manual effort, ensuring faster execution. With real-time synchronization and centralized visibility, organizations can manage complex processes effortlessly, improving efficiency, collaboration, and decision-making across the entire AI lifecycle.
                 </p>
               </div>
             </div>
 
             {/* Layer 3: Insight */}
-            <div className="col-lg-4 col-md-12">
+            <div className="col-lg-4 col-md-12 text-start">
               <div className="layer-card">
-                <div className="mb-20" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(0,240,255,0.08)' }}>
-                  <Layers className="text-cyan-500" size={28} style={{ color: '#06b6d4' }} />
+                <div className="mb-20" style={{ display: 'inline-flex', padding: '12px', borderRadius: '12px', background: 'rgba(253,58,37,0.06)' }}>
+                  <Layers className="text-orange" size={24} style={{ color: '#fd3a25' }} />
                 </div>
-                <h4 className="fw-bold text-white mb-15" style={{ fontSize: '20px' }}>AI Insight Layer</h4>
-                <p className="text-secondary mb-0" style={{ fontSize: '14px', lineHeight: '1.6', color: '#94a3b8' }}>
+                <h4 className="fw-bold text-dark mb-12" style={{ fontSize: '1.2rem' }}>AI Insight Layer</h4>
+                <p className="text-secondary mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                   Where raw data evolves into meaningful, business-aware intelligence. This layer unifies data from multiple sources, creating a consistent and reliable foundation for insights. By centralizing knowledge and eliminating silos, it enables systems to understand business context more effectively. The result is adaptive, context-driven intelligence that aligns with business goals, empowering smarter decisions and delivering deeper, more relevant insights across operations.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION 4: INDUSTRY EXPERIENCES */}
-      <section className="section-spacing-lg mb-80" style={{ background: 'rgba(255, 255, 255, 0.01)', padding: '60px 0', borderTop: '1px solid rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-        <div className="container py-40">
-          <div className="heading-section center mb-60">
-            <div className="heading-sub fw-semibold text-brand">Vertical Solutions</div>
-            <h2 className="heading-title text-white">Experience What VGIL AI Can Do for Your Industry</h2>
-            <p className="mx-auto text-secondary mt-15" style={{ maxWidth: '600px', fontSize: '1.05rem' }}>
-              Discover how we create measurable business value through transformation and cutting-edge technology.
-            </p>
-          </div>
+        {/* SECTION 4: INDUSTRY EXPERIENCES */}
+        <section className="py-24" style={{ background: '#faf8f6', padding: '40px 0', borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb', borderRadius: '24px', margin: '20px 0' }}>
+          <div className="container">
+            <div className="text-center mb-28">
+              <span className="ai-badge">Vertical Solutions</span>
+              <h2 className="fw-bold text-dark mb-8" style={{ fontSize: '2.1rem', letterSpacing: '-0.01em' }}>Experience What VGIL AI Can Do for Your Industry</h2>
+              <p className="mx-auto text-secondary" style={{ maxWidth: '600px', fontSize: '1.02rem' }}>
+                Discover how we create measurable business value through transformation and cutting-edge technology.
+              </p>
+            </div>
 
-          <div className="row justify-content-center">
-            <div className="col-lg-4 col-md-6 mb-24 mb-lg-0">
-              <div className="industry-card d-flex flex-column justify-content-between">
-                <div>
-                  <div className="fw-bold text-brand mb-15" style={{ fontSize: '1.5rem', fontFamily: 'monospace' }}>01</div>
-                  <h5 className="fw-bold text-white mb-15">Transforming Core Banking Solution for Digital Finance</h5>
-                  <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                    Seamless integration of automated compliance, real-time risk checks, and predictive transactional models into banking environments.
-                  </p>
+            <div className="row justify-content-center g-4">
+              <div className="col-lg-4 col-md-6 text-start">
+                <div className="industry-card d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="fw-bold mb-12" style={{ color: '#fd3a25', fontSize: '1.4rem', fontFamily: 'monospace' }}>01</div>
+                    <h5 className="fw-bold text-dark mb-12">Transforming Core Banking Solution for Digital Finance</h5>
+                    <p className="text-secondary" style={{ fontSize: '0.88rem', lineHeight: '1.5' }}>
+                      Seamless integration of automated compliance, real-time risk checks, and predictive transactional models into banking environments.
+                    </p>
+                  </div>
+                  <Link to="/products/transact-core" className="fw-semibold d-flex align-items-center gap-8 mt-20" style={{ color: '#fd3a25', textDecoration: 'none', fontSize: '0.88rem' }}>
+                    Learn More <ArrowRight size={14} />
+                  </Link>
                 </div>
-                <Link to="/products/transact-core" className="text-brand fw-semibold d-flex align-items-center gap-8 mt-20" style={{ textDecoration: 'none', fontSize: '0.9rem' }}>
-                  Learn More <ArrowRight size={14} />
-                </Link>
+              </div>
+
+              <div className="col-lg-4 col-md-6 text-start">
+                <div className="industry-card d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="fw-bold mb-12" style={{ color: '#fd3a25', fontSize: '1.4rem', fontFamily: 'monospace' }}>02</div>
+                    <h5 className="fw-bold text-dark mb-12">Re(AI)powering Hi-Tech with End-to-End Cybersecurity</h5>
+                    <p className="text-secondary" style={{ fontSize: '0.88rem', lineHeight: '1.5' }}>
+                      Intelligent anomaly warning networks, SSO/SAML integration, and robust defensive security protocols protecting enterprise networks.
+                    </p>
+                  </div>
+                  <Link to="/products/audit-flux" className="fw-semibold d-flex align-items-center gap-8 mt-20" style={{ color: '#fd3a25', textDecoration: 'none', fontSize: '0.88rem' }}>
+                    Learn More <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-md-6 text-start">
+                <div className="industry-card d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="fw-bold mb-12" style={{ color: '#fd3a25', fontSize: '1.4rem', fontFamily: 'monospace' }}>03</div>
+                    <h5 className="fw-bold text-dark mb-12">Conversational AI Companion for Smarter Experiences</h5>
+                    <p className="text-secondary" style={{ fontSize: '0.88rem', lineHeight: '1.5' }}>
+                      Contextual enterprise RAG chatbots delivering instant, cited answers from internal knowledge sources for support and internal teams.
+                    </p>
+                  </div>
+                  <Link to="/products/conversational-ai-companion" className="fw-semibold d-flex align-items-center gap-8 mt-20" style={{ color: '#fd3a25', textDecoration: 'none', fontSize: '0.88rem' }}>
+                    Learn More <ArrowRight size={14} />
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-6 mb-24 mb-lg-0">
-              <div className="industry-card d-flex flex-column justify-content-between">
-                <div>
-                  <div className="fw-bold text-brand mb-15" style={{ fontSize: '1.5rem', fontFamily: 'monospace' }}>02</div>
-                  <h5 className="fw-bold text-white mb-15">Re(AI)powering Hi-Tech with End-to-End Cybersecurity</h5>
-                  <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                    Intelligent anomaly warning networks, SSO/SAML integration, and robust defensive security protocols protecting enterprise networks.
-                  </p>
-                </div>
-                <Link to="/products/audit-flux" className="text-brand fw-semibold d-flex align-items-center gap-8 mt-20" style={{ textDecoration: 'none', fontSize: '0.9rem' }}>
-                  Learn More <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <div className="industry-card d-flex flex-column justify-content-between">
-                <div>
-                  <div className="fw-bold text-brand mb-15" style={{ fontSize: '1.5rem', fontFamily: 'monospace' }}>03</div>
-                  <h5 className="fw-bold text-white mb-15">Conversational AI Companion for Smarter Experiences</h5>
-                  <p className="text-secondary" style={{ fontSize: '14px', lineHeight: '1.5' }}>
-                    Contextual enterprise RAG chatbots delivering instant, cited answers from internal knowledge sources for support and internal teams.
-                  </p>
-                </div>
-                <Link to="/products/conversational-ai-companion" className="text-brand fw-semibold d-flex align-items-center gap-8 mt-20" style={{ textDecoration: 'none', fontSize: '0.9rem' }}>
-                  Learn More <ArrowRight size={14} />
-                </Link>
-              </div>
+            <div className="text-center mt-36">
+              <h5 className="text-secondary fw-semibold mb-0" style={{ letterSpacing: '0.01em' }}>
+                Take a closer look at how we’re redefining what’s possible with technology.
+              </h5>
             </div>
           </div>
+        </section>
 
-          <div className="text-center mt-50">
-            <h5 className="text-light fw-medium" style={{ letterSpacing: '0.02em', color: '#cbd5e1' }}>
-              Take a closer look at how we’re redefining what’s possible with technology.
-            </h5>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5: TRUSTED PARTNERS */}
-      <section className="section-spacing-lg mb-80">
-        <div className="container">
-          <div className="heading-section center mb-48">
-            <div className="heading-sub fw-semibold text-brand">Partnerships</div>
-            <h2 className="heading-title text-white">Our Trusted Partners</h2>
-          </div>
-          <div className="glass-panel text-center">
-            <p className="mx-auto mb-40 text-secondary" style={{ maxWidth: '800px', fontSize: '1.1rem', lineHeight: '1.7' }}>
+        {/* SECTION 5: TRUSTED PARTNERS */}
+        <section className="py-24">
+          <div className="text-center mb-24">
+            <span className="ai-badge">Partnerships</span>
+            <h2 className="fw-bold text-dark mb-8" style={{ fontSize: '2.1rem', letterSpacing: '-0.01em' }}>Our Trusted Partners</h2>
+            <p className="mx-auto text-secondary" style={{ maxWidth: '680px', fontSize: '1.02rem', lineHeight: '1.6' }}>
               With a focused hyperscale team, we work closely with leading platform partners to deliver AI-driven solutions that accelerate innovation and create real business impact.
             </p>
-            {/* Partners Logo Simulation */}
-            <div className="row justify-content-center align-items-center g-4 flex-wrap" style={{ opacity: 0.6 }}>
-              {['Oracle', 'Microsoft', 'redhat', 'Yotta', 'AWS', 'netmagic','Nxtra Data', 'Oracle Cloud', 'NVDIA', 'CISCO', 'LENOVO', 'Hewlett Packard', 'Fortnite'].map((p, idx) => (
-                <div className="col-6 col-md-4 col-lg-2" key={idx}>
-                  <div style={{
-                    padding: '15px 10px',
-                    borderRadius: '8px',
-                    border: '1px solid rgba(255,255,255,0.05)',
-                    background: 'rgba(255,255,255,0.02)',
-                    color: '#94a3b8',
-                    fontFamily: 'monospace',
-                    fontSize: '0.9rem',
-                    fontWeight: 'bold',
-                    letterSpacing: '0.05em'
-                  }}>
-                    {p}
-                  </div>
+          </div>
+
+          {/* Infinite Marquee Carousel - Row 1 (left → right) */}
+          <div className="partner-marquee-wrapper">
+            <div className="partner-marquee-track track-forward">
+              {[
+                { name: 'Oracle',       logo: '/logos/oracle.svg' },
+                { name: 'Microsoft',    logo: '/logos/microsoft.svg' },
+                { name: 'Red Hat',      logo: '/logos/redhat.svg' },
+                { name: 'AWS',          logo: '/logos/aws.svg' },
+                { name: 'NVIDIA',       logo: '/logos/nvidia.svg' },
+                { name: 'Cisco',        logo: '/logos/cisco.svg' },
+                { name: 'Lenovo',       logo: '/logos/lenovo.svg' },
+                { name: 'HP Enterprise',logo: '/logos/hpe.svg' },
+                { name: 'Yotta',        logo: '/logos/yotta.svg' },
+                { name: 'NetMagic',     logo: '/logos/netmagic.svg' },
+                { name: 'Fortinet',     logo: '/logos/fortinet.svg' },
+                { name: 'Nxtra Data',   logo: '/logos/nxtra-data.svg' },
+              ].concat([
+                { name: 'Oracle',       logo: '/logos/oracle.svg' },
+                { name: 'Microsoft',    logo: '/logos/microsoft.svg' },
+                { name: 'Red Hat',      logo: '/logos/redhat.svg' },
+                { name: 'AWS',          logo: '/logos/aws.svg' },
+                { name: 'NVIDIA',       logo: '/logos/nvidia.svg' },
+                { name: 'Cisco',        logo: '/logos/cisco.svg' },
+                { name: 'Lenovo',       logo: '/logos/lenovo.svg' },
+                { name: 'HP Enterprise',logo: '/logos/hpe.svg' },
+                { name: 'Yotta',        logo: '/logos/yotta.svg' },
+                { name: 'NetMagic',     logo: '/logos/netmagic.svg' },
+                { name: 'Fortinet',     logo: '/logos/fortinet.svg' },
+                { name: 'Nxtra Data',   logo: '/logos/nxtra-data.svg' },
+              ]).map((partner, idx) => (
+                <div className="partner-card" key={idx}>
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="partner-logo-img"
+                    onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
+                  />
+                  <span className="partner-logo-fallback" style={{ display: 'none' }}>{partner.name}</span>
+                  <span className="partner-name">{partner.name}</span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* SECTION 6: INTERACTIVE NEURAL LAB */}
-      <section className="section-spacing-lg mb-80" id="lab">
-        <div className="container relative z-10">
-          
-          <div className="text-center mb-40">
-            <div className="d-flex justify-content-center mb-3">
-              <span className="cyber-badge">
-                <ShieldAlert size={14} className="text-cyan-400" />
-                SEO PROTECTED // SECURE ZONE
-              </span>
+          {/* Infinite Marquee Carousel - Row 2 (right ← left, slower) */}
+          <div className="partner-marquee-wrapper mt-16">
+            <div className="partner-marquee-track track-reverse">
+              {[
+                { name: 'IBM',         logo: '/logos/ibm.svg' },
+                { name: 'VMware',      logo: '/logos/vmware.svg' },
+                { name: 'Dell',        logo: '/logos/dell.svg' },
+                { name: 'Intel',       logo: '/logos/intel.svg' },
+                { name: 'Google Cloud',logo: '/logos/google-cloud.svg' },
+                { name: 'Akamai',      logo: '/logos/akamai.svg' },
+                { name: 'Palo Alto',   logo: '/logos/palo-alto.svg' },
+                { name: 'ServiceNow',  logo: '/logos/servicenow.svg' },
+                { name: 'Splunk',      logo: '/logos/splunk.svg' },
+                { name: 'Databricks',  logo: '/logos/databricks.svg' },
+              ].concat([
+                { name: 'IBM',         logo: '/logos/ibm.svg' },
+                { name: 'VMware',      logo: '/logos/vmware.svg' },
+                { name: 'Dell',        logo: '/logos/dell.svg' },
+                { name: 'Intel',       logo: '/logos/intel.svg' },
+                { name: 'Google Cloud',logo: '/logos/google-cloud.svg' },
+                { name: 'Akamai',      logo: '/logos/akamai.svg' },
+                { name: 'Palo Alto',   logo: '/logos/palo-alto.svg' },
+                { name: 'ServiceNow',  logo: '/logos/servicenow.svg' },
+                { name: 'Splunk',      logo: '/logos/splunk.svg' },
+                { name: 'Databricks',  logo: '/logos/databricks.svg' },
+              ]).map((partner, idx) => (
+                <div className="partner-card" key={idx}>
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="partner-logo-img"
+                    onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
+                  />
+                  <span className="partner-logo-fallback" style={{ display: 'none' }}>{partner.name}</span>
+                  <span className="partner-name">{partner.name}</span>
+                </div>
+              ))}
             </div>
-            <h2 className="fw-bold text-white mb-2 neon-glow-header" style={{ fontSize: '2.5rem', letterSpacing: '-0.02em' }}>
-              Virtual Galaxy <span className="text-brand">Neural Lab</span>
-            </h2>
-            <p className="mx-auto" style={{ maxWidth: '600px', color: '#94a3b8', fontSize: '1.05rem' }}>
-              Protected mainframe environment for model evaluation, neural path auditing, and autonomous agent orchestration.
-            </p>
           </div>
+        </section>
 
-          {/* Dashboard Content Grid */}
-          <div className="row g-4 justify-content-center">
-            
-            {/* LEFT COLUMN: Controls & HUD metrics */}
-            <div className="col-lg-4 col-md-5 d-flex flex-column gap-4">
-              
-              {/* HUD Diagnostic Stats */}
-              <div className="glass-panel">
-                <h4 className="fs-5 fw-bold text-white mb-20 d-flex align-items-center gap-8" style={{ fontSize: '18px' }}>
-                  <Activity size={18} className="text-brand" />
-                  Real-Time Health
-                </h4>
-                
-                <div className="d-flex flex-column gap-3">
-                  <div>
-                    <div className="d-flex justify-content-between text-xs mb-1" style={{ fontSize: '0.85rem' }}>
-                      <span style={{ color: '#94a3b8' }}>Network Coherence</span>
-                      <span style={{ color: '#10b981', fontWeight: 600 }}>{calculatedCoherence}%</span>
-                    </div>
-                    <div style={{ height: '6px', background: '#1e293b', borderRadius: '3px', overflow: 'hidden' }}>
-                      <div style={{ width: `${calculatedCoherence}%`, height: '100%', background: 'linear-gradient(90deg, #bd00ff, #10b981)', borderRadius: '3px' }}></div>
-                    </div>
-                  </div>
+        {/* SECTION 6: INTERACTIVE NEURAL LAB */}
+        <section className="py-32" id="lab">
+          <div className="container relative z-10">
 
-                  <div>
-                    <div className="d-flex justify-content-between text-xs mb-1" style={{ fontSize: '0.85rem' }}>
-                      <span style={{ color: '#94a3b8' }}>Quantum Latency</span>
-                      <span style={{ color: calculatedLatency > 20 ? '#f59e0b' : '#ff3b30', fontWeight: 600 }}>{calculatedLatency}ms</span>
-                    </div>
-                    <div style={{ height: '6px', background: '#1e293b', borderRadius: '3px', overflow: 'hidden' }}>
-                      <div style={{ width: `${Math.min(100, calculatedLatency * 2.5)}%`, height: '100%', background: 'linear-gradient(90deg, #ff3b30, #f59e0b)', borderRadius: '3px' }}></div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="d-flex justify-content-between text-xs mb-1" style={{ fontSize: '0.85rem' }}>
-                      <span style={{ color: '#94a3b8' }}>Synapse Throughput</span>
-                      <span style={{ color: '#bd00ff', fontWeight: 600 }}>{calculatedThroughput.toLocaleString()} tok/s</span>
-                    </div>
-                    <div style={{ height: '6px', background: '#1e293b', borderRadius: '3px', overflow: 'hidden' }}>
-                      <div style={{ width: `${Math.min(100, (calculatedThroughput / 1200) * 100)}%`, height: '100%', background: 'linear-gradient(90deg, #ff3b30, #bd00ff)', borderRadius: '3px' }}></div>
-                    </div>
-                  </div>
-                </div>
+            <div className="text-center mb-24">
+              <div className="d-flex justify-content-center mb-2">
+                <span className="ai-badge" style={{ background: 'rgba(253,58,37,0.06)', borderColor: 'rgba(253,58,37,0.2)' }}>
+                  <ShieldAlert size={14} className="me-2" />
+                  SEO PROTECTED // SECURE ZONE
+                </span>
               </div>
-
-              {/* Neural Parameters Tuning */}
-              <div className="glass-panel">
-                <h4 className="fs-5 fw-bold text-white mb-20 d-flex align-items-center gap-8" style={{ fontSize: '18px' }}>
-                  <Sliders size={18} className="text-brand" />
-                  Hyperparameter Tuning
-                </h4>
-
-                <div className="d-flex flex-column gap-4">
-                  <div>
-                    <div className="d-flex justify-content-between mb-2">
-                      <label style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Learning Rate (α)</label>
-                      <span className="font-monospace" style={{ fontSize: '0.9rem', color: '#ff3b30' }}>{learningRate}</span>
-                    </div>
-                    <input 
-                      type="range" 
-                      min="0.0001" 
-                      max="0.01" 
-                      step="0.0001"
-                      value={learningRate} 
-                      onChange={(e) => setLearningRate(parseFloat(e.target.value))}
-                      className="custom-slider"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="d-flex justify-content-between mb-2">
-                      <label style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Context Window</label>
-                      <span className="font-monospace" style={{ fontSize: '0.9rem', color: '#ff3b30' }}>{contextWindow} tokens</span>
-                    </div>
-                    <input 
-                      type="range" 
-                      min="2048" 
-                      max="32768" 
-                      step="2048"
-                      value={contextWindow} 
-                      onChange={(e) => setContextWindow(parseInt(e.target.value))}
-                      className="custom-slider"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="d-flex justify-content-between mb-2">
-                      <label style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Temperature</label>
-                      <span className="font-monospace" style={{ fontSize: '0.9rem', color: '#ff3b30' }}>{temperature}</span>
-                    </div>
-                    <input 
-                      type="range" 
-                      min="0.1" 
-                      max="1.5" 
-                      step="0.05"
-                      value={temperature} 
-                      onChange={(e) => setTemperature(parseFloat(e.target.value))}
-                      className="custom-slider"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="d-flex justify-content-between mb-2">
-                      <label style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Neural Density</label>
-                      <span className="font-monospace" style={{ fontSize: '0.9rem', color: '#ff3b30' }}>{neuralDensity}%</span>
-                    </div>
-                    <input 
-                      type="range" 
-                      min="50" 
-                      max="100" 
-                      step="1"
-                      value={neuralDensity} 
-                      onChange={(e) => setNeuralDensity(parseInt(e.target.value))}
-                      className="custom-slider"
-                    />
-                  </div>
-
-                  <div className="pt-2">
-                    <button 
-                      onClick={triggerOptimization} 
-                      disabled={isOptimizing}
-                      className="interactive-btn w-100 justify-content-center"
-                    >
-                      {isOptimizing ? (
-                        <>
-                          <RefreshCw size={16} className="spinner-border-sm animate-spin" style={{ animation: 'spin 1s linear infinite' }} />
-                          <span>Optimizing Mainframe...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Play size={16} />
-                          <span>Run Sync Diagnostics</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-
+              <h2 className="fw-bold text-dark mb-8" style={{ fontSize: '2.2rem', letterSpacing: '-0.01em' }}>
+                Virtual Galaxy <span style={{ color: '#fd3a25' }}>Neural Lab</span>
+              </h2>
+              <p className="mx-auto text-secondary" style={{ maxWidth: '600px', fontSize: '1.02rem' }}>
+                Protected mainframe environment for model evaluation, neural path auditing, and autonomous agent orchestration.
+              </p>
             </div>
 
-            {/* RIGHT COLUMN: Terminal Command Console */}
-            <div className="col-lg-8 col-md-7">
-              <div className="glass-panel d-flex flex-column h-100" style={{ minHeight: '480px' }}>
-                <h4 className="fs-5 fw-bold text-white mb-3 d-flex align-items-center gap-8" style={{ fontSize: '18px' }}>
-                  <TerminalIcon size={18} className="text-brand" />
-                  Mainframe Quantum Shell
-                </h4>
-                
-                {/* Interactive Terminal Screen */}
-                <div className="terminal-window flex-grow-1">
-                  <div className="terminal-header">
-                    <div className="dot-container">
-                      <span className="window-dot red"></span>
-                      <span className="window-dot yellow"></span>
-                      <span className="window-dot green"></span>
-                    </div>
-                    <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontFamily: 'monospace' }}>
-                      vgil_terminal_session.sh
-                    </div>
-                    <div style={{ width: '38px' }}></div>
-                  </div>
-                  
-                  <div className="terminal-content">
-                    {history.map((log, index) => {
-                      let colorClass = '#e2e8f0';
-                      let prefix = '';
-                      
-                      if (log.type === 'command') {
-                        colorClass = '#ff3b30';
-                        prefix = '$ ';
-                      } else if (log.type === 'system') {
-                        colorClass = '#bd00ff';
-                      } else if (log.type === 'info') {
-                        colorClass = '#94a3b8';
-                      } else if (log.type === 'success') {
-                        colorClass = '#10b981';
-                      } else if (log.type === 'error') {
-                        colorClass = '#ef4444';
-                      }
+            {/* Dashboard Content Grid */}
+            <div className="row g-4 justify-content-center text-start">
 
-                      return (
-                        <div 
-                          key={index} 
-                          style={{ color: colorClass, whiteSpace: 'pre-wrap', marginBottom: '8px' }}
-                        >
-                          {prefix}{log.text}
-                        </div>
-                      );
-                    })}
-                    <div ref={terminalEndRef} />
-                  </div>
+              {/* LEFT COLUMN: Controls & HUD metrics */}
+              <div className="col-lg-4 col-md-5 d-flex flex-column gap-4">
 
-                  <form onSubmit={handleCommandSubmit} className="terminal-input-row">
-                    <span className="prompt-symbol">&gt;</span>
-                    <input 
-                      id="terminal-input"
-                      type="text" 
-                      value={inputVal}
-                      onChange={(e) => setInputVal(e.target.value)}
-                      placeholder="Type a command (e.g. 'help', 'status', 'agents')..."
-                      className="terminal-input-element"
-                      autoComplete="off"
-                      autoCorrect="off"
-                      autoCapitalize="off"
-                      spellCheck="false"
-                    />
-                    <button type="submit" style={{ background: 'transparent', border: 'none', color: '#ff3b30', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                      <Send size={16} />
-                    </button>
-                  </form>
+                {/* HUD Diagnostic Stats */}
+                <div className="glass-panel">
+                  <h4 className="fw-bold text-dark mb-20 d-flex align-items-center gap-8" style={{ fontSize: '1.1rem' }}>
+                    <Activity size={18} style={{ color: '#fd3a25' }} />
+                    Real-Time Health
+                  </h4>
+
+                  <div className="d-flex flex-column gap-3">
+                    <div>
+                      <div className="d-flex justify-content-between mb-1" style={{ fontSize: '0.82rem', fontWeight: 600 }}>
+                        <span className="text-secondary">Network Coherence</span>
+                        <span style={{ color: '#10b981' }}>{calculatedCoherence}%</span>
+                      </div>
+                      <div style={{ height: '6px', background: '#e5e7eb', borderRadius: '3px', overflow: 'hidden' }}>
+                        <div style={{ width: `${calculatedCoherence}%`, height: '100%', background: 'linear-gradient(90deg, #fd3a25, #10b981)', borderRadius: '3px' }}></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="d-flex justify-content-between mb-1" style={{ fontSize: '0.82rem', fontWeight: 600 }}>
+                        <span className="text-secondary">Quantum Latency</span>
+                        <span style={{ color: calculatedLatency > 20 ? '#f59e0b' : '#fd3a25' }}>{calculatedLatency}ms</span>
+                      </div>
+                      <div style={{ height: '6px', background: '#e5e7eb', borderRadius: '3px', overflow: 'hidden' }}>
+                        <div style={{ width: `${Math.min(100, calculatedLatency * 2.5)}%`, height: '100%', background: 'linear-gradient(90deg, #fd3a25, #f59e0b)', borderRadius: '3px' }}></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="d-flex justify-content-between mb-1" style={{ fontSize: '0.82rem', fontWeight: 600 }}>
+                        <span className="text-secondary">Synapse Throughput</span>
+                        <span style={{ color: '#fd3a25' }}>{calculatedThroughput.toLocaleString()} tok/s</span>
+                      </div>
+                      <div style={{ height: '6px', background: '#e5e7eb', borderRadius: '3px', overflow: 'hidden' }}>
+                        <div style={{ width: `${Math.min(100, (calculatedThroughput / 1200) * 100)}%`, height: '100%', background: 'linear-gradient(90deg, #fd3a25, #fd3a25)', borderRadius: '3px' }}></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Quick-Click Command Shortcuts for mobile/desktop UX */}
-                <div className="mt-20">
-                  <div className="text-muted mb-2" style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}>MAIN FRAME SHORTCUTS:</div>
-                  <div className="d-flex flex-wrap gap-8">
-                    {['help', 'status', 'about', 'agents', 'neural', 'optimize', 'clear'].map((cmd) => (
-                      <button 
-                        key={cmd}
-                        type="button"
-                        onClick={() => handleShortcutClick(cmd)}
-                        className="shortcut-pill"
+                {/* Neural Parameters Tuning */}
+                <div className="glass-panel">
+                  <h4 className="fw-bold text-dark mb-20 d-flex align-items-center gap-8" style={{ fontSize: '1.1rem' }}>
+                    <Sliders size={18} style={{ color: '#fd3a25' }} />
+                    Hyperparameter Tuning
+                  </h4>
+
+                  <div className="d-flex flex-column gap-4">
+                    <div>
+                      <div className="d-flex justify-content-between mb-2" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                        <label className="text-secondary">Learning Rate (α)</label>
+                        <span className="font-monospace" style={{ color: '#fd3a25' }}>{learningRate}</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="0.0001"
+                        max="0.01"
+                        step="0.0001"
+                        value={learningRate}
+                        onChange={(e) => setLearningRate(parseFloat(e.target.value))}
+                        className="custom-slider"
+                      />
+                    </div>
+
+                    <div>
+                      <div className="d-flex justify-content-between mb-2" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                        <label className="text-secondary">Context Window</label>
+                        <span className="font-monospace" style={{ color: '#fd3a25' }}>{contextWindow} tokens</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="2048"
+                        max="32768"
+                        step="2048"
+                        value={contextWindow}
+                        onChange={(e) => setContextWindow(parseInt(e.target.value))}
+                        className="custom-slider"
+                      />
+                    </div>
+
+                    <div>
+                      <div className="d-flex justify-content-between mb-2" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                        <label className="text-secondary">Temperature</label>
+                        <span className="font-monospace" style={{ color: '#fd3a25' }}>{temperature}</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="0.1"
+                        max="1.5"
+                        step="0.05"
+                        value={temperature}
+                        onChange={(e) => setTemperature(parseFloat(e.target.value))}
+                        className="custom-slider"
+                      />
+                    </div>
+
+                    <div>
+                      <div className="d-flex justify-content-between mb-2" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                        <label className="text-secondary">Neural Density</label>
+                        <span className="font-monospace" style={{ color: '#fd3a25' }}>{neuralDensity}%</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="50"
+                        max="100"
+                        step="1"
+                        value={neuralDensity}
+                        onChange={(e) => setNeuralDensity(parseInt(e.target.value))}
+                        className="custom-slider"
+                      />
+                    </div>
+
+                    <div className="pt-2">
+                      <button
+                        onClick={triggerOptimization}
+                        disabled={isOptimizing}
+                        className="btn-orange-primary w-100 justify-content-center"
                       >
-                        {cmd}
+                        {isOptimizing ? (
+                          <>
+                            <RefreshCw size={16} className="animate-spin me-2" style={{ animation: 'spin 1s linear infinite' }} />
+                            <span>Optimizing...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Play size={16} className="me-2" />
+                            <span>Run Sync Diagnostics</span>
+                          </>
+                        )}
                       </button>
-                    ))}
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN: Terminal Command Console */}
+              <div className="col-lg-8 col-md-7">
+                <div className="glass-panel d-flex flex-column h-100" style={{ minHeight: '460px' }}>
+                  <h4 className="fw-bold text-dark mb-16 d-flex align-items-center gap-8" style={{ fontSize: '1.1rem' }}>
+                    <Server size={18} style={{ color: '#fd3a25' }} />
+                    Mainframe Quantum Shell
+                  </h4>
+
+                  {/* Interactive Terminal Screen */}
+                  <div className="terminal-window flex-grow-1">
+                    <div className="terminal-header">
+                      <div className="dot-container">
+                        <span className="window-dot red"></span>
+                        <span className="window-dot yellow"></span>
+                        <span className="window-dot green"></span>
+                      </div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontFamily: 'monospace' }}>
+                        vgil_terminal_session.sh
+                      </div>
+                      <div style={{ width: '38px' }}></div>
+                    </div>
+
+                    <div className="terminal-content">
+                      {history.map((log, index) => {
+                        let colorClass = '#cbd5e1';
+                        let prefix = '';
+
+                        if (log.type === 'command') {
+                          colorClass = '#fd3a25';
+                          prefix = '$ ';
+                        } else if (log.type === 'system') {
+                          colorClass = '#fb923c';
+                        } else if (log.type === 'info') {
+                          colorClass = '#94a3b8';
+                        } else if (log.type === 'success') {
+                          colorClass = '#10b981';
+                        } else if (log.type === 'error') {
+                          colorClass = '#ef4444';
+                        }
+
+                        return (
+                          <div
+                            key={index}
+                            style={{ color: colorClass, whiteSpace: 'pre-wrap', marginBottom: '8px', fontFamily: 'monospace' }}
+                          >
+                            {prefix}{log.text}
+                          </div>
+                        );
+                      })}
+                      <div ref={terminalEndRef} />
+                    </div>
+
+                    <form onSubmit={handleCommandSubmit} className="terminal-input-row">
+                      <span className="prompt-symbol">&gt;</span>
+                      <input
+                        id="terminal-input"
+                        type="text"
+                        value={inputVal}
+                        onChange={(e) => setInputVal(e.target.value)}
+                        placeholder="Type a command (e.g. 'help', 'status', 'agents')..."
+                        className="terminal-input-element"
+                        autoComplete="off"
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        spellCheck="false"
+                      />
+                      <button type="submit" style={{ background: 'transparent', border: 'none', color: '#fd3a25', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+                        <Send size={16} />
+                      </button>
+                    </form>
+                  </div>
+
+                  {/* Quick-Click Command Shortcuts for mobile/desktop UX */}
+                  <div className="mt-20">
+                    <div className="text-secondary mb-8" style={{ fontSize: '0.8rem', fontWeight: 600 }}>MAIN FRAME SHORTCUTS:</div>
+                    <div className="d-flex flex-wrap gap-8">
+                      {['help', 'status', 'about', 'agents', 'neural', 'optimize', 'clear'].map((cmd) => (
+                        <button
+                          key={cmd}
+                          type="button"
+                          onClick={() => handleShortcutClick(cmd)}
+                          className="shortcut-pill"
+                        >
+                          {cmd}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
-
           </div>
-        </div>
-      </section>
+        </section>
 
+      </div>
       <style>
         {`
           @keyframes spin {

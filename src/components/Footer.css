@@ -8,11 +8,9 @@
 }
 
 .vg-footer-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(7, 11, 20, 0.88),
-    rgba(10, 12, 18, 0.96)
-  ) !important;
+  background: linear-gradient(180deg,
+      rgba(7, 11, 20, 0.88),
+      rgba(10, 12, 18, 0.96)) !important;
   backdrop-filter: blur(2px) !important;
 }
 
@@ -55,7 +53,7 @@
 .footer-brand p {
   max-width: 620px !important;
   margin: 0 auto !important;
-  color: rgba(255,255,255,.75) !important;
+  color: rgba(255, 255, 255, .75) !important;
   font-size: 17px !important;
   line-height: 1.9 !important;
 }
@@ -75,16 +73,16 @@
 .footer-tags span {
   padding: 10px 18px !important;
   border-radius: 999px !important;
-  background: rgba(255,255,255,.08) !important;
-  border: 1px solid rgba(255,255,255,.12) !important;
-  color: rgba(255,255,255,.85) !important;
+  background: rgba(255, 255, 255, .08) !important;
+  border: 1px solid rgba(255, 255, 255, .12) !important;
+  color: rgba(255, 255, 255, .85) !important;
   font-size: 14px !important;
   transition: .35s ease !important;
 }
 
 .footer-tags span:hover {
-  background: rgba(225,6,0,.18) !important;
-  border-color: rgba(225,6,0,.45) !important;
+  background: rgba(225, 6, 0, .18) !important;
+  border-color: rgba(225, 6, 0, .45) !important;
   transform: translateY(-4px) !important;
 }
 
@@ -96,12 +94,10 @@
   width: 100% !important;
   height: 1px !important;
   margin: 55px 0 !important;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255,255,255,.18),
-    transparent
-  ) !important;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, .18),
+      transparent) !important;
 }
 
 /* =======================================
@@ -139,7 +135,7 @@
 }
 
 .footer-links a {
-  color: rgba(255,255,255,.72) !important;
+  color: rgba(255, 255, 255, .72) !important;
   text-decoration: none !important;
   transition: .3s ease !important;
   position: relative !important;
@@ -179,7 +175,7 @@
   gap: 20px !important;
 }
 
-.footer-contact > div {
+.footer-contact>div {
   display: flex !important;
   align-items: flex-start !important;
   gap: 14px !important;
@@ -193,7 +189,7 @@
 
 .footer-contact span,
 .footer-contact a {
-  color: rgba(255,255,255,.74) !important;
+  color: rgba(255, 255, 255, .74) !important;
   line-height: 1.7 !important;
   text-decoration: none !important;
   transition: .3s !important;
@@ -223,8 +219,8 @@
 
   border-radius: 50% !important;
 
-  background: rgba(255,255,255,0.06) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
 
   color: white !important;
 
@@ -237,7 +233,7 @@
   transform: translateY(-6px) !important;
   background: #e10600 !important;
   border-color: #e10600 !important;
-  box-shadow: 0 15px 30px rgba(225,6,0,.35) !important;
+  box-shadow: 0 15px 30px rgba(225, 6, 0, .35) !important;
 }
 
 .footer-social a svg {
@@ -264,7 +260,7 @@
   margin-top: 55px !important;
   padding-top: 35px !important;
 
-  border-top: 1px solid rgba(255,255,255,.08) !important;
+  border-top: 1px solid rgba(255, 255, 255, .08) !important;
 
   display: flex !important;
   align-items: center !important;
@@ -275,7 +271,7 @@
 }
 
 .footer-bottom-left {
-  color: rgba(255,255,255,.65) !important;
+  color: rgba(255, 255, 255, .65) !important;
   font-size: 14px !important;
   line-height: 1.8 !important;
 }
@@ -289,7 +285,7 @@
 }
 
 .footer-bottom-links a {
-  color: rgba(255,255,255,.72) !important;
+  color: rgba(255, 255, 255, .72) !important;
   text-decoration: none !important;
   font-size: 14px !important;
   transition: .3s ease !important;
@@ -334,9 +330,9 @@
 
   border-radius: 999px !important;
 
-  border: 1px solid rgba(255,255,255,.12) !important;
+  border: 1px solid rgba(255, 255, 255, .12) !important;
 
-  background: rgba(255,255,255,.06) !important;
+  background: rgba(255, 255, 255, .06) !important;
 
   color: #fff !important;
 
@@ -383,10 +379,8 @@
   width: 120% !important;
   height: 120% !important;
 
-  background: radial-gradient(
-      rgba(255,255,255,.28),
-      transparent
-  ) !important;
+  background: radial-gradient(rgba(255, 255, 255, .28),
+      transparent) !important;
 
   transform: scale(0) !important;
 
@@ -427,12 +421,10 @@
   width: 100% !important;
   height: 100% !important;
 
-  background: linear-gradient(
-      90deg,
+  background: linear-gradient(90deg,
       transparent,
-      rgba(255,255,255,.18),
-      transparent
-  ) !important;
+      rgba(255, 255, 255, .18),
+      transparent) !important;
 
   transition: .6s !important;
 }
@@ -599,7 +591,7 @@
     justify-content: center !important;
   }
 
-  .footer-contact > div {
+  .footer-contact>div {
     justify-content: center !important;
     text-align: center !important;
     flex-direction: column !important;
