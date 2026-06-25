@@ -43,12 +43,12 @@ function HomeV1() {
         <img className="light-bot" src="/assets/images/item/light-bot.png" alt="" />
         
         <TeamSection />
-        <StatisticSection />
+        {/* <StatisticSection /> */}
         <AwardsSection />
         <TestimonialsSection />
       </div>
 
-      <PricingSection />
+      {/* <PricingSection /> */}
       <FaqsSection />
       <ContactSection />
     </>

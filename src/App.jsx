@@ -90,9 +90,10 @@ function App() {
             <Route path="/ai" element={<AIPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <Footer />
         </div>
       </main>
+          <Footer />
+
       <MobileMenu />
     </>
   );

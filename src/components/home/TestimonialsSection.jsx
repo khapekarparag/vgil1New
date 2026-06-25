@@ -61,15 +61,15 @@ function TestimonialsSection() {
       <div className="container">
         <div className="row justify-content-between">
 
-          <div className="col-lg-5">
+          <div className="col-lg-6">
             <div className="col-left">
 
-              <div className="heading-section mb-48">
-                <div className="heading-sub fw-semibold style-1 effectFade fadeUp">
+              <div className="heading-section mb-16">
+                <div className="heading-sub fw-semibold effectFade fadeUp">
                   Testimonials
                 </div>
-                <div className="heading-title text-dark effectFade fadeRotateX">
-                  What Our <br /> Clients Says
+                <div className="heading-title text-dark effectFade fadeRotateX ">
+                  What Our Clients Says
                 </div>
               </div>
 
@@ -149,7 +149,7 @@ function TestimonialsSection() {
           </div>
 
           {/* RIGHT SIDE IMAGES */}
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <div className="swiper sw-main-image effectFade fadeUp">
               <div className="swiper-wrapper">
                 {TESTIMONIALS_DATA.map((item) => (

@@ -42,7 +42,7 @@ function AwardsSection() {
     <div className="section-awards section-spacing dark-section">
       <div className="container">
         <div className="heading-section center mb-48">
-          <div className="heading-sub fw-semibold style-1 mb-0 effectFade fadeUp">Awards</div>
+          <div className="heading-sub fw-semibold mb-0 effectFade fadeUp">Awards</div>
         </div>
         <div className="d-grid gap-16">
           {AWARDS_DATA.map((award, index) => (

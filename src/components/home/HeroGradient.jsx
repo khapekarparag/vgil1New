@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import homeBgImg from '../../assets/home/• Homepage Background video size (896_678)px_@2x.jpg';
 
 import eAutopsyImg from '../../assets/home/e-autopsy.png';
 import digitalIdentityImg from '../../assets/home/digital-identity.png';
 import imisImg from '../../assets/home/imis.png';
-import  './HeroGradient.css'
+import './HeroGradient.css'
 
 function HeroGradient() {
+  const words = ['Tech', 'Driven', 'Native'];
+
+  const [currentWord, setCurrentWord] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-  <div className="section-hero" >
+    <div className="section-hero" >
       <div className="hero-image" style={{ backgroundImage: `url("${homeBgImg}")` }}>
       </div>
       <div className="container">
@@ -43,9 +55,24 @@ function HeroGradient() {
           </div>
           <div className="title text-display-2 effectFade fadeRotateX">
             <span className="title1 fw-semibold text-gradient-1">Your-Complete </span>
-            <br />
-            <div className="title2 d-flex gap-20 justify-content-center flex-wrap">
-              <span className="fw-semibold text-gradient-1">AI-TECH Partner </span>
+            {/* <br /> */}
+            <div className="title2 d-flex gap-20 justify-content-center  align-items-start flex-wrap" >
+              <div className="hero-rotating-title inline">
+                <span className="fw-semibold text-gradient-1" >AI-</span>
+
+                <span className="word-container" >
+                  <span
+                    key={words[currentWord]}
+                    className="hero-rotating-word fw-semibold text-gradient-1"
+                  >
+                    {words[currentWord]}
+                  </span>
+                </span>
+
+                <span className="fw-semibold text-gradient-1">
+                  &nbsp;Partner
+                </span>
+              </div>
               <div className="title-icon">
                 <div className="box"></div>
                 <div className="title-icon-wrap">
