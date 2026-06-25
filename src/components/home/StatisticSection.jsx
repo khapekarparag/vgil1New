@@ -73,7 +73,7 @@ function StatisticSection() {
         <div className="row justify-content-between">
           <div className="col-md-6">
             <div className="heading-section mb-48">
-              <div className="heading-sub fw-semibold style-1 effectFade fadeUp">Statistic</div>
+              <div className="heading-sub fw-semibold effectFade fadeUp">Statistic</div>
               <div className="heading-title text-dark effectFade fadeRotateX">Human-centered <br /> AI, built for <br /> production</div>
             </div>
           </div>

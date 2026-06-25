@@ -1,4 +1,5 @@
 import React from 'react';
+import './FaqsSection.css'
 
 function FaqsSection() {
   return (
@@ -13,7 +14,7 @@ function FaqsSection() {
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <div className="accordion-asked" id="accordion-asked">
-              <div className="accordion-asked-item effectFade fadeRotateX">
+              <div className="accordion-asked-item ">
                 <div className="accordion-asked-title" id="asked1">
                   <button className="accordion-button text-body-1 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                     What’s the typical timeline from idea to v1?
@@ -26,7 +27,7 @@ function FaqsSection() {
                   </div>
                 </div>
               </div>
-              <div className="accordion-asked-item effectFade fadeRotateX" data-delay="0.1">
+              <div className="accordion-asked-item " data-delay="0.1">
                 <div className="accordion-asked-title" id="asked2">
                   <button className="accordion-button text-body-1 fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                     What do we need to start?
@@ -39,7 +40,7 @@ function FaqsSection() {
                   </div>
                 </div>
               </div>
-              <div className="accordion-asked-item effectFade fadeRotateX" data-delay="0.2">
+              <div className="accordion-asked-item " data-delay="0.2">
                 <div className="accordion-asked-title" id="asked3">
                   <button className="accordion-button text-body-1 fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                     Which models/stack do you use?
@@ -52,7 +53,7 @@ function FaqsSection() {
                   </div>
                 </div>
               </div>
-              <div className="accordion-asked-item effectFade fadeRotateX" data-delay="0.3">
+              <div className="accordion-asked-item " data-delay="0.3">
                 <div className="accordion-asked-title" id="asked4">
                   <button className="accordion-button text-body-1 fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                     Are model/API costs included in pricing?

@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import contactBg from '../../assets/Contact-img/Contact@2x.png';
+import './ContactSection.css'
+import { Megaphone, Users } from "lucide-react";
 
 function ContactSection() {
   const [phone, setPhone] = useState('');
@@ -37,7 +39,7 @@ function ContactSection() {
   ];
 
   return (
-    <div id="contact" className="section-spacing-lg">
+    <div id="contact" className="container section-spacing-lg">
       <div className="section-contact" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${contactBg})`,
         backgroundSize: 'cover',
@@ -49,135 +51,220 @@ function ContactSection() {
       }}>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <div className="col-left">
                 <div className="heading-section mb-48">
-                  <div className="heading-sub fw-semibold" style={{ color: '#ffffff', opacity: 0.9 }}>Contact</div>
+                  <div className="heading-sub fw-semibold">Contact</div>
                   <div className="heading-title" style={{ color: '#ffffff', fontSize: '3rem', fontWeight: '800', lineHeight: '1.1' }}>
                     Let’s Build <br /> Intelligent Things
                   </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                  <div className="contact-item" style={{ border: '1px solid rgba(255, 255, 255, 0.25)', padding: '20px', borderRadius: '16px', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)' }}>
-                    <div className="content">
-                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff4d4d' }}>Marketing</div>
-                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2', color: '#ffffff' }}>info@vgipl.in</div>
-                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2', color: '#ffffff' }}>+91 62626 86865</div>
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: '30px' }}>
+                  <div className="contact-cards-wrap">
+
+                    <div className="contact-pill-card">
+                      <div className="contact-pill-icon">
+                        <Megaphone size={24} strokeWidth={2.2} />
+                      </div>
+
+                      <div className="contact-pill-content">
+                        <span className="contact-pill-label">Marketing</span>
+
+                        <a href="mailto:info@vgipl.in">
+                          info@vgipl.in
+                        </a>
+
+                        <a href="tel:+916262686865">
+                          +91 62626 86865
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="contact-item" style={{ border: '1px solid rgba(255, 255, 255, 0.25)', padding: '20px', borderRadius: '16px', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)' }}>
-                    <div className="content">
-                      <div className="title fw-bold mb-4" style={{ fontSize: '18px', color: '#ff4d4d' }}>HR</div>
-                      <div className="text" style={{ fontSize: '14px', marginBottom: '2px', lineHeight: '1.2', color: '#ffffff' }}>hr@vgipl.in</div>
-                      <div className="text" style={{ fontSize: '14px', lineHeight: '1.2', color: '#ffffff' }}>+91 77988 80958</div>
+
+                    <div className="contact-pill-card">
+                      <div className="contact-pill-icon">
+                        <Users size={24} strokeWidth={2.2} />
+                      </div>
+
+                      <div className="contact-pill-content">
+                        <span className="contact-pill-label">Human Resources</span>
+
+                        <a href="mailto:hr@vgipl.in">
+                          hr@vgipl.in
+                        </a>
+
+                        <a href="tel:+917798880958">
+                          +91 77988 80958
+                        </a>
+                      </div>
                     </div>
+
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="contact-form-card">
-                <div className="contact-form-header">
-                  <div className="sub-title" style={{ fontWeight: '700', color: '#1a1a1a', marginBottom: '6px', textTransform: 'uppercase', fontSize: '12px', letterSpacing: '1px' }}>Contact Us</div>
-                  <h2 style={{ fontSize: '2.2rem', fontWeight: '800', lineHeight: '1.2', color: '#1a1a1a', margin: '0' }}>
-                    How can we support <br /> your <span style={{ color: '#e10600' }}>needs?</span>
-                  </h2>
+            <div className="col-lg-7">
+              <div className="contact-form-redesign effectFade fadeRotateX">
+
+                <div className="form-header">
+                  <div className="heading-sub fw-semibold mb-12">
+                    Contact Form
+                  </div>
+
+                  <h3 className="form-title">
+                    Send Us a Message
+                  </h3>
+
+                  <p className="form-subtitle">
+                    Tell us about your requirements and our team will get back to you shortly.
+                  </p>
                 </div>
 
-                <form className="form-contact-compact">
-                  <div className="form-row-2col">
-                    <div className="form-field-half">
-                      <select className="form-select-compact">
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Select your industry</option>
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Bank</option>
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Manufacturing</option>
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>NBFC</option>
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Other</option>
-                      </select>
-                    </div>
-                    <div className="form-field-half">
-                      <select className="form-select-compact">
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Select a product</option>
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Core Banking</option>
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Conversational AI</option>
-                        <option style={{ backgroundColor: '#fff', color: '#111827' }}>Audit Flux</option>
-                      </select>
-                    </div>
-                  </div>
+                <form>
 
-                  <div className="form-row-2col">
-                    <div className="form-field-half">
-                      <input type="text" placeholder="Full name*" required className="form-input-compact" />
-                    </div>
-                    <div className="form-field-half">
-                      <input type="email" placeholder="Email*" required className="form-input-compact" />
-                    </div>
-                  </div>
+                  <div className="row g-3">
 
-                  <div className="form-row-2col">
-                    <div className="form-field-half phone-field-wrapper">
-                      <div ref={dropdownRef} style={{ position: 'relative' }}>
-                        <div
-                          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                          className="country-select-trigger-compact"
-                        >
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                            <img src={`https://flagcdn.com/${selectedCountry.flag}.svg`} alt={selectedCountry.flag} style={{ width: '20px', borderRadius: '1.5px' }} />
-                            <span style={{ fontSize: '13.5px', color: '#111827', fontWeight: '500' }}>{selectedCountry.code}</span>
-                          </div>
-                          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#111827" strokeWidth="3.5" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </div>
-
-                        {isDropdownOpen && (
-                          <div className="country-dropdown-compact">
-                            {countries.map((country, idx) => (
-                              <div
-                                key={idx}
-                                onClick={() => { setSelectedCountry(country); setIsDropdownOpen(false); }}
-                                className="country-option-compact"
-                              >
-                                <img src={`https://flagcdn.com/${country.flag}.svg`} alt={country.flag} style={{ width: '20px', borderRadius: '1.5px' }} />
-                                <span style={{ flex: 1, color: '#111827', fontWeight: '500' }}>{country.name}</span>
-                                <span style={{ color: '#6b7280', fontSize: '0.8rem' }}>{country.code}</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
+                    <div className="col-md-6">
                       <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        required
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="phone-input-compact"
+                        type="text"
+                        className="form-control custom-input"
+                        placeholder="Full Name"
                       />
                     </div>
-                    <div className="form-field-half">
-                      <input type="text" placeholder="Website" className="form-input-compact" />
-                    </div>
-                  </div>
 
-                  <div>
-                    <textarea placeholder="Message*" required className="textarea-compact"></textarea>
-                  </div>
-
-                  <div className="form-footer-row">
-                    <div className="terms-checkbox-wrap">
-                      <input type="checkbox" id="terms" />
-                      <label htmlFor="terms">
-                        I agree with the <span style={{ color: '#e10600' }}>Terms & Conditions</span>
-                      </label>
+                    <div className="col-md-6">
+                      <input
+                        type="email"
+                        className="form-control custom-input"
+                        placeholder="Email Address"
+                      />
                     </div>
 
-                    <button type="submit" className="btn-submit-compact">
-                      Send Message
-                      <div className="btn-icon-circle">
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    <div className="col-md-6">
+
+                      <div className="phone-field-redesign">
+
+                        <div ref={dropdownRef} className="country-wrapper-redesign">
+
+                          <div
+                            className="country-trigger-redesign"
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                          >
+                            <img
+                              src={`https://flagcdn.com/${selectedCountry.flag}.svg`}
+                              alt={selectedCountry.flag}
+                            />
+
+                            <span>{selectedCountry.code}</span>
+
+                            <svg
+                              width="8"
+                              height="8"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3"
+                            >
+                              <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                          </div>
+
+                          {isDropdownOpen && (
+                            <div className="country-dropdown-redesign">
+
+                              {countries.map((country, index) => (
+                                <div
+                                  key={index}
+                                  className="country-option-redesign"
+                                  onClick={() => {
+                                    setSelectedCountry(country);
+                                    setIsDropdownOpen(false);
+                                  }}
+                                >
+                                  <img
+                                    src={`https://flagcdn.com/${country.flag}.svg`}
+                                    alt={country.flag}
+                                  />
+
+                                  <span>{country.name}</span>
+
+                                  <small>{country.code}</small>
+                                </div>
+                              ))}
+
+                            </div>
+                          )}
+
+                        </div>
+
+                        <input
+                          type="tel"
+                          className="phone-input-redesign "
+                          placeholder="Phone Number"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                        />
+
                       </div>
-                    </button>
+
+                    </div>
+
+                    <div className="col-md-6">
+                      <select className=" form-select form-select-compact-redesign">
+                        <option>Choose Service</option>
+                        <option>AI Solutions</option>
+                        <option>Core Banking</option>
+                        <option>Cyber Security</option>
+                        <option>ERP Solutions</option>
+                        <option>Digital Transformation</option>
+                      </select>
+                    </div>
+
+                    <div className="col-12">
+                      <textarea
+                        rows="6"
+                        className="form-control custom-input custom-textarea"
+                        placeholder="Tell us about your project..."
+                      />
+                    </div>
+
+                    <div className="col-12">
+
+                      <div className="form-footer-redesign">
+
+                        <div className="terms-checkbox-wrap">
+                          <input type="checkbox" id="terms" />
+                          <label htmlFor="terms">
+                            I agree with the <span>Terms & Conditions</span>
+                          </label>
+                        </div>
+
+                        <button type="submit" className="contact-submit-btn">
+                          Send Message
+
+                          <span className="btn-arrow-circle">
+                            <svg
+                              width="10"
+                              height="10"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                            >
+                              <line x1="7" y1="17" x2="17" y2="7"></line>
+                              <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                          </span>
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
                   </div>
+
                 </form>
+
               </div>
             </div>
           </div>

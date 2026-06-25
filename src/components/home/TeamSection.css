@@ -1,0 +1,17 @@
+.founder-card {
+  opacity: 0 !important;
+  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.founder-left {
+  transform: translateX(-80px) rotate(-3deg) !important;
+}
+
+.founder-right {
+  transform: translateX(80px) rotate(3deg) !important;
+}
+
+.founder-card.animate {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) !important;
+}

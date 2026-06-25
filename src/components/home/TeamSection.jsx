@@ -1,4 +1,6 @@
 import React from 'react';
+import { useEffect } from 'react';
+import './TeamSection.css'
 
 // Import local images
 import team1Image from '../../assets/home/ownwer-img/avinash-shende-clear-bg.png';
@@ -8,23 +10,41 @@ import avinashSignature from '../../assets/home/signature.png';
 import sachinSignature from '../../assets/home/sachin-signature.png';
 
 function TeamSection() {
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        document
+          .querySelectorAll('.founder-card')
+          .forEach((card) => card.classList.add('animate'));
+      }
+    },
+    { threshold: 0.25 }
+  );
+
+  const section = document.querySelector('#leadership');
+
+  if (section) observer.observe(section);
+
+  return () => observer.disconnect();
+}, []);
   return (
     <div className="section-team-premium" id="leadership">
       <div className="container">
         
         {/* Section Heading */}
         <div className="heading-section center mb-64">
-          <div className="heading-sub fw-semibold style-1 effectFade fadeUp">Our Founder</div>
+          <div className="heading-sub fw-semibold  effectFade fadeUp">Our Founder</div>
           <div className="heading-title text-dark effectFade fadeRotateX">
-            The Minds Behind <br /> Virtual-Galaxy
+            The Minds Behind Virtual-Galaxy
           </div>
         </div>
 
         {/* Responsive Grid Wrapper */}
-        <div className="leadership-grid-container effectFade fadeUp">
+        <div className="leadership-grid-container effectFade ">
           
           {/* Left Card - Mr. Avinash Shende */}
-          <div className="leader-card-item card-left">
+          <div className="leader-card-item card-left founder-card founder-left">
             <div className="leader-image-wrap">
               <div className="image-bg-box">
                 <img src={team1Image} alt="Mr. Avinash Shende" className="leader-profile-img" />
@@ -55,7 +75,7 @@ function TeamSection() {
           </div>
 
           {/* Right Card - Mr. Sachin Pande */}
-          <div className="leader-card-item card-right">
+          <div className="leader-card-item card-right founder-card founder-right">
             <div className="leader-image-wrap">
               <div className="image-bg-box">
                 <img src={team2Image} alt="Mr. Sachin Pande" className="leader-profile-img" />
