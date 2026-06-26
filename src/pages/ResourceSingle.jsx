@@ -5,7 +5,7 @@ import ContactSection from '../components/home/ContactSection';
 import { RESOURCE_DATA } from '../data/resourceData';
 import VideoSection from '../components/common/VideoSection';
 import resourceBgImg from '../assets/Resource-img/Resource@2x.png';
-import InstagramFeed from '../components/common/instagramFeed';
+import InstagramFeed from '../components/common/InstagramFeed';
 
 
 function ResourceSingle() {
