@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import team1Image from '../../assets/home/ownwer-img/avinash-shende-clear-bg.png';
 import team2Image from '../../assets/home/ownwer-img/sachin-pande-clear-bg.png';
 import logoImage from '../../assets/home/ownwer-img/vg-logo-2.png';
@@ -172,7 +172,7 @@ function AboutTeamSection() {
                 </p>
               </div>
             </div>
-          </div>v>
+          </div>
 
           {/* Center Circular Logo Container */}
           <div className="leader-logo-center-wrap anim-on-scroll anim-scale-in">
