@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import team1Image from '../../assets/home/ownwer-img/avinash-shende-clear-bg.png';
 import team2Image from '../../assets/home/ownwer-img/sachin-pande-clear-bg.png';
 import logoImage from '../../assets/home/ownwer-img/vg-logo-2.png';
@@ -17,11 +17,52 @@ import satishImg from '../../assets/home/ownwer-img/Satish_Kukde.jpg';
 
 function AboutTeamSection() {
   const [activeDirector, setActiveDirector] = useState(null);
+  const sectionRef = useRef(null);
 
   const handleCardClick = (member) => {
     if (window.innerWidth <= 768) {
       setActiveDirector(member);
     }
+  };
+
+  // Intersection Observer for scroll-triggered animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('anim-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const section = sectionRef.current;
+    if (section) {
+      const animElements = section.querySelectorAll('.anim-on-scroll');
+      animElements.forEach((el) => observer.observe(el));
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // 3D tilt effect handler
+  const handleTilt = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+  };
+
+  const handleTiltReset = (e) => {
+    e.currentTarget.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
   };
   const vgilTeam = [
     { name: 'Alhad Hardas', role: 'Director - Banking Domain Services', img: alhadImg },
@@ -95,7 +136,7 @@ function AboutTeamSection() {
   const rightColumnMembers = [boardMembers[1], boardMembers[3], boardMembers[5]];
 
   return (
-    <div className="section-team flat-spacing" style={{ backgroundColor: '#ffffff', padding: '100px 0' }}>
+    <div ref={sectionRef} className="section-team flat-spacing" style={{ backgroundColor: '#ffffff', padding: '100px 0' }}>
       <div className="container">
         {/* Founders Section */}
         <div className="heading-section center mb-64">
@@ -105,13 +146,13 @@ function AboutTeamSection() {
           </div>
         </div>
 
-        <div className="founders-container mb-120 effectFade fadeUp">
+        <div className="founders-container mb-120">
 
           {/* Left Side - Avinash Shende */}
-          <div className="founder-item" style={{ display: 'flex' }}>
-            <div className="leader-card-item card-left" style={{ width: '100%', background: '#ffffff', boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)', border: '1px solid #eef2f6', borderRadius: '32px' }}>
+          <div className="founder-item anim-on-scroll anim-slide-left" style={{ display: 'flex' }}>
+            <div className="leader-card-item card-left tilt-card" style={{ width: '100%', background: '#ffffff', boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)', border: '1px solid #eef2f6', borderRadius: '32px' }} onMouseMove={handleTilt} onMouseLeave={handleTiltReset}>
               <div className="leader-image-wrap">
-                <div className="image-bg-box" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden' }}>
+                <div className="image-bg-box shine-effect" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden' }}>
                   <img src={team1Image} alt="Mr. Avinash Shende" className="leader-profile-img" style={{ width: '100%', height: 'auto', display: 'block' }} />
                 </div>
                 <div className="profile-icon-badge">
@@ -127,24 +168,24 @@ function AboutTeamSection() {
                 <div className="leader-position">Founder & CEO</div>
                 <div className="leader-divider"></div>
                 <p className="leader-desc">
-                  Avinash oversees operations and finances at Virtual Galaxy Infotech, balancing market needs with cost efficiency. He’s also a gardening enthusiast with a love for all things green.
+                  Avinash oversees operations and finances at Virtual Galaxy Infotech, balancing market needs with cost efficiency. He's also a gardening enthusiast with a love for all things green.
                 </p>
               </div>
             </div>
-          </div>
+          </div>v>
 
           {/* Center Circular Logo Container */}
-          <div className="leader-logo-center-wrap">
-            <div className="logo-circle-container">
+          <div className="leader-logo-center-wrap anim-on-scroll anim-scale-in">
+            <div className="logo-circle-container logo-float">
               <img src={logoImage} alt="Virtual Galaxy Logo" className="logo-center-img" />
             </div>
           </div>
 
           {/* Right Side - Sachin Pande */}
-          <div className="founder-item" style={{ display: 'flex' }}>
-            <div className="leader-card-item card-right" style={{ width: '100%', background: '#ffffff', boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)', border: '1px solid #eef2f6', borderRadius: '32px' }}>
+          <div className="founder-item anim-on-scroll anim-slide-right" style={{ display: 'flex' }}>
+            <div className="leader-card-item card-right tilt-card" style={{ width: '100%', background: '#ffffff', boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)', border: '1px solid #eef2f6', borderRadius: '32px' }} onMouseMove={handleTilt} onMouseLeave={handleTiltReset}>
               <div className="leader-image-wrap">
-                <div className="image-bg-box" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden' }}>
+                <div className="image-bg-box shine-effect" style={{ background: 'rgba(0,0,0,0.05)', borderRadius: '24px', overflow: 'hidden' }}>
                   <img src={team2Image} alt="Mr. Sachin Pande" className="leader-profile-img" style={{ width: '100%', height: 'auto', display: 'block' }} />
                 </div>
                 <div className="profile-icon-badge">
@@ -186,10 +227,13 @@ function AboutTeamSection() {
               {leftColumnMembers.map((member, i) => (
                 <div 
                   key={i} 
-                  className="board-card effectFade fadeUp"
+                  className={`board-card anim-on-scroll anim-slide-left`}
+                  style={{ transitionDelay: `${i * 150}ms` }}
                   onClick={() => handleCardClick(member)}
+                  onMouseMove={handleTilt}
+                  onMouseLeave={handleTiltReset}
                 >
-                  <div className="board-card-img-wrapper" style={{ backgroundColor: member.bg }}>
+                  <div className="board-card-img-wrapper shine-effect" style={{ backgroundColor: member.bg }}>
                     <img 
                       src={member.img} 
                       alt={member.name} 
@@ -259,10 +303,13 @@ function AboutTeamSection() {
               {rightColumnMembers.map((member, i) => (
                 <div 
                   key={i} 
-                  className="board-card effectFade fadeUp"
+                  className={`board-card anim-on-scroll anim-slide-right`}
+                  style={{ transitionDelay: `${i * 150}ms` }}
                   onClick={() => handleCardClick(member)}
+                  onMouseMove={handleTilt}
+                  onMouseLeave={handleTiltReset}
                 >
-                  <div className="board-card-img-wrapper" style={{ backgroundColor: member.bg }}>
+                  <div className="board-card-img-wrapper shine-effect" style={{ backgroundColor: member.bg }}>
                     <img 
                       src={member.img} 
                       alt={member.name} 
@@ -304,8 +351,8 @@ function AboutTeamSection() {
 
           <div className="team-grid-responsive">
             {vgilTeam.map((member, i) => (
-              <div key={i} className="effectFade fadeUp" style={{ textAlign: 'center' }}>
-                <div className="vgil-card-unique">
+              <div key={i} className="anim-on-scroll anim-scale-in" style={{ textAlign: 'center', transitionDelay: `${i * 100}ms` }}>
+                <div className="vgil-card-unique shine-effect" onMouseMove={handleTilt} onMouseLeave={handleTiltReset}>
                   <img
                     src={member.img}
                     alt={member.name}
@@ -348,6 +395,120 @@ function AboutTeamSection() {
         </div>
 
         <style>{`
+          /* ====== SCROLL ANIMATION SYSTEM ====== */
+          .anim-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+          }
+
+          .anim-slide-left {
+            transform: translateX(-60px) translateY(20px);
+          }
+          .anim-slide-right {
+            transform: translateX(60px) translateY(20px);
+          }
+          .anim-scale-in {
+            transform: scale(0.85) translateY(30px);
+          }
+
+          .anim-visible {
+            opacity: 1 !important;
+            transform: translateX(0) translateY(0) scale(1) !important;
+          }
+
+          /* ====== 3D TILT CARD ====== */
+          .tilt-card {
+            transition: transform 0.15s ease-out, box-shadow 0.3s ease !important;
+            will-change: transform;
+          }
+
+          /* ====== GRADIENT SHINE SWEEP ====== */
+          .shine-effect {
+            position: relative;
+            overflow: hidden;
+          }
+          .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(
+              105deg,
+              transparent 40%,
+              rgba(255, 255, 255, 0.4) 45%,
+              rgba(255, 255, 255, 0.1) 50%,
+              transparent 55%
+            );
+            transform: skewX(-20deg);
+            transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            z-index: 5;
+          }
+          .shine-effect:hover::after {
+            left: 130%;
+          }
+
+          /* ====== FLOATING LOGO ====== */
+          .logo-float {
+            animation: logoFloatAnim 4s ease-in-out infinite;
+          }
+          @keyframes logoFloatAnim {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+          }
+
+          /* ====== BOARD CENTER CIRCLE PULSE ====== */
+          .board-center-circle {
+            animation-name: pulseGlow;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+          }
+          @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(225, 6, 0, 0.25); }
+            50% { box-shadow: 0 10px 50px rgba(225, 6, 0, 0.5), 0 0 80px rgba(225, 6, 0, 0.15); }
+          }
+
+          /* ====== ENHANCED BOARD CARD HOVER ====== */
+          .board-card {
+            transition: transform 0.15s ease-out, box-shadow 0.4s ease, border-color 0.3s ease !important;
+            will-change: transform;
+          }
+          .board-card:hover .board-card-img-wrapper img {
+            transform: scale(1.08);
+          }
+
+          /* ====== VGIL CARD HOVER ENHANCEMENT ====== */
+          .vgil-card-unique {
+            transition: transform 0.15s ease-out, box-shadow 0.4s ease, border-color 0.4s ease !important;
+            will-change: transform;
+          }
+          .vgil-card-unique:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+            border-color: rgba(225, 6, 0, 0.2) !important;
+          }
+
+          /* ====== MOBILE: Disable 3D tilt & heavy animations ====== */
+          @media (max-width: 768px) {
+            .anim-slide-left,
+            .anim-slide-right {
+              transform: translateY(30px) !important;
+            }
+            .anim-scale-in {
+              transform: scale(0.95) translateY(20px) !important;
+            }
+            .anim-visible {
+              transform: translateY(0) scale(1) !important;
+            }
+            .shine-effect::after {
+              display: none;
+            }
+          }
+
           .social-links-founder {
             display: flex;
             justify-content: center;
