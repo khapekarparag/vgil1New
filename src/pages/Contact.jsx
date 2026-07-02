@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import contactBg from '../assets/Contact-img/Contact@2x.png';
+import './Contact.css';
+
 
 function Contact() {
   return (
@@ -24,168 +26,106 @@ function Contact() {
         </div>
       </section>
 
-      <div id="contact" className="flat-spacing">
-        <div className="section-contact p-0">
-          <div className="container">
-            <div className="row mb-60">
-              <div className="col-md-4 md-mb-24">
-                <div className="box-contact-item text-center effectFade fadeUp" style={{ 
-                  height: '320px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'flex-start', 
-                  padding: '40px 20px', 
-                  backgroundColor: '#ffffff', 
-                  borderRadius: '24px', 
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.05)', 
-                  border: '1.5px solid #000000',
-                  transition: 'all 0.3s ease-in-out',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-10px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
-                }}>
-                  <h4 className="title fw-bold mb-24" style={{ fontSize: '22px', color: '#ff0000' }}>Marketing</h4>
-                  <div className="contact-details" style={{ fontSize: '15px', color: '#4b5563', lineHeight: '1.2' }}>
-                    <a className="text d-block mb-2 link1" href="mailto:info@vgipl.in">info@vgipl.in</a>
-                    <a className="text d-block mb-12 link1" href="mailto:virtualdigital@vgipl.in">virtualdigital@vgipl.in</a>
-                    <a href="tel:+916262686865" className="text d-block mb-2 link1">+91 62626 86865</a>
-                    <a href="tel:+917798880931" className="text d-block link1">+91 77988 80931</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 md-mb-24">
-                <div className="box-contact-item text-center effectFade fadeUp" data-delay="0.1" style={{ 
-                  height: '320px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'flex-start', 
-                  padding: '40px 20px', 
-                  backgroundColor: '#ffffff', 
-                  borderRadius: '24px', 
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.05)', 
-                  border: '1.5px solid #000000',
-                  transition: 'all 0.3s ease-in-out',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-10px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
-                }}>
-                  <h4 className="title fw-bold mb-24" style={{ fontSize: '22px', color: '#ff0000' }}>HR</h4>
-                  <div className="contact-details" style={{ fontSize: '15px', color: '#4b5563', lineHeight: '1.2' }}>
-                    <a className="text d-block mb-12 link1" href="mailto:hr@vgipl.in">hr@vgipl.in</a>
-                    <a href="tel:+917798880958" className="text d-block link1">+91 77988 80958</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="box-contact-item text-center effectFade fadeUp" data-delay="0.2" style={{ 
-                  height: '320px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'flex-start', 
-                  padding: '40px 20px', 
-                  backgroundColor: '#ffffff', 
-                  borderRadius: '24px', 
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.05)', 
-                  border: '1.5px solid #000000',
-                  transition: 'all 0.3s ease-in-out',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-10px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
-                }}>
-                  <h4 className="title fw-bold mb-24" style={{ fontSize: '22px', color: '#ff0000' }}>Investor</h4>
-                  <div className="contact-details" style={{ fontSize: '15px', color: '#4b5563', lineHeight: '1.2' }}>
-                    <div className="fw-bold text-dark mb-4" style={{ fontSize: '18px' }}>Anjali Padhye</div>
-                    <div className="text-secondary mb-12" style={{ fontSize: '13px', lineHeight: '1.3', fontWeight: '500' }}>Company Secretary & <br/> Compliance Officer</div>
-                    <a className="text d-block mb-8 link1" href="mailto:investors@vgipl.in">investors@vgipl.in</a>
-                    <a href="tel:+919823290368" className="text d-block link1">+91 98232 90368</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* ==================== CONTACT SECTION (Aigocy style) ==================== */}
+      <div id="contact" className="flat-spacing pt-0">
+        <div className="section-contact">
+
+          {/* Background image */}
+          <div className="contact-image">
+            <img src={contactBg} alt="" />
+          </div>
+
+          <div className="container contact-container-custom">
             <div className="row">
-              <div className="col-lg-6 lg-mb-24">
-                <div className="col-left p-0">
-                  <div className="mb-24">
-                    <div className="heading-section mb-48">
-                      <div className="heading-sub fw-semibold effectFade fadeUp">Contact</div>
-                      <div className="heading-title text-gradient-3 effectFade fadeRotateX">
-                        Let’s Build <br /> Intelligent Things
+
+              {/* ---- LEFT: Heading + Contact Items ---- */}
+              <div className="col-lg-6">
+                <div className="col-left">
+
+                  <div className="heading-section mb-24">
+                    <div className="contact-badge-pill effectFade fadeUp mb-12">
+                      <span className="dot"></span>
+                      Contact
+                    </div>
+                    <h2 className="heading-title effectFade fadeRotateX">
+                      Let's Build <br /> Intelligent Things
+                    </h2>
+                  </div>
+
+                  <div className="contact-items-wrapper">
+                    {/* Email */}
+                    <div className="contact-item effectFade fadeRotateX">
+                      <div className="contact-item-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="2" y="4" width="20" height="16" rx="2"/>
+                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                      </div>
+                      <div className="contact-item-content">
+                        <div className="contact-item-title">E-mail address</div>
+                        <a href="mailto:info@vgipl.in" className="contact-item-text">info@vgipl.in</a>
                       </div>
                     </div>
-                    <p className="text effectFade fadeUp">combining creativity, technology, and strategy to craft solutions that think, adapt, and inspire. Connect with us to turn visionary ideas into meaningful, data-driven realities.</p>
+
+                    {/* Phone */}
+                    <div className="contact-item effectFade fadeRotateX">
+                      <div className="contact-item-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                        </svg>
+                      </div>
+                      <div className="contact-item-content">
+                        <div className="contact-item-title">Phone number</div>
+                        <a href="tel:+916262686865" className="contact-item-text">+91 62626 86865</a>
+                      </div>
+                    </div>
                   </div>
-                  <div className="tf-social-1 gap-24 effectFade fadeRotateX">
-                    <a href="https://x.com/Virtualvgipl" target="_blank" rel="noreferrer" className="text-body-1 fw-semibold">
-                      Twitter / X
-                      <div className="social-item">
-                        <i className="icon icon-twitter-x"></i>
-                      </div>
-                    </a>
-                    <a href="https://www.facebook.com/VirtualGalaxyInfotechLtd" target="_blank" rel="noreferrer" className="text-body-1 fw-semibold">
-                      Facebook
-                      <div className="social-item">
-                        <i className="icon icon-facebook-f"></i>
-                      </div>
-                    </a>
-                    <a href="https://www.instagram.com/virtualgalaxyinfotech/" target="_blank" rel="noreferrer" className="text-body-1 fw-semibold">
-                      Instagram
-                      <div className="social-item">
-                        <i className="icon icon-instagram"></i>
-                      </div>
-                    </a>
-                    <a href="https://www.linkedin.com/company/virtualgalaxy/" target="_blank" rel="noreferrer" className="text-body-1 fw-semibold">
-                      Linkedin
-                      <div className="social-item">
-                        <i className="icon icon-linkedin-in"></i>
-                      </div>
-                    </a>
-                  </div>
+
                 </div>
               </div>
+
+              {/* ---- RIGHT: Form ---- */}
               <div className="col-lg-6">
-                <form className="form-contact m-0 effectFade fadeUp" onSubmit={e => e.preventDefault()}>
-                  <h4 className="heading fw-semibold">Fill this form below</h4>
+                <form className="form-contact effectFade fadeUp" onSubmit={e => e.preventDefault()}>
+                  <h3 className="heading fw-semibold">Fill this form below</h3>
+
                   <fieldset className="mb-21">
-                    <label className="fw-semibold text-body-3 mb-20">Your Name</label>
-                    <input className="" type="text" placeholder="Enter your full name" required />
+                    <label className="fw-semibold text-body-3">Your Name</label>
+                    <input type="text" placeholder="Enter your full name" required />
                   </fieldset>
+
                   <fieldset className="mb-21">
-                    <label className="fw-semibold text-body-3 mb-20">Your Phone</label>
-                    <input className="" type="text" placeholder="Enter the phone" required />
+                    <label className="fw-semibold text-body-3">Email address</label>
+                    <input type="email" placeholder="Enter your email address" required />
                   </fieldset>
+
+                  <fieldset className="mb-21">
+                    <label className="fw-semibold text-body-3">Your Phone</label>
+                    <input type="tel" placeholder="Enter your phone number" required />
+                  </fieldset>
+
                   <fieldset className="mb-18">
-                    <label className="fw-semibold text-body-3 mb-0">More About The Project</label>
-                    <textarea name="text" className=""></textarea>
+                    <label className="fw-semibold text-body-3">More About The Project</label>
+                    <textarea name="text"></textarea>
                   </fieldset>
+
                   <div className="attachment d-flex gap-8 align-items-center">
-                    <i className="icon icon-paperclip-solid fs-24"></i>
-                    <div className="fw-semibold text-body-3">Add an Attachment</div>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="attachment-icon">
+                      <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                    </svg>
+                    <div className="attachment-text fw-semibold">Add an Attachment</div>
                   </div>
+
                   <button type="submit" className="tf-btn w-100">Submit Message</button>
                 </form>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
 
       <div className="section-maps flat-spacing pt-0">
         <div className="container">
