@@ -44,12 +44,12 @@ function HomeV1() {
         
         <TeamSection />
         {/* <StatisticSection /> */}
-        <AwardsSection />
-        <TestimonialsSection />
+        {/* <AwardsSection /> */}
+        {/* <TestimonialsSection /> */}
       </div>
 
       {/* <PricingSection /> */}
-      <FaqsSection />
+      {/* <FaqsSection /> */}
       <ContactSection />
     </>
   );
